@@ -1,0 +1,49 @@
+# Credenciales y configuracion local
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets.json
+credentials.json
+
+# Entornos Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.egg-info/
+dist/
+build/
+
+# IDE, sistema y notebooks
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+.ipynb_checkpoints/
+
+# Datos y ejecuciones locales (se documentan las fuentes)
+data/bronce/**
+data/plata/**
+data/oro/**
+data/cuarentena/**
+!data/bronce/.gitkeep
+!data/plata/.gitkeep
+!data/oro/.gitkeep
+!data/cuarentena/.gitkeep
+logs/
+*.log
+*.duckdb
+*.duckdb.wal
+*.db
+*.sqlite3
+
+# Cache de Streamlit
+.streamlit/secrets.toml
