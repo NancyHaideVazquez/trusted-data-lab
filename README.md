@@ -1,10 +1,7 @@
-# TRUSTED DATA LAB
-
-Observatorio de datos certificado. Proyecto integrador de Ingeniería de Datos, Análisis Estadístico y Calidad en los Sistemas de Información. Proyecto de observatorio de datos para la recopilación, almacenamiento y análisis de información histórica.
-
 # Observatorio de Vivienda y Costos de Colima
 
 **Proyecto Integrador TRUSTED DATA LAB**
+Observatorio de datos certificado. Proyecto integrador de Ingeniería de Datos, Análisis Estadístico y Calidad en los Sistemas de Información. Proyecto de observatorio de datos para la recopilación, almacenamiento y análisis de información histórica.
 
 ## Descripción
 
