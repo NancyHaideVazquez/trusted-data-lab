@@ -1,0 +1,4 @@
+fecha,inicio,fin,interrupcion_min,fase,actividad
+2026-11-06,16:00,17:30,0,planeacion,Investigacion del sector inmobiliario y pregunta central
+2026-11-06,17:30,19:00,15,investigacion,Revision de terminos de uso de las APIs de INEGI y Banxico
+2026-11-06,19:00,21:00,0,investigacion,Busqueda de indicadores de vivienda en el catalogo del INEGI

@@ -1,0 +1,3 @@
+numero,fecha,tipo,fase_introducido,fase_eliminado,minutos_correccion,defecto_origen,descripcion
+1,2026-11-06,entorno,entorno,entorno,5,Configuracion,Error de comando pip no reconocido en PowerShell
+
