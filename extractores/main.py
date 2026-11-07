@@ -55,6 +55,7 @@ def ejecutar_inegi(modo="oportuno"):
         paquete, resumen = inegi.capturar(
             indicador_id=indicador_id, 
             modo=modo, 
+            ubicacion="00",
             revisar_robots=False 
         )
         
@@ -88,7 +89,7 @@ def main():
     print("========================================")
     
     # Ejecutamos ambos. Si uno falla, el otro sigue.
-   # ejecutar_inegi(modo=modo)
+    ejecutar_inegi(modo=modo)
     ejecutar_banxico(modo=modo)
     
     print("\n========================================")

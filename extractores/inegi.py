@@ -68,44 +68,65 @@ def _parsear_fecha(texto):
     raise ValueError(f"Fecha del INEGI no reconocida: {texto!r}")
 
 
-def construir_url(indicador_id, modo="historico", inicio=None, fin=None,
-                  ubicacion="0700", banco="BISE", version="2.0"):
-    """Arma la URL de consulta segun el modo elegido.
 
-    Parametros oficiales del BISE:
-      - indicador_id: ID numerico del indicador (solo digitos).
-      - ubicacion:    clave geoestadistica (0700 = nacional).
-      - banco:        BISE por defecto.
-      - version:      2.0
+def construir_url( indicador_id,
+    modo="historico",
+    inicio=None,
+    fin=None,
+    ubicacion="00",
+    banco="BISE",
+    version="2.0"
+):
     """
-    if not re.fullmatch(r"[A-Za-z0-9]+", indicador_id or ""):
-        raise ValueError("El ID del indicador solo puede tener letras y numeros")
+    Construye la URL oficial de INEGI.
 
-    if not re.fullmatch(r"\d{4}", ubicacion or ""):
-        raise ValueError("La ubicacion debe ser una clave de 4 digitos (ej. 0700)")
+    historico: descarga todos los periodos.
+    oportuno: descarga el dato mas reciente.
+    """
 
+    # Comprobamos que el indicador contenga solo numeros
+    indicador_id = str(indicador_id)
+
+    if not re.fullmatch(r"\d+", indicador_id):
+        raise ValueError("El indicador debe ser numerico")
+
+    # Comprobamos que la ubicacion sea numerica
+    ubicacion = str(ubicacion)
+
+    if not re.fullmatch(r"\d{2,5}", ubicacion):
+        raise ValueError("Clave geografica incorrecta")
+
+    # Verificamos el banco de informacion
+    if banco not in ("BISE", "BIE-BISE"):
+        raise ValueError("Banco de INEGI no valido")
+
+    # Elegimos si necesitamos el historico o el dato reciente
+    if modo == "historico":
+        recientes = "false"
+
+    elif modo == "oportuno":
+        recientes = "true"
+
+    elif modo == "rango":
+        raise ValueError(
+            "El modo rango requiere filtrado local; "
+            "todavia no esta implementado"
+        )
+
+    else:
+        raise ValueError("Modo de consulta no valido")
+
+    # Obtenemos el token sin imprimirlo
     token = _leer_token()
 
-    # La base de la URL sin parámetros extras (el ?type=json lo agregamos después)
-    url_base = f"{URL_BASE}/INDICATOR/{indicador_id}/es/{ubicacion}/false/{banco}/{version}/{token}"
+    # Construimos la URL
+    url = (
+        f"{URL_BASE}/INDICATOR/{indicador_id}/"
+        f"es/{ubicacion}/{recientes}/"
+        f"{banco}/{version}/{token}?type=json"
+    )
 
-    if modo == "historico":
-        # Todo lo disponible para ese indicador.
-        return f"{url_base}?type=json"
-
-    if modo == "oportuno":
-        # Solo el dato mas reciente.
-        return f"{url_base}?type=json&RECENT=1"
-
-    if modo == "rango":
-        if not inicio or not fin:
-            raise ValueError("El modo 'rango' necesita inicio y fin (AAAA-MM-DD)")
-        datetime.strptime(inicio, "%Y-%m-%d")
-        datetime.strptime(fin, "%Y-%m-%d")
-        # El BISE espera fechas AAAA-MM-DD al final de la ruta.
-        return f"{url_base}?type=json&STARTDATE={inicio}&ENDDATE={fin}"
-
-    raise ValueError("Modo no valido: usa 'historico', 'oportuno' o 'rango'")
+    return url
 
 
 def resumir(crudo):
@@ -153,7 +174,7 @@ def resumir(crudo):
 
 
 def capturar(indicador_id=INDICADOR_POR_DEFECTO, modo="historico",
-             inicio=None, fin=None, ubicacion="0700",
+             inicio=None, fin=None, ubicacion="00",
              extractor=None, revisar_robots=True):
     """Consulta un indicador del BISE.
 
