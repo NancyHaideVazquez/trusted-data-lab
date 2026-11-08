@@ -134,6 +134,9 @@ class ExtractorEtico:
             timeout = float(os.getenv("REQUEST_TIMEOUT", "20"))
         self.timeout = timeout
 
+        if self.timeout <= 0:
+            raise ValueError("El timeout debe ser mayor que cero")
+
         # Reglas de robots.txt ya descargadas, una por dominio.
         self.robots = {}
 
@@ -252,6 +255,9 @@ class ExtractorEtico:
         - PermissionError: robots.txt no permite la ruta.
         - RuntimeError: la fuente fallo o se agotaron los intentos.
         """
+        # Validar el numero de intentos
+        if not isinstance(intentos, int) or intentos < 1:
+            raise ValueError("El numero de intentos debe ser mayor que cero")
         partes = urlparse(url)
 
         # 1. Solo HTTPS, para que los datos y las llaves viajen cifrados.
@@ -348,20 +354,36 @@ class ExtractorEtico:
 # Utilidades que usara main.py
 # ---------------------------------------------------------------------------
 
-def guardar_bronce(fuente, nombre, metadatos, datos):
-    """Guarda una captura en data/bronce/<fuente>/<AAAA-MM-DD>/<nombre>.json
 
-    Los datos se guardan tal como llegaron de la fuente (capa Bronce: no se
-    limpia ni se modifica nada). Devuelve la ruta del archivo creado.
+def guardar_bronce(fuente, nombre, metadatos, datos):
     """
-    fecha = ahora_utc().strftime("%Y-%m-%d")
+    Guarda los datos originales en la capa Bronce.
+    Cada captura recibe un archivo independiente.
+    """
+
+    import uuid
+
+    fecha_utc = ahora_utc()
+
+    fecha = fecha_utc.strftime("%Y-%m-%d")
+    hora = fecha_utc.strftime("%H%M%S_%f")
+
     carpeta = RAIZ / "data" / "bronce" / fuente / fecha
     carpeta.mkdir(parents=True, exist_ok=True)
 
-    ruta = carpeta / f"{nombre}.json"
-    contenido = {"metadata": metadatos, "data": datos}
-    ruta.write_text(json.dumps(contenido, ensure_ascii=False), encoding="utf-8")
+    nombre_archivo = f"{nombre}_{hora}_{uuid.uuid4().hex[:8]}.json"
+    ruta = carpeta / nombre_archivo
+
+    contenido = {
+        "metadata": metadatos,
+        "data": datos
+    }
+
+    with ruta.open("x", encoding="utf-8") as archivo:
+        json.dump(contenido, archivo, ensure_ascii=False, indent=2)
+
     return ruta
+
 
 
 def registrar_ejecucion(fuente, serie, exito, segundos, detalle=""):
