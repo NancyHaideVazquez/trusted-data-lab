@@ -323,7 +323,10 @@ class ExtractorEtico:
             # Cualquier otro codigo distinto de 200 es un error que no se reintenta
             # (por ejemplo 401 token invalido o 404 serie inexistente).
             if codigo != 200:
-                raise RuntimeError(f"Error HTTP {codigo}")
+                detalle = getattr(respuesta, "text", "Sin información adicional")
+                raise RuntimeError(
+                    f"Error HTTP {codigo}. Detalle: {str(detalle)[:1000]}"
+                    )
 
             # Exito.
             duracion = time.monotonic() - inicio
