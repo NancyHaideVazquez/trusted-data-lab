@@ -1,3 +1,12 @@
 numero,fecha,tipo,fase_introducido,fase_eliminado,minutos_correccion,defecto_origen,descripcion
-1,2026-11-06,entorno,entorno,entorno,5,Configuracion,Error de comando pip no reconocido en PowerShell
-
+1,2026-11-06,entorno,configuracion,configuracion,25,no encontraba los links  para obtener los tokens,Token de INEGI y Banxico obtenido y verificado mediante consultas a las APIs
+2,2026-11-06,construcción,codigo,revision,10,se encontraron errores al referencar el contacto y tokens,Se ajustaron versiones de base.py
+3,2026-11-06,entorno,configuracion,configuracion,15,se referenciaba mal el contacto desde el .env y se cambio la estructura,Problema de lectura de TDL_CONTACTO desde .env
+4,2026-11-06,sistema,configuracion,pruebas,15,faltaba instalar e integrar dotenv,Se tuvieron que ajustar los requerimientos porque faltaban por agregar
+5,2026-11-06,verificación,pruebas,pruebas,20,,"Verificacion de respuestas y validacion de historicos; Banxico validado, INEGI fue revisado"
+6,2026-11-06,función,codigo,pruebas,10,,Ajustes al codigo de verificacion de fuentes y sus comprobaciones
+7,2026-11-06,datos,investigacion,investigacion,130,algunos datos faltaban por validar,Busqueda de series pertinentes de vivienda; el indicador definitivo se resolvio posteriormente
+8,2026-11-06,entorno,investigacion,investigacion,30,,Paginas oficiales de consulta de datos no cargaban o no mostraban correctamente sus contenidos
+9,2026-11-07,interfaz,codigo,pruebas,20,main.py tenia un codigo de ubicación incorrecto,HTTP 400 por ubicacion 0700; validado HTTP 200 con ubicacion 00
+10,2026-11-07,interfaz,pruebas,investigacion,30,main.py tenia in identificador invalido ,ID 865552 no aceptado despues de cambiarlo para obtener 36 periodos; se busco posteriormente otro indicador compatible
+11,2026-11-07,sistema,configuracion,configuracion,5,.gitignore,Ajuste de .gitignore para permitir archivos Bronce y logs/capturas.csv

@@ -1,2 +1,13 @@
 fecha,inicio,fin,interrupcion_min,fase,actividad
-2026-11-06,16:00,17:00,0,planeacion,Revision del plan de trabajo y estructura del proyecto
+2026-11-06,16:00,17:00,20,planeacion,Revision del plan de trabajo y estructura del proyecto
+2026-11-06,16:00,17:10,20,construccion,Creacion de la estructura del repositorio mientras se hacia el plan de trabajo
+2026-11-06,17:18,17:20,0,gestion,Envio de invitacion de colaboracion a David Cuevas
+2026-11-06,17:30,18:00,15,configuracion,Obtencion y configuracion de tokens de INEGI y Banxico
+2026-11-06,18:30,21:00,0,codigo,Desarrollo y ajustes de base.py y banxico.py
+2026-11-06,19:00,22:30,40,investigacion,Investigacion y recopilacion de fuentes de vivienda e INPC 
+2026-11-06,21:00,22:00,15,pruebas,Validacion de APIs y descarga de datos historicos 
+2026-11-07,12:30,13:30,0,codigo,Correcciones leves a inegi.py y pruebas de consulta
+2026-11-07,18:00,19:40,0,configuracion,Configuracion de GitHub Actions y elaboracion de captura.yml
+2026-11-07,19:30,19:45,0,configuracion,Modificacion de .gitignore para conservar evidencia en Bronce y logs/capturas.csv
+2026-11-07,22:00,23:00,15,revision,Revision y explicacion de base.py y main.py 
+2026-11-08,13:00,15:00,30,documentacion,Elaboracion de estructura base de docs/E0/propuesta.md
