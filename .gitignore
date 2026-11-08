@@ -29,8 +29,7 @@ build/
 Thumbs.db
 .ipynb_checkpoints/
 
-# Datos y ejecuciones locales (se documentan las fuentes)
-data/bronce/**
+# Datos del proyecto
 data/plata/**
 data/oro/**
 data/cuarentena/**
@@ -38,7 +37,13 @@ data/cuarentena/**
 !data/plata/.gitkeep
 !data/oro/.gitkeep
 !data/cuarentena/.gitkeep
-logs/
+
+# Bitacoras
+logs/*
+!logs/.gitkeep
+!logs/capturas.csv
+
+# Archivos temporales y bases de datos locales
 *.log
 *.duckdb
 *.duckdb.wal
