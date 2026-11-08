@@ -1,2 +1,6 @@
 numero,fecha,tipo,fase_introducido,fase_eliminado,minutos_correccion,defecto_origen,descripcion
-1,2026-11-06,documentación,investigacion,investigacion,15,Dudas en API,Dificultad para localizar los terminos oficiales de la API del INEGI
+1,2026-11-07,sintaxis,codigo,pruebas,15,,Error de importacion en el script por no llamar correctamente a la clase ExtractorEtico
+2,2026-11-07,datos,codigo,pruebas,30,,Error HTTP 400 en INEGI causado por armar incorrectamente la URL con el parametro ?type=json
+3,2026-11-07,datos,codigo,pruebas,20,,El indicador de INEGI por defecto no era mensual, lo que generaba solo 16 periodos en lugar de los 36 requeridos
+4,2026-11-08,entorno,documentacion,revision,10,,El archivo .gitignore estaba bloqueando la subida de la carpeta data/bronce, impidiendo subir la evidencia
+5,2026-11-08,interfaz,pruebas,revision,15,,El primer workflow de GitHub Actions fallo por un error de sintaxis en el archivo YAML (traduccion de palabras clave al español)

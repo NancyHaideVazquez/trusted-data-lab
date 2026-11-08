@@ -1,4 +1,8 @@
 fecha,inicio,fin,interrupcion_min,fase,actividad
-2026-11-06,16:00,17:30,0,planeacion,Investigacion del sector inmobiliario y pregunta central
-2026-11-06,17:30,19:00,15,investigacion,Revision de terminos de uso de las APIs de INEGI y Banxico
-2026-11-06,19:00,21:00,0,investigacion,Busqueda de indicadores de vivienda en el catalogo del INEGI
+2026-11-06,16:00,17:00,0,planeacion,Clonacion del repositorio y creacion de rama local
+2026-11-06,17:00,19:00,0,codigo,Investigacion de APIs de INEGI y Banxico e identificacion de series
+2026-11-07,10:00,12:00,0,codigo,Pruebas del extractor main.py y validacion de datos en capa bronce
+2026-11-07,12:00,14:30,0,pruebas,Depuracion de errores en URLs de INEGI y Banxico
+2026-11-07,15:00,16:00,0,revision,Pull Request y fusion de rama main con GitHub Actions
+2026-11-08,10:00,13:00,0,documentacion,Redaccion de seccion de fuentes y objetivos de calidad en propuesta.md
+2026-11-08,13:00,14:00,0,pruebas,Verificacion de ejecucion de GitHub Actions en la nube
