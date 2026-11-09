@@ -4,8 +4,7 @@ name: Captura diaria - Trusted Data Lab
 # Ejecutar automaticamente y permitir pruebas manuales
 on:
   schedule:
-    - cron: "0 20 * * *"
-
+    - cron: "0 */12 * * *"
   workflow_dispatch:
 
 # Permiso para guardar datos en el repositorio
