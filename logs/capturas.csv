@@ -5,3 +5,5 @@ fecha_utc,fuente,serie,exito,segundos,detalle
 2026-11-07T19:30:15.317277+00:00,banxico,SF43783,1,1.64,Guardado en SF43783_oportuno.json
 2026-11-08T21:32:33.552423+00:00,inegi,910402,1,0.65,Guardado en 910402_oportuno_213233_551809_3697250a.json
 2026-11-08T21:32:35.199590+00:00,banxico,SF43783,1,1.65,Guardado en SF43783_oportuno_213235_199215_3af5cf41.json
+2026-11-10T02:51:51.513503+00:00,inegi,910402,1,0.6,Guardado en 910402_oportuno_025151_513135_67c13aec.json
+2026-11-10T02:51:53.108486+00:00,banxico,SF43783,1,1.59,Guardado en SF43783_oportuno_025153_108099_0f82eb0e.json
