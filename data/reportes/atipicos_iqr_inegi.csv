@@ -1,0 +1,2 @@
+﻿grupo,columna,n_validos,q1,q3,iqr,limite_inferior,limite_superior,cantidad_atipicos,estado
+910402,valor,183,0.185,0.39,0.20500000000000002,-0.1225,0.6975,4,evaluado

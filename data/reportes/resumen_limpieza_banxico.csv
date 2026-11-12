@@ -1,0 +1,2 @@
+﻿fuente,serie_id,registros,numericos_validos,faltantes_no_publicados,valores_no_numericos,fechas_invalidas,registros_eliminados,registros_imputados,criterio,atipicos_por_revisar,archivo_origen
+banxico,SF43783,7958,7758,200,0,0,0,0,"IQR 1.5 como alerta, no como exclusion; sin imputacion",1044,data/bronce/banxico/2026-11-12/SF43783_historico_130116_421967_754519eb.json
