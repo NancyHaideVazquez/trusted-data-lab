@@ -1,0 +1,8 @@
+﻿fuente,columna,tipo,registros,nulos,completitud_porcentaje,valores_unicos,es_constante,minimo,maximo,promedio,mediana,q1,q3,desviacion_estandar
+inegi,TIME_PERIOD,str,183,0,100.0,183,False,,,,,,,
+inegi,OBS_VALUE,str,183,0,100.0,86,False,-0.24,0.82,0.29147540983606557,0.2999999999999999,0.185,0.39,0.1747478818017524
+inegi,OBS_EXCEPTION,object,183,183,0.0,0,True,,,,,,,
+inegi,OBS_STATUS,str,183,0,100.0,1,True,,,,,,,
+inegi,OBS_SOURCE,str,183,183,0.0,0,True,,,,,,,
+inegi,OBS_NOTE,str,183,183,0.0,0,True,,,,,,,
+inegi,COBER_GEO,str,183,0,100.0,1,True,,,,,,,

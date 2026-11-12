@@ -3,25 +3,62 @@
 **Proyecto:** Trusted Data Lab  
 **Etapa:** E1 — Diagnóstico y preparación de datos  
 **Fecha:** 12 de noviembre de 2026  
-**Fuente analizada:** Banco de México, serie SF43783 (TIIE a 28 días)
+**Fuentes analizadas:** INEGI (indicador 910402) y Banco de México (serie SF43783)
 
 ## 1. Objetivo
 
-Analizar la distribución temporal de los valores faltantes en la serie histórica de Banco de México, identificar posibles patrones de ausencia y discutir los mecanismos MCAR, MAR y MNAR.
+Analizar los valores faltantes de las capturas históricas de INEGI y Banco de México, identificar patrones de ausencia y formular hipótesis sobre los mecanismos MCAR, MAR y MNAR.
+
+También se propone un método de tratamiento para cada columna afectada, justificando la decisión y sus limitaciones.
+
+El análisis no modifica los archivos originales de la capa Bronce.
 
 ## 2. Datos analizados
 
-Se utilizó la captura histórica del 12 de noviembre de 2026, correspondiente a la serie SF43783.
+### 2.1 INEGI
+
+Se analizó la captura histórica del indicador 910402, correspondiente al 12 de noviembre de 2026.
+
+- **Total de registros:** 183
+- **Periodo:** agosto de 2011 a octubre de 2026
+- **Valores faltantes en `OBS_VALUE`:** 0
+- **Completitud de `OBS_VALUE`:** 100%
+
+El diagnóstico por columna identificó tres campos completamente vacíos:
+
+| Columna | Registros | Faltantes | Porcentaje faltante |
+|---|---:|---:|---:|
+| OBS_EXCEPTION | 183 | 183 | 100% |
+| OBS_SOURCE | 183 | 183 | 100% |
+| OBS_NOTE | 183 | 183 | 100% |
+
+Las columnas `TIME_PERIOD`, `OBS_VALUE`, `OBS_STATUS` y `COBER_GEO` no presentan valores faltantes.
+
+Los campos auxiliares vacíos no implican necesariamente un error de captura. Es necesario revisar su significado antes de decidir si requieren tratamiento.
+
+### 2.2 Banco de México
+
+Se analizó la captura histórica de la serie SF43783, correspondiente a la TIIE a 28 días.
 
 - **Total de registros:** 7,958
 - **Valores faltantes:** 200
-- **Registros disponibles:** 7,758
+- **Registros con valor disponible:** 7,758
 - **Porcentaje global de faltantes:** 2.51%
 - **Marcador identificado:** `N/E`
 
-Los archivos originales de la capa Bronce no fueron modificados.
+Los 200 valores faltantes se encuentran en la columna `dato`.
 
 ## 3. Distribución temporal de los faltantes
+
+### 3.1 INEGI
+
+Los campos `OBS_EXCEPTION`, `OBS_SOURCE` y `OBS_NOTE` están vacíos en todas las observaciones del periodo analizado.
+
+Por lo tanto, su ausencia no se limita a un año específico: se presenta en el 100% de los registros.
+
+No existe variación en el indicador de ausencia de estas columnas que permita evaluar asociaciones temporales dentro de esta captura.
+
+### 3.2 Banco de México
 
 | Año | Registros | Faltantes | Disponibles | Porcentaje faltante |
 |---|---:|---:|---:|---:|
@@ -30,63 +67,128 @@ Los archivos originales de la capa Bronce no fueron modificados.
 | 1997–2026 | 7,513 | 0 | 7,513 | 0% |
 | **Total** | **7,958** | **200** | **7,758** | **2.51%** |
 
-Se identificó una concentración de valores faltantes durante los primeros dos años de la serie histórica.
+Los valores faltantes se concentran exclusivamente en 1995 y 1996.
 
-En 1995, aproximadamente el 78.76% de las observaciones registradas no tiene un valor numérico disponible. En 1996, esta proporción disminuye al 19.05%.
+Aunque la ausencia global representa el 2.51%, durante 1995 alcanza el 78.76% y durante 1996 el 19.05%.
 
-Desde 1997 hasta noviembre de 2026 no se identificaron observaciones con el marcador `N/E`.
+Este patrón muestra una asociación entre el periodo temporal y la presencia de valores faltantes, pero no demuestra por sí solo su mecanismo estadístico.
 
 ## 4. Análisis de mecanismos de ausencia
 
-### MCAR — Missing Completely At Random
+### 4.1 MCAR — Missing Completely At Random
 
-Los datos se consideran MCAR cuando la probabilidad de ausencia no depende de las variables observadas ni de los valores faltantes.
+MCAR significa que la probabilidad de que falte un valor no depende de las variables observadas ni de los valores no observados.
 
-La concentración de los faltantes en 1995 y 1996 muestra una asociación temporal que requiere investigación. No se puede afirmar que los datos sean MCAR.
+En Banxico, la concentración temporal de los faltantes es evidencia contraria a la hipótesis de una ausencia completamente aleatoria respecto al año.
 
-### MAR — Missing At Random
+En INEGI, las tres columnas auxiliares están completamente vacías, por lo que no existe información suficiente para comprobar este mecanismo.
 
-Los datos se consideran MAR cuando, una vez consideradas las variables observadas, la ausencia no depende de los valores que faltan.
+### 4.2 MAR — Missing At Random
 
-Dado que los faltantes están concentrados en determinados años, MAR constituye una hipótesis posible. Sin embargo, el patrón observado no demuestra por sí solo este mecanismo.
+MAR significa que la probabilidad de ausencia puede explicarse por variables observadas, sin depender de los valores faltantes después de considerar dichas variables.
 
-### MNAR — Missing Not At Random
+En Banxico, el año podría estar relacionado con la ausencia. Por ello, MAR es una hipótesis posible, pero no está demostrada.
 
-Los datos se consideran MNAR cuando la probabilidad de ausencia depende de los propios valores no observados, incluso después de considerar las variables disponibles.
+En INEGI, no se dispone de evidencia suficiente para afirmar que los campos auxiliares estén ausentes debido a otras variables observadas.
 
-No se cuenta con evidencia suficiente para establecer que los valores faltantes de Banxico correspondan a este mecanismo.
+### 4.3 MNAR — Missing Not At Random
 
-## 5. Interpretación
+MNAR significa que la probabilidad de ausencia depende de los valores no observados, incluso después de considerar las variables disponibles.
 
-El análisis identificó un patrón temporal de valores faltantes en la serie histórica SF43783.
+No existe evidencia suficiente para establecer que los faltantes de INEGI o Banxico correspondan a este mecanismo.
 
-Aunque el porcentaje global de ausencia es relativamente pequeño (2.51%), su distribución no es uniforme. Los faltantes representan una proporción elevada de las observaciones de 1995 y una proporción importante de las de 1996.
+### 4.4 Resultado de la clasificación
 
-Por esta razón, el porcentaje global no debe utilizarse como único criterio para evaluar la calidad de la serie.
+Con la información disponible, los mecanismos de ausencia se clasifican como **indeterminados**.
 
-La información disponible permite describir el patrón, pero no establecer de manera definitiva su causa o mecanismo estadístico.
+Esta clasificación reconoce que existen patrones observables, pero no se cuenta con evidencia suficiente para identificar definitivamente MCAR, MAR o MNAR.
 
-## 6. Consideraciones para el tratamiento
+## 5. Tabla de clasificación y tratamiento propuesto
 
-- Conservar los archivos originales de la capa Bronce sin modificaciones.
-- Mantener identificados los valores `N/E` como datos faltantes.
-- No reemplazar los valores faltantes por cero.
-- Evitar imputaciones automáticas sin una justificación estadística.
-- Documentar cualquier decisión de filtrado o tratamiento en etapas posteriores.
-- Investigar la documentación de la fuente para determinar si existen razones de publicación o disponibilidad que expliquen los registros faltantes.
+| Fuente | Columna | Nulos | % | Mecanismo | Confianza | Evidencia | Método propuesto | Limitación |
+|---|---|---:|---:|---|---|---|---|---|
+| INEGI | OBS_EXCEPTION | 183 | 100% | Indeterminado | Alta en la detección; mecanismo no determinado | Campo vacío en todos los registros | Conservar nulos | No se ha confirmado si el campo es opcional |
+| INEGI | OBS_SOURCE | 183 | 100% | Indeterminado | Alta en la detección; mecanismo no determinado | Campo vacío en todos los registros | Conservar nulos | No se ha confirmado si la fuente proporciona este metadato |
+| INEGI | OBS_NOTE | 183 | 100% | Indeterminado | Alta en la detección; mecanismo no determinado | Campo vacío en todos los registros | Conservar nulos | No se ha confirmado si existen notas asociadas |
+| Banxico | dato | 200 | 2.51% | Indeterminado | Alta en la detección; mecanismo no determinado | Faltantes concentrados en 1995 y 1996 | Conservar nulos | Falta verificar el significado de `N/E` y la causa de ausencia |
 
-## 7. Evidencias
+La confianza alta corresponde a los conteos y patrones observados, no a la identificación del mecanismo MCAR, MAR o MNAR.
+
+No se recomienda imputar automáticamente ninguna de estas columnas durante esta etapa.
+
+## 6. Justificación del tratamiento
+
+### 6.1 INEGI
+
+Los campos `OBS_EXCEPTION`, `OBS_SOURCE` y `OBS_NOTE` son auxiliares.
+
+Al encontrarse completamente vacíos, no existe información observada en esas mismas columnas que permita estimar valores mediante media, mediana o interpolación.
+
+La decisión propuesta es conservar los valores nulos y documentar su ausencia.
+
+No se deben inventar excepciones, fuentes ni notas.
+
+### 6.2 Banco de México
+
+La columna `dato` representa el valor de la serie TIIE a 28 días.
+
+Los 200 valores `N/E` deben conservarse como faltantes mientras no se confirme su significado y la razón por la cual aparecen en los primeros años.
+
+No se recomienda:
+
+- Reemplazar los faltantes por cero, porque podría introducir valores artificiales.
+- Aplicar automáticamente la media o mediana, porque podría distorsionar la serie histórica.
+- Interpolar sin comprobar primero que los periodos faltantes sean adecuados para ese procedimiento.
+- Eliminar registros silenciosamente, porque se perdería información temporal y trazabilidad.
+
+Si posteriormente se justifica alguna imputación, deberá realizarse sobre una copia de los datos, identificando las observaciones imputadas y conservando los valores originales.
+
+## 7. Limitaciones del análisis
+
+El análisis se basa en las capturas históricas disponibles y en la distribución de los valores faltantes.
+
+No se realizó una prueba estadística concluyente para identificar el mecanismo de ausencia.
+
+Tampoco se verificó todavía mediante documentación oficial si los marcadores `N/E` corresponden a datos no publicados, no disponibles u otra condición específica.
+
+Por estas razones, no se puede afirmar definitivamente que los datos sean MCAR, MAR o MNAR.
+
+La decisión de conservar los faltantes es provisional y deberá revisarse si se obtiene evidencia adicional de las fuentes.
+
+## 8. Relación con T05
+
+Los resultados de T04 proporcionan criterios para la etapa de imputación controlada.
+
+Por el momento, la configuración recomendada es conservar los nulos de las columnas identificadas.
+
+Cualquier tratamiento posterior deberá:
+
+1. Trabajar sobre una copia y mantener Bronce intacto.
+2. Justificar el método seleccionado.
+3. Registrar qué valores fueron modificados o imputados.
+4. Conservar evidencia del número de registros antes y después.
+5. Evitar la imputación de fechas, identificadores y valores cuya ausencia represente información no publicada.
+
+## 9. Evidencias
 
 - `src/analisis_faltantes.py`
-- `data/reportes/faltantes_banxico_por_anio.csv`
 - `src/diagnostico.py`
+- `data/reportes/faltantes_banxico_por_anio.csv`
 - `data/reportes/diagnostico_calidad.csv`
+- `data/reportes/diagnostico_inegi.csv`
+- `data/reportes/diagnostico_banxico.csv`
+- `docs/E1/diagnostico_calidad.md`
+- `data/bronce/inegi/2026-11-12/910402_historico_130114_649094_60dc15f7.json`
 - `data/bronce/banxico/2026-11-12/SF43783_historico_130116_421967_754519eb.json`
 
-## 8. Conclusión
+## 10. Conclusión
 
-Se identificaron 200 valores faltantes en la serie histórica de Banxico, concentrados exclusivamente en 1995 y 1996.
+El análisis permitió identificar dos situaciones diferentes de ausencia.
 
-El análisis demuestra que la ausencia presenta una concentración temporal, pero no permite determinar de manera concluyente si el mecanismo corresponde a MCAR, MAR o MNAR.
+En INEGI, el indicador principal está completo, pero tres columnas auxiliares presentan un 100% de valores faltantes.
 
-Se recomienda conservar los registros originales y documentar las decisiones de tratamiento antes de continuar con la preparación de los datos para la capa Plata.
+En Banxico, se identificaron 200 valores faltantes en la columna `dato`, concentrados exclusivamente en 1995 y 1996.
+
+Los patrones observados permiten describir la distribución de los faltantes, pero no determinar de manera definitiva su mecanismo estadístico.
+
+Se propone conservar los nulos, evitar imputaciones sin justificación y mantener intactos los archivos originales de la capa Bronce.
