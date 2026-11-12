@@ -1,0 +1,66 @@
+{
+    "banxico": {
+        "cut": {
+            "columna": "valor",
+            "metodo": "cut",
+            "etiquetas": [
+                "Bajo",
+                "Medio",
+                "Alto"
+            ],
+            "limites": [
+                3.1868741,
+                32.349399999999996,
+                61.424699999999994,
+                90.5
+            ]
+        },
+        "qcut": {
+            "columna": "valor",
+            "metodo": "qcut",
+            "etiquetas": [
+                "Bajo",
+                "Medio",
+                "Alto"
+            ],
+            "limites": [
+                3.2741,
+                6.195533333333334,
+                8.745666666666665,
+                90.5
+            ]
+        }
+    },
+    "inegi": {
+        "cut": {
+            "columna": "valor",
+            "metodo": "cut",
+            "etiquetas": [
+                "Bajo",
+                "Medio",
+                "Alto"
+            ],
+            "limites": [
+                -0.24106,
+                0.11333333333333334,
+                0.4666666666666667,
+                0.82
+            ]
+        },
+        "qcut": {
+            "columna": "valor",
+            "metodo": "qcut",
+            "etiquetas": [
+                "Bajo",
+                "Medio",
+                "Alto"
+            ],
+            "limites": [
+                -0.24,
+                0.23666666666666597,
+                0.36,
+                0.82
+            ]
+        }
+    }
+}
