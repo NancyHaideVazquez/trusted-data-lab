@@ -1,0 +1,1686 @@
+{
+  "metadata": {
+    "captured_at_utc": "2026-11-12T13:01:14.639577+00:00",
+    "source_url": "https://www.inegi.org.mx/app/api/indicadores/desarrolladores/jsonxml/INDICATOR/910402/es/00/false/BIE-BISE/2.0/[PROTEGIDO]",
+    "extractor_version": "1.0.0",
+    "http_status": 200,
+    "duration_seconds": 1.276,
+    "attempts": 1,
+    "source": "INEGI BIE-BISE",
+    "indicator_id": "910402",
+    "location": "00",
+    "mode": "historico",
+    "bank": "BIE-BISE",
+    "records": 183,
+    "first_date": "2011-08-01",
+    "last_date": "2026-10-01"
+  },
+  "data": {
+    "Header": {
+      "Name": "Datos compactos BIE",
+      "Email": "atencion.usuarios@inegi.org.mx"
+    },
+    "Series": [
+      {
+        "INDICADOR": "910402",
+        "FREQ": "8",
+        "TOPIC": "189119",
+        "UNIT": "302",
+        "UNIT_MULT": "",
+        "NOTE": "",
+        "SOURCE": "3371",
+        "LASTUPDATE": "09/11/2026 12:00:00 a. m.",
+        "STATUS": null,
+        "OBSERVATIONS": [
+          {
+            "TIME_PERIOD": "2026/10",
+            "OBS_VALUE": "0.44000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2026/09",
+            "OBS_VALUE": "0.26000000000000001000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2026/08",
+            "OBS_VALUE": "0.20999999999999999000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2026/07",
+            "OBS_VALUE": "0.26000000000000001000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2026/06",
+            "OBS_VALUE": "0.29999999999999999000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2026/05",
+            "OBS_VALUE": "0.28999999999999998000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2026/04",
+            "OBS_VALUE": "0.31000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2026/03",
+            "OBS_VALUE": "0.47999999999999998000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2026/02",
+            "OBS_VALUE": "0.52000000000000002000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2026/01",
+            "OBS_VALUE": "0.29999999999999999000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2025/12",
+            "OBS_VALUE": "0.47999999999999998000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2025/11",
+            "OBS_VALUE": "0.39000000000000001000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2025/10",
+            "OBS_VALUE": "0.39000000000000001000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2025/09",
+            "OBS_VALUE": "0.32000000000000001000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2025/08",
+            "OBS_VALUE": "0.23000000000000001000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2025/07",
+            "OBS_VALUE": "0.39000000000000001000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2025/06",
+            "OBS_VALUE": "0.38000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2025/05",
+            "OBS_VALUE": "0.23999999999999999000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2025/04",
+            "OBS_VALUE": "0.29999999999999999000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2025/03",
+            "OBS_VALUE": "0.40999999999999998000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2025/02",
+            "OBS_VALUE": "0.55000000000000004000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2025/01",
+            "OBS_VALUE": "0.17000000000000001000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2024/12",
+            "OBS_VALUE": "0.60999999999999999000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2024/11",
+            "OBS_VALUE": "0.34999999999999998000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2024/10",
+            "OBS_VALUE": "0.32000000000000001000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2024/09",
+            "OBS_VALUE": "0.34999999999999998000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2024/08",
+            "OBS_VALUE": "0.27000000000000002000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2024/07",
+            "OBS_VALUE": "0.55000000000000004000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2024/06",
+            "OBS_VALUE": "0.27000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2024/05",
+            "OBS_VALUE": "0.29999999999999999000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2024/04",
+            "OBS_VALUE": "0.10000000000000001000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2024/03",
+            "OBS_VALUE": "0.68999999999999995000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2024/02",
+            "OBS_VALUE": "0.60999999999999999000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2024/01",
+            "OBS_VALUE": "0.40000000000000002000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2023/12",
+            "OBS_VALUE": "0.58000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2023/11",
+            "OBS_VALUE": "0.42000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2023/10",
+            "OBS_VALUE": "0.44000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2023/09",
+            "OBS_VALUE": "0.43000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2023/08",
+            "OBS_VALUE": "0.31000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2023/07",
+            "OBS_VALUE": "0.49000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2023/06",
+            "OBS_VALUE": "0.33000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2023/05",
+            "OBS_VALUE": "0.29000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2023/04",
+            "OBS_VALUE": "0.25000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2023/03",
+            "OBS_VALUE": "0.62000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2023/02",
+            "OBS_VALUE": "0.56000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2023/01",
+            "OBS_VALUE": "0.48000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2022/12",
+            "OBS_VALUE": "0.53000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2022/11",
+            "OBS_VALUE": "0.48000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2022/10",
+            "OBS_VALUE": "0.33000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2022/09",
+            "OBS_VALUE": "0.35000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2022/08",
+            "OBS_VALUE": "0.39000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2022/07",
+            "OBS_VALUE": "0.50000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2022/06",
+            "OBS_VALUE": "0.50000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2022/05",
+            "OBS_VALUE": "0.33000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2022/04",
+            "OBS_VALUE": "0.48000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2022/03",
+            "OBS_VALUE": "0.47000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2022/02",
+            "OBS_VALUE": "0.52000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2022/01",
+            "OBS_VALUE": "0.19000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2021/12",
+            "OBS_VALUE": "0.68000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2021/11",
+            "OBS_VALUE": "0.43000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2021/10",
+            "OBS_VALUE": "0.38000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2021/09",
+            "OBS_VALUE": "0.21000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2021/08",
+            "OBS_VALUE": "0.12000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2021/07",
+            "OBS_VALUE": "0.36000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2021/06",
+            "OBS_VALUE": "0.48000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2021/05",
+            "OBS_VALUE": "0.42000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2021/04",
+            "OBS_VALUE": "0.28000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2021/03",
+            "OBS_VALUE": "0.47000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2021/02",
+            "OBS_VALUE": "0.25000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2021/01",
+            "OBS_VALUE": "0.14000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2020/12",
+            "OBS_VALUE": "0.30000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2020/11",
+            "OBS_VALUE": "0.16000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2020/10",
+            "OBS_VALUE": "0.18000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2020/09",
+            "OBS_VALUE": "0.20000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2020/08",
+            "OBS_VALUE": "0.15000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2020/07",
+            "OBS_VALUE": "0.13000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2020/06",
+            "OBS_VALUE": "0.11000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2020/05",
+            "OBS_VALUE": "0.12000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2020/04",
+            "OBS_VALUE": "0.06000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2020/03",
+            "OBS_VALUE": "0.23000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2020/02",
+            "OBS_VALUE": "0.33000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2020/01",
+            "OBS_VALUE": "-0.04000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2019/12",
+            "OBS_VALUE": "0.57000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2019/11",
+            "OBS_VALUE": "0.33000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2019/10",
+            "OBS_VALUE": "0.23000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2019/09",
+            "OBS_VALUE": "0.20000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2019/08",
+            "OBS_VALUE": "0.09000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2019/07",
+            "OBS_VALUE": "0.38000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2019/06",
+            "OBS_VALUE": "0.38000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2019/05",
+            "OBS_VALUE": "0.03000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2019/04",
+            "OBS_VALUE": "0.56000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2019/03",
+            "OBS_VALUE": "0.35000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2019/02",
+            "OBS_VALUE": "0.36000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2019/01",
+            "OBS_VALUE": "0.08000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2018/12",
+            "OBS_VALUE": "0.61000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2018/11",
+            "OBS_VALUE": "0.24000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2018/10",
+            "OBS_VALUE": "0.39000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2018/09",
+            "OBS_VALUE": "0.26000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2018/08",
+            "OBS_VALUE": "0.09000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2018/07",
+            "OBS_VALUE": "0.34000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2018/06",
+            "OBS_VALUE": "0.32000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2018/05",
+            "OBS_VALUE": "0.30000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2018/04",
+            "OBS_VALUE": "-0.01000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2018/03",
+            "OBS_VALUE": "0.40000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2018/02",
+            "OBS_VALUE": "0.45000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2018/01",
+            "OBS_VALUE": "0.04000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2017/12",
+            "OBS_VALUE": "0.50000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2017/11",
+            "OBS_VALUE": "0.35000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2017/10",
+            "OBS_VALUE": "0.28000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2017/09",
+            "OBS_VALUE": "0.24000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2017/08",
+            "OBS_VALUE": "0.06000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2017/07",
+            "OBS_VALUE": "0.40000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2017/06",
+            "OBS_VALUE": "0.29000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2017/05",
+            "OBS_VALUE": "0.10000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2017/04",
+            "OBS_VALUE": "0.32000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2017/03",
+            "OBS_VALUE": "0.40000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2017/02",
+            "OBS_VALUE": "0.47000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2017/01",
+            "OBS_VALUE": "0.28000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2016/12",
+            "OBS_VALUE": "0.53000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2016/11",
+            "OBS_VALUE": "0.31000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2016/10",
+            "OBS_VALUE": "0.17000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2016/09",
+            "OBS_VALUE": "0.33000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2016/08",
+            "OBS_VALUE": "0.02000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2016/07",
+            "OBS_VALUE": "0.29000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2016/06",
+            "OBS_VALUE": "0.24000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2016/05",
+            "OBS_VALUE": "0.18000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2016/04",
+            "OBS_VALUE": "0.06000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2016/03",
+            "OBS_VALUE": "0.37000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2016/02",
+            "OBS_VALUE": "0.25000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2016/01",
+            "OBS_VALUE": "0.14000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2015/12",
+            "OBS_VALUE": "0.39000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2015/11",
+            "OBS_VALUE": "-0.09000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2015/10",
+            "OBS_VALUE": "0.17000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2015/09",
+            "OBS_VALUE": "0.26000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2015/08",
+            "OBS_VALUE": "0.08000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2015/07",
+            "OBS_VALUE": "0.36000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2015/06",
+            "OBS_VALUE": "0.21000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2015/05",
+            "OBS_VALUE": "0.15000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2015/04",
+            "OBS_VALUE": "0.05000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2015/03",
+            "OBS_VALUE": "0.36000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2015/02",
+            "OBS_VALUE": "0.35000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2015/01",
+            "OBS_VALUE": "-0.24000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2014/12",
+            "OBS_VALUE": "0.27000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2014/11",
+            "OBS_VALUE": "0.20000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2014/10",
+            "OBS_VALUE": "0.17000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2014/09",
+            "OBS_VALUE": "0.27000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2014/08",
+            "OBS_VALUE": "0.02000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2014/07",
+            "OBS_VALUE": "0.38000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2014/06",
+            "OBS_VALUE": "0.25000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2014/05",
+            "OBS_VALUE": "-0.06000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2014/04",
+            "OBS_VALUE": "0.34000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2014/03",
+            "OBS_VALUE": "0.24000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2014/02",
+            "OBS_VALUE": "0.41000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2014/01",
+            "OBS_VALUE": "0.51000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2013/12",
+            "OBS_VALUE": "0.30000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2013/11",
+            "OBS_VALUE": "0.27000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2013/10",
+            "OBS_VALUE": "0.26000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2013/09",
+            "OBS_VALUE": "0.25000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2013/08",
+            "OBS_VALUE": "-0.05000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2013/07",
+            "OBS_VALUE": "0.20000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2013/06",
+            "OBS_VALUE": "0.22000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2013/05",
+            "OBS_VALUE": "0.22000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2013/04",
+            "OBS_VALUE": "0.03000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2013/03",
+            "OBS_VALUE": "0.38000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2013/02",
+            "OBS_VALUE": "0.82000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2013/01",
+            "OBS_VALUE": "0.58000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2012/12",
+            "OBS_VALUE": "-0.17000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2012/11",
+            "OBS_VALUE": "-0.23000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2012/10",
+            "OBS_VALUE": "0.18000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2012/09",
+            "OBS_VALUE": "0.05000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2012/08",
+            "OBS_VALUE": "0.08000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2012/07",
+            "OBS_VALUE": "0.31000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2012/06",
+            "OBS_VALUE": "0.09000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2012/05",
+            "OBS_VALUE": "0.23000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2012/04",
+            "OBS_VALUE": "0.01000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2012/03",
+            "OBS_VALUE": "0.23999999999999900000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2012/02",
+            "OBS_VALUE": "0.25000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2012/01",
+            "OBS_VALUE": "0.11000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2011/12",
+            "OBS_VALUE": "0.37000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2011/11",
+            "OBS_VALUE": "0.31000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2011/10",
+            "OBS_VALUE": "0.18000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2011/09",
+            "OBS_VALUE": "0.22000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          },
+          {
+            "TIME_PERIOD": "2011/08",
+            "OBS_VALUE": "0.15000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,3 @@
+﻿fuente,archivo,registros,faltantes,duplicados_fecha,fechas_invalidas,valores_invalidos,minimo,maximo,promedio
+inegi,data/bronce/inegi/2026-11-12/910402_historico_130114_649094_60dc15f7.json,183,0,0,0,0,-0.24,0.82,0.29147540983606557
+banxico,data/bronce/banxico/2026-11-12/SF43783_historico_130116_421967_754519eb.json,7958,200,0,0,0,3.2741,90.5,9.938054253673627
