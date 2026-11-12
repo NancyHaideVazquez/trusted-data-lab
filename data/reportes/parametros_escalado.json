@@ -1,0 +1,24 @@
+{
+    "banxico": {
+        "columna": "valor",
+        "minmax": {
+            "minimo": 3.2741,
+            "maximo": 90.5
+        },
+        "zscore": {
+            "media": 9.938054253673627,
+            "desviacion_estandar": 7.855447892174649
+        }
+    },
+    "inegi": {
+        "columna": "valor",
+        "minmax": {
+            "minimo": -0.24,
+            "maximo": 0.82
+        },
+        "zscore": {
+            "media": 0.29147540983606557,
+            "desviacion_estandar": 0.17426977452603942
+        }
+    }
+}
