@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "captured_at_utc": "2026-11-12T07:43:58.796603+00:00",
+    "source_url": "https://www.banxico.org.mx/SieAPIRest/service/v1/series/SF43783/datos/oportuno",
+    "extractor_version": "1.0.0",
+    "http_status": 200,
+    "duration_seconds": 0.91,
+    "attempts": 1,
+    "source": "Banxico SIE",
+    "series_id": "SF43783",
+    "mode": "oportuno",
+    "records": 1,
+    "first_date": "2026-11-12",
+    "last_date": "2026-11-12"
+  },
+  "data": {
+    "bmx": {
+      "series": [
+        {
+          "idSerie": "SF43783",
+          "titulo": "TIIE a 28 días Tasa de interés en por ciento anual",
+          "datos": [
+            {
+              "fecha": "12/11/2026",
+              "dato": "6.5147"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
