@@ -1,3 +1,3 @@
-﻿fuente,archivo,registros,faltantes,duplicados_fecha,fechas_invalidas,valores_invalidos,minimo,maximo,promedio
-inegi,data/bronce/inegi/2026-11-12/910402_historico_130114_649094_60dc15f7.json,183,0,0,0,0,-0.24,0.82,0.29147540983606557
-banxico,data/bronce/banxico/2026-11-12/SF43783_historico_130116_421967_754519eb.json,7958,200,0,0,0,3.2741,90.5,9.938054253673627
+﻿fuente,archivo,registros,faltantes,completitud_porcentaje,duplicados_fecha,duplicados_exactos,duplicados_llave,fechas_invalidas,valores_invalidos,minimo,maximo,promedio,mediana,q1,q3,desviacion_estandar
+inegi,data/bronce/inegi/2026-11-12/910402_historico_130114_649094_60dc15f7.json,183,0,100.0,0,0,0,0,0,-0.24,0.82,0.29147540983606557,0.2999999999999999,0.185,0.39,0.1747478818017524
+banxico,data/bronce/banxico/2026-11-12/SF43783_historico_130116_421967_754519eb.json,7958,200,97.49,0,0,0,0,0,3.2741,90.5,9.938054253673627,7.705,4.915,10.328524999999999,7.855954221601979

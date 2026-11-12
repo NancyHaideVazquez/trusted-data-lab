@@ -1,0 +1,3 @@
+﻿fuente,columna,tipo,registros,nulos,completitud_porcentaje,valores_unicos,es_constante,minimo,maximo,promedio,mediana,q1,q3,desviacion_estandar
+banxico,fecha,str,7958,0,100.0,7958,False,,,,,,,
+banxico,dato,str,7958,200,97.49,4209,False,3.2741,90.5,9.938054253673627,7.705,4.915,10.328524999999999,7.855954221601979
