@@ -1,0 +1,2 @@
+﻿fuente,serie_id,registros,numericos_validos,faltantes_no_publicados,valores_no_numericos,fechas_invalidas,registros_eliminados,registros_imputados,criterio,atipicos_por_revisar,archivo_origen
+inegi,910402,183,183,0,0,0,0,0,"IQR 1.5 como alerta, no como exclusion; sin imputacion",4,data/bronce/inegi/2026-11-12/910402_historico_130114_649094_60dc15f7.json
