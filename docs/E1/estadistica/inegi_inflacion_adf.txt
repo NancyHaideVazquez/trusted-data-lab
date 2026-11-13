@@ -1,0 +1,21 @@
+Serie: inegi_inflacion
+Indicador: Inflacion mensual
+Observaciones: 183
+Periodo: 2011-08 a 2026-10
+
+ADF: H0 = la serie tiene raiz unitaria.
+Criterio de decision: alfa = 0.05
+
+Serie original
+Estadistico ADF: -1.566062
+p-valor: 0.500616
+Rezagos: 11
+Observaciones: 171
+Interpretacion: No se rechaza H0: estacionariedad no demostrada
+
+Primera diferencia
+Estadistico ADF: -8.304645
+p-valor: 3.93355e-13
+Rezagos: 10
+Observaciones: 171
+Interpretacion: Se rechaza H0: evidencia de estacionariedad

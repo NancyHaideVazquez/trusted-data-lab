@@ -1,0 +1,30 @@
+SERIE: TIIE a 28 dias
+Entrenamiento: 356 meses
+Prueba: 24 meses
+Seleccion final: menor RMSE en prueba
+Mejor modelo: ARIMA
+
+JUSTIFICACION DE MODELOS:
+Simple: nivel sin tendencia ni estacionalidad.
+Holt: nivel y tendencia aditiva.
+Holt-Winters: tendencia y estacionalidad aditivas con periodo de 12 meses.
+ARIMA: orden candidato evaluado mediante AIC solo con datos de entrenamiento.
+
+=== Simple ===
+{'smoothing_level': np.float64(0.9999999850988388), 'smoothing_trend': np.float64(nan), 'smoothing_seasonal': np.float64(nan), 'damping_trend': nan, 'initial_level': np.float64(89.48249549553128), 'initial_trend': np.float64(nan), 'initial_seasons': array([], dtype=float64), 'use_boxcox': False, 'lamda': None, 'remove_bias': False}
+
+=== Holt ===
+{'smoothing_level': np.float64(0.9999999850988388), 'smoothing_trend': np.float64(0.09867087533154961), 'smoothing_seasonal': np.float64(nan), 'damping_trend': nan, 'initial_level': np.float64(93.8684758437047), 'initial_trend': np.float64(-4.385938418336823), 'initial_seasons': array([], dtype=float64), 'use_boxcox': False, 'lamda': None, 'remove_bias': False}
+
+=== Holt-Winters ===
+{'smoothing_level': np.float64(0.9999999850988388), 'smoothing_trend': np.float64(0.10007859603199623), 'smoothing_seasonal': np.float64(1.4608920416902322e-08), 'damping_trend': nan, 'initial_level': np.float64(89.92230393759675), 'initial_trend': np.float64(-4.355243520621922), 'initial_seasons': array([3.91302856, 3.45503998, 2.45868581, 2.47135815, 2.43177976,
+       2.49594107, 3.14015915, 3.49425136, 4.2802675 , 4.22448475,
+       3.9257104 , 3.84158611]), 'use_boxcox': False, 'lamda': None, 'remove_bias': False}
+
+=== ARIMA ===
+{'orden': '(3, 0, 0)', 'AIC': 1374.4858368091666, 'coeficientes': {'const': 8.474632652921697, 'ar.L1': 1.2466776284160188, 'ar.L2': -0.48083965382926497, 'ar.L3': 0.18474534282306887, 'sigma2': 2.7944477662094824}}
+
+NOTA SOBRE MAPE:
+MAPE usa error porcentual absoluto y omite valores reales con magnitud <= 1e-8.
+Cuando los valores son negativos o cercanos a cero, MAPE puede ser poco interpretable.
+MAE y RMSE son la base principal de seleccion.

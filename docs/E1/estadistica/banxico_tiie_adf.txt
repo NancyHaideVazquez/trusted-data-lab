@@ -1,0 +1,21 @@
+Serie: banxico_tiie
+Indicador: TIIE a 28 dias
+Observaciones: 380
+Periodo: 1995-03 a 2026-10
+
+ADF: H0 = la serie tiene raiz unitaria.
+Criterio de decision: alfa = 0.05
+
+Serie original
+Estadistico ADF: -3.582797
+p-valor: 0.00609855
+Rezagos: 14
+Observaciones: 365
+Interpretacion: Se rechaza H0: evidencia de estacionariedad
+
+Primera diferencia
+Estadistico ADF: -6.445494
+p-valor: 1.56966e-08
+Rezagos: 17
+Observaciones: 361
+Interpretacion: Se rechaza H0: evidencia de estacionariedad

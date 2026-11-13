@@ -1,0 +1,30 @@
+SERIE: Inflacion mensual
+Entrenamiento: 159 meses
+Prueba: 24 meses
+Seleccion final: menor RMSE en prueba
+Mejor modelo: Holt-Winters
+
+JUSTIFICACION DE MODELOS:
+Simple: nivel sin tendencia ni estacionalidad.
+Holt: nivel y tendencia aditiva.
+Holt-Winters: tendencia y estacionalidad aditivas con periodo de 12 meses.
+ARIMA: orden candidato evaluado mediante AIC solo con datos de entrenamiento.
+
+=== Simple ===
+{'smoothing_level': np.float64(0.07798151021169668), 'smoothing_trend': np.float64(nan), 'smoothing_seasonal': np.float64(nan), 'damping_trend': nan, 'initial_level': np.float64(0.20243160346965397), 'initial_trend': np.float64(nan), 'initial_seasons': array([], dtype=float64), 'use_boxcox': False, 'lamda': None, 'remove_bias': False}
+
+=== Holt ===
+{'smoothing_level': np.float64(1.4901161193847656e-08), 'smoothing_trend': np.float64(2.1507929166454848e-09), 'smoothing_seasonal': np.float64(nan), 'damping_trend': nan, 'initial_level': np.float64(0.16079213688768637), 'initial_trend': np.float64(0.001508966148617352), 'initial_seasons': array([], dtype=float64), 'use_boxcox': False, 'lamda': None, 'remove_bias': False}
+
+=== Holt-Winters ===
+{'smoothing_level': np.float64(0.09490837180201363), 'smoothing_trend': np.float64(0.0), 'smoothing_seasonal': np.float64(0.0), 'damping_trend': nan, 'initial_level': np.float64(0.19592934611287505), 'initial_trend': np.float64(0.0013643317602850481), 'initial_seasons': array([-0.15370221, -0.02364993, -0.02072409, -0.03039075,  0.14363389,
+       -0.07234556,  0.15398332,  0.12108294, -0.08720316, -0.08241754,
+       -0.00070844,  0.07484311]), 'use_boxcox': False, 'lamda': None, 'remove_bias': False}
+
+=== ARIMA ===
+{'orden': '(0, 1, 1)', 'AIC': -103.39768727231018, 'coeficientes': {'ma.L1': -0.9154976885282015, 'sigma2': 0.029183465246882444}}
+
+NOTA SOBRE MAPE:
+MAPE usa error porcentual absoluto y omite valores reales con magnitud <= 1e-8.
+Cuando los valores son negativos o cercanos a cero, MAPE puede ser poco interpretable.
+MAE y RMSE son la base principal de seleccion.
