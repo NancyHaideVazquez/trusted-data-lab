@@ -1,7 +1,7 @@
 
 import pandas as pd
-import pytest
 import pandera.pandas as pa
+import pytest
 
 from src.calidad import validar_calidad
 

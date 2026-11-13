@@ -17,24 +17,23 @@ Resultados:
 No modifica los archivos de datos originales.
 """
 
-from pathlib import Path
 import warnings
+from pathlib import Path
 
 import matplotlib
+
 matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-
-from statsmodels.tsa.holtwinters import (
-    SimpleExpSmoothing,
-    Holt,
-    ExponentialSmoothing,
-)
-from statsmodels.tsa.arima.model import ARIMA
 from statsmodels.tools.sm_exceptions import ConvergenceWarning
-
+from statsmodels.tsa.arima.model import ARIMA
+from statsmodels.tsa.holtwinters import (
+    ExponentialSmoothing,
+    Holt,
+    SimpleExpSmoothing,
+)
 
 RAIZ = Path(__file__).resolve().parent.parent
 ARCHIVO_ORO = (
@@ -390,10 +389,14 @@ def evaluar_serie(nombre, configuracion, datos):
         "JUSTIFICACION DE MODELOS:",
         "Simple: nivel sin tendencia ni estacionalidad.",
         "Holt: nivel y tendencia aditiva.",
-        "Holt-Winters: tendencia y estacionalidad "
-        "aditivas con periodo de 12 meses.",
-        "ARIMA: orden candidato evaluado mediante AIC "
-        "solo con datos de entrenamiento.",
+        (
+            "Holt-Winters: tendencia y estacionalidad "
+            "aditivas con periodo de 12 meses."
+        ),
+        (
+            "ARIMA: orden candidato evaluado mediante AIC "
+            "solo con datos de entrenamiento."
+        ),
         "",
     ]
 
@@ -406,10 +409,14 @@ def evaluar_serie(nombre, configuracion, datos):
 
     lineas.extend([
         "NOTA SOBRE MAPE:",
-        "MAPE usa error porcentual absoluto y omite "
-        "valores reales con magnitud <= 1e-8.",
-        "Cuando los valores son negativos o cercanos "
-        "a cero, MAPE puede ser poco interpretable.",
+        (
+            "MAPE usa error porcentual absoluto y omite "
+            "valores reales con magnitud <= 1e-8."
+        ),
+        (
+            "Cuando los valores son negativos o cercanos "
+            "a cero, MAPE puede ser poco interpretable."
+        ),
         "MAE y RMSE son la base principal de seleccion.",
     ])
 

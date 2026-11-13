@@ -2,6 +2,7 @@
 """T03 - Diagnóstico de calidad de datos."""
 
 from pathlib import Path
+
 import pandas as pd
 
 from src.lectura import cargar_dataframe, convertir_fecha

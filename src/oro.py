@@ -1,8 +1,6 @@
 
-import pandas as pd
 
 from src.calidad import validar_calidad
-
 
 COLUMNAS_ORO = [
     "periodo",

@@ -2,7 +2,7 @@
 import pandas as pd
 import pytest
 
-import pipeline.publicacion as publicacion
+from pipeline import publicacion
 
 
 def test_publicacion_correcta(tmp_path):

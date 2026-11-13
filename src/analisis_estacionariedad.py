@@ -2,13 +2,13 @@
 from pathlib import Path
 
 import matplotlib
+
 matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
 import pandas as pd
 from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
 from statsmodels.tsa.stattools import adfuller
-
 
 # Rutas relativas a la raiz del repositorio
 RAIZ = Path(__file__).resolve().parent.parent

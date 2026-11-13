@@ -6,10 +6,10 @@ Desde la raí­z del repositorio:
 Dependencias: pandas; pyarrow (o fastparquet) para archivos Parquet.
 """
 
-from pathlib import Path
 import hashlib
 import json
-import re
+from pathlib import Path
+
 import pandas as pd
 
 RAIZ = Path(__file__).resolve().parents[1]
@@ -35,10 +35,18 @@ def buscar_observaciones(objeto):
     if isinstance(objeto, list):
         if not objeto:
             return objeto
-        if all(isinstance(elemento, dict) for elemento in objeto):
-            # Las listas de series contienen metadatos, no observaciones.
-            if not any(any(k in elemento for k in ("OBSERVATIONS", "observations", "datos", "Datos")) for elemento in objeto):
-                return objeto
+        # Las listas de series contienen metadatos, no observaciones.
+        if (
+            all(isinstance(elemento, dict) for elemento in objeto)
+            and not any(
+                any(
+                    clave in elemento
+                    for clave in ("OBSERVATIONS", "observations", "datos", "Datos")
+                )
+                for elemento in objeto
+            )
+        ):
+            return objeto
         for elemento in objeto:
             encontrado = buscar_observaciones(elemento)
             if encontrado is not None:

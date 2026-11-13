@@ -3,6 +3,8 @@ import pytest
 from pandas.testing import assert_frame_equal
 
 from src.transformaciones import escalar_datos
+
+
 def test_reutilizar_parametros_sin_fuga():
     entrenamiento = pd.DataFrame({"valor": [10, 20, 30]})
     prueba = pd.DataFrame({"valor": [40, 50]})

@@ -113,8 +113,12 @@ def imputar(df: pd.DataFrame, config: dict[str, Any]) -> tuple[pd.DataFrame, pd.
     """
     if not isinstance(df, pd.DataFrame):
         raise TypeError("df debe ser un pandas.DataFrame")
-    if not isinstance(config, dict) or not isinstance(config.get("metodos"), dict):
-        raise ValueError("config debe incluir un diccionario 'metodos'")
+    if not isinstance(config, dict):
+        raise TypeError("config debe ser un diccionario")
+    if "metodos" not in config:
+        raise ValueError("config debe incluir la clave 'metodos'")
+    if not isinstance(config["metodos"], dict):
+        raise TypeError("config['metodos'] debe ser un diccionario")
     if not df.columns.is_unique:
         raise ValueError("El DataFrame tiene nombres de columnas duplicados")
     if not df.index.is_unique:
@@ -375,8 +379,9 @@ def ejecutar_diagnostico_limpieza(fuente: str = 'ambas') -> None:
     Nunca escribe en data/bronce, plata, oro ni cuarentena.
     """
     from pathlib import Path
-    from src.lectura import cargar_dataframe
+
     from src.diagnostico import buscar_historico
+    from src.lectura import cargar_dataframe
 
     raiz = Path(__file__).resolve().parents[1]
     reportes = raiz / 'data' / 'reportes'

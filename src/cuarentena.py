@@ -1,4 +1,3 @@
-import pandas as pd
 from pandera.errors import SchemaErrors
 
 from src.calidad import validar_calidad
@@ -51,8 +50,10 @@ def separar_cuarentena(datos):
 
     for indice in indices_duplicados:
         motivos[indice] = [
-            "Registro duplicado: misma fuente, "
-            "serie_id y periodo."
+            (
+                "Registro duplicado: misma fuente, "
+                "serie_id y periodo."
+            )
         ]
 
     # Excluir temporalmente los duplicados de la

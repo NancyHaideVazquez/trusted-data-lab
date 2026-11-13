@@ -1,11 +1,9 @@
 
 """T04 - Análisis de valores faltantes de Banxico."""
 
-import pandas as pd
 
-from src.diagnostico import buscar_historico
+from src.diagnostico import RAIZ, buscar_historico
 from src.lectura import cargar_dataframe, convertir_fecha
-from src.diagnostico import RAIZ
 
 
 def main():

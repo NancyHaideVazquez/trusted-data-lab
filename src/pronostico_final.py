@@ -18,16 +18,15 @@ No modifica datos Bronce, Plata ni Oro.
 from pathlib import Path
 
 import matplotlib
+
 matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-
+from statsmodels.stats.diagnostic import acorr_ljungbox
 from statsmodels.tsa.arima.model import ARIMA
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
-from statsmodels.stats.diagnostic import acorr_ljungbox
-
 
 RAIZ = Path(__file__).resolve().parent.parent
 ARCHIVO_ORO = (

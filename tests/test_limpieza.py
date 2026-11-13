@@ -89,7 +89,7 @@ def test_iqr_rechaza_fechas_e_identificadores():
     with pytest.raises(ValueError, match="identificadores"):
         detectar_atipicos_iqr(datos, "serie_id")
 
-from src.limpieza import preparar_serie, limpieza_conservadora
+from src.limpieza import limpieza_conservadora, preparar_serie
 
 
 def test_banxico_n_e_se_conserva_como_no_publicado_sin_imputacion():

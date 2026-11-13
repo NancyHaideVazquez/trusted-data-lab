@@ -1,7 +1,6 @@
 from pathlib import Path
 
 import pandas as pd
-
 from statsmodels.stats.diagnostic import acorr_ljungbox
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 
@@ -106,7 +105,7 @@ def main():
             print("Ljung-Box p(24):", round(r["lb_p24"], 6))
             print()
 
-        except Exception as error:
+        except Exception as error:  # noqa: BLE001 - Un modelo fallido no debe detener la evaluacion de los demas
             print(
                 f"ARIMA={order} Estacional={seasonal_order}"
             )

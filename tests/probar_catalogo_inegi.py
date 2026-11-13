@@ -5,9 +5,9 @@ No imprime ni guarda el token.
 """
 
 import os
-import requests
-
 from pathlib import Path
+
+import requests
 from dotenv import load_dotenv
 
 # Localizamos el .env en la raíz del proyecto
