@@ -27,12 +27,17 @@ def crear_datos():
             "promedio mensual",
             "valor mensual original"
         ],
-        "cobertura": ["nacional", "nacional", "nacional"]
+        "cobertura": [
+            "nacional",
+            "nacional",
+            "nacional"
+        ]
     })
 
 
 def test_todos_validos():
     datos = crear_datos()
+
     validos, rechazados = separar_cuarentena(datos)
 
     assert len(validos) == 3
@@ -49,8 +54,6 @@ def test_separa_periodo_invalido():
     assert len(rechazados) == 1
     assert rechazados.iloc[0]["periodo"] == "2026-13"
 
-
-
 def test_conserva_motivo_rechazo():
     datos = crear_datos()
     datos.loc[0, "periodo"] = "fecha_invalida"
@@ -62,8 +65,6 @@ def test_conserva_motivo_rechazo():
     assert "periodo" in motivo.lower()
     assert "AAAA-MM" in motivo
 
-
-
 def test_separa_valor_faltante():
     datos = crear_datos()
     datos.loc[1, "valor"] = None
@@ -74,9 +75,14 @@ def test_separa_valor_faltante():
     assert len(rechazados) == 1
     assert pd.isna(rechazados.iloc[0]["valor"])
 
+    assert "valor" in (
+        rechazados.iloc[0]["motivo_rechazo"].lower()
+    )
+
 
 def test_separa_varios_errores():
     datos = crear_datos()
+
     datos.loc[0, "periodo"] = "2026-13"
     datos.loc[2, "unidad"] = ""
 
@@ -106,7 +112,60 @@ def test_no_modifica_originales():
 
 def test_detiene_error_estructural():
     datos = crear_datos()
+
     datos = datos.drop(columns=["cobertura"])
 
     with pytest.raises(ValueError):
         separar_cuarentena(datos)
+
+
+def test_separa_duplicado_con_motivo():
+    datos = crear_datos()
+
+    duplicado = datos.iloc[[0]].copy()
+
+    datos = pd.concat(
+        [datos, duplicado],
+        ignore_index=True
+    )
+
+    validos, rechazados = separar_cuarentena(datos)
+
+    assert len(validos) == 3
+    assert len(rechazados) == 1
+
+    assert len(validos) + len(rechazados) == len(datos)
+
+    motivo = str(
+        rechazados.iloc[0]["motivo_rechazo"]
+    )
+
+    assert motivo.strip()
+    assert "duplic" in motivo.lower()
+
+    # El duplicado no debe recibir errores falsos
+    # sobre sus columnas, porque son datos validos.
+    assert "fuente invalida" not in motivo.lower()
+    assert "periodo invalido" not in motivo.lower()
+    assert "valor invalido" not in motivo.lower()
+
+
+def test_separa_valor_infinito_con_motivo():
+    datos = crear_datos()
+
+    # Infinito no es un valor numerico finito.
+    datos.loc[1, "valor"] = float("inf")
+
+    validos, rechazados = separar_cuarentena(datos)
+
+    assert len(validos) == 2
+    assert len(rechazados) == 1
+
+    assert len(validos) + len(rechazados) == len(datos)
+
+    motivo = str(
+        rechazados.iloc[0]["motivo_rechazo"]
+    )
+
+    assert "valor" in motivo.lower()
+    assert "finito" in motivo.lower()
