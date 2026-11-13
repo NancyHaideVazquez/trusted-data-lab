@@ -1,118 +1,33 @@
-﻿============================= test session starts =============================
-cachedir: .pytest_cache
-plugins: anyio-4.15.1, cov-7.1.0, typeguard-4.6.0
-collecting ... collected 85 items
-
-tests/test_calidad.py::test_datos_validos PASSED                         [  1%]
-tests/test_calidad.py::test_rechaza_fuente_desconocida PASSED            [  2%]
-tests/test_calidad.py::test_rechaza_periodo_invalido PASSED              [  3%]
-tests/test_calidad.py::test_rechaza_valor_faltante PASSED                [  4%]
-tests/test_calidad.py::test_rechaza_metadato_vacio PASSED                [  5%]
-tests/test_calidad.py::test_rechaza_frecuencia_incorrecta PASSED         [  7%]
-tests/test_calidad.py::test_rechaza_duplicados PASSED                    [  8%]
-tests/test_calidad.py::test_no_modifica_originales PASSED                [  9%]
-tests/test_calidad.py::test_rechaza_columnas_faltantes PASSED            [ 10%]
-tests/test_cuarentena.py::test_todos_validos PASSED                      [ 11%]
-tests/test_cuarentena.py::test_separa_periodo_invalido PASSED            [ 12%]
-tests/test_cuarentena.py::test_conserva_motivo_rechazo PASSED            [ 14%]
-tests/test_cuarentena.py::test_separa_valor_faltante PASSED              [ 15%]
-tests/test_cuarentena.py::test_separa_varios_errores PASSED              [ 16%]
-tests/test_cuarentena.py::test_no_pierde_registros PASSED                [ 17%]
-tests/test_cuarentena.py::test_no_modifica_originales PASSED             [ 18%]
-tests/test_cuarentena.py::test_detiene_error_estructural PASSED          [ 20%]
-tests/test_cuarentena.py::test_separa_duplicado_con_motivo PASSED        [ 21%]
-tests/test_cuarentena.py::test_separa_valor_infinito_con_motivo PASSED   [ 22%]
-tests/test_discretizacion.py::test_cut PASSED                            [ 23%]
-tests/test_discretizacion.py::test_qcut PASSED                           [ 24%]
-tests/test_discretizacion.py::test_conserva_valores_originales PASSED    [ 25%]
-tests/test_discretizacion.py::test_conserva_faltantes PASSED             [ 27%]
-tests/test_discretizacion.py::test_todos_los_validos_clasificados PASSED [ 28%]
-tests/test_discretizacion.py::test_limites_ordenados PASSED              [ 29%]
-tests/test_discretizacion.py::test_columna_inexistente PASSED            [ 30%]
-tests/test_discretizacion.py::test_columna_no_numerica PASSED            [ 31%]
-tests/test_discretizacion.py::test_metodo_invalido PASSED                [ 32%]
-tests/test_discretizacion.py::test_sin_valores_validos PASSED            [ 34%]
-tests/test_discretizacion.py::test_valores_distintos_insuficientes PASSED [ 35%]
-tests/test_integracion.py::test_cantidad_registros PASSED                [ 36%]
-tests/test_integracion.py::test_conserva_fuentes PASSED                  [ 37%]
-tests/test_integracion.py::test_conserva_series PASSED                   [ 38%]
-tests/test_integracion.py::test_periodos_mensuales PASSED                [ 40%]
-tests/test_integracion.py::test_no_modifica_originales PASSED            [ 41%]
-tests/test_integracion.py::test_conserva_valores PASSED                  [ 42%]
-tests/test_integracion.py::test_conserva_metadatos PASSED                [ 43%]
-tests/test_integracion.py::test_metadatos_por_fuente PASSED              [ 44%]
-tests/test_limpieza.py::test_interpolacion_por_fecha_y_grupo_sin_modificar_original PASSED [ 45%]
-tests/test_limpieza.py::test_no_extrapola_ni_inventa_ceros PASSED        [ 47%]
-tests/test_limpieza.py::test_ffill_respetando_grupo_y_orden_temporal PASSED [ 48%]
-tests/test_limpieza.py::test_mediana_por_grupo_no_global PASSED          [ 49%]
-tests/test_limpieza.py::test_prohibe_identificadores[id] PASSED          [ 50%]
-tests/test_limpieza.py::test_prohibe_identificadores[serie_id] PASSED    [ 51%]
-tests/test_limpieza.py::test_prohibe_identificadores[fecha] PASSED       [ 52%]
-tests/test_limpieza.py::test_prohibe_identificadores[clave_predio] PASSED [ 54%]
-tests/test_limpieza.py::test_prohibe_identificadores[codigo_fuente] PASSED [ 55%]
-tests/test_limpieza.py::test_prohibe_identificadores[periodo] PASSED     [ 56%]
-tests/test_limpieza.py::test_n_e_no_se_imputa_silenciosamente PASSED     [ 57%]
-tests/test_limpieza.py::test_iqr_marca_extremo_sin_eliminar_ni_modificar_original PASSED [ 58%]
-tests/test_limpieza.py::test_iqr_no_mezcla_series PASSED                 [ 60%]
-tests/test_limpieza.py::test_iqr_grupos_pequenos_no_son_errores PASSED   [ 61%]
-tests/test_limpieza.py::test_iqr_rechaza_fechas_e_identificadores PASSED [ 62%]
-tests/test_limpieza.py::test_banxico_n_e_se_conserva_como_no_publicado_sin_imputacion PASSED [ 63%]
-tests/test_limpieza.py::test_inegi_acepta_valores_negativos_y_sin_imputacion PASSED [ 64%]
-tests/test_limpieza.py::test_valor_no_numerico_tiene_motivo_sin_eliminar PASSED [ 65%]
-tests/test_limpieza.py::test_fechas_invalidas_se_marcan_y_conservan PASSED [ 67%]
-tests/test_limpieza.py::test_limpieza_no_borra_atipico_extremo PASSED    [ 68%]
-tests/test_limpieza.py::test_fecha_banxico_dia_mes_anio PASSED           [ 69%]
-tests/test_pipeline.py::test_pipeline_publica_datos_validos PASSED       [ 70%]
-tests/test_pipeline.py::test_pipeline_separa_registros_invalidos PASSED  [ 71%]
-tests/test_pipeline.py::test_pipeline_detiene_error_estructural PASSED   [ 72%]
-tests/test_pipeline.py::test_pipeline_publica_oro PASSED                 [ 74%]
-tests/test_pipeline.py::test_pipeline_oro_conserva_series PASSED         [ 75%]
-tests/test_pipeline.py::test_pipeline_no_publica_si_falla_oro PASSED     [ 76%]
-tests/test_pipeline.py::test_pipeline_no_modifica_bronce PASSED          [ 77%]
-tests/test_pipeline.py::test_pipeline_es_idempotente PASSED              [ 78%]
-tests/test_pipeline.py::test_pipeline_omite_discretizacion_con_pocos_valores PASSED [ 80%]
-tests/test_publicacion.py::test_publicacion_correcta PASSED              [ 81%]
-tests/test_publicacion.py::test_recuperacion_si_falla_publicacion PASSED [ 82%]
-tests/test_publicacion.py::test_no_permite_rutas_duplicadas PASSED       [ 83%]
-tests/test_reduccion.py::test_reduccion_mensual PASSED                   [ 84%]
-tests/test_reduccion.py::test_conserva_identificadores PASSED            [ 85%]
-tests/test_reduccion.py::test_no_modifica_datos_originales PASSED        [ 87%]
-tests/test_reduccion.py::test_ignora_faltantes_en_promedio PASSED        [ 88%]
-tests/test_transformaciones.py::test_reutilizar_parametros_sin_fuga PASSED [ 89%]
-tests/test_transformaciones.py::test_reutilizar_parametros_con_faltantes PASSED [ 90%]
-tests/test_transformaciones.py::test_rechaza_parametros_de_otra_columna PASSED [ 91%]
-tests/test_transformaciones.py::test_minmax PASSED                       [ 92%]
-tests/test_transformaciones.py::test_zscore PASSED                       [ 94%]
-tests/test_transformaciones.py::test_conserva_original PASSED            [ 95%]
-tests/test_transformaciones.py::test_valores_faltantes PASSED            [ 96%]
-tests/test_transformaciones.py::test_parametros PASSED                   [ 97%]
-tests/test_transformaciones.py::test_columna_inexistente PASSED          [ 98%]
-tests/test_transformaciones.py::test_sin_valores_validos PASSED          [100%]
-
+﻿........................................................................ [ 54%]
+...........................................................              [100%]
 =============================== tests coverage ================================
 _______________ coverage: platform win32, python 3.14.3-final-0 _______________
 
-Name                             Stmts   Miss  Cover   Missing
---------------------------------------------------------------
-src\__init__.py                      0      0   100%
-src\analisis_faltantes.py           24     24     0%   4-68
-src\calidad.py                      10      0   100%
-src\cuarentena.py                   51      7    86%   36, 92, 99, 125, 131, 150, 183
-src\diagnostico.py                  84     26    69%   17-27, 102, 147-151, 183-214, 218
-src\discretizacion.py               21      0   100%
-src\ejecutar_calidad.py             33     33     0%   2-68
-src\ejecutar_cuarentena.py          31     31     0%   2-70
-src\ejecutar_discretizacion.py      30     30     0%   4-75
-src\ejecutar_escalado.py            24     24     0%   4-48
-src\ejecutar_integracion.py         22     22     0%   2-44
-src\ejecutar_reduccion.py           22     22     0%   2-42
-src\integracion.py                  21      0   100%
-src\lectura.py                     103     65    37%   23-27, 37, 42-60, 67, 69, 75, 77, 98-104, 109-153, 157-162
-src\limpieza.py                    206     53    74%   59-61, 69, 72, 115, 117, 119, 121, 133, 137, 141, 144, 155, 157, 172, 181, 190, 231, 233, 235, 237, 239, 243, 245, 249, 309, 311, 314, 377-396, 400-404
-src\main.py                          5      5     0%   4-12
-src\oro.py                          10      1    90%   39
-src\reduccion.py                    11      0   100%
-src\transformaciones.py             35      2    94%   29, 75
---------------------------------------------------------------
-TOTAL                              743    345    54%
-============================= 85 passed in 15.26s =============================
+Name                              Stmts   Miss  Cover   Missing
+---------------------------------------------------------------
+src\__init__.py                       0      0   100%
+src\analisis_estacionariedad.py      77      3    96%   43, 119, 170
+src\analisis_faltantes.py            22      1    95%   66
+src\calidad.py                        9      0   100%
+src\cuarentena.py                    50      7    86%   34, 92, 99, 125, 131, 150, 183
+src\diagnostico.py                   84     26    69%   18-28, 103, 148-152, 184-215, 219
+src\discretizacion.py                21      0   100%
+src\ejecutar_calidad.py              33      3    91%   9-10, 68
+src\ejecutar_cuarentena.py           31      3    90%   8-9, 70
+src\ejecutar_discretizacion.py       30      1    97%   75
+src\ejecutar_escalado.py             24      1    96%   48
+src\ejecutar_integracion.py          22     22     0%   2-45
+src\ejecutar_reduccion.py            22     22     0%   2-44
+src\evaluar_banxico_sarima.py        52     52     0%   1-131
+src\integracion.py                   21      0   100%
+src\lectura.py                      101     12    88%   37, 54, 77, 83, 151-152, 165-170
+src\limpieza.py                     210     55    74%   59-61, 69, 72, 115, 117, 119, 121, 123, 125, 137, 141, 145, 148, 159, 161, 176, 185, 194, 235, 237, 239, 241, 243, 247, 249, 253, 313, 315, 318, 381-401, 405-409
+src\main.py                           5      5     0%   4-12
+src\modelos_pronostico.py           153    104    32%   74, 161-219, 223-475, 479-526, 533
+src\oro.py                            9      1    89%   37
+src\pronostico_final.py             118     80    32%   48, 99-125, 129-186, 190-236, 240-298, 302-343, 350
+src\reduccion.py                     11      0   100%
+src\transformaciones.py              35      2    94%   29, 75
+---------------------------------------------------------------
+TOTAL                              1140    400    65%
+131 passed in 8.96s
