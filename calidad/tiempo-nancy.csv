@@ -11,3 +11,18 @@ fecha,inicio,fin,interrupcion_min,fase,actividad
 2026-11-07,19:30,19:45,0,configuracion,Modificacion de .gitignore para conservar evidencia en Bronce y logs/capturas.csv
 2026-11-07,22:00,23:00,15,revision,Revision y explicacion de base.py y main.py 
 2026-11-08,13:00,15:00,30,documentacion,Elaboracion de estructura base de docs/E0/propuesta.md
+2026-11-11,20:10,21:10,0,Construcción,Creación de carpetas E1 e implementación de src/lectura.py
+2026-11-11,21:30,00:30,40,Construcción,Implementación de src/limpieza.py y tests/test_limpieza.py
+2026-11-12,09:20,09:40,0,Pruebas,Integración de limpieza con datos reales INEGI y Banxico
+2026-11-12,16:40,17:00,0,Construcción,Inicio de la puerta de calidad en calidad.py
+2026-11-12,17:00,17:25,0,Pruebas,Implementación de test_calidad.py
+2026-11-12,17:35,18:30,0,Construcción,Implementación de ejecutar_calidad.py
+2026-11-12,18:30,18:40,0,Construcción,Ajustes de ejecutar_calidad.py
+2026-11-12,18:45,19:10,5,Construcción,Inicio de implementación de cuarentena
+2026-11-12,19:10,19:20,0,Pruebas,Implementación de test_cuarentena.py
+2026-11-12,19:20,19:44,5,Construcción,Implementación de ejecutar_cuarentena.py y reporte
+2026-11-12,19:50,22:00,0,Integración,Orquestación de Bronce a Plata y Oro
+2026-11-12,22:05,22:55,0,Pruebas,Pruebas de seguridad y fiabilidad
+2026-11-13,08:30,09:00,0,Análisis estadístico,Análisis de series temporales
+2026-11-13,09:00,10:30,0,Análisis estadístico,Modelos de pronóstico y pronóstico final
+2026-11-13,10:30,11:11,0,Calidad,Mejoras de calidad del proyecto

@@ -10,3 +10,13 @@ numero,fecha,tipo,fase_introducido,fase_eliminado,minutos_correccion,defecto_ori
 9,2026-11-07,interfaz,codigo,pruebas,20,main.py tenia un codigo de ubicación incorrecto,HTTP 400 por ubicacion 0700; validado HTTP 200 con ubicacion 00
 10,2026-11-07,interfaz,pruebas,investigacion,30,main.py tenia in identificador invalido ,ID 865552 no aceptado despues de cambiarlo para obtener 36 periodos; se busco posteriormente otro indicador compatible
 11,2026-11-07,sistema,configuracion,configuracion,5,.gitignore,Ajuste de .gitignore para permitir archivos Bronce y logs/capturas.csv
+12,2026-11-11,Funcional,Construcción,Pruebas,15,src/lectura.py,El lector JSON no interpretaba la estructura anidada data.bmx.series.datos de Banxico; se corrigió y verificó la lectura de los 26 archivos
+13,2026-11-12,Comunicación,Construcción,Pruebas,5,src/cuarentena.py,El mensaje de rechazo de Cuarentena era poco claro; se ajustó su redacción
+14,2026-11-12,Pruebas,Construcción,Pruebas,5,tests/test_cuarentena.py,La prueba fallaba porque esperaba el texto anterior del motivo de rechazo; se actualizó la comprobación
+15,2026-11-12,Integración,Construcción,Integración,20,pipeline Bronce-Plata-Oro,El pipeline no estaba configurado para iniciar la integración desde la capa Bronce; se ajustó el origen de los datos
+16,2026-11-12,Pruebas,Integración,Pruebas,10,test_pipeline_detiene_error_estructural,Se corrigió la prueba de detención del pipeline ante un error estructural
+17,2026-11-12,Validación,Integración,Pruebas,10,transformaciones de datos,Se presentó ValueError porque la transformación necesitaba al menos tres valores distintos; se revisó la condición de entrada
+18,2026-11-12,Lógica,Construcción,Pruebas,15,src/cuarentena.py,Un registro duplicado recibía motivos incorrectos de fuente y periodo y valor y frecuencia; se ajustó la asignación de motivos para conservar tres válidos y uno rechazado sin pérdidas
+19,2026-11-12,Entorno,Pruebas,Pruebas,5,Gitleaks en Windows,PowerShell no encontraba el ejecutable de Gitleaks después de la instalación con winget; se revisó su disponibilidad en el entorno
+20,2026-11-12,Configuración,Pruebas,Pruebas,18,configuración TOML de Gitleaks,El archivo TOML contenía una marca BOM UTF-8 que impedía leer la configuración; se corrigió la codificación
+21,2026-11-13,Estadístico,Análisis estadístico,,5,ARIMA(3 0 0),El modelo seleccionado por menor RMSE no superó Ljung-Box; se documentó la limitación de autocorrelación residual sin afirmar que estuviera resuelta
