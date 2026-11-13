@@ -1,0 +1,565 @@
+periodo,fuente,serie_id,indicador,valor,unidad,metodo,cobertura
+1995-03,banxico,SF43783,TIIE a 28 dias,89.4825,porcentaje anual,promedio mensual,nacional
+1995-04,banxico,SF43783,TIIE a 28 dias,85.22037499999999,porcentaje anual,promedio mensual,nacional
+1995-05,banxico,SF43783,TIIE a 28 dias,60.44625,porcentaje anual,promedio mensual,nacional
+1995-06,banxico,SF43783,TIIE a 28 dias,49.5,porcentaje anual,promedio mensual,nacional
+1995-07,banxico,SF43783,TIIE a 28 dias,43.0,porcentaje anual,promedio mensual,nacional
+1995-08,banxico,SF43783,TIIE a 28 dias,37.59854,porcentaje anual,promedio mensual,nacional
+1995-09,banxico,SF43783,TIIE a 28 dias,35.480125,porcentaje anual,promedio mensual,nacional
+1995-10,banxico,SF43783,TIIE a 28 dias,42.6075,porcentaje anual,promedio mensual,nacional
+1995-11,banxico,SF43783,TIIE a 28 dias,57.43424,porcentaje anual,promedio mensual,nacional
+1995-12,banxico,SF43783,TIIE a 28 dias,51.356275,porcentaje anual,promedio mensual,nacional
+1996-01,banxico,SF43783,TIIE a 28 dias,42.657525,porcentaje anual,promedio mensual,nacional
+1996-02,banxico,SF43783,TIIE a 28 dias,40.1055,porcentaje anual,promedio mensual,nacional
+1996-03,banxico,SF43783,TIIE a 28 dias,42.929199999999994,porcentaje anual,promedio mensual,nacional
+1996-04,banxico,SF43783,TIIE a 28 dias,36.613749999999996,porcentaje anual,promedio mensual,nacional
+1996-05,banxico,SF43783,TIIE a 28 dias,30.309545454545454,porcentaje anual,promedio mensual,nacional
+1996-06,banxico,SF43783,TIIE a 28 dias,30.10525,porcentaje anual,promedio mensual,nacional
+1996-07,banxico,SF43783,TIIE a 28 dias,33.48978260869565,porcentaje anual,promedio mensual,nacional
+1996-08,banxico,SF43783,TIIE a 28 dias,29.357613636363634,porcentaje anual,promedio mensual,nacional
+1996-09,banxico,SF43783,TIIE a 28 dias,26.822250000000004,porcentaje anual,promedio mensual,nacional
+1996-10,banxico,SF43783,TIIE a 28 dias,28.684565217391306,porcentaje anual,promedio mensual,nacional
+1996-11,banxico,SF43783,TIIE a 28 dias,32.284,porcentaje anual,promedio mensual,nacional
+1996-12,banxico,SF43783,TIIE a 28 dias,29.919249999999998,porcentaje anual,promedio mensual,nacional
+1997-01,banxico,SF43783,TIIE a 28 dias,25.95977272727273,porcentaje anual,promedio mensual,nacional
+1997-02,banxico,SF43783,TIIE a 28 dias,22.106315789473683,porcentaje anual,promedio mensual,nacional
+1997-03,banxico,SF43783,TIIE a 28 dias,23.950833333333335,porcentaje anual,promedio mensual,nacional
+1997-04,banxico,SF43783,TIIE a 28 dias,23.98034090909091,porcentaje anual,promedio mensual,nacional
+1997-05,banxico,SF43783,TIIE a 28 dias,20.64725,porcentaje anual,promedio mensual,nacional
+1997-06,banxico,SF43783,TIIE a 28 dias,22.531666666666666,porcentaje anual,promedio mensual,nacional
+1997-07,banxico,SF43783,TIIE a 28 dias,20.495217391304347,porcentaje anual,promedio mensual,nacional
+1997-08,banxico,SF43783,TIIE a 28 dias,20.636785714285715,porcentaje anual,promedio mensual,nacional
+1997-09,banxico,SF43783,TIIE a 28 dias,20.23425,porcentaje anual,promedio mensual,nacional
+1997-10,banxico,SF43783,TIIE a 28 dias,19.69717391304348,porcentaje anual,promedio mensual,nacional
+1997-11,banxico,SF43783,TIIE a 28 dias,22.171315789473685,porcentaje anual,promedio mensual,nacional
+1997-12,banxico,SF43783,TIIE a 28 dias,20.48190476190476,porcentaje anual,promedio mensual,nacional
+1998-01,banxico,SF43783,TIIE a 28 dias,19.740238095238094,porcentaje anual,promedio mensual,nacional
+1998-02,banxico,SF43783,TIIE a 28 dias,20.51578947368421,porcentaje anual,promedio mensual,nacional
+1998-03,banxico,SF43783,TIIE a 28 dias,21.689318181818184,porcentaje anual,promedio mensual,nacional
+1998-04,banxico,SF43783,TIIE a 28 dias,20.55175,porcentaje anual,promedio mensual,nacional
+1998-05,banxico,SF43783,TIIE a 28 dias,19.895263157894735,porcentaje anual,promedio mensual,nacional
+1998-06,banxico,SF43783,TIIE a 28 dias,21.469545454545454,porcentaje anual,promedio mensual,nacional
+1998-07,banxico,SF43783,TIIE a 28 dias,21.880434782608695,porcentaje anual,promedio mensual,nacional
+1998-08,banxico,SF43783,TIIE a 28 dias,25.780714285714286,porcentaje anual,promedio mensual,nacional
+1998-09,banxico,SF43783,TIIE a 28 dias,42.0395,porcentaje anual,promedio mensual,nacional
+1998-10,banxico,SF43783,TIIE a 28 dias,37.654318181818184,porcentaje anual,promedio mensual,nacional
+1998-11,banxico,SF43783,TIIE a 28 dias,34.77578947368421,porcentaje anual,promedio mensual,nacional
+1998-12,banxico,SF43783,TIIE a 28 dias,36.69113636363637,porcentaje anual,promedio mensual,nacional
+1999-01,banxico,SF43783,TIIE a 28 dias,35.7955,porcentaje anual,promedio mensual,nacional
+1999-02,banxico,SF43783,TIIE a 28 dias,32.205263157894734,porcentaje anual,promedio mensual,nacional
+1999-03,banxico,SF43783,TIIE a 28 dias,26.870434782608694,porcentaje anual,promedio mensual,nacional
+1999-04,banxico,SF43783,TIIE a 28 dias,22.54025,porcentaje anual,promedio mensual,nacional
+1999-05,banxico,SF43783,TIIE a 28 dias,22.52,porcentaje anual,promedio mensual,nacional
+1999-06,banxico,SF43783,TIIE a 28 dias,23.595227272727275,porcentaje anual,promedio mensual,nacional
+1999-07,banxico,SF43783,TIIE a 28 dias,22.111136363636362,porcentaje anual,promedio mensual,nacional
+1999-08,banxico,SF43783,TIIE a 28 dias,23.1275,porcentaje anual,promedio mensual,nacional
+1999-09,banxico,SF43783,TIIE a 28 dias,22.040375,porcentaje anual,promedio mensual,nacional
+1999-10,banxico,SF43783,TIIE a 28 dias,20.631190476190476,porcentaje anual,promedio mensual,nacional
+1999-11,banxico,SF43783,TIIE a 28 dias,19.005714285714287,porcentaje anual,promedio mensual,nacional
+1999-12,banxico,SF43783,TIIE a 28 dias,18.745454545454546,porcentaje anual,promedio mensual,nacional
+2000-01,banxico,SF43783,TIIE a 28 dias,18.551190476190477,porcentaje anual,promedio mensual,nacional
+2000-02,banxico,SF43783,TIIE a 28 dias,18.151904761904763,porcentaje anual,promedio mensual,nacional
+2000-03,banxico,SF43783,TIIE a 28 dias,15.76909090909091,porcentaje anual,promedio mensual,nacional
+2000-04,banxico,SF43783,TIIE a 28 dias,14.736944444444443,porcentaje anual,promedio mensual,nacional
+2000-05,banxico,SF43783,TIIE a 28 dias,15.917142857142856,porcentaje anual,promedio mensual,nacional
+2000-06,banxico,SF43783,TIIE a 28 dias,17.437954545454545,porcentaje anual,promedio mensual,nacional
+2000-07,banxico,SF43783,TIIE a 28 dias,15.125714285714285,porcentaje anual,promedio mensual,nacional
+2000-08,banxico,SF43783,TIIE a 28 dias,16.61554347826087,porcentaje anual,promedio mensual,nacional
+2000-09,banxico,SF43783,TIIE a 28 dias,16.770057142857144,porcentaje anual,promedio mensual,nacional
+2000-10,banxico,SF43783,TIIE a 28 dias,17.38016818181818,porcentaje anual,promedio mensual,nacional
+2000-11,banxico,SF43783,TIIE a 28 dias,18.64225,porcentaje anual,promedio mensual,nacional
+2000-12,banxico,SF43783,TIIE a 28 dias,18.39402777777778,porcentaje anual,promedio mensual,nacional
+2001-01,banxico,SF43783,TIIE a 28 dias,18.61909090909091,porcentaje anual,promedio mensual,nacional
+2001-02,banxico,SF43783,TIIE a 28 dias,18.11921052631579,porcentaje anual,promedio mensual,nacional
+2001-03,banxico,SF43783,TIIE a 28 dias,17.280952380952378,porcentaje anual,promedio mensual,nacional
+2001-04,banxico,SF43783,TIIE a 28 dias,16.361052631578946,porcentaje anual,promedio mensual,nacional
+2001-05,banxico,SF43783,TIIE a 28 dias,14.09125,porcentaje anual,promedio mensual,nacional
+2001-06,banxico,SF43783,TIIE a 28 dias,11.643928571428571,porcentaje anual,promedio mensual,nacional
+2001-07,banxico,SF43783,TIIE a 28 dias,11.099545454545455,porcentaje anual,promedio mensual,nacional
+2001-08,banxico,SF43783,TIIE a 28 dias,9.289782608695651,porcentaje anual,promedio mensual,nacional
+2001-09,banxico,SF43783,TIIE a 28 dias,10.9475,porcentaje anual,promedio mensual,nacional
+2001-10,banxico,SF43783,TIIE a 28 dias,10.338478260869564,porcentaje anual,promedio mensual,nacional
+2001-11,banxico,SF43783,TIIE a 28 dias,8.9,porcentaje anual,promedio mensual,nacional
+2001-12,banxico,SF43783,TIIE a 28 dias,7.941578947368422,porcentaje anual,promedio mensual,nacional
+2002-01,banxico,SF43783,TIIE a 28 dias,7.9675,porcentaje anual,promedio mensual,nacional
+2002-02,banxico,SF43783,TIIE a 28 dias,8.990263157894736,porcentaje anual,promedio mensual,nacional
+2002-03,banxico,SF43783,TIIE a 28 dias,8.470277777777778,porcentaje anual,promedio mensual,nacional
+2002-04,banxico,SF43783,TIIE a 28 dias,6.849318181818182,porcentaje anual,promedio mensual,nacional
+2002-05,banxico,SF43783,TIIE a 28 dias,7.727954545454546,porcentaje anual,promedio mensual,nacional
+2002-06,banxico,SF43783,TIIE a 28 dias,8.41975,porcentaje anual,promedio mensual,nacional
+2002-07,banxico,SF43783,TIIE a 28 dias,8.335652173913044,porcentaje anual,promedio mensual,nacional
+2002-08,banxico,SF43783,TIIE a 28 dias,7.613636363636363,porcentaje anual,promedio mensual,nacional
+2002-09,banxico,SF43783,TIIE a 28 dias,8.373000000000001,porcentaje anual,promedio mensual,nacional
+2002-10,banxico,SF43783,TIIE a 28 dias,8.671956521739132,porcentaje anual,promedio mensual,nacional
+2002-11,banxico,SF43783,TIIE a 28 dias,8.33125,porcentaje anual,promedio mensual,nacional
+2002-12,banxico,SF43783,TIIE a 28 dias,8.255500000000001,porcentaje anual,promedio mensual,nacional
+2003-01,banxico,SF43783,TIIE a 28 dias,9.14340909090909,porcentaje anual,promedio mensual,nacional
+2003-02,banxico,SF43783,TIIE a 28 dias,9.905131578947367,porcentaje anual,promedio mensual,nacional
+2003-03,banxico,SF43783,TIIE a 28 dias,9.961,porcentaje anual,promedio mensual,nacional
+2003-04,banxico,SF43783,TIIE a 28 dias,8.58195,porcentaje anual,promedio mensual,nacional
+2003-05,banxico,SF43783,TIIE a 28 dias,5.917142857142857,porcentaje anual,promedio mensual,nacional
+2003-06,banxico,SF43783,TIIE a 28 dias,5.788809523809523,porcentaje anual,promedio mensual,nacional
+2003-07,banxico,SF43783,TIIE a 28 dias,5.298586956521739,porcentaje anual,promedio mensual,nacional
+2003-08,banxico,SF43783,TIIE a 28 dias,4.9730952380952385,porcentaje anual,promedio mensual,nacional
+2003-09,banxico,SF43783,TIIE a 28 dias,5.046428571428571,porcentaje anual,promedio mensual,nacional
+2003-10,banxico,SF43783,TIIE a 28 dias,5.595921739130435,porcentaje anual,promedio mensual,nacional
+2003-11,banxico,SF43783,TIIE a 28 dias,5.354494736842105,porcentaje anual,promedio mensual,nacional
+2003-12,banxico,SF43783,TIIE a 28 dias,6.397733333333333,porcentaje anual,promedio mensual,nacional
+2004-01,banxico,SF43783,TIIE a 28 dias,5.3569,porcentaje anual,promedio mensual,nacional
+2004-02,banxico,SF43783,TIIE a 28 dias,5.791494736842105,porcentaje anual,promedio mensual,nacional
+2004-03,banxico,SF43783,TIIE a 28 dias,6.48505652173913,porcentaje anual,promedio mensual,nacional
+2004-04,banxico,SF43783,TIIE a 28 dias,6.168305,porcentaje anual,promedio mensual,nacional
+2004-05,banxico,SF43783,TIIE a 28 dias,6.9476666666666675,porcentaje anual,promedio mensual,nacional
+2004-06,banxico,SF43783,TIIE a 28 dias,7.024768181818183,porcentaje anual,promedio mensual,nacional
+2004-07,banxico,SF43783,TIIE a 28 dias,7.112631818181819,porcentaje anual,promedio mensual,nacional
+2004-08,banxico,SF43783,TIIE a 28 dias,7.4999590909090905,porcentaje anual,promedio mensual,nacional
+2004-09,banxico,SF43783,TIIE a 28 dias,7.775666666666666,porcentaje anual,promedio mensual,nacional
+2004-10,banxico,SF43783,TIIE a 28 dias,8.045485714285714,porcentaje anual,promedio mensual,nacional
+2004-11,banxico,SF43783,TIIE a 28 dias,8.597959090909091,porcentaje anual,promedio mensual,nacional
+2004-12,banxico,SF43783,TIIE a 28 dias,8.930621739130435,porcentaje anual,promedio mensual,nacional
+2005-01,banxico,SF43783,TIIE a 28 dias,8.968333333333334,porcentaje anual,promedio mensual,nacional
+2005-02,banxico,SF43783,TIIE a 28 dias,9.467,porcentaje anual,promedio mensual,nacional
+2005-03,banxico,SF43783,TIIE a 28 dias,9.777,porcentaje anual,promedio mensual,nacional
+2005-04,banxico,SF43783,TIIE a 28 dias,10.014285714285714,porcentaje anual,promedio mensual,nacional
+2005-05,banxico,SF43783,TIIE a 28 dias,10.122272727272728,porcentaje anual,promedio mensual,nacional
+2005-06,banxico,SF43783,TIIE a 28 dias,10.01,porcentaje anual,promedio mensual,nacional
+2005-07,banxico,SF43783,TIIE a 28 dias,10.014761904761905,porcentaje anual,promedio mensual,nacional
+2005-08,banxico,SF43783,TIIE a 28 dias,9.984347826086957,porcentaje anual,promedio mensual,nacional
+2005-09,banxico,SF43783,TIIE a 28 dias,9.649285714285714,porcentaje anual,promedio mensual,nacional
+2005-10,banxico,SF43783,TIIE a 28 dias,9.408452380952381,porcentaje anual,promedio mensual,nacional
+2005-11,banxico,SF43783,TIIE a 28 dias,9.1675,porcentaje anual,promedio mensual,nacional
+2005-12,banxico,SF43783,TIIE a 28 dias,8.721785714285714,porcentaje anual,promedio mensual,nacional
+2006-01,banxico,SF43783,TIIE a 28 dias,8.412045454545455,porcentaje anual,promedio mensual,nacional
+2006-02,banxico,SF43783,TIIE a 28 dias,7.968289473684211,porcentaje anual,promedio mensual,nacional
+2006-03,banxico,SF43783,TIIE a 28 dias,7.677159090909091,porcentaje anual,promedio mensual,nacional
+2006-04,banxico,SF43783,TIIE a 28 dias,7.514722222222222,porcentaje anual,promedio mensual,nacional
+2006-05,banxico,SF43783,TIIE a 28 dias,7.319772727272727,porcentaje anual,promedio mensual,nacional
+2006-06,banxico,SF43783,TIIE a 28 dias,7.333409090909091,porcentaje anual,promedio mensual,nacional
+2006-07,banxico,SF43783,TIIE a 28 dias,7.311666666666666,porcentaje anual,promedio mensual,nacional
+2006-08,banxico,SF43783,TIIE a 28 dias,7.300778260869565,porcentaje anual,promedio mensual,nacional
+2006-09,banxico,SF43783,TIIE a 28 dias,7.3083857142857145,porcentaje anual,promedio mensual,nacional
+2006-10,banxico,SF43783,TIIE a 28 dias,7.313331818181819,porcentaje anual,promedio mensual,nacional
+2006-11,banxico,SF43783,TIIE a 28 dias,7.302225,porcentaje anual,promedio mensual,nacional
+2006-12,banxico,SF43783,TIIE a 28 dias,7.338127777777777,porcentaje anual,promedio mensual,nacional
+2007-01,banxico,SF43783,TIIE a 28 dias,7.405068181818181,porcentaje anual,promedio mensual,nacional
+2007-02,banxico,SF43783,TIIE a 28 dias,7.456642105263158,porcentaje anual,promedio mensual,nacional
+2007-03,banxico,SF43783,TIIE a 28 dias,7.455390476190476,porcentaje anual,promedio mensual,nacional
+2007-04,banxico,SF43783,TIIE a 28 dias,7.466647368421053,porcentaje anual,promedio mensual,nacional
+2007-05,banxico,SF43783,TIIE a 28 dias,7.699777272727274,porcentaje anual,promedio mensual,nacional
+2007-06,banxico,SF43783,TIIE a 28 dias,7.703552380952381,porcentaje anual,promedio mensual,nacional
+2007-07,banxico,SF43783,TIIE a 28 dias,7.704127272727273,porcentaje anual,promedio mensual,nacional
+2007-08,banxico,SF43783,TIIE a 28 dias,7.708760869565218,porcentaje anual,promedio mensual,nacional
+2007-09,banxico,SF43783,TIIE a 28 dias,7.704009999999999,porcentaje anual,promedio mensual,nacional
+2007-10,banxico,SF43783,TIIE a 28 dias,7.732717391304347,porcentaje anual,promedio mensual,nacional
+2007-11,banxico,SF43783,TIIE a 28 dias,7.933764999999999,porcentaje anual,promedio mensual,nacional
+2007-12,banxico,SF43783,TIIE a 28 dias,7.932557894736843,porcentaje anual,promedio mensual,nacional
+2008-01,banxico,SF43783,TIIE a 28 dias,7.925986363636364,porcentaje anual,promedio mensual,nacional
+2008-02,banxico,SF43783,TIIE a 28 dias,7.928319999999999,porcentaje anual,promedio mensual,nacional
+2008-03,banxico,SF43783,TIIE a 28 dias,7.931205555555555,porcentaje anual,promedio mensual,nacional
+2008-04,banxico,SF43783,TIIE a 28 dias,7.935522727272727,porcentaje anual,promedio mensual,nacional
+2008-05,banxico,SF43783,TIIE a 28 dias,7.9327000000000005,porcentaje anual,promedio mensual,nacional
+2008-06,banxico,SF43783,TIIE a 28 dias,8.00232380952381,porcentaje anual,promedio mensual,nacional
+2008-07,banxico,SF43783,TIIE a 28 dias,8.282869565217391,porcentaje anual,promedio mensual,nacional
+2008-08,banxico,SF43783,TIIE a 28 dias,8.557619047619047,porcentaje anual,promedio mensual,nacional
+2008-09,banxico,SF43783,TIIE a 28 dias,8.660357142857142,porcentaje anual,promedio mensual,nacional
+2008-10,banxico,SF43783,TIIE a 28 dias,8.676413043478261,porcentaje anual,promedio mensual,nacional
+2008-11,banxico,SF43783,TIIE a 28 dias,8.733947368421052,porcentaje anual,promedio mensual,nacional
+2008-12,banxico,SF43783,TIIE a 28 dias,8.73967619047619,porcentaje anual,promedio mensual,nacional
+2009-01,banxico,SF43783,TIIE a 28 dias,8.414766666666667,porcentaje anual,promedio mensual,nacional
+2009-02,banxico,SF43783,TIIE a 28 dias,7.936594736842105,porcentaje anual,promedio mensual,nacional
+2009-03,banxico,SF43783,TIIE a 28 dias,7.642738095238095,porcentaje anual,promedio mensual,nacional
+2009-04,banxico,SF43783,TIIE a 28 dias,6.677365,porcentaje anual,promedio mensual,nacional
+2009-05,banxico,SF43783,TIIE a 28 dias,5.779954999999999,porcentaje anual,promedio mensual,nacional
+2009-06,banxico,SF43783,TIIE a 28 dias,5.261845454545455,porcentaje anual,promedio mensual,nacional
+2009-07,banxico,SF43783,TIIE a 28 dias,4.9172,porcentaje anual,promedio mensual,nacional
+2009-08,banxico,SF43783,TIIE a 28 dias,4.889409523809523,porcentaje anual,promedio mensual,nacional
+2009-09,banxico,SF43783,TIIE a 28 dias,4.911104761904762,porcentaje anual,promedio mensual,nacional
+2009-10,banxico,SF43783,TIIE a 28 dias,4.925272727272727,porcentaje anual,promedio mensual,nacional
+2009-11,banxico,SF43783,TIIE a 28 dias,4.931168421052631,porcentaje anual,promedio mensual,nacional
+2009-12,banxico,SF43783,TIIE a 28 dias,4.930613636363637,porcentaje anual,promedio mensual,nacional
+2010-01,banxico,SF43783,TIIE a 28 dias,4.91003,porcentaje anual,promedio mensual,nacional
+2010-02,banxico,SF43783,TIIE a 28 dias,4.917342105263158,porcentaje anual,promedio mensual,nacional
+2010-03,banxico,SF43783,TIIE a 28 dias,4.923181818181818,porcentaje anual,promedio mensual,nacional
+2010-04,banxico,SF43783,TIIE a 28 dias,4.937015000000001,porcentaje anual,promedio mensual,nacional
+2010-05,banxico,SF43783,TIIE a 28 dias,4.943523809523809,porcentaje anual,promedio mensual,nacional
+2010-06,banxico,SF43783,TIIE a 28 dias,4.937654545454546,porcentaje anual,promedio mensual,nacional
+2010-07,banxico,SF43783,TIIE a 28 dias,4.919290909090909,porcentaje anual,promedio mensual,nacional
+2010-08,banxico,SF43783,TIIE a 28 dias,4.904209090909091,porcentaje anual,promedio mensual,nacional
+2010-09,banxico,SF43783,TIIE a 28 dias,4.9006300000000005,porcentaje anual,promedio mensual,nacional
+2010-10,banxico,SF43783,TIIE a 28 dias,4.870790476190476,porcentaje anual,promedio mensual,nacional
+2010-11,banxico,SF43783,TIIE a 28 dias,4.865164999999999,porcentaje anual,promedio mensual,nacional
+2010-12,banxico,SF43783,TIIE a 28 dias,4.88745652173913,porcentaje anual,promedio mensual,nacional
+2011-01,banxico,SF43783,TIIE a 28 dias,4.858990476190476,porcentaje anual,promedio mensual,nacional
+2011-02,banxico,SF43783,TIIE a 28 dias,4.8410631578947365,porcentaje anual,promedio mensual,nacional
+2011-03,banxico,SF43783,TIIE a 28 dias,4.840768181818182,porcentaje anual,promedio mensual,nacional
+2011-04,banxico,SF43783,TIIE a 28 dias,4.846084210526316,porcentaje anual,promedio mensual,nacional
+2011-05,banxico,SF43783,TIIE a 28 dias,4.847154545454545,porcentaje anual,promedio mensual,nacional
+2011-06,banxico,SF43783,TIIE a 28 dias,4.8454227272727275,porcentaje anual,promedio mensual,nacional
+2011-07,banxico,SF43783,TIIE a 28 dias,4.821342857142857,porcentaje anual,promedio mensual,nacional
+2011-08,banxico,SF43783,TIIE a 28 dias,4.808,porcentaje anual,promedio mensual,nacional
+2011-08,inegi,910402,Inflacion mensual,0.15,porcentaje,valor mensual original,nacional
+2011-09,banxico,SF43783,TIIE a 28 dias,4.777595238095238,porcentaje anual,promedio mensual,nacional
+2011-09,inegi,910402,Inflacion mensual,0.22,porcentaje,valor mensual original,nacional
+2011-10,banxico,SF43783,TIIE a 28 dias,4.794266666666666,porcentaje anual,promedio mensual,nacional
+2011-10,inegi,910402,Inflacion mensual,0.18,porcentaje,valor mensual original,nacional
+2011-11,banxico,SF43783,TIIE a 28 dias,4.799825,porcentaje anual,promedio mensual,nacional
+2011-11,inegi,910402,Inflacion mensual,0.31,porcentaje,valor mensual original,nacional
+2011-12,banxico,SF43783,TIIE a 28 dias,4.798061904761904,porcentaje anual,promedio mensual,nacional
+2011-12,inegi,910402,Inflacion mensual,0.37,porcentaje,valor mensual original,nacional
+2012-01,banxico,SF43783,TIIE a 28 dias,4.787345454545455,porcentaje anual,promedio mensual,nacional
+2012-01,inegi,910402,Inflacion mensual,0.11,porcentaje,valor mensual original,nacional
+2012-02,banxico,SF43783,TIIE a 28 dias,4.78423,porcentaje anual,promedio mensual,nacional
+2012-02,inegi,910402,Inflacion mensual,0.25,porcentaje,valor mensual original,nacional
+2012-03,banxico,SF43783,TIIE a 28 dias,4.7692523809523815,porcentaje anual,promedio mensual,nacional
+2012-03,inegi,910402,Inflacion mensual,0.239999999999999,porcentaje,valor mensual original,nacional
+2012-04,banxico,SF43783,TIIE a 28 dias,4.743826315789474,porcentaje anual,promedio mensual,nacional
+2012-04,inegi,910402,Inflacion mensual,0.01,porcentaje,valor mensual original,nacional
+2012-05,banxico,SF43783,TIIE a 28 dias,4.760209090909091,porcentaje anual,promedio mensual,nacional
+2012-05,inegi,910402,Inflacion mensual,0.23,porcentaje,valor mensual original,nacional
+2012-06,banxico,SF43783,TIIE a 28 dias,4.763290476190476,porcentaje anual,promedio mensual,nacional
+2012-06,inegi,910402,Inflacion mensual,0.09,porcentaje,valor mensual original,nacional
+2012-07,banxico,SF43783,TIIE a 28 dias,4.7778909090909085,porcentaje anual,promedio mensual,nacional
+2012-07,inegi,910402,Inflacion mensual,0.31,porcentaje,valor mensual original,nacional
+2012-08,banxico,SF43783,TIIE a 28 dias,4.788165217391304,porcentaje anual,promedio mensual,nacional
+2012-08,inegi,910402,Inflacion mensual,0.08,porcentaje,valor mensual original,nacional
+2012-09,banxico,SF43783,TIIE a 28 dias,4.802305,porcentaje anual,promedio mensual,nacional
+2012-09,inegi,910402,Inflacion mensual,0.05,porcentaje,valor mensual original,nacional
+2012-10,banxico,SF43783,TIIE a 28 dias,4.816973913043478,porcentaje anual,promedio mensual,nacional
+2012-10,inegi,910402,Inflacion mensual,0.18,porcentaje,valor mensual original,nacional
+2012-11,banxico,SF43783,TIIE a 28 dias,4.842805,porcentaje anual,promedio mensual,nacional
+2012-11,inegi,910402,Inflacion mensual,-0.23,porcentaje,valor mensual original,nacional
+2012-12,banxico,SF43783,TIIE a 28 dias,4.842089473684211,porcentaje anual,promedio mensual,nacional
+2012-12,inegi,910402,Inflacion mensual,-0.17,porcentaje,valor mensual original,nacional
+2013-01,banxico,SF43783,TIIE a 28 dias,4.841322727272727,porcentaje anual,promedio mensual,nacional
+2013-01,inegi,910402,Inflacion mensual,0.58,porcentaje,valor mensual original,nacional
+2013-02,banxico,SF43783,TIIE a 28 dias,4.82311052631579,porcentaje anual,promedio mensual,nacional
+2013-02,inegi,910402,Inflacion mensual,0.82,porcentaje,valor mensual original,nacional
+2013-03,banxico,SF43783,TIIE a 28 dias,4.4823666666666675,porcentaje anual,promedio mensual,nacional
+2013-03,inegi,910402,Inflacion mensual,0.38,porcentaje,valor mensual original,nacional
+2013-04,banxico,SF43783,TIIE a 28 dias,4.334563636363637,porcentaje anual,promedio mensual,nacional
+2013-04,inegi,910402,Inflacion mensual,0.03,porcentaje,valor mensual original,nacional
+2013-05,banxico,SF43783,TIIE a 28 dias,4.316454545454546,porcentaje anual,promedio mensual,nacional
+2013-05,inegi,910402,Inflacion mensual,0.22,porcentaje,valor mensual original,nacional
+2013-06,banxico,SF43783,TIIE a 28 dias,4.303635,porcentaje anual,promedio mensual,nacional
+2013-06,inegi,910402,Inflacion mensual,0.22,porcentaje,valor mensual original,nacional
+2013-07,banxico,SF43783,TIIE a 28 dias,4.3183043478260865,porcentaje anual,promedio mensual,nacional
+2013-07,inegi,910402,Inflacion mensual,0.2,porcentaje,valor mensual original,nacional
+2013-08,banxico,SF43783,TIIE a 28 dias,4.30615,porcentaje anual,promedio mensual,nacional
+2013-08,inegi,910402,Inflacion mensual,-0.05,porcentaje,valor mensual original,nacional
+2013-09,banxico,SF43783,TIIE a 28 dias,4.1049050000000005,porcentaje anual,promedio mensual,nacional
+2013-09,inegi,910402,Inflacion mensual,0.25,porcentaje,valor mensual original,nacional
+2013-10,banxico,SF43783,TIIE a 28 dias,3.9768565217391303,porcentaje anual,promedio mensual,nacional
+2013-10,inegi,910402,Inflacion mensual,0.26,porcentaje,valor mensual original,nacional
+2013-11,banxico,SF43783,TIIE a 28 dias,3.78953,porcentaje anual,promedio mensual,nacional
+2013-11,inegi,910402,Inflacion mensual,0.27,porcentaje,valor mensual original,nacional
+2013-12,banxico,SF43783,TIIE a 28 dias,3.7903350000000002,porcentaje anual,promedio mensual,nacional
+2013-12,inegi,910402,Inflacion mensual,0.3,porcentaje,valor mensual original,nacional
+2014-01,banxico,SF43783,TIIE a 28 dias,3.7819727272727275,porcentaje anual,promedio mensual,nacional
+2014-01,inegi,910402,Inflacion mensual,0.51,porcentaje,valor mensual original,nacional
+2014-02,banxico,SF43783,TIIE a 28 dias,3.787052631578947,porcentaje anual,promedio mensual,nacional
+2014-02,inegi,910402,Inflacion mensual,0.41,porcentaje,valor mensual original,nacional
+2014-03,banxico,SF43783,TIIE a 28 dias,3.8012950000000005,porcentaje anual,promedio mensual,nacional
+2014-03,inegi,910402,Inflacion mensual,0.24,porcentaje,valor mensual original,nacional
+2014-04,banxico,SF43783,TIIE a 28 dias,3.8064349999999996,porcentaje anual,promedio mensual,nacional
+2014-04,inegi,910402,Inflacion mensual,0.34,porcentaje,valor mensual original,nacional
+2014-05,banxico,SF43783,TIIE a 28 dias,3.802509523809524,porcentaje anual,promedio mensual,nacional
+2014-05,inegi,910402,Inflacion mensual,-0.06,porcentaje,valor mensual original,nacional
+2014-06,banxico,SF43783,TIIE a 28 dias,3.4286476190476187,porcentaje anual,promedio mensual,nacional
+2014-06,inegi,910402,Inflacion mensual,0.25,porcentaje,valor mensual original,nacional
+2014-07,banxico,SF43783,TIIE a 28 dias,3.297508695652174,porcentaje anual,promedio mensual,nacional
+2014-07,inegi,910402,Inflacion mensual,0.38,porcentaje,valor mensual original,nacional
+2014-08,banxico,SF43783,TIIE a 28 dias,3.2985523809523807,porcentaje anual,promedio mensual,nacional
+2014-08,inegi,910402,Inflacion mensual,0.02,porcentaje,valor mensual original,nacional
+2014-09,banxico,SF43783,TIIE a 28 dias,3.2893142857142856,porcentaje anual,promedio mensual,nacional
+2014-09,inegi,910402,Inflacion mensual,0.27,porcentaje,valor mensual original,nacional
+2014-10,banxico,SF43783,TIIE a 28 dias,3.2919130434782606,porcentaje anual,promedio mensual,nacional
+2014-10,inegi,910402,Inflacion mensual,0.17,porcentaje,valor mensual original,nacional
+2014-11,banxico,SF43783,TIIE a 28 dias,3.287321052631579,porcentaje anual,promedio mensual,nacional
+2014-11,inegi,910402,Inflacion mensual,0.2,porcentaje,valor mensual original,nacional
+2014-12,banxico,SF43783,TIIE a 28 dias,3.2997238095238095,porcentaje anual,promedio mensual,nacional
+2014-12,inegi,910402,Inflacion mensual,0.27,porcentaje,valor mensual original,nacional
+2015-01,banxico,SF43783,TIIE a 28 dias,3.30162380952381,porcentaje anual,promedio mensual,nacional
+2015-01,inegi,910402,Inflacion mensual,-0.24,porcentaje,valor mensual original,nacional
+2015-02,banxico,SF43783,TIIE a 28 dias,3.2970894736842107,porcentaje anual,promedio mensual,nacional
+2015-02,inegi,910402,Inflacion mensual,0.35,porcentaje,valor mensual original,nacional
+2015-03,banxico,SF43783,TIIE a 28 dias,3.3029095238095243,porcentaje anual,promedio mensual,nacional
+2015-03,inegi,910402,Inflacion mensual,0.36,porcentaje,valor mensual original,nacional
+2015-04,banxico,SF43783,TIIE a 28 dias,3.2965150000000003,porcentaje anual,promedio mensual,nacional
+2015-04,inegi,910402,Inflacion mensual,0.05,porcentaje,valor mensual original,nacional
+2015-05,banxico,SF43783,TIIE a 28 dias,3.30117,porcentaje anual,promedio mensual,nacional
+2015-05,inegi,910402,Inflacion mensual,0.15,porcentaje,valor mensual original,nacional
+2015-06,banxico,SF43783,TIIE a 28 dias,3.3046636363636366,porcentaje anual,promedio mensual,nacional
+2015-06,inegi,910402,Inflacion mensual,0.21,porcentaje,valor mensual original,nacional
+2015-07,banxico,SF43783,TIIE a 28 dias,3.3035217391304346,porcentaje anual,promedio mensual,nacional
+2015-07,inegi,910402,Inflacion mensual,0.36,porcentaje,valor mensual original,nacional
+2015-08,banxico,SF43783,TIIE a 28 dias,3.3161666666666667,porcentaje anual,promedio mensual,nacional
+2015-08,inegi,910402,Inflacion mensual,0.08,porcentaje,valor mensual original,nacional
+2015-09,banxico,SF43783,TIIE a 28 dias,3.3343000000000003,porcentaje anual,promedio mensual,nacional
+2015-09,inegi,910402,Inflacion mensual,0.26,porcentaje,valor mensual original,nacional
+2015-10,banxico,SF43783,TIIE a 28 dias,3.3050181818181814,porcentaje anual,promedio mensual,nacional
+2015-10,inegi,910402,Inflacion mensual,0.17,porcentaje,valor mensual original,nacional
+2015-11,banxico,SF43783,TIIE a 28 dias,3.3163,porcentaje anual,promedio mensual,nacional
+2015-11,inegi,910402,Inflacion mensual,-0.09,porcentaje,valor mensual original,nacional
+2015-12,banxico,SF43783,TIIE a 28 dias,3.415127272727273,porcentaje anual,promedio mensual,nacional
+2015-12,inegi,910402,Inflacion mensual,0.39,porcentaje,valor mensual original,nacional
+2016-01,banxico,SF43783,TIIE a 28 dias,3.55659,porcentaje anual,promedio mensual,nacional
+2016-01,inegi,910402,Inflacion mensual,0.14,porcentaje,valor mensual original,nacional
+2016-02,banxico,SF43783,TIIE a 28 dias,3.75062,porcentaje anual,promedio mensual,nacional
+2016-02,inegi,910402,Inflacion mensual,0.25,porcentaje,valor mensual original,nacional
+2016-03,banxico,SF43783,TIIE a 28 dias,4.062685,porcentaje anual,promedio mensual,nacional
+2016-03,inegi,910402,Inflacion mensual,0.37,porcentaje,valor mensual original,nacional
+2016-04,banxico,SF43783,TIIE a 28 dias,4.064233333333333,porcentaje anual,promedio mensual,nacional
+2016-04,inegi,910402,Inflacion mensual,0.06,porcentaje,valor mensual original,nacional
+2016-05,banxico,SF43783,TIIE a 28 dias,4.075022727272727,porcentaje anual,promedio mensual,nacional
+2016-05,inegi,910402,Inflacion mensual,0.18,porcentaje,valor mensual original,nacional
+2016-06,banxico,SF43783,TIIE a 28 dias,4.101218181818182,porcentaje anual,promedio mensual,nacional
+2016-06,inegi,910402,Inflacion mensual,0.24,porcentaje,valor mensual original,nacional
+2016-07,banxico,SF43783,TIIE a 28 dias,4.559785714285714,porcentaje anual,promedio mensual,nacional
+2016-07,inegi,910402,Inflacion mensual,0.29,porcentaje,valor mensual original,nacional
+2016-08,banxico,SF43783,TIIE a 28 dias,4.590630434782608,porcentaje anual,promedio mensual,nacional
+2016-08,inegi,910402,Inflacion mensual,0.02,porcentaje,valor mensual original,nacional
+2016-09,banxico,SF43783,TIIE a 28 dias,4.611019047619048,porcentaje anual,promedio mensual,nacional
+2016-09,inegi,910402,Inflacion mensual,0.33,porcentaje,valor mensual original,nacional
+2016-10,banxico,SF43783,TIIE a 28 dias,5.108561904761904,porcentaje anual,promedio mensual,nacional
+2016-10,inegi,910402,Inflacion mensual,0.17,porcentaje,valor mensual original,nacional
+2016-11,banxico,SF43783,TIIE a 28 dias,5.336275,porcentaje anual,promedio mensual,nacional
+2016-11,inegi,910402,Inflacion mensual,0.31,porcentaje,valor mensual original,nacional
+2016-12,banxico,SF43783,TIIE a 28 dias,5.8390095238095245,porcentaje anual,promedio mensual,nacional
+2016-12,inegi,910402,Inflacion mensual,0.53,porcentaje,valor mensual original,nacional
+2017-01,banxico,SF43783,TIIE a 28 dias,6.127995454545455,porcentaje anual,promedio mensual,nacional
+2017-01,inegi,910402,Inflacion mensual,0.28,porcentaje,valor mensual original,nacional
+2017-02,banxico,SF43783,TIIE a 28 dias,6.438763157894737,porcentaje anual,promedio mensual,nacional
+2017-02,inegi,910402,Inflacion mensual,0.47,porcentaje,valor mensual original,nacional
+2017-03,banxico,SF43783,TIIE a 28 dias,6.627954545454545,porcentaje anual,promedio mensual,nacional
+2017-03,inegi,910402,Inflacion mensual,0.4,porcentaje,valor mensual original,nacional
+2017-04,banxico,SF43783,TIIE a 28 dias,6.866122222222222,porcentaje anual,promedio mensual,nacional
+2017-04,inegi,910402,Inflacion mensual,0.32,porcentaje,valor mensual original,nacional
+2017-05,banxico,SF43783,TIIE a 28 dias,6.977881818181817,porcentaje anual,promedio mensual,nacional
+2017-05,inegi,910402,Inflacion mensual,0.1,porcentaje,valor mensual original,nacional
+2017-06,banxico,SF43783,TIIE a 28 dias,7.2149,porcentaje anual,promedio mensual,nacional
+2017-06,inegi,910402,Inflacion mensual,0.29,porcentaje,valor mensual original,nacional
+2017-07,banxico,SF43783,TIIE a 28 dias,7.366361904761905,porcentaje anual,promedio mensual,nacional
+2017-07,inegi,910402,Inflacion mensual,0.4,porcentaje,valor mensual original,nacional
+2017-08,banxico,SF43783,TIIE a 28 dias,7.375591304347826,porcentaje anual,promedio mensual,nacional
+2017-08,inegi,910402,Inflacion mensual,0.06,porcentaje,valor mensual original,nacional
+2017-09,banxico,SF43783,TIIE a 28 dias,7.376442857142858,porcentaje anual,promedio mensual,nacional
+2017-09,inegi,910402,Inflacion mensual,0.24,porcentaje,valor mensual original,nacional
+2017-10,banxico,SF43783,TIIE a 28 dias,7.378977272727273,porcentaje anual,promedio mensual,nacional
+2017-10,inegi,910402,Inflacion mensual,0.28,porcentaje,valor mensual original,nacional
+2017-11,banxico,SF43783,TIIE a 28 dias,7.37982,porcentaje anual,promedio mensual,nacional
+2017-11,inegi,910402,Inflacion mensual,0.35,porcentaje,valor mensual original,nacional
+2017-12,banxico,SF43783,TIIE a 28 dias,7.5052473684210534,porcentaje anual,promedio mensual,nacional
+2017-12,inegi,910402,Inflacion mensual,0.5,porcentaje,valor mensual original,nacional
+2018-01,banxico,SF43783,TIIE a 28 dias,7.636059090909091,porcentaje anual,promedio mensual,nacional
+2018-01,inegi,910402,Inflacion mensual,0.04,porcentaje,valor mensual original,nacional
+2018-02,banxico,SF43783,TIIE a 28 dias,7.781915789473684,porcentaje anual,promedio mensual,nacional
+2018-02,inegi,910402,Inflacion mensual,0.45,porcentaje,valor mensual original,nacional
+2018-03,banxico,SF43783,TIIE a 28 dias,7.834136842105264,porcentaje anual,promedio mensual,nacional
+2018-03,inegi,910402,Inflacion mensual,0.4,porcentaje,valor mensual original,nacional
+2018-04,banxico,SF43783,TIIE a 28 dias,7.840461904761905,porcentaje anual,promedio mensual,nacional
+2018-04,inegi,910402,Inflacion mensual,-0.01,porcentaje,valor mensual original,nacional
+2018-05,banxico,SF43783,TIIE a 28 dias,7.850959090909091,porcentaje anual,promedio mensual,nacional
+2018-05,inegi,910402,Inflacion mensual,0.3,porcentaje,valor mensual original,nacional
+2018-06,banxico,SF43783,TIIE a 28 dias,7.928114285714285,porcentaje anual,promedio mensual,nacional
+2018-06,inegi,910402,Inflacion mensual,0.32,porcentaje,valor mensual original,nacional
+2018-07,banxico,SF43783,TIIE a 28 dias,8.104227272727274,porcentaje anual,promedio mensual,nacional
+2018-07,inegi,910402,Inflacion mensual,0.34,porcentaje,valor mensual original,nacional
+2018-08,banxico,SF43783,TIIE a 28 dias,8.106008695652173,porcentaje anual,promedio mensual,nacional
+2018-08,inegi,910402,Inflacion mensual,0.09,porcentaje,valor mensual original,nacional
+2018-09,banxico,SF43783,TIIE a 28 dias,8.114085,porcentaje anual,promedio mensual,nacional
+2018-09,inegi,910402,Inflacion mensual,0.26,porcentaje,valor mensual original,nacional
+2018-10,banxico,SF43783,TIIE a 28 dias,8.117917391304347,porcentaje anual,promedio mensual,nacional
+2018-10,inegi,910402,Inflacion mensual,0.39,porcentaje,valor mensual original,nacional
+2018-11,banxico,SF43783,TIIE a 28 dias,8.24542,porcentaje anual,promedio mensual,nacional
+2018-11,inegi,910402,Inflacion mensual,0.24,porcentaje,valor mensual original,nacional
+2018-12,banxico,SF43783,TIIE a 28 dias,8.410310526315788,porcentaje anual,promedio mensual,nacional
+2018-12,inegi,910402,Inflacion mensual,0.61,porcentaje,valor mensual original,nacional
+2019-01,banxico,SF43783,TIIE a 28 dias,8.59225909090909,porcentaje anual,promedio mensual,nacional
+2019-01,inegi,910402,Inflacion mensual,0.08,porcentaje,valor mensual original,nacional
+2019-02,banxico,SF43783,TIIE a 28 dias,8.5617,porcentaje anual,promedio mensual,nacional
+2019-02,inegi,910402,Inflacion mensual,0.36,porcentaje,valor mensual original,nacional
+2019-03,banxico,SF43783,TIIE a 28 dias,8.519020000000001,porcentaje anual,promedio mensual,nacional
+2019-03,inegi,910402,Inflacion mensual,0.35,porcentaje,valor mensual original,nacional
+2019-04,banxico,SF43783,TIIE a 28 dias,8.498155,porcentaje anual,promedio mensual,nacional
+2019-04,inegi,910402,Inflacion mensual,0.56,porcentaje,valor mensual original,nacional
+2019-05,banxico,SF43783,TIIE a 28 dias,8.506554545454547,porcentaje anual,promedio mensual,nacional
+2019-05,inegi,910402,Inflacion mensual,0.03,porcentaje,valor mensual original,nacional
+2019-06,banxico,SF43783,TIIE a 28 dias,8.507475,porcentaje anual,promedio mensual,nacional
+2019-06,inegi,910402,Inflacion mensual,0.38,porcentaje,valor mensual original,nacional
+2019-07,banxico,SF43783,TIIE a 28 dias,8.475221739130435,porcentaje anual,promedio mensual,nacional
+2019-07,inegi,910402,Inflacion mensual,0.38,porcentaje,valor mensual original,nacional
+2019-08,banxico,SF43783,TIIE a 28 dias,8.36980909090909,porcentaje anual,promedio mensual,nacional
+2019-08,inegi,910402,Inflacion mensual,0.09,porcentaje,valor mensual original,nacional
+2019-09,banxico,SF43783,TIIE a 28 dias,8.197109999999999,porcentaje anual,promedio mensual,nacional
+2019-09,inegi,910402,Inflacion mensual,0.2,porcentaje,valor mensual original,nacional
+2019-10,banxico,SF43783,TIIE a 28 dias,7.998604347826087,porcentaje anual,promedio mensual,nacional
+2019-10,inegi,910402,Inflacion mensual,0.23,porcentaje,valor mensual original,nacional
+2019-11,banxico,SF43783,TIIE a 28 dias,7.872655,porcentaje anual,promedio mensual,nacional
+2019-11,inegi,910402,Inflacion mensual,0.33,porcentaje,valor mensual original,nacional
+2019-12,banxico,SF43783,TIIE a 28 dias,7.696524999999999,porcentaje anual,promedio mensual,nacional
+2019-12,inegi,910402,Inflacion mensual,0.57,porcentaje,valor mensual original,nacional
+2020-01,banxico,SF43783,TIIE a 28 dias,7.530281818181819,porcentaje anual,promedio mensual,nacional
+2020-01,inegi,910402,Inflacion mensual,-0.04,porcentaje,valor mensual original,nacional
+2020-02,banxico,SF43783,TIIE a 28 dias,7.390531578947368,porcentaje anual,promedio mensual,nacional
+2020-02,inegi,910402,Inflacion mensual,0.33,porcentaje,valor mensual original,nacional
+2020-03,banxico,SF43783,TIIE a 28 dias,7.100676190476191,porcentaje anual,promedio mensual,nacional
+2020-03,inegi,910402,Inflacion mensual,0.23,porcentaje,valor mensual original,nacional
+2020-04,banxico,SF43783,TIIE a 28 dias,6.537730000000001,porcentaje anual,promedio mensual,nacional
+2020-04,inegi,910402,Inflacion mensual,0.06,porcentaje,valor mensual original,nacional
+2020-05,banxico,SF43783,TIIE a 28 dias,5.99545,porcentaje anual,promedio mensual,nacional
+2020-05,inegi,910402,Inflacion mensual,0.12,porcentaje,valor mensual original,nacional
+2020-06,banxico,SF43783,TIIE a 28 dias,5.648704545454546,porcentaje anual,promedio mensual,nacional
+2020-06,inegi,910402,Inflacion mensual,0.11,porcentaje,valor mensual original,nacional
+2020-07,banxico,SF43783,TIIE a 28 dias,5.231469565217392,porcentaje anual,promedio mensual,nacional
+2020-07,inegi,910402,Inflacion mensual,0.13,porcentaje,valor mensual original,nacional
+2020-08,banxico,SF43783,TIIE a 28 dias,4.967419047619048,porcentaje anual,promedio mensual,nacional
+2020-08,inegi,910402,Inflacion mensual,0.15,porcentaje,valor mensual original,nacional
+2020-09,banxico,SF43783,TIIE a 28 dias,4.720285714285715,porcentaje anual,promedio mensual,nacional
+2020-09,inegi,910402,Inflacion mensual,0.2,porcentaje,valor mensual original,nacional
+2020-10,banxico,SF43783,TIIE a 28 dias,4.532459090909091,porcentaje anual,promedio mensual,nacional
+2020-10,inegi,910402,Inflacion mensual,0.18,porcentaje,valor mensual original,nacional
+2020-11,banxico,SF43783,TIIE a 28 dias,4.498610526315789,porcentaje anual,promedio mensual,nacional
+2020-11,inegi,910402,Inflacion mensual,0.16,porcentaje,valor mensual original,nacional
+2020-12,banxico,SF43783,TIIE a 28 dias,4.485686363636364,porcentaje anual,promedio mensual,nacional
+2020-12,inegi,910402,Inflacion mensual,0.3,porcentaje,valor mensual original,nacional
+2021-01,banxico,SF43783,TIIE a 28 dias,4.468395,porcentaje anual,promedio mensual,nacional
+2021-01,inegi,910402,Inflacion mensual,0.14,porcentaje,valor mensual original,nacional
+2021-02,banxico,SF43783,TIIE a 28 dias,4.362863157894737,porcentaje anual,promedio mensual,nacional
+2021-02,inegi,910402,Inflacion mensual,0.25,porcentaje,valor mensual original,nacional
+2021-03,banxico,SF43783,TIIE a 28 dias,4.283331818181818,porcentaje anual,promedio mensual,nacional
+2021-03,inegi,910402,Inflacion mensual,0.47,porcentaje,valor mensual original,nacional
+2021-04,banxico,SF43783,TIIE a 28 dias,4.28445,porcentaje anual,promedio mensual,nacional
+2021-04,inegi,910402,Inflacion mensual,0.28,porcentaje,valor mensual original,nacional
+2021-05,banxico,SF43783,TIIE a 28 dias,4.285123809523809,porcentaje anual,promedio mensual,nacional
+2021-05,inegi,910402,Inflacion mensual,0.42,porcentaje,valor mensual original,nacional
+2021-06,banxico,SF43783,TIIE a 28 dias,4.31705,porcentaje anual,promedio mensual,nacional
+2021-06,inegi,910402,Inflacion mensual,0.48,porcentaje,valor mensual original,nacional
+2021-07,banxico,SF43783,TIIE a 28 dias,4.519322727272727,porcentaje anual,promedio mensual,nacional
+2021-07,inegi,910402,Inflacion mensual,0.36,porcentaje,valor mensual original,nacional
+2021-08,banxico,SF43783,TIIE a 28 dias,4.645490909090909,porcentaje anual,promedio mensual,nacional
+2021-08,inegi,910402,Inflacion mensual,0.12,porcentaje,valor mensual original,nacional
+2021-09,banxico,SF43783,TIIE a 28 dias,4.74612380952381,porcentaje anual,promedio mensual,nacional
+2021-09,inegi,910402,Inflacion mensual,0.21,porcentaje,valor mensual original,nacional
+2021-10,banxico,SF43783,TIIE a 28 dias,4.975090476190476,porcentaje anual,promedio mensual,nacional
+2021-10,inegi,910402,Inflacion mensual,0.38,porcentaje,valor mensual original,nacional
+2021-11,banxico,SF43783,TIIE a 28 dias,5.125545000000001,porcentaje anual,promedio mensual,nacional
+2021-11,inegi,910402,Inflacion mensual,0.43,porcentaje,valor mensual original,nacional
+2021-12,banxico,SF43783,TIIE a 28 dias,5.442573913043478,porcentaje anual,promedio mensual,nacional
+2021-12,inegi,910402,Inflacion mensual,0.68,porcentaje,valor mensual original,nacional
+2022-01,banxico,SF43783,TIIE a 28 dias,5.723766666666667,porcentaje anual,promedio mensual,nacional
+2022-01,inegi,910402,Inflacion mensual,0.19,porcentaje,valor mensual original,nacional
+2022-02,banxico,SF43783,TIIE a 28 dias,6.022657894736842,porcentaje anual,promedio mensual,nacional
+2022-02,inegi,910402,Inflacion mensual,0.52,porcentaje,valor mensual original,nacional
+2022-03,banxico,SF43783,TIIE a 28 dias,6.3347181818181815,porcentaje anual,promedio mensual,nacional
+2022-03,inegi,910402,Inflacion mensual,0.47,porcentaje,valor mensual original,nacional
+2022-04,banxico,SF43783,TIIE a 28 dias,6.7318263157894735,porcentaje anual,promedio mensual,nacional
+2022-04,inegi,910402,Inflacion mensual,0.48,porcentaje,valor mensual original,nacional
+2022-05,banxico,SF43783,TIIE a 28 dias,7.013790909090909,porcentaje anual,promedio mensual,nacional
+2022-05,inegi,910402,Inflacion mensual,0.33,porcentaje,valor mensual original,nacional
+2022-06,banxico,SF43783,TIIE a 28 dias,7.421636363636364,porcentaje anual,promedio mensual,nacional
+2022-06,inegi,910402,Inflacion mensual,0.5,porcentaje,valor mensual original,nacional
+2022-07,banxico,SF43783,TIIE a 28 dias,8.037290476190476,porcentaje anual,promedio mensual,nacional
+2022-07,inegi,910402,Inflacion mensual,0.5,porcentaje,valor mensual original,nacional
+2022-08,banxico,SF43783,TIIE a 28 dias,8.498047826086957,porcentaje anual,promedio mensual,nacional
+2022-08,inegi,910402,Inflacion mensual,0.39,porcentaje,valor mensual original,nacional
+2022-09,banxico,SF43783,TIIE a 28 dias,8.891095238095238,porcentaje anual,promedio mensual,nacional
+2022-09,inegi,910402,Inflacion mensual,0.35,porcentaje,valor mensual original,nacional
+2022-10,banxico,SF43783,TIIE a 28 dias,9.562538095238095,porcentaje anual,promedio mensual,nacional
+2022-10,inegi,910402,Inflacion mensual,0.33,porcentaje,valor mensual original,nacional
+2022-11,banxico,SF43783,TIIE a 28 dias,9.998965,porcentaje anual,promedio mensual,nacional
+2022-11,inegi,910402,Inflacion mensual,0.48,porcentaje,valor mensual original,nacional
+2022-12,banxico,SF43783,TIIE a 28 dias,10.52537619047619,porcentaje anual,promedio mensual,nacional
+2022-12,inegi,910402,Inflacion mensual,0.53,porcentaje,valor mensual original,nacional
+2023-01,banxico,SF43783,TIIE a 28 dias,10.780886363636363,porcentaje anual,promedio mensual,nacional
+2023-01,inegi,910402,Inflacion mensual,0.48,porcentaje,valor mensual original,nacional
+2023-02,banxico,SF43783,TIIE a 28 dias,11.101473684210527,porcentaje anual,promedio mensual,nacional
+2023-02,inegi,910402,Inflacion mensual,0.56,porcentaje,valor mensual original,nacional
+2023-03,banxico,SF43783,TIIE a 28 dias,11.336627272727272,porcentaje anual,promedio mensual,nacional
+2023-03,inegi,910402,Inflacion mensual,0.62,porcentaje,valor mensual original,nacional
+2023-04,banxico,SF43783,TIIE a 28 dias,11.528288888888888,porcentaje anual,promedio mensual,nacional
+2023-04,inegi,910402,Inflacion mensual,0.25,porcentaje,valor mensual original,nacional
+2023-05,banxico,SF43783,TIIE a 28 dias,11.535522727272728,porcentaje anual,promedio mensual,nacional
+2023-05,inegi,910402,Inflacion mensual,0.29,porcentaje,valor mensual original,nacional
+2023-06,banxico,SF43783,TIIE a 28 dias,11.501090909090909,porcentaje anual,promedio mensual,nacional
+2023-06,inegi,910402,Inflacion mensual,0.33,porcentaje,valor mensual original,nacional
+2023-07,banxico,SF43783,TIIE a 28 dias,11.500861904761905,porcentaje anual,promedio mensual,nacional
+2023-07,inegi,910402,Inflacion mensual,0.49,porcentaje,valor mensual original,nacional
+2023-08,banxico,SF43783,TIIE a 28 dias,11.499778260869563,porcentaje anual,promedio mensual,nacional
+2023-08,inegi,910402,Inflacion mensual,0.31,porcentaje,valor mensual original,nacional
+2023-09,banxico,SF43783,TIIE a 28 dias,11.50325238095238,porcentaje anual,promedio mensual,nacional
+2023-09,inegi,910402,Inflacion mensual,0.43,porcentaje,valor mensual original,nacional
+2023-10,banxico,SF43783,TIIE a 28 dias,11.503368181818182,porcentaje anual,promedio mensual,nacional
+2023-10,inegi,910402,Inflacion mensual,0.44,porcentaje,valor mensual original,nacional
+2023-11,banxico,SF43783,TIIE a 28 dias,11.505175,porcentaje anual,promedio mensual,nacional
+2023-11,inegi,910402,Inflacion mensual,0.42,porcentaje,valor mensual original,nacional
+2023-12,banxico,SF43783,TIIE a 28 dias,11.504194736842106,porcentaje anual,promedio mensual,nacional
+2023-12,inegi,910402,Inflacion mensual,0.58,porcentaje,valor mensual original,nacional
+2024-01,banxico,SF43783,TIIE a 28 dias,11.500872727272727,porcentaje anual,promedio mensual,nacional
+2024-01,inegi,910402,Inflacion mensual,0.4,porcentaje,valor mensual original,nacional
+2024-02,banxico,SF43783,TIIE a 28 dias,11.495745,porcentaje anual,promedio mensual,nacional
+2024-02,inegi,910402,Inflacion mensual,0.6099999999999999,porcentaje,valor mensual original,nacional
+2024-03,banxico,SF43783,TIIE a 28 dias,11.441177777777778,porcentaje anual,promedio mensual,nacional
+2024-03,inegi,910402,Inflacion mensual,0.69,porcentaje,valor mensual original,nacional
+2024-04,banxico,SF43783,TIIE a 28 dias,11.2467,porcentaje anual,promedio mensual,nacional
+2024-04,inegi,910402,Inflacion mensual,0.1,porcentaje,valor mensual original,nacional
+2024-05,banxico,SF43783,TIIE a 28 dias,11.239631818181818,porcentaje anual,promedio mensual,nacional
+2024-05,inegi,910402,Inflacion mensual,0.2999999999999999,porcentaje,valor mensual original,nacional
+2024-06,banxico,SF43783,TIIE a 28 dias,11.244945,porcentaje anual,promedio mensual,nacional
+2024-06,inegi,910402,Inflacion mensual,0.27,porcentaje,valor mensual original,nacional
+2024-07,banxico,SF43783,TIIE a 28 dias,11.245565217391302,porcentaje anual,promedio mensual,nacional
+2024-07,inegi,910402,Inflacion mensual,0.55,porcentaje,valor mensual original,nacional
+2024-08,banxico,SF43783,TIIE a 28 dias,11.08025,porcentaje anual,promedio mensual,nacional
+2024-08,inegi,910402,Inflacion mensual,0.27,porcentaje,valor mensual original,nacional
+2024-09,banxico,SF43783,TIIE a 28 dias,10.950050000000001,porcentaje anual,promedio mensual,nacional
+2024-09,inegi,910402,Inflacion mensual,0.3499999999999999,porcentaje,valor mensual original,nacional
+2024-10,banxico,SF43783,TIIE a 28 dias,10.73550909090909,porcentaje anual,promedio mensual,nacional
+2024-10,inegi,910402,Inflacion mensual,0.32,porcentaje,valor mensual original,nacional
+2024-11,banxico,SF43783,TIIE a 28 dias,10.605735,porcentaje anual,promedio mensual,nacional
+2024-11,inegi,910402,Inflacion mensual,0.3499999999999999,porcentaje,valor mensual original,nacional
+2024-12,banxico,SF43783,TIIE a 28 dias,10.38072,porcentaje anual,promedio mensual,nacional
+2024-12,inegi,910402,Inflacion mensual,0.6099999999999999,porcentaje,valor mensual original,nacional
+2025-01,banxico,SF43783,TIIE a 28 dias,10.282522727272728,porcentaje anual,promedio mensual,nacional
+2025-01,inegi,910402,Inflacion mensual,0.17,porcentaje,valor mensual original,nacional
+2025-02,banxico,SF43783,TIIE a 28 dias,9.878884210526316,porcentaje anual,promedio mensual,nacional
+2025-02,inegi,910402,Inflacion mensual,0.55,porcentaje,valor mensual original,nacional
+2025-03,banxico,SF43783,TIIE a 28 dias,9.73917,porcentaje anual,promedio mensual,nacional
+2025-03,inegi,910402,Inflacion mensual,0.4099999999999999,porcentaje,valor mensual original,nacional
+2025-04,banxico,SF43783,TIIE a 28 dias,9.27798,porcentaje anual,promedio mensual,nacional
+2025-04,inegi,910402,Inflacion mensual,0.2999999999999999,porcentaje,valor mensual original,nacional
+2025-05,banxico,SF43783,TIIE a 28 dias,9.049938095238096,porcentaje anual,promedio mensual,nacional
+2025-05,inegi,910402,Inflacion mensual,0.2399999999999999,porcentaje,valor mensual original,nacional
+2025-06,banxico,SF43783,TIIE a 28 dias,8.736004761904761,porcentaje anual,promedio mensual,nacional
+2025-06,inegi,910402,Inflacion mensual,0.38,porcentaje,valor mensual original,nacional
+2025-07,banxico,SF43783,TIIE a 28 dias,8.255734782608696,porcentaje anual,promedio mensual,nacional
+2025-07,inegi,910402,Inflacion mensual,0.39,porcentaje,valor mensual original,nacional
+2025-08,banxico,SF43783,TIIE a 28 dias,8.08585238095238,porcentaje anual,promedio mensual,nacional
+2025-08,inegi,910402,Inflacion mensual,0.23,porcentaje,valor mensual original,nacional
+2025-09,banxico,SF43783,TIIE a 28 dias,8.017838095238096,porcentaje anual,promedio mensual,nacional
+2025-09,inegi,910402,Inflacion mensual,0.32,porcentaje,valor mensual original,nacional
+2025-10,banxico,SF43783,TIIE a 28 dias,7.812278260869565,porcentaje anual,promedio mensual,nacional
+2025-10,inegi,910402,Inflacion mensual,0.39,porcentaje,valor mensual original,nacional
+2025-11,banxico,SF43783,TIIE a 28 dias,7.609752631578947,porcentaje anual,promedio mensual,nacional
+2025-11,inegi,910402,Inflacion mensual,0.39,porcentaje,valor mensual original,nacional
+2025-12,banxico,SF43783,TIIE a 28 dias,7.470957142857142,porcentaje anual,promedio mensual,nacional
+2025-12,inegi,910402,Inflacion mensual,0.4799999999999999,porcentaje,valor mensual original,nacional
+2026-01,banxico,SF43783,TIIE a 28 dias,7.30197619047619,porcentaje anual,promedio mensual,nacional
+2026-01,inegi,910402,Inflacion mensual,0.2999999999999999,porcentaje,valor mensual original,nacional
+2026-02,banxico,SF43783,TIIE a 28 dias,7.286452631578947,porcentaje anual,promedio mensual,nacional
+2026-02,inegi,910402,Inflacion mensual,0.52,porcentaje,valor mensual original,nacional
+2026-03,banxico,SF43783,TIIE a 28 dias,7.241652380952381,porcentaje anual,promedio mensual,nacional
+2026-03,inegi,910402,Inflacion mensual,0.4799999999999999,porcentaje,valor mensual original,nacional
+2026-04,banxico,SF43783,TIIE a 28 dias,7.021694999999999,porcentaje anual,promedio mensual,nacional
+2026-04,inegi,910402,Inflacion mensual,0.31,porcentaje,valor mensual original,nacional
+2026-05,banxico,SF43783,TIIE a 28 dias,6.828245,porcentaje anual,promedio mensual,nacional
+2026-05,inegi,910402,Inflacion mensual,0.2899999999999999,porcentaje,valor mensual original,nacional
+2026-06,banxico,SF43783,TIIE a 28 dias,6.728918181818182,porcentaje anual,promedio mensual,nacional
+2026-06,inegi,910402,Inflacion mensual,0.2999999999999999,porcentaje,valor mensual original,nacional
+2026-07,banxico,SF43783,TIIE a 28 dias,6.759378260869565,porcentaje anual,promedio mensual,nacional
+2026-07,inegi,910402,Inflacion mensual,0.26,porcentaje,valor mensual original,nacional
+2026-08,banxico,SF43783,TIIE a 28 dias,6.755880952380953,porcentaje anual,promedio mensual,nacional
+2026-08,inegi,910402,Inflacion mensual,0.2099999999999999,porcentaje,valor mensual original,nacional
+2026-09,banxico,SF43783,TIIE a 28 dias,6.771652380952381,porcentaje anual,promedio mensual,nacional
+2026-09,inegi,910402,Inflacion mensual,0.26,porcentaje,valor mensual original,nacional
+2026-10,banxico,SF43783,TIIE a 28 dias,6.772322727272726,porcentaje anual,promedio mensual,nacional
+2026-10,inegi,910402,Inflacion mensual,0.44,porcentaje,valor mensual original,nacional
+2026-11,banxico,SF43783,TIIE a 28 dias,6.662925,porcentaje anual,promedio mensual,nacional

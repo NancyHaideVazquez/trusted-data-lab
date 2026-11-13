@@ -194,12 +194,63 @@ Los archivos originales se conservan para mantener la trazabilidad, reproducibil
 
 La actualización de las capturas no modifica automáticamente los resultados del diagnóstico T03, por lo que este deberá ejecutarse nuevamente sobre los archivos actuales.
 
-## 8. Conclusión
+## 8. Diccionario de datos de la capa Oro
 
-Se documentaron los campos originales de INEGI y Banco de México, junto con sus tipos de datos esperados, frecuencias, unidades y propuestas de nombres canónicos.
+La capa Oro contiene los indicadores mensuales de INEGI y Banco de México preparados para consulta y análisis.
 
-Las nuevas capturas del 12 de noviembre de 2026 permitieron actualizar la cobertura temporal de ambas fuentes.
+El archivo generado es:
 
-El diagnóstico inicial identificó valores faltantes en la serie histórica de Banxico, concentrados en 1995 y 1996, mientras que la serie de INEGI no presentó valores faltantes en la captura analizada.
+`data/oro/indicadores_mensuales.csv`
 
-Se conservarán los archivos originales de la capa Bronce y se actualizará el diagnóstico de calidad antes de continuar con el análisis de mecanismos de ausencia y la preparación de la capa Plata.
+La tabla conserva 564 observaciones: 183 de INEGI y 381 de Banxico.
+
+### Estructura de la tabla
+
+| Campo | Tipo esperado | Descripción |
+|---|---|---|
+| `periodo` | Fecha | Mes al que corresponde la observación |
+| `fuente` | Texto | Organismo de procedencia: INEGI o Banxico |
+| `serie_id` | Texto | Identificador oficial de la serie |
+| `indicador` | Texto | Nombre del indicador económico |
+| `valor` | Decimal | Valor mensual de la observación |
+| `unidad` | Texto | Unidad de medida correspondiente al indicador |
+| `metodo` | Texto | Método utilizado para obtener el valor mensual |
+| `cobertura` | Texto | Ámbito geográfico del indicador |
+
+### Granularidad
+
+Cada fila representa una observación mensual de una serie económica.
+
+La combinación de `fuente`, `serie_id` y `periodo` identifica una observación.
+
+Los datos de Banxico se obtienen mediante agregación mensual de sus registros diarios. Los datos de INEGI conservan su frecuencia mensual original.
+
+### Reglas de calidad
+
+Antes de publicar los registros, el pipeline aplica una validación mediante Pandera.
+
+Se comprueban los campos requeridos, los tipos de datos, los periodos válidos, los valores numéricos y la ausencia de duplicados por serie y mes.
+
+Los registros que no cumplen las reglas se envían a Cuarentena cuando sus errores pueden identificarse de manera individual.
+
+### Conservación de las unidades
+
+Los valores de INEGI y Banxico representan indicadores distintos.
+
+Por esta razón, el pipeline conserva cada serie por separado y no suma ni promedia valores entre fuentes.
+
+La unidad y el nombre oficial del indicador INEGI deben verificarse contra la documentación de la fuente, tal como se indica en los apartados anteriores de este diccionario.
+
+## 9. Conclusión
+
+Se documentaron los campos originales de INEGI y Banco de México, junto con sus tipos de datos esperados, frecuencias, unidades y nombres canónicos utilizados durante el procesamiento.
+
+Las capturas históricas del 12 de noviembre de 2026 permitieron actualizar la cobertura temporal de ambas fuentes y ejecutar nuevamente el diagnóstico de calidad.
+
+El procesamiento identificó 200 valores faltantes en Banxico y ninguno en INEGI. Se adoptó una política conservadora que evita imputar automáticamente los valores no publicados y mantiene intactos los archivos originales de Bronce.
+
+Mediante la reducción mensual y la integración de las fuentes se obtuvieron 564 observaciones válidas, publicadas en Plata y Oro.
+
+También se documentaron las ocho columnas de la capa Oro, su granularidad mensual y las reglas generales de calidad utilizadas para validar los registros.
+
+Queda pendiente verificar el nombre oficial y la unidad del indicador INEGI, así como completar las investigaciones adicionales sobre los mecanismos de ausencia.
