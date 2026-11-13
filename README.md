@@ -1,91 +1,94 @@
 # Observatorio de Vivienda y Costos de Colima
 
-**Proyecto Integrador TRUSTED DATA LAB**
-Observatorio de datos certificado. Proyecto integrador de Ingeniería de Datos, Análisis Estadístico y Calidad en los Sistemas de Información. Proyecto de observatorio de datos para la recopilación, almacenamiento y análisis de información histórica.
+**Proyecto Integrador · TRUSTED DATA LAB**
+**Materias:** Ingeniería de Datos, Análisis Estadístico y Calidad en los Sistemas de Información.
 
 ## Descripción
 
-Este proyecto tiene como objetivo desarrollar un observatorio de datos sobre la evolución de los costos asociados a la vivienda en Colima y Villa de Álvarez, mediante la recopilación, procesamiento y análisis de información económica de fuentes oficiales.
+Este proyecto desarrolla un observatorio de datos sobre la evolución de los costos asociados a la vivienda en Colima y Villa de Álvarez mediante la recopilación, procesamiento y análisis de información económica de fuentes oficiales.
 
 **Pregunta central:** ¿Cómo evolucionan los costos económicos relacionados con la vivienda y las condiciones de financiamiento, y qué información pública permite describir las características y diferencias de vivienda entre Colima, Villa de Álvarez y otras zonas comparables?
 
-El observatorio permitirá estudiar el comportamiento histórico de indicadores relacionados con rentas, servicios de vivienda, inflación y costo del crédito, así como realizar comparaciones con otras ciudades mexicanas.
-
-El desarrollo integra conocimientos de Ingeniería de Datos, Análisis Estadístico para Ciencia de Datos y Calidad en los Sistemas de Información.
+El observatorio estudia series históricas e indicadores relacionados con la inflación, los servicios asociados a la vivienda y el costo del crédito. Los indicadores disponibles no sustituyen mediciones directas de rentas o precios inmobiliarios donde estas no existan en las fuentes consultadas.
 
 ## Objetivo general
 
-Desarrollar un observatorio de datos que integre información económica de fuentes oficiales, aplique técnicas estadísticas para identificar tendencias y realizar pronósticos, y garantice la confiabilidad de sus resultados mediante procesos de validación y aseguramiento de calidad.
+Desarrollar un observatorio que integre información económica oficial, aplique técnicas estadísticas para identificar tendencias y producir pronósticos, y aporte trazabilidad y confiabilidad mediante validación y aseguramiento de calidad.
 
 ## Fuentes de datos
 
-Se utilizarán principalmente dos fuentes oficiales:
+- **INEGI:** API de Indicadores; información histórica económica, incluida la serie de inflación analizada en E1.
+- **Banco de México (Banxico):** API del Sistema de Información Económica (SIE); indicadores financieros, incluida la TIIE analizada en E1.
 
-- **INEGI:** API de Indicadores para consultar información histórica relacionada con vivienda y economía.
-- **Banco de México (Banxico):** API del Sistema de Información Económica (SIE) para consultar indicadores financieros relacionados con el costo del crédito.
-
-Los indicadores específicos se seleccionarán y verificarán durante la etapa inicial.
+Las capturas originales se conservan en Bronce y se atribuyen a las instituciones de origen.
 
 ## Tecnologías
 
-- Python 3.11
-- Requests
-- Pandas
-- Git y GitHub
-- GitHub Actions
-- Pytest
+- Python 3.11, Requests y Pandas.
+- Pandera para validación de estructuras y reglas de datos.
+- Statsmodels para análisis de series temporales y pronósticos.
+- Pytest y pytest-cov para pruebas y cobertura.
+- Ruff para revisión estática de código.
+- Git, GitHub y GitHub Actions para versionado y automatización.
+- Gitleaks y pip-audit para revisiones de secretos y dependencias.
 
-Se incorporarán herramientas adicionales conforme avancen las etapas del proyecto.
+Las dependencias declaradas del proyecto están en [`requirements.txt`](requirements.txt).
 
-## Arquitectura y estructura
-Se utiliza una arquitectura por capas: Bronce conserva las respuestas originales y metadatos; Plata y Oro se desarrollarán en etapas posteriores. El orquestador coordina los extractores y registra las ejecuciones.
+## Arquitectura de datos
+
+El proyecto utiliza un flujo de procesamiento **Bronce → Plata → Oro**, con una **Cuarentena** para los registros que incumplen reglas de calidad.
+
+| Capa o componente | Función |
+|---|---|
+| **Bronce** | Conserva archivos originales y metadatos de las capturas para trazabilidad. |
+| **Plata** | Contiene datos limpios, armonizados y validados procedentes de las fuentes oficiales. |
+| **Oro** | Publica datos integrados y preparados para consumo analítico. |
+| **Cuarentena** | Separa registros rechazados y registra sus motivos sin mezclarlos con los datos válidos. |
+| **Reportes y pruebas** | Documentan diagnósticos, reglas de calidad, modelos y verificaciones reproducibles. |
+
+### Estructura principal del repositorio
 
 ```text
-tdl-equipo/
-├── docs/
-│   ├── EE0/
-│   │   ├── propuesta.md
-│   │   ├── relatoria-E0.md
-│   │   ├── ENTREGA.md
-│   │   └── evidencias/
-│   ├── E1/
-│   ├── E2/
-│   ├── E3/
-│   └── E4/
+trusted-data-lab/
+├── .github/
+│   └── workflows/
+│       ├── captura.yml
+│       └── calidad-e1.yml
 ├── calidad/
 │   ├── tiempo-nancy.csv
 │   ├── defectos-nancy.csv
 │   ├── tiempo-david.csv
 │   └── defectos-david.csv
-├── extractores/
-│   ├── __init__.py
-│   ├── base.py
-│   ├── inegi.py
-│   ├── banxico.py
-│   └── main.py
-├── pipeline/
 ├── data/
 │   ├── bronce/
 │   ├── plata/
 │   ├── oro/
 │   └── cuarentena/
-├── laboratorio/
+├── docs/
+│   ├── E0/
+│   ├── E1/
+│   │   ├── estadistica/
+│   │   ├── plan_sqa.md
+│   │   ├── matriz_requerimientos.md
+│   │   └── ENTREGA.md          # Documento de cierre E1
+│   └── relatoria-E1.md         # Documento de cierre E1
+├── extractores/
+├── src/
 ├── tests/
 ├── logs/
 │   └── capturas.csv
-├── .github/
-│   └── workflows/
-│       └── captura.yml
 ├── requirements.txt
 ├── .env.example
-├── .gitignore
 └── README.md
 ```
 
+Los documentos de cierre de E1 se encuentran enlazados a continuación. Su presencia y los enlaces relativos deben verificarse en la rama de trabajo antes del cierre.
+
 ## Requisitos e instalación
-- Python 3.11 (utilizado en GitHub Actions).
-- Git y acceso a Internet para las APIs oficiales.
-- Tokens personales vigentes de INEGI y Banxico.
+
+- Python 3.11 y Git.
+- Acceso a Internet y tokens vigentes de las APIs para realizar nuevas capturas.
+- No se requieren tokens para ejecutar las pruebas que usan datos de prueba y recursos locales.
 
 Clonar el repositorio:
 
@@ -94,146 +97,179 @@ git clone https://github.com/NancyHaideVazquez/trusted-data-lab.git
 cd trusted-data-lab
 ```
 
-Crear un entorno virtual:
+Crear el entorno virtual:
 
 ```bash
 python -m venv .venv
 ```
 
-Activarlo en PowerShell:
+Activarlo en **PowerShell**:
 
 ```powershell
 .\.venv\Scripts\Activate.ps1
 ```
 
-En Linux o macOS, para activar el entorno virtual utiliza 
-```bash
-source .venv/bin/activate.
-```
-
-Instalar las dependencias:
+En **Linux o macOS**:
 
 ```bash
-pip install -r requirements.txt
+source .venv/bin/activate
 ```
 
-## Configuración
+Instalar dependencias:
 
-Para ejecutar localmente, crea .env en la raíz del proyecto, tomando .env.example como referencia si está disponible:
+```bash
+python -m pip install -r requirements.txt
+```
 
-- `INEGI_TOKEN=REEMPLAZAR_CON_TOKEN_REAL`
-- `BANXICO_TOKEN=REEMPLAZAR_CON_TOKEN_REAL`
-- `TDL_CONTACTO=correo-real-del-equipo@ejemplo.org`
+## Configuración y seguridad
 
-Las APIs de INEGI y Banxico requieren configurar los tokens de acceso correspondientes.
+Para realizar capturas locales, crear un archivo `.env` privado en la raíz, tomando `.env.example` como referencia:
 
-En GitHub para las ejecuciones automáticas se configuran en Settings → Secrets and variables → Actions, los tokens se almacenarán en **GitHub Actions Secrets** con los siguientes nombres:
+```dotenv
+INEGI_TOKEN=REEMPLAZAR_CON_TOKEN_REAL
+BANXICO_TOKEN=REEMPLAZAR_CON_TOKEN_REAL
+TDL_CONTACTO=correo-del-equipo@ejemplo.org
+```
 
-- `INEGI_TOKEN`
-- `BANXICO_TOKEN`
+En GitHub, los tokens se almacenan como **Actions Secrets** (`INEGI_TOKEN` y `BANXICO_TOKEN`), y `TDL_CONTACTO` se configura como variable, según la configuración del workflow de captura.
 
-El correo se almacena en Variables. El workflow los inyecta como variables de entorno con el siguiente nombre:
-- `TDL_CONTACTO` 
+**Nunca publicar** `.env`, tokens, credenciales o URLs que contengan secretos. Las revisiones con Gitleaks y pip-audit están documentadas en [Evidencia de seguridad E1](docs/E1/evidencia_seguridad.md).
 
-Seguridad: nunca publicar .env, tokens, credenciales ni URLs completas que incluyan un token directamente en el código ni publicarse en el repositorio.
+## Captura y procesamiento
 
-## Ejecución
-
-Una vez implementados y configurados los extractores, la captura podrá ejecutarse mediante:
+Ejecutar la captura con los extractores configurados:
 
 ```bash
 python -m extractores.main
 ```
-Descarga del histórico disponible
+
+Solicitar descarga histórica disponible:
+
 ```bash
 python -m extractores.main --historico
 ```
 
-LoLas capturas se almacenan en `data/bronce/<fuente>/<AAAA-MM-DD>/` y las ejecuciones se registran en logs/capturas.csv. Una captura diaria no implica que la institución publique un nuevo periodo cada día.
-La automatización se realizará mediante GitHub Actions.
+Las respuestas se almacenan bajo `data/bronce/`, y las ejecuciones se registran en [`logs/capturas.csv`](logs/capturas.csv). Una captura exitosa no significa que la fuente haya publicado un nuevo periodo.
+
+El procesamiento posterior realiza diagnóstico, limpieza, integración, validación y publicación a Plata y Oro. La arquitectura y las etapas implementadas se explican en:
+
+- [Análisis del pipeline E1](docs/E1/analisis_pipeline.md).
+- [Integración de fuentes](docs/E1/analisis_integracion.md).
+- [Validación de calidad](docs/E1/validacion_calidad.md).
+- [Análisis de Cuarentena](docs/E1/analisis_cuarentena.md).
 
 ## Automatización con GitHub Actions
-El workflow [`.github/workflows/captura.yml`](.github/workflows/captura.yml) contempla:
 
-- Ejecución programada: 0 12 * * * (12:00 UTC).
-- Ejecución manual: workflow_dispatch desde Actions.
-- Instalación de Python 3.11 y dependencias.
-- Captura con python -m extractores.main.
-- Registro y commit de resultados cuando hay archivos nuevos y permisos suficientes.
-- Verificación del resultado para detectar fallos de captura.
+### Captura de fuentes
 
-## Extracción ética, trazabilidad y calidad
+El workflow [`captura.yml`](.github/workflows/captura.yml) permite la ejecución programada y manual de los extractores, registra resultados y puede incorporar nuevas capturas al repositorio. En la configuración trabajada en E1, la programación es `*/5 * * * *` (cada cinco minutos en UTC); GitHub Actions no garantiza una ejecución exacta al minuto.
 
-extractores/base.py implementa consultas HTTPS con identificación mediante User-Agent, contacto del equipo, pausa mínima de 1.5 segundos por dominio, reintentos limitados ante HTTP 429/5xx y protección de tokens en las URLs registradas. Las consultas a INEGI y Banxico utilizan sus APIs oficiales.
+### Integración continua de calidad
 
-Se revisaron las rutas de los archivos robots.txt de ambas instituciones y sus términos de uso: INEGI y Banco de México. Las rutas de API consultadas no coincidían con las restricciones identificadas; esto no representa autorización general para cualquier extracción. Se atribuirá la información a las instituciones de origen.
+El workflow [`calidad-e1.yml`](.github/workflows/calidad-e1.yml) se activa mediante `push`, `pull_request` o ejecución manual. Comprueba:
 
-Los objetivos iniciales de calidad —metas, no resultados alcanzados— son:
-- Disponibilidad de captura ≥ 95 %.
-- Completitud de datos ≥ 95 %.
-- Cobertura de pruebas automatizadas ≥ 60 %.
-- Cero credenciales expuestas en el repositorio (medida complementaria de seguridad).
-Cada integrante mantiene registros PSP de tiempo y defectos en calidad/; las evidencias y verificaciones se vinculan en la documentación de cada etapa.
+1. **Ruff** sobre `src` y `tests`.
+2. **Pytest** sobre `tests/`.
+3. **Pruebas de la puerta de calidad**, incluidas validaciones de datos, Cuarentena y pipeline.
 
-## Documentación y evidencias E0
+La ejecución **Calidad E1 - Trusted Data Lab #1**, asociada al commit `02dc26e`, se observó completada satisfactoriamente en GitHub Actions. Esto demuestra la ejecución del workflow, sin implicar una auditoría exhaustiva de todas las capturas históricas.
 
-- [Propuesta del observatorio](docs/E0/propuesta.md): problema, preguntas E1–E3, entrevista y plan de recopilación.
-- [Relatoría E0](docs/E0/relatoria-E0.md): cronología, decisiones, defectos y aprendizajes.
-- [Ficha técnica de entrega](docs/E0/ENTREGA.md): requisitos y enlaces de evidencia.
-- [Evidencias visuales](docs/E0/evidencias/): capturas de ejecución, validaciones, Bronce, entrevista y contribuciones, cuando estén publicadas y autorizadas.
-La entrevista de campo se realizó mediante WhatsApp con una persona del sector inmobiliario. Se documentaron sus respuestas y aprendizajes; la duración y modalidad deben consignarse conforme a lo ocurrido y a lo aceptado por los docentes.
+Pruebas locales verificadas durante E1:
 
-## Etapas y entregables
-
-El proyecto se desarrolla en cinco entregas que integran las actividades de las tres materias.
-
-| Entrega | Fecha | Entregables principales |
-|---|---|---|
-| **E0 — Arranque** | 6 de noviembre | Propuesta del observatorio, entrevista, plan de recopilación, dos fuentes funcionando, serie histórica de al menos 36 periodos, captura automática y registros iniciales de calidad. |
-| **E1 — Datos de confianza y pronóstico** | 13 de noviembre | Limpieza e integración de datos, capas Plata y Oro, puerta de calidad, modelos de pronóstico, métricas de fiabilidad, plan SQA y pruebas automatizadas. |
-| **E2 — Experimento y auditoría** | 23 de noviembre | Fuente especializada, experimento factorial, análisis ANOVA, evaluación ISO/IEC 25010 y 25012, y auditoría cruzada. |
-| **E3 — Mapa multivariado y sello** | 30 de noviembre | Análisis PCA y MANOVA, mapa multivariado, optimización del sistema, dataset publicado, cierre de auditoría y solicitud del Sello TDL. |
-| **E4 — Demo Day y cierre** | 2 y 4 de diciembre | Presentación del observatorio, demostración en vivo, reporte de inteligencia, reporte técnico final, relatoría final, modelo de negocio y video de presentación. |
-
-
-### Organización de las entregas
-
-Cada entrega se documentará dentro de `docs/`, utilizando una carpeta independiente.
-
-```text
-docs/
-├── E0/
-│   ├── propuesta.md
-│   └── ENTREGA.md
-├── E1/
-│   └── ENTREGA.md
-├── E2/
-│   └── ENTREGA.md
-├── E3/
-│   └── ENTREGA.md
-└── E4/
-    └── ENTREGA.md
+```bash
+python -m ruff check src tests --output-format concise
+python -m pytest tests/ -q
 ```
 
-El archivo `ENTREGA.md` incluirá las evidencias correspondientes a Ingeniería de Datos, Análisis Estadístico y Calidad en los Sistemas de Información, con enlaces al código, análisis y documentación.
+**Resultado local actualizado (13 de noviembre): 131 pruebas aprobadas y 65 % de cobertura de `src`**, superior a la meta del 60 %. Evidencia en [`docs/E1/evidencia_pruebas_cobertura.txt`](docs/E1/evidencia_pruebas_cobertura.txt), commit [`85d6cae`](https://github.com/NancyHaideVazquez/trusted-data-lab/commit/85d6cae) de `e1parte1d`. Ruff sin observaciones corresponde a la verificación anterior; la integración a `main` y el CI del nuevo commit están pendientes de comprobar.
 
-Cada entrega deberá quedar registrada mediante una etiqueta de Git (`e0`, `e1`, `e2`, `e3` y `e4`) para conservar una versión verificable del proyecto.
+## Resultados de Ingeniería de Datos · E1
 
-Las etapas E1, E2 y E3 también incluirán una relatoría de máximo dos páginas, ubicada en `docs/relatoria-E1.md`, `docs/relatoria-E2.md` y `docs/relatoria-E3.md`, respectivamente.
+Se desarrollaron los siguientes trabajos:
 
+- Diagnóstico de valores faltantes y decisiones de tratamiento.
+- Identificación y evaluación de valores atípicos y ruido.
+- Escalado, discretización y reducción de datos con análisis comparativos.
+- Integración de datos de INEGI y Banxico, con armonización de esquemas y valores.
+- Puerta de calidad automatizada con Cuarentena y motivos de rechazo.
+- Trazabilidad de archivos originales mediante huellas SHA-256.
+
+**Evidencias:** [Faltantes](docs/E1/analisis_faltantes.md) · [Atípicos](docs/E1/analisis_atipicos.md) · [Escalado](docs/E1/analisis_escalado.md) · [Discretización](docs/E1/analisis_discretizacion.md) · [Reducción](docs/E1/analisis_reduccion.md) · [Diccionario de datos](docs/E1/diccionario_datos.md).
+
+## Resultados de Análisis Estadístico · E1
+
+Se analizaron series mensuales de **TIIE de Banxico** e **inflación de INEGI**, con descomposición temporal, pruebas ADF, gráficas ACF/PACF y comparación de cuatro familias de pronóstico: suavizamiento exponencial simple, Holt, Holt-Winters y ARIMA. La selección se apoyó en MAE, RMSE y MAPE sobre datos de prueba, y se examinaron los residuos mediante Ljung-Box.
+
+| Serie | Modelo con menor RMSE de prueba | RMSE aproximado | Diagnóstico de residuos |
+|---|---|---:|---|
+| Banxico, TIIE | ARIMA(3,0,0) | 1.7604 | Ljung-Box no superado; autocorrelación residual pendiente. |
+| INEGI, inflación | Holt-Winters aditivo | 0.0986 | Sin evidencia significativa de autocorrelación en los rezagos examinados. |
+
+Los pronósticos e intervalos expresan incertidumbre y no son garantías de evolución futura. En particular, los límites inferiores negativos del pronóstico ARIMA de Banxico son artefactos posibles del modelo y requieren cautela interpretativa.
+
+**Evidencias:** [Análisis estadístico](docs/E1/estadistica/analisis_series_temporales.md) · [Comparación de modelos](docs/E1/estadistica/comparacion_general_modelos.csv) · [Pronósticos finales](docs/E1/estadistica/pronosticos_finales_e1.csv).
+
+## Calidad y fiabilidad · E1
+
+- [Matriz de requerimientos verificables](docs/E1/matriz_requerimientos.md).
+- [Plan SQA adaptado a IEEE 730](docs/E1/plan_sqa.md).
+- [Evidencia de pruebas y cobertura](docs/E1/evidencia_pruebas_cobertura.txt).
+- [Evidencia de seguridad](docs/E1/evidencia_seguridad.md).
+- [Análisis de fiabilidad](docs/E1/analisis_fiabilidad.md).
+- Registros PSP de tiempo y defectos en [`calidad/`](calidad/), mantenidos por Nancy y David.
+
+**Metas iniciales de calidad** (no todas acreditadas como resultados): disponibilidad de captura ≥ 95 %, completitud de datos ≥ 95 %, cobertura automatizada ≥ 60 % y ausencia de credenciales expuestas en el repositorio.
+
+**Limitación de fiabilidad:** hasta la revisión de E1 se contaba con registros de capturas exitosas en **cinco días distintos**, no en los siete días exigidos por la rúbrica. Al no observarse fallas en esa ventana, no se presentan valores inventados de MTBF o MTTR.
+
+## Extracción ética y trazabilidad
+
+El módulo `extractores/base.py` contempla consultas HTTPS, identificación mediante User-Agent y contacto del equipo, pausas entre solicitudes, reintentos limitados ante errores transitorios y protección de tokens en URLs registradas. Las consultas se realizan a las APIs oficiales.
+
+La revisión de `robots.txt` y de términos de uso de las instituciones no constituye autorización general para realizar cualquier extracción. Se mantiene la atribución a INEGI y Banco de México.
+
+## Documentación y entregas
+
+### E0 · Arranque
+
+- [Propuesta del observatorio](docs/E0/propuesta.md).
+- [Relatoría E0](docs/E0/relatoria-E0.md).
+- [Ficha de entrega E0](docs/E0/ENTREGA.md).
+
+La entrevista de campo se realizó mediante WhatsApp con una persona del sector inmobiliario, según la documentación de E0.
+
+### E1 · Datos de confianza y pronóstico
+
+- [Ficha de entrega E1](docs/E1/ENTREGA.md) — documento actualizado para revisión del equipo.
+- [Relatoría E1](docs/relatoria-E1.md) — documento actualizado para revisión del equipo.
+- [Análisis del pipeline](docs/E1/analisis_pipeline.md).
+- [Análisis de series temporales](docs/E1/estadistica/analisis_series_temporales.md).
+- [Plan SQA](docs/E1/plan_sqa.md).
+
+### Calendario académico
+
+| Entrega | Fecha de referencia (2026) | Objetivo |
+|---|---|---|
+| **E0 — Arranque** | 6 de noviembre | Propuesta, entrevista, fuentes, histórico y automatización inicial. |
+| **E1 — Datos de confianza y pronóstico** | 13 de noviembre | Limpieza, integración, capas Plata y Oro, pronósticos, seguridad y calidad. |
+| **E2 — Experimento y auditoría** | 23 de noviembre | Fuente especializada, experimento factorial, ANOVA y auditoría cruzada. |
+| **E3 — Mapa multivariado y sello** | 30 de noviembre | PCA, MANOVA, mapa multivariado, publicación y auditoría. |
+| **E4 — Demo Day y cierre** | 2 y 4 de diciembre | Demostración, reportes finales, modelo de negocio y video. |
+
+Cada entrega debe conservar evidencias de las tres materias. Cuando corresponda, el equipo creará la etiqueta Git de cierre (`e0`, `e1`, `e2`, `e3`, `e4`); **no se da por creada la etiqueta `e1` en este documento**.
 
 ## Integrantes
 
 - **Nancy:** Data Engineer.
 - **David:** Data Statistician.
 
-Ambos integrantes participarán en las actividades de aseguramiento de calidad, revisión cruzada y documentación.
+Ambos integrantes participan en actividades de calidad, pruebas, documentación y revisión cruzada.
 
 ## Estado del proyecto
 
-**Etapa actual: E0 — Arranque.**
+**Etapa actual: revisión y cierre documental de E1 (13 de noviembre de 2026).**
 
-Se han comprobado ambas conexiones, el histórico mensual de INEGI y la ejecución manual del workflow. La validación final de la entrega requiere cotejar las evidencias publicadas, registros PSP y ejecución programada posterior.
+Se implementaron las capas Bronce, Plata, Oro y Cuarentena, se generaron análisis y pronósticos de dos series temporales, se aprobaron **131 pruebas locales con 65 % de cobertura** (commit `85d6cae` en `e1parte1d`) y se verificó anteriormente una ejecución satisfactoria del workflow de Calidad E1 (commit `02dc26e`). Continúan pendientes la revisión conjunta de los documentos de cierre, la integración a `main`, la comprobación del CI actualizado, el registro de tiempo posterior de David, la etiqueta `e1` y las limitaciones declaradas de fiabilidad y residuos de Banxico.
 
 ---
 
