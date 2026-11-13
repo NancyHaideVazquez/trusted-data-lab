@@ -271,7 +271,18 @@ def test_pipeline_no_modifica_bronce(
     antes_inegi = ruta_inegi.read_bytes()
     antes_banxico = ruta_banxico.read_bytes()
 
+    hash_inegi_antes = hashlib.sha256(antes_inegi).hexdigest()
+    hash_banxico_antes = hashlib.sha256(antes_banxico).hexdigest()
+
     pipeline.ejecutar_pipeline()
+
+    assert hashlib.sha256(
+        ruta_inegi.read_bytes()
+    ).hexdigest() == hash_inegi_antes
+
+    assert hashlib.sha256(
+        ruta_banxico.read_bytes()
+    ).hexdigest() == hash_banxico_antes
 
     # Comprobar que Bronce permanece idéntico
     assert ruta_inegi.read_bytes() == antes_inegi
