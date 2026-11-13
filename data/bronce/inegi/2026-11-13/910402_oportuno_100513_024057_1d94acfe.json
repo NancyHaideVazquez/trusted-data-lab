@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "captured_at_utc": "2026-11-13T10:05:13.005516+00:00",
+    "source_url": "https://www.inegi.org.mx/app/api/indicadores/desarrolladores/jsonxml/INDICATOR/910402/es/00/true/BIE-BISE/2.0/[PROTEGIDO]",
+    "extractor_version": "1.0.0",
+    "http_status": 200,
+    "duration_seconds": 0.49,
+    "attempts": 1,
+    "source": "INEGI BIE-BISE",
+    "indicator_id": "910402",
+    "location": "00",
+    "mode": "oportuno",
+    "bank": "BIE-BISE",
+    "records": 1,
+    "first_date": "2026-10-01",
+    "last_date": "2026-10-01"
+  },
+  "data": {
+    "Header": {
+      "Name": "Datos compactos BIE",
+      "Email": "atencion.usuarios@inegi.org.mx"
+    },
+    "Series": [
+      {
+        "INDICADOR": "910402",
+        "FREQ": "8",
+        "TOPIC": "189119",
+        "UNIT": "302",
+        "UNIT_MULT": "",
+        "NOTE": "",
+        "SOURCE": "3371",
+        "LASTUPDATE": "09/11/2026 12:00:00 a. m.",
+        "STATUS": null,
+        "OBSERVATIONS": [
+          {
+            "TIME_PERIOD": "2026/10",
+            "OBS_VALUE": "0.44000000000000000000",
+            "OBS_EXCEPTION": null,
+            "OBS_STATUS": "3",
+            "OBS_SOURCE": "",
+            "OBS_NOTE": "",
+            "COBER_GEO": "0"
+          }
+        ]
+      }
+    ]
+  }
+}
