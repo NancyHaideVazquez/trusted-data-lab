@@ -38,6 +38,16 @@ data/cuarentena/**
 !data/oro/.gitkeep
 !data/cuarentena/.gitkeep
 
+# Permitir las salidas finales verificadas del pipeline
+!data/plata/integracion_mensual.csv
+!data/oro/indicadores_mensuales.csv
+
+# Permitir el reporte y los registros de cuarentena
+!data/cuarentena/registros/
+!data/cuarentena/reportes/
+!data/cuarentena/registros/integracion_mensual_rechazados.csv
+!data/cuarentena/reportes/reporte_cuarentena.csv
+
 # Bitacoras
 logs/*
 !logs/.gitkeep

@@ -27,7 +27,7 @@ def buscar_historico(fuente, indicador):
     return archivos[-1]
 
 
-def diagnosticar(ruta, fuente):
+def diagnosticar(ruta, fuente, guardar_reporte=True):
     """Analiza los datos sin modificar Bronce."""
 
     df = cargar_dataframe(ruta)
@@ -38,6 +38,25 @@ def diagnosticar(ruta, fuente):
     else:
         columna_fecha = "fecha"
         columna_valor = "dato"
+
+
+    # Comprobar el esquema antes de acceder a las columnas
+    columnas_obligatorias = [
+        columna_fecha,
+        columna_valor
+    ]
+
+    faltantes_esquema = [
+        columna
+        for columna in columnas_obligatorias
+        if columna not in df.columns
+    ]
+
+    if faltantes_esquema:
+        raise ValueError(
+            f"{fuente}: faltan columnas obligatorias: "
+            f"{faltantes_esquema}"
+        )
 
     valores = df[columna_valor].astype("string").str.strip()
 
@@ -123,20 +142,22 @@ def diagnosticar(ruta, fuente):
 
     detalle_df = pd.DataFrame(detalle)
 
-    REPORTES.mkdir(parents=True, exist_ok=True)
+    
+    if guardar_reporte:
+        REPORTES.mkdir(parents=True, exist_ok=True)
 
-    ruta_detalle = REPORTES / f"diagnostico_{fuente}.csv"
+        ruta_detalle = REPORTES / f"diagnostico_{fuente}.csv"
 
-    detalle_df.to_csv(
-        ruta_detalle,
-        index=False,
-        encoding="utf-8-sig"
-    )
+        detalle_df.to_csv(
+            ruta_detalle,
+            index=False,
+            encoding="utf-8-sig"
+        )
 
     # Mantener el reporte general de T03.
     return {
         "fuente": fuente,
-        "archivo": ruta.relative_to(RAIZ).as_posix(),
+        "archivo": str(ruta),
         "registros": len(df),
         "faltantes": int(faltantes.sum()),
         "completitud_porcentaje": round(
