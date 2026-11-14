@@ -9,8 +9,8 @@ from src.lectura import (
     calcular_sha256,
     cargar_dataframe,
     convertir_fecha,
-    resumen_periodo,
     inventariar,
+    resumen_periodo,
 )
 
 

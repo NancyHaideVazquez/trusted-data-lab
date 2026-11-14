@@ -4,8 +4,8 @@ import pandas as pd
 import pytest
 
 from src.modelos_pronostico import (
-    preparar_serie,
     calcular_metricas,
+    preparar_serie,
 )
 from src.pronostico_final import (
     cargar_serie,

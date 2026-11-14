@@ -1,12 +1,11 @@
 
-from pathlib import Path
 
 import numpy as np
 import pandas as pd
 import pytest
 
-import src.analisis_faltantes as faltantes
 import src.analisis_estacionariedad as estacionariedad
+import src.analisis_faltantes as faltantes
 
 
 def crear_datos_estadisticos(n=72, fuente="inegi"):
