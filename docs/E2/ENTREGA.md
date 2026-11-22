@@ -1,10 +1,10 @@
 # Entrega E2 · Trusted Data Lab
 
-**Proyecto:** Observatorio de Vivienda y Costos de Colima  
-**Equipo:** David Cuevas Farías y Nancy Haide Vázquez Ávalos  
-**Etapa:** E2 — Procesamiento geoespacial, trazabilidad y ética de datos  
-**Fecha de preparación:** 22 de noviembre de 2026  
-**Rama de trabajo:** `e2david`  
+**Proyecto:** Observatorio de Vivienda y Costos de Colima
+**Equipo:** David Cuevas Farías y Nancy Haide Vázquez Ávalos
+**Etapa:** E2 — Procesamiento geoespacial, trazabilidad y ética de datos
+**Fecha de preparación:** 22 de noviembre de 2026
+**Rama de trabajo:** `e2david`
 **Repositorio:** https://github.com/NancyHaideVazquez/trusted-data-lab
 
 ## 1. Resumen ejecutivo
