@@ -1,6 +1,5 @@
-
-
 from src.calidad import validar_calidad
+
 
 COLUMNAS_ORO = [
     "periodo",
@@ -10,29 +9,42 @@ COLUMNAS_ORO = [
     "valor",
     "unidad",
     "metodo",
-    "cobertura"
+    "cobertura",
+]
+
+COLUMNAS_TRAZABILIDAD = [
+    "archivo_origen",
+    "fecha_ingesta_utc",
 ]
 
 
 def preparar_oro(datos_plata):
-    """
-    Prepara una tabla de consulta mensual para Oro.
+    """Valida Plata y prepara Oro conservando la trazabilidad."""
 
-    No mezcla indicadores ni modifica los valores.
-    """
-
-    # Validar nuevamente la entrada
     validados = validar_calidad(datos_plata)
 
-    # Seleccionar las columnas para consulta
-    oro = validados[COLUMNAS_ORO].copy()
+    columnas = COLUMNAS_ORO.copy()
 
-    # Ordenar los datos
+    presentes = [
+        columna
+        for columna in COLUMNAS_TRAZABILIDAD
+        if columna in validados.columns
+    ]
+
+    if presentes and len(presentes) != len(COLUMNAS_TRAZABILIDAD):
+        raise ValueError(
+            "La trazabilidad está incompleta: "
+            "deben existir ambas columnas."
+        )
+
+    columnas.extend(presentes)
+
+    oro = validados[columnas].copy()
+
     oro = oro.sort_values(
         ["periodo", "fuente", "serie_id"]
     ).reset_index(drop=True)
 
-    # Conservar todos los registros
     if len(oro) != len(validados):
         raise RuntimeError(
             "La preparacion de Oro perdio registros."

@@ -57,11 +57,25 @@ def crear_esquema_calidad():
                 checks=texto_obligatorio,
                 nullable=False
             ),
-            "cobertura": pa.Column(
-                str,
-                checks=texto_obligatorio,
-                nullable=False
-            ),
+"cobertura": pa.Column(
+    str,
+    checks=texto_obligatorio,
+    nullable=False
+),
+"archivo_origen": pa.Column(
+    str,
+    checks=texto_obligatorio,
+    nullable=False,
+    required=False
+),
+"fecha_ingesta_utc": pa.Column(
+    str,
+    checks=pa.Check.str_matches(
+        r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}"
+    ),
+    nullable=False,
+    required=False
+),
         },
         checks=pa.Check(
             lambda df: ~df.duplicated(
