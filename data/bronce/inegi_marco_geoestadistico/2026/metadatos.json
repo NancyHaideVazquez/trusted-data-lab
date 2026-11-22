@@ -1,0 +1,17 @@
+﻿{
+  "fuente": "INEGI",
+  "producto": "Marco Geoestadistico",
+  "capa": "AGEM",
+  "edicion": "2026",
+  "entidad": "Colima",
+  "clave_entidad": "06",
+  "archivo_original": "2026_1_06_MUN.zip",
+  "ruta_bronce": "data/bronce/inegi_marco_geoestadistico/2026/2026_1_06_MUN.zip",
+  "sha256": "D58C6A6F77039C00A62D4D51FDE33A27AB70116F3B2CD9C90899463E46A11F00",
+  "pagina_fuente": "https://www.inegi.org.mx/temas/mg/",
+  "formato": "Shapefile comprimido",
+  "crs_original": "EPSG:6372",
+  "fecha_ingesta_utc": null,
+  "url_descarga_directa": null,
+  "observaciones": "Archivo descargado manualmente desde el portal del Marco Geoestadistico. La URL directa y la fecha exacta de ingesta estan pendientes de documentar."
+}
