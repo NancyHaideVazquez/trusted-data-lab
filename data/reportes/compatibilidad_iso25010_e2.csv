@@ -1,0 +1,6 @@
+prueba,aprobada
+CSV con Pandas,True
+CSV con DuckDB,True
+JSON con Python,True
+GeoPackage con GeoPandas,True
+Mapa PNG,True
