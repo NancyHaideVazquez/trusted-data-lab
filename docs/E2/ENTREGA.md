@@ -101,7 +101,7 @@ Se incorporaron mecanismos para identificar la procedencia de los registros proc
 
 Entre los campos utilizados se encuentran:
 
-- `file_origin`: referencia al archivo de origen o respaldo.
+- `archivo_origen`: referencia al archivo original en Bronce.
 - `fecha_ingesta_utc`: fecha de captura registrada para la fuente.
 
 Es importante distinguir la fecha de captura de los datos de la fecha en que se ejecutó su procesamiento.
@@ -331,3 +331,40 @@ de descarga permanecen sin documentar.
 
 La revision de procedencia y condiciones de uso
 se encuentra registrada en docs/etica-datos.md.
+
+
+## Validacion tecnica final de Ingenieria de Datos
+
+El 22 de noviembre de 2026 se verificaron los siguientes resultados:
+
+| Verificacion | Resultado |
+|---|---|
+| Pruebas automatizadas | 145 aprobadas |
+| Analisis estatico con Ruff | Sin errores |
+| Municipios procesados | 10 |
+| Geometrias validas | 10 |
+| CRS de salida | EPSG:4326 |
+| Registros en Plata | 564 |
+| Registros en Oro | 564 |
+| Registros de Banxico por capa | 381 |
+| Registros de INEGI por capa | 183 |
+| Registros sin archivo de origen | 0 |
+| Registros sin fecha de ingesta | 0 |
+| Archivos originales inexistentes | 0 |
+| Fechas de ingesta validas | 564 por capa |
+
+Los resultados se comprobaron mediante pruebas automatizadas
+y consultas directas a los productos de las capas Plata y Oro.
+
+### Commits complementarios
+
+| Commit | Descripcion |
+|---|---|
+| `3c58f28` | Incorporar evidencias de validacion y actualizar PSP |
+| `691bb86` | Documentar procedencia INEGI y corregir estilo del codigo |
+
+La rama de trabajo utilizada fue `e2david`.
+
+Estas verificaciones respaldan la implementacion tecnica.
+No sustituyen las revisiones pendientes de otros integrantes
+ni la validacion de los requisitos oficiales de E2.
