@@ -113,3 +113,30 @@ El equipo se compromete a:
 El uso ético de los datos es fundamental para que el Observatorio de Vivienda y Costos de Colima produzca información transparente y confiable.
 
 La trazabilidad, la validación y la comunicación de limitaciones permiten reducir interpretaciones incorrectas y favorecer un uso responsable de los resultados.
+
+## Condiciones de uso del Marco Geoestadistico del INEGI
+
+El proyecto utiliza informacion del Marco Geoestadistico
+municipal 2026 del INEGI.
+
+Fuente oficial:
+https://www.inegi.org.mx/temas/mg/
+
+Terminos de uso:
+https://www.inegi.org.mx/inegi/terminos.html
+
+Los terminos permiten reproducir, publicar, adaptar
+y analizar informacion, respetando sus condiciones.
+
+Compromisos del proyecto:
+- Reconocer al INEGI como fuente original.
+- Conservar los metadatos de procedencia.
+- Identificar las transformaciones realizadas.
+- No presentar los resultados derivados como
+  analisis oficiales del INEGI.
+
+Referencia de atribucion:
+Fuente: INEGI, Marco Geoestadistico municipal 2026.
+
+La fecha exacta de ingesta y la URL directa de
+descarga no estan documentadas y no se inventan.

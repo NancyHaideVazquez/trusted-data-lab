@@ -3,7 +3,6 @@
 import json
 from pathlib import Path
 
-
 RUTAS_BRONCE = {
     "inegi": (
         "data/bronce/inegi/2026-11-12/"

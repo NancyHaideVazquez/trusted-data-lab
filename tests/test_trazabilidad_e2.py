@@ -1,9 +1,9 @@
 import pandas as pd
 import pytest
 
-from src.trazabilidad import obtener_trazabilidad
 from src.integracion import integrar_datos
 from src.oro import preparar_oro
+from src.trazabilidad import obtener_trazabilidad
 
 
 def crear_datos():

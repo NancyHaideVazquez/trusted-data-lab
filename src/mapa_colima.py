@@ -5,7 +5,6 @@ import geopandas as gpd
 import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
 
-
 RUTA_PLATA = Path("data/plata/municipios_colima_2026.gpkg")
 RUTA_SALIDA = Path("reportes/figuras/mapa_municipios_colima_v2.png")
 
@@ -73,7 +72,7 @@ def generar_mapa():
     # Utilizamos los polígonos continentales para
     # calcular una extensión cartográfica adecuada.
 
-    from shapely.geometry import Polygon, MultiPolygon
+    from shapely.geometry import MultiPolygon, Polygon
 
     poligonos = []
 

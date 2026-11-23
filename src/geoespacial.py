@@ -1,10 +1,10 @@
 
-from pathlib import Path
 import hashlib
 import json
+from datetime import UTC
+from pathlib import Path
 
 import geopandas as gpd
-
 
 RUTA_BRONCE = Path(
     "data/bronce/inegi_marco_geoestadistico/2026"
@@ -108,7 +108,7 @@ def preparar_plata():
     Transforma los municipios validados a EPSG:4326
     e incorpora la trazabilidad del archivo original.
     """
-    from datetime import datetime, timezone
+    from datetime import datetime
 
     municipios, metadatos, hash_verificado = cargar_municipios()
 
@@ -133,7 +133,7 @@ def preparar_plata():
     plata["archivo_origen"] = metadatos["ruta_bronce"]
     plata["sha256_origen"] = hash_verificado
     plata["procesado_utc"] = datetime.now(
-        timezone.utc
+        UTC
     ).isoformat()
 
     # Ordenar por clave municipal.

@@ -312,3 +312,22 @@ Evidencia disponible:
 
 Estas verificaciones no implican que se hayan completado
 las demas actividades de revision pendientes.
+
+## Verificacion de procedencia y condiciones de uso
+
+Se verifico la integridad del archivo original
+2026_1_06_MUN.zip mediante SHA-256.
+
+El hash calculado coincide con el registrado
+en metadatos.json.
+
+Fuente: INEGI, Marco Geoestadistico municipal 2026.
+
+Condiciones de uso:
+https://www.inegi.org.mx/inegi/terminos.html
+
+La fecha exacta de ingesta y la URL directa
+de descarga permanecen sin documentar.
+
+La revision de procedencia y condiciones de uso
+se encuentra registrada en docs/etica-datos.md.
