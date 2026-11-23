@@ -12,6 +12,8 @@
 
 **Responsables:** David Cuevas Farías y Nancy Haide Vázquez Ávalos
 
+---
+
 ## 2. Objetivo
 
 Comparar un diseño factorial completo 2⁴ con un diseño factorial fraccionado 2⁴⁻¹, con el propósito de evaluar las diferencias en los efectos estimados, la significancia estadística y el esfuerzo experimental requerido.
@@ -47,6 +49,20 @@ Este diseño conserva 8 tratamientos de los 16 posibles y mantiene dos réplicas
 
 La reducción permite evaluar los factores principales y determinadas interacciones con la mitad de las ejecuciones del diseño completo.
 
+La estructura de alias establece las siguientes equivalencias:
+
+| Efecto | Alias |
+|---|---|
+| A | BCD |
+| B | ACD |
+| C | ABD |
+| D | ABC |
+| AB | CD |
+| AC | BD |
+| AD | BC |
+
+Esto significa que algunos efectos no pueden distinguirse individualmente mediante este diseño.
+
 ## 4. Resultados del diseño factorial completo
 
 El análisis se realizó mediante un modelo de regresión lineal con todos los efectos principales y sus interacciones:
@@ -58,11 +74,11 @@ El análisis se realizó mediante un modelo de regresión lineal con todos los e
 | Factor | Efecto estimado (ms) | Valor p | Interpretación |
 |---|---:|---:|---|
 | A | +1.5826 | 0.017880 | Significativo |
-| B | +7.9747 | <0.001 | Significativo |
-| C | +15.0554 | <0.001 | Significativo |
-| D | -0.7806 | 0.211544 | No significativo |
+| B | +7.9747 | 4.593855e-10 | Significativo |
+| C | +15.0554 | 2.809236e-14 | Significativo |
+| D | -0.7806 | 0.211543 | No significativo |
 
-La validación Pandera (C) presentó el mayor efecto sobre el tiempo de procesamiento, seguida por la trazabilidad (B).
+La validación Pandera (C) presentó el mayor efecto positivo sobre el tiempo de procesamiento, seguida por la trazabilidad (B).
 
 La cantidad de registros (A) también presentó un efecto estadísticamente significativo en este experimento. El factor D no mostró evidencia suficiente de un efecto significativo.
 
@@ -77,6 +93,8 @@ Se identificaron las siguientes interacciones con un nivel de significancia de 0
 | B × C × D | -1.4362 | 0.029237 |
 
 Las interacciones indican que el efecto de algunos factores puede variar dependiendo de la combinación de niveles de otros factores.
+
+Las interacciones no significativas no presentaron evidencia estadística suficiente para afirmar que influyeran sobre el tiempo de procesamiento bajo las condiciones evaluadas.
 
 ### 4.3. Diagnóstico del modelo
 
@@ -96,23 +114,27 @@ Se utilizó el modelo:
 
 `tiempo_ms ~ A + B + C + D + A:B + A:C + A:D`
 
-Este modelo permite estimar siete contrastes independientes.
+Este modelo permite estimar siete contrastes independientes, considerando la estructura de alias del diseño fraccionado.
 
 ### 5.1. Efectos estimados y estructura de alias
 
-| Contraste | Alias | Efecto estimado (ms) | Valor p |
-|---|---|---:|---:|
-| A | A = BCD | +0.1464 | 0.749820 |
-| B | B = ACD | +7.4573 | <0.001 |
-| C | C = ABD | +14.4215 | <0.001 |
-| D | D = ABC | -0.3164 | 0.495902 |
-| A × B | AB = CD | -1.2311 | 0.024085 |
-| A × C | AC = BD | -0.0253 | 0.955911 |
-| A × D | AD = BC | +1.5458 | 0.008256 |
+| Contraste | Alias | Efecto estimado (ms) | Valor p | Interpretación |
+|---|---|---:|---:|---|
+| A | A = BCD | +0.1464 | 0.749820 | No significativo |
+| B | B = ACD | +7.4573 | 1.586045e-07 | Significativo |
+| C | C = ABD | +14.4215 | 8.724929e-10 | Significativo |
+| D | D = ABC | -0.3164 | 0.495902 | No significativo |
+| A × B | AB = CD | -1.2311 | 0.024085 | Significativo |
+| A × C | AC = BD | -0.0253 | 0.955911 | No significativo |
+| A × D | AD = BC | +1.5458 | 0.008256 | Significativo |
 
 La validación Pandera y la trazabilidad conservaron efectos principales positivos y estadísticamente significativos.
 
 Sin embargo, los efectos estimados en este diseño deben interpretarse considerando su estructura de alias.
+
+Por ejemplo, el contraste AB = CD no permite determinar si la significancia corresponde exclusivamente a la interacción entre A y B o a la interacción entre C y D.
+
+De igual manera, el contraste AD = BC no permite separar individualmente ambas interacciones.
 
 ### 5.2. Diagnóstico del modelo
 
@@ -156,7 +178,7 @@ El diseño fraccionado redujo de 32 a 16 las corridas consideradas, lo que repre
 
 Esta reducción implica menor esfuerzo experimental, aunque también limita la posibilidad de separar determinados efectos e interacciones.
 
-**Nota metodológica:** las 16 corridas del diseño fraccionado fueron seleccionadas de las 32 observaciones del diseño completo mediante el generador D = ABC. Por tanto, no representan una segunda ejecución independiente.
+**Nota metodológica:** las 16 corridas del diseño fraccionado corresponden a una fracción del diseño factorial de cuatro factores. Por tanto, los dos diseños no deben interpretarse como experimentos independientes cuando se utilizan observaciones procedentes de la misma ejecución experimental.
 
 ### 6.3. Comparación de los modelos
 
@@ -166,14 +188,15 @@ Esta reducción implica menor esfuerzo experimental, aunque también limita la p
 | R² ajustado | 0.9640 | 0.9890 |
 | Desviación residual (ms) | 1.6964 | 0.8871 |
 
-El diseño fraccionado presentó mejores indicadores de ajuste en esta comparación. Sin embargo, esto no significa que sea universalmente superior: los modelos utilizan diferentes cantidades de observaciones y diferentes estructuras de términos, por lo que sus indicadores no deben interpretarse como una comparación directa de capacidad predictiva.
+El diseño fraccionado presentó mejores indicadores de ajuste en esta comparación. Sin embargo, esto no significa que sea universalmente superior.
+
+Los modelos utilizan diferentes cantidades de observaciones y diferentes estructuras de términos, por lo que sus indicadores no deben interpretarse como una comparación directa de capacidad predictiva.
 
 ## 7. Interpretación de las evidencias gráficas
 
 ### Gráfica 1. Comparación de efectos principales
 
-![Grafica 1](../../../data/reportes/graficas_comparacion_2_4/01_efectos_principales.png)
-
+![Gráfica 1](../../../data/reportes/graficas_comparacion_2_4/01_efectos_principales.png)
 
 La gráfica muestra los efectos estimados de los cuatro factores para ambos diseños.
 
@@ -183,8 +206,7 @@ Esto permite observar que ambos diseños coinciden en los factores de mayor infl
 
 ### Gráfica 2. Significancia estadística de los efectos
 
-![Grafica 2](../../../data/reportes/graficas_comparacion_2_4/02_significancia_estadistica.png)
-
+![Gráfica 2](../../../data/reportes/graficas_comparacion_2_4/02_significancia_estadistica.png)
 
 La gráfica representa la significancia estadística mediante el valor transformado -log10(p).
 
@@ -196,8 +218,7 @@ Las interacciones del diseño fraccionado deben interpretarse considerando los a
 
 ### Gráfica 3. Reducción del esfuerzo experimental
 
-![Grafica 3](../../../data/reportes/graficas_comparacion_2_4/03_numero_corridas.png)
-
+![Gráfica 3](../../../data/reportes/graficas_comparacion_2_4/03_numero_corridas.png)
 
 La gráfica compara el número de corridas de ambos diseños.
 
@@ -209,12 +230,13 @@ Esto representa una reducción del 50 % en el número de ejecuciones considerada
 
 - El diseño completo contó con dos réplicas por tratamiento.
 - El diseño fraccionado utiliza la mitad de las observaciones del diseño completo.
-- Las observaciones del diseño fraccionado proceden del mismo conjunto experimental y no son independientes del diseño completo.
+- Las observaciones del diseño fraccionado no deben considerarse independientes de las del diseño completo cuando proceden de la misma ejecución experimental.
 - La resolución IV confunde los efectos principales con interacciones de tres factores.
 - Las interacciones de dos factores están confundidas entre sí.
 - Los resultados corresponden únicamente a las condiciones experimentales evaluadas.
 - Los tiempos de ejecución pueden variar dependiendo de la carga del equipo y las condiciones de ejecución.
 - Los indicadores de ajuste no demuestran por sí solos que un modelo tenga mejor capacidad de predicción.
+- Los resultados estadísticos no deben extrapolarse automáticamente a tamaños de datos o condiciones de procesamiento diferentes.
 
 ## 9. Conclusiones
 
@@ -236,6 +258,7 @@ En conclusión, el diseño completo resulta más apropiado cuando se necesita es
 - `src/analisis_factorial_2_4_e2.py`
 - `src/analisis_fraccionado_2_4_e2.py`
 - `src/comparacion_factorial_2_4_e2.py`
+- `src/graficas_comparacion_2_4_e2.py`
 
 ### Resultados experimentales
 
@@ -253,16 +276,17 @@ En conclusión, el diseño completo resulta más apropiado cuando se necesita es
 
 ### Comandos de reproducción
 
-Desde la raíz del repositorio:
+Desde la raíz del repositorio se pueden ejecutar los programas mediante los siguientes comandos:
 
 ```powershell
 python -m src.experimento_factorial_2_4_e2
 python -m src.analisis_factorial_2_4_e2
 python -m src.analisis_fraccionado_2_4_e2
 python -m src.comparacion_factorial_2_4_e2
+python -m src.graficas_comparacion_2_4_e2
 ```
 
-**Nota:** ejecutar nuevamente el experimento completo sobrescribe su archivo CSV de salida y, por tanto, también puede cambiar los resultados del análisis posterior. Se recomienda conservar una copia de los resultados utilizados en esta entrega.
+**Nota:** ejecutar nuevamente el experimento completo sobrescribe su archivo CSV de salida y puede modificar los resultados del análisis posterior. Se recomienda conservar una copia de los resultados utilizados en esta entrega.
 
 ---
 

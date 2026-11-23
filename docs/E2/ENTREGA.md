@@ -1,14 +1,12 @@
-# Entrega E2 · Trusted Data Lab
+# ENTREGA E2 — Trusted Data Lab
 
 **Proyecto:** Observatorio de Vivienda y Costos de Colima
 
 **Equipo:** David Cuevas Farías y Nancy Haide Vázquez Ávalos
 
-**Etapa:** E2 — Procesamiento geoespacial, trazabilidad y ética de datos
+**Etapa:** E2 — Procesamiento geoespacial, trazabilidad, análisis estadístico y calidad de datos.
 
-**Fecha de preparación:** 22 de noviembre de 2026
-
-**Rama de trabajo:** `e2david`
+**Fecha de actualización:** 22 de noviembre de 2026.
 
 **Repositorio:** https://github.com/NancyHaideVazquez/trusted-data-lab
 
@@ -18,15 +16,19 @@
 
 Durante la etapa E2 del proyecto Trusted Data Lab se fortaleció el Observatorio de Vivienda y Costos de Colima mediante la incorporación de información geográfica oficial, el procesamiento de datos municipales, la integración de indicadores económicos y la implementación de mecanismos de trazabilidad y calidad.
 
-Se incorporó información del Marco Geoestadístico municipal 2026 del INEGI, se procesaron los límites de los diez municipios del estado de Colima y se generó un mapa que destaca los municipios de Colima y Villa de Álvarez.
+Se incorporó información del Marco Geoestadístico municipal 2026 del Instituto Nacional de Estadística y Geografía (INEGI). Se procesaron los límites de los diez municipios del estado de Colima y se generó una representación cartográfica que destaca los municipios de Colima y Villa de Álvarez.
 
-También se fortaleció la arquitectura Bronce–Plata–Oro, incorporando mecanismos para identificar el origen de los registros y conservar la reproducibilidad de las transformaciones.
+También se fortaleció la arquitectura Bronce–Plata–Oro para conservar la procedencia de los registros y facilitar la reproducción de las transformaciones.
 
-Los resultados de integración generaron 564 registros mensuales en la capa Plata y 564 registros en la capa Oro. Durante la validación técnica se obtuvo un resultado de 145 pruebas automatizadas aprobadas.
+Los resultados de integración generaron 564 registros mensuales en la capa Plata y 564 registros en la capa Oro.
 
-Para organizar el cierre de la etapa se estableció una distribución de responsabilidades entre implementación técnica y aseguramiento de calidad.
+En el área de Análisis Estadístico se desarrollaron experimentos factoriales para evaluar el comportamiento del flujo de integración de datos. Se implementó un diseño factorial completo 2³, un diseño factorial completo 2⁴ y un diseño factorial fraccionado 2⁴⁻¹.
 
-La documentación incluye evidencias de procesamiento, trazabilidad, ética de datos, pruebas y control de versiones.
+Se realizaron análisis ANOVA, estimación de efectos, evaluación de interacciones, diagnósticos de residuos y comparaciones entre diseños experimentales.
+
+En el área de Calidad de Software se ejecutaron pruebas automatizadas, análisis estático con Ruff y verificaciones de formato. La validación general del proyecto reportó 145 pruebas aprobadas.
+
+La documentación de esta etapa reúne los resultados de Ingeniería de Datos, Análisis Estadístico y Calidad en los Sistemas de Información.
 
 ## 2. Ingeniería de Datos
 
@@ -38,7 +40,7 @@ La fuente geográfica se encuentra en:
 
 `data/bronce/inegi_marco_geoestadistico/2026/`
 
-Se conservaron el archivo de origen y los metadatos correspondientes para facilitar la identificación de la fuente.
+Se conservaron los archivos originales y sus metadatos para facilitar la identificación de la procedencia de la información.
 
 ### 2.2 Procesamiento de límites municipales
 
@@ -55,8 +57,9 @@ Este módulo permite procesar la información geográfica y generar un producto 
 | Fuente | Marco Geoestadístico municipal 2026 del INEGI |
 | Entidad federativa | Colima |
 | Municipios procesados | 10 |
+| Geometrías válidas | 10 |
 | Formato de salida | GeoPackage |
-| Sistema de referencia de salida | EPSG:4326 |
+| Sistema de referencia | EPSG:4326 |
 | Archivo generado | `data/plata/municipios_colima_2026.gpkg` |
 
 El archivo de salida es un producto derivado que puede regenerarse mediante el procesamiento correspondiente.
@@ -73,7 +76,7 @@ La evidencia gráfica se encuentra en:
 
 `reportes/figuras/mapa_municipios_colima_v2.png`
 
-Este mapa representa límites administrativos y no debe interpretarse como una visualización de precios de vivienda o indicadores económicos municipales.
+El mapa representa límites administrativos y no debe interpretarse como una visualización de precios de vivienda o indicadores económicos municipales.
 
 ### 2.4 Integración Bronce–Plata–Oro
 
@@ -113,16 +116,48 @@ La implementación y documentación de trazabilidad se encuentran en:
 
 La trazabilidad facilita la revisión de las fuentes y la reproducción de los resultados.
 
-### 2.6 Evidencias de Ingeniería de Datos
+### 2.6 Verificación de procedencia
 
-| Actividad | Evidencia |
+Se verificó la integridad del archivo original `2026_1_06_MUN.zip` mediante SHA-256.
+
+El hash calculado coincide con el registrado en `metadatos.json`.
+
+**Fuente:** INEGI, Marco Geoestadístico municipal 2026.
+
+**Condiciones de uso:**
+
+https://www.inegi.org.mx/inegi/terminos.html
+
+La fecha exacta de ingesta y la URL directa de descarga permanecen sin documentar.
+
+La revisión de procedencia y condiciones de uso se encuentra registrada en `docs/etica-datos.md`.
+
+### 2.7 Resultados de trazabilidad
+
+Durante la validación técnica se obtuvieron los siguientes resultados:
+
+| Criterio | Plata | Oro |
+|---|---:|---:|
+| Registros totales | 564 | 564 |
+| Registros de Banxico | 381 | 381 |
+| Registros de INEGI | 183 | 183 |
+| Registros sin archivo de origen | 0 | 0 |
+| Registros sin fecha de ingesta | 0 | 0 |
+| Archivos originales inexistentes | 0 | 0 |
+| Fechas de ingesta válidas | 564 | 564 |
+
+Los resultados respaldan la conservación de la procedencia de los registros durante la integración.
+
+### 2.8 Evidencias de Ingeniería de Datos
+
+| Actividad | Commit |
 |---|---|
 | Incorporación del Marco Geoestadístico | `b4fe64f` |
 | Procesamiento geoespacial | `8ef0ae2` |
 | Generación del mapa municipal | `6f79137` |
 | Incorporación de trazabilidad | `ce8b16a` |
 
-## 3. Estadística
+## 3. Análisis Estadístico
 
 ### 3.1 Alcance de los indicadores
 
@@ -132,11 +167,7 @@ Entre ellos se encuentran la inflación mensual de servicios subyacentes del INE
 
 Estos indicadores no representan directamente el costo de la vivienda en Colima ni en Villa de Álvarez.
 
-### 3.2 Resultados y limitaciones
-
-La incorporación de información geográfica permite identificar los municipios del estado de Colima y establecer una base territorial para análisis posteriores.
-
-Sin embargo, la información económica procesada no constituye por sí misma una medición municipal de precios de vivienda.
+La información geográfica permite identificar los municipios del estado de Colima y establecer una base territorial para análisis posteriores.
 
 Por lo tanto:
 
@@ -145,30 +176,348 @@ Por lo tanto:
 - Se conserva la distinción entre indicadores económicos y delimitaciones territoriales.
 - Se documentan las limitaciones de cobertura y escala de los datos.
 
-### 3.3 Experimento estadístico previsto
+### 3.2 Experimento factorial completo 2³
 
-En la propuesta inicial del proyecto se contempló para E2 un experimento factorial 2³ relacionado con el procesamiento y almacenamiento de datos.
+Se implementó un diseño factorial completo 2³ para evaluar el efecto de tres factores sobre el tiempo de integración de datos.
 
-No se dispone todavía de evidencia suficiente para declarar ejecutado ese experimento en esta entrega.
+**Objetivo:** evaluar cómo influyen la cantidad de registros, la trazabilidad y la validación Pandera sobre el rendimiento del flujo de integración.
 
-Su realización o documentación deberá verificarse antes del cierre definitivo de E2.
+Los factores considerados fueron:
 
-## 4. Calidad de Software
+| Factor | Descripción | Nivel bajo (-1) | Nivel alto (+1) |
+|---|---|---|---|
+| A | Cantidad de registros | 200 | 500 |
+| B | Trazabilidad | Desactivada | Activada |
+| C | Validación Pandera | Desactivada | Activada |
+
+El diseño contempla ocho tratamientos y dos réplicas por tratamiento, para un total de 16 corridas experimentales.
+
+Se realizaron dos tandas:
+
+- Primera tanda: 16 corridas sin calentamiento.
+- Segunda tanda: ocho ejecuciones de calentamiento y 16 corridas de confirmación.
+
+Las combinaciones se ejecutaron en orden aleatorizado mediante la semilla 2026.
+
+#### 3.2.1 Resultados del ANOVA 2³
+
+El análisis estadístico se realizó mediante un modelo factorial completo:
+
+`tiempo_ms ~ A * B * C`
+
+Los resultados de la tanda de confirmación fueron:
+
+| Factor o interacción | Efecto estimado (ms) | Valor p | Interpretación |
+|---|---:|---:|---|
+| A | +1.4528 | 0.083061 | No significativo |
+| B | +7.4401 | 0.000008 | Significativo |
+| A × B | -0.4013 | 0.599367 | No significativo |
+| C | +13.7474 | 0.000000068 | Significativo |
+| A × C | -0.0152 | 0.983981 | No significativo |
+| B × C | +0.6679 | 0.389304 | No significativo |
+| A × B × C | -1.2462 | 0.127873 | No significativo |
+
+Se utilizó un nivel de significancia de 0.05.
+
+Los factores B y C presentaron efectos estadísticamente significativos sobre el tiempo de procesamiento.
+
+La activación de la trazabilidad incrementó el tiempo promedio de ejecución aproximadamente 7.44 ms.
+
+La validación Pandera presentó el mayor efecto positivo, con un incremento aproximado de 13.75 ms.
+
+La cantidad de registros no presentó evidencia estadística suficiente de un efecto significativo en esta tanda de confirmación.
+
+#### 3.2.2 Diagnóstico del modelo
+
+| Indicador | Resultado |
+|---|---:|
+| R² | 0.9830 |
+| R² ajustado | 0.9681 |
+| Desviación residual | 1.4675 ms |
+| Shapiro-Wilk W | 0.915498 |
+| Shapiro-Wilk p | 0.142733 |
+
+El modelo explicó aproximadamente el 98.30 % de la variabilidad observada en el tiempo de procesamiento.
+
+La prueba Shapiro-Wilk no mostró evidencia suficiente para rechazar la normalidad de los residuos al nivel de significancia de 0.05. Esto no constituye una demostración de normalidad.
+
+#### 3.2.3 Comparación de las tandas experimentales
+
+En la primera tanda se registró un tiempo extremo de 168.756 ms.
+
+El diagnóstico inicial presentó:
+
+- R² = 0.5574.
+- Desviación residual = 35.3814 ms.
+- Shapiro-Wilk p = 0.000016.
+
+En la tanda de confirmación, el tiempo máximo fue de 29.167 ms.
+
+El diagnóstico de confirmación presentó:
+
+- R² = 0.9830.
+- Desviación residual = 1.4675 ms.
+- Shapiro-Wilk p = 0.142733.
+
+La segunda tanda mostró menor variabilidad. El calentamiento pudo contribuir a este cambio, aunque no se ha demostrado que fuera su única causa.
+
+#### 3.2.4 Evidencias del experimento 2³
+
+**Código:**
+
+- `src/experimento_factorial_e2.py`
+- `src/analisis_factorial_2_3_e2.py`
+- `src/graficas_factorial_e2.py`
+
+**Resultados:**
+
+- `data/reportes/experimento_factorial_e2.csv`
+- `data/reportes/experimento_factorial_e2_original.csv`
+- `data/reportes/experimento_factorial_e2_confirmacion.csv`
+- `data/reportes/anova_factorial_2_3.csv`
+
+**Gráficas:**
+
+- `data/reportes/graficas_e2_monico/01_efectos_principales.png`
+- `data/reportes/graficas_e2_monico/02_interacciones.png`
+- `data/reportes/graficas_e2_monico/03_residuos.png`
+- `data/reportes/graficas_e2_monico/04_qqplot.png`
+
+### 3.3 Comparación de diseños factoriales 2⁴ y 2⁴⁻¹
+
+Se desarrolló una comparación entre un diseño factorial completo 2⁴ y un diseño factorial fraccionado 2⁴⁻¹.
+
+El objetivo fue evaluar las diferencias en los efectos estimados, la significancia estadística y el esfuerzo experimental requerido.
+
+Los cuatro factores utilizados fueron:
+
+| Factor | Descripción | Nivel bajo (-1) | Nivel alto (+1) |
+|---|---|---|---|
+| A | Cantidad de registros | 200 | 500 |
+| B | Trazabilidad | Desactivada | Activada |
+| C | Validación Pandera | Desactivada | Activada |
+| D | Generación de resumen estadístico | Desactivada | Activada |
+
+#### 3.3.1 Diseño factorial completo 2⁴
+
+El diseño factorial completo contempla 16 tratamientos experimentales y dos réplicas por tratamiento, para un total de 32 corridas.
+
+Se utilizó el modelo:
+
+`tiempo_ms ~ A * B * C * D`
+
+Los resultados de los efectos principales fueron:
+
+| Factor | Efecto estimado (ms) | Valor p | Interpretación |
+|---|---:|---:|---|
+| A | +1.5826 | 0.017880 | Significativo |
+| B | +7.9747 | 4.593855e-10 | Significativo |
+| C | +15.0554 | 2.809236e-14 | Significativo |
+| D | -0.7806 | 0.211543 | No significativo |
+
+La validación Pandera presentó el mayor efecto positivo sobre el tiempo de procesamiento, seguida por la trazabilidad.
+
+La cantidad de registros también presentó un efecto estadísticamente significativo en este experimento.
+
+El factor D no mostró evidencia suficiente de un efecto significativo.
+
+Entre las interacciones estadísticamente significativas se identificaron:
+
+| Interacción | Efecto estimado (ms) | Valor p |
+|---|---:|---:|
+| B × C | +1.3090 | 0.044326 |
+| C × D | -1.5591 | 0.019360 |
+| B × C × D | -1.4362 | 0.029237 |
+
+Las interacciones indican que el efecto de algunos factores puede variar dependiendo de la combinación de niveles de otros factores.
+
+#### 3.3.2 Diagnóstico del diseño completo
+
+| Indicador | Resultado |
+|---|---:|
+| R² | 0.9814 |
+| R² ajustado | 0.9640 |
+| Desviación residual | 1.6964 ms |
+| Shapiro-Wilk W | 0.943642 |
+| Shapiro-Wilk p | 0.095015 |
+
+La prueba Shapiro-Wilk no mostró evidencia suficiente para rechazar la normalidad de los residuos al nivel de significancia de 0.05.
+
+#### 3.3.3 Diseño factorial fraccionado 2⁴⁻¹
+
+Para reducir el esfuerzo experimental se construyó una fracción de resolución IV utilizando el generador:
+
+**D = ABC**
+
+Su relación definitoria es:
+
+**I = ABCD**
+
+Este diseño conserva ocho tratamientos de los 16 posibles y mantiene dos réplicas por tratamiento, para un total de 16 corridas.
+
+La reducción permite evaluar los factores principales y determinadas interacciones con la mitad de las ejecuciones del diseño completo.
+
+La estructura de alias establece las siguientes equivalencias:
+
+| Efecto | Alias |
+|---|---|
+| A | BCD |
+| B | ACD |
+| C | ABD |
+| D | ABC |
+| AB | CD |
+| AC | BD |
+| AD | BC |
+
+Esto significa que algunos efectos no pueden distinguirse individualmente mediante este diseño.
+
+Se utilizó el modelo:
+
+`tiempo_ms ~ A + B + C + D + A:B + A:C + A:D`
+
+Los resultados fueron:
+
+| Contraste | Alias | Efecto estimado (ms) | Valor p | Interpretación |
+|---|---|---:|---:|---|
+| A | A = BCD | +0.1464 | 0.749820 | No significativo |
+| B | B = ACD | +7.4573 | 1.586045e-07 | Significativo |
+| C | C = ABD | +14.4215 | 8.724929e-10 | Significativo |
+| D | D = ABC | -0.3164 | 0.495902 | No significativo |
+| A × B | AB = CD | -1.2311 | 0.024085 | Significativo |
+| A × C | AC = BD | -0.0253 | 0.955911 | No significativo |
+| A × D | AD = BC | +1.5458 | 0.008256 | Significativo |
+
+La validación Pandera y la trazabilidad conservaron efectos principales positivos y estadísticamente significativos.
+
+Sin embargo, los efectos estimados en este diseño deben interpretarse considerando su estructura de alias.
+
+Por ejemplo, el contraste AB = CD no permite determinar si la significancia corresponde exclusivamente a la interacción entre A y B o a la interacción entre C y D.
+
+De igual manera, el contraste AD = BC no permite separar individualmente ambas interacciones.
+
+#### 3.3.4 Diagnóstico del diseño fraccionado
+
+| Indicador | Resultado |
+|---|---:|
+| R² | 0.9942 |
+| R² ajustado | 0.9890 |
+| Desviación residual | 0.8871 ms |
+| Shapiro-Wilk W | 0.995479 |
+| Shapiro-Wilk p | 0.999999 |
+
+La prueba Shapiro-Wilk no mostró evidencia suficiente para rechazar la normalidad de los residuos al nivel de significancia de 0.05.
+
+#### 3.3.5 Comparación de los diseños
+
+| Indicador | Completo 2⁴ | Fraccionado 2⁴⁻¹ |
+|---|---:|---:|
+| Corridas | 32 | 16 |
+| Tratamientos | 16 | 8 |
+| Réplicas por tratamiento | 2 | 2 |
+| R² | 0.9814 | 0.9942 |
+| R² ajustado | 0.9640 | 0.9890 |
+| Desviación residual (ms) | 1.6964 | 0.8871 |
+
+El diseño fraccionado redujo de 32 a 16 las corridas consideradas, lo que representa una disminución del 50 % en el esfuerzo experimental.
+
+Esta reducción implica menor esfuerzo de ejecución, aunque también limita la posibilidad de separar determinados efectos e interacciones.
+
+El diseño fraccionado presentó mejores indicadores de ajuste en esta comparación. Sin embargo, esto no significa que sea universalmente superior.
+
+Los modelos utilizan diferentes cantidades de observaciones y diferentes estructuras de términos, por lo que sus indicadores no deben interpretarse como una comparación directa de capacidad predictiva.
+
+**Nota metodológica:** las 16 corridas del diseño fraccionado corresponden a una fracción del diseño factorial de cuatro factores. Por tanto, los dos diseños no deben interpretarse como experimentos independientes cuando se utilizan observaciones procedentes de la misma ejecución experimental.
+
+#### 3.3.6 Evidencias gráficas comparativas
+
+**Gráfica 1. Comparación de efectos principales**
+
+![Gráfica de efectos principales](../../data/reportes/graficas_comparacion_2_4/01_efectos_principales.png)
+
+La gráfica muestra los efectos estimados de los cuatro factores para ambos diseños.
+
+**Gráfica 2. Significancia estadística**
+
+![Gráfica de significancia estadística](../../data/reportes/graficas_comparacion_2_4/02_significancia_estadistica.png)
+
+La gráfica representa la significancia estadística mediante el valor transformado -log10(p), utilizando como referencia el umbral de 0.05.
+
+**Gráfica 3. Número de corridas**
+
+![Gráfica de número de corridas](../../data/reportes/graficas_comparacion_2_4/03_numero_corridas.png)
+
+La gráfica compara el número de corridas de ambos diseños y permite observar la reducción del esfuerzo experimental.
+
+#### 3.3.7 Evidencias de la comparación factorial
+
+**Código:**
+
+- `src/experimento_factorial_2_4_e2.py`
+- `src/analisis_factorial_2_4_e2.py`
+- `src/analisis_fraccionado_2_4_e2.py`
+- `src/comparacion_factorial_2_4_e2.py`
+- `src/graficas_comparacion_2_4_e2.py`
+
+**Resultados:**
+
+- `data/reportes/experimento_factorial_2_4_completo.csv`
+- `data/reportes/experimento_factorial_2_4_fraccionado.csv`
+- `data/reportes/anova_factorial_2_4_completo.csv`
+- `data/reportes/anova_factorial_2_4_fraccionado.csv`
+- `data/reportes/comparacion_factorial_2_4.csv`
+
+**Gráficas:**
+
+- `data/reportes/graficas_comparacion_2_4/01_efectos_principales.png`
+- `data/reportes/graficas_comparacion_2_4/02_significancia_estadistica.png`
+- `data/reportes/graficas_comparacion_2_4/03_numero_corridas.png`
+
+### 3.4 Limitaciones del análisis estadístico
+
+Los resultados deben interpretarse considerando las siguientes limitaciones:
+
+1. Los experimentos utilizaron dos réplicas por tratamiento.
+2. Los tiempos pueden variar según la carga del equipo.
+3. Se evaluaron únicamente los tamaños de muestra definidos en los diseños.
+4. La primera tanda del experimento 2³ presentó una medición extrema.
+5. Las tandas de confirmación y originales se ejecutaron con condiciones de calentamiento diferentes.
+6. El diseño fraccionado presenta efectos confundidos por su estructura de alias.
+7. Los indicadores nacionales no representan automáticamente condiciones económicas municipales.
+8. Los resultados estadísticos no deben extrapolarse automáticamente a tamaños de datos o condiciones de procesamiento diferentes.
+
+## 4. Calidad en los Sistemas de Información
 
 ### 4.1 Pruebas automatizadas
 
-Se incorporaron pruebas para verificar el procesamiento geoespacial y la trazabilidad.
+Se incorporaron pruebas para verificar el procesamiento geoespacial, la trazabilidad y otros componentes del proyecto.
 
 Entre los archivos de pruebas se encuentran:
 
 - `tests/test_geoespacial.py`
 - `tests/test_trazabilidad_e2.py`
 
-Durante la validación técnica de E2 se registraron **145 pruebas aprobadas**.
+Durante la validación general del proyecto se obtuvo el siguiente resultado:
 
-Estas pruebas permiten verificar aspectos del procesamiento, la estructura de los resultados y la conservación de información.
+| Verificación | Resultado |
+|---|---|
+| Pruebas automatizadas | 145 aprobadas |
+| Análisis estático con Ruff | Sin errores |
+| Compilación de módulos estadísticos | Sin errores |
+| Verificación de formato Git | Sin errores |
 
-### 4.2 Documentación ética
+Las pruebas permiten verificar aspectos del procesamiento, la estructura de los resultados y la conservación de información.
+
+### 4.2 Validación de calidad con Pandera
+
+Se utilizó Pandera como herramienta de validación de calidad dentro de los experimentos factoriales.
+
+Su activación se evaluó como un factor experimental para medir el efecto de la validación sobre el tiempo de procesamiento.
+
+Los resultados de los experimentos muestran que la ejecución de la validación incrementó el tiempo de procesamiento bajo las condiciones evaluadas.
+
+Esto permite observar el costo computacional asociado con incorporar controles de calidad en el flujo de integración.
+
+### 4.3 Documentación ética
 
 Se elaboró el documento:
 
@@ -176,22 +525,20 @@ Se elaboró el documento:
 
 Este documento aborda consideraciones relacionadas con el uso responsable de información, la procedencia de las fuentes, las limitaciones de los indicadores y la necesidad de evitar interpretaciones incorrectas.
 
-### 4.3 Distribución de responsabilidades del equipo
+Se consideró especialmente importante distinguir los indicadores nacionales de las mediciones municipales para evitar conclusiones que no estén respaldadas por las fuentes.
 
-Para el cierre de E2 se establecieron dos áreas complementarias de responsabilidad:
+### 4.4 Distribución de responsabilidades
+
+Para el desarrollo y cierre de E2 se establecieron dos áreas complementarias de responsabilidad:
 
 | Integrante | Área | Responsabilidades |
 |---|---|---|
-| David Cuevas Farías | Implementación técnica | Incorporación de información geográfica, desarrollo de scripts, procesamiento municipal, generación del mapa, integración y trazabilidad |
+| David Cuevas Farías | Implementación técnica | Incorporación de información geográfica, desarrollo de scripts, procesamiento municipal, generación del mapa, integración, trazabilidad y análisis estadístico |
 | Nancy Haide Vázquez Ávalos | Validación y aseguramiento de calidad | Revisión de fuentes y metadatos, validación de resultados geográficos, auditoría de trazabilidad, verificación de pruebas y revisión documental |
 
 Esta distribución busca equilibrar las actividades de construcción técnica y revisión de calidad.
 
-La implementación se encuentra respaldada por los commits de la rama `e2david`.
-
-Las revisiones asignadas a Nancy se documentarán como completadas una vez que se ejecuten y se incorporen sus evidencias.
-
-### 4.4 Evidencia de proceso personal (PSP)
+### 4.5 Evidencia de proceso personal (PSP)
 
 El repositorio contiene registros de tiempo y defectos para ambos integrantes:
 
@@ -210,20 +557,39 @@ Los registros PSP de Nancy para E2 deberán actualizarse con los tiempos y activ
 
 Los registros de defectos anteriores se conservan como antecedentes. No se asignan defectos nuevos sin evidencia de su identificación y corrección.
 
-## 5. Limitaciones y pendientes declarados
+### 4.6 Validaciones complementarias G05–G07
 
-La etapa E2 presenta las siguientes limitaciones y actividades pendientes:
+El 22 de noviembre de 2026 se documentaron verificaciones adicionales de calidad correspondientes a E2.
+
+| Actividad | Resultado | Tiempo reportado |
+|---|---|---:|
+| G05 — Revisión de ética de datos | Aprobada | 20 min |
+| G06 — Pruebas automatizadas | 145 pruebas aprobadas | 35 min |
+| G07 — Revisión documental | Comprobaciones aprobadas | 20 min |
+
+**Tiempo total reportado:** 75 minutos.
+
+La evidencia se encuentra en:
+
+`docs/E2/validacion-calidad.md`
+
+Estas verificaciones corresponden al trabajo documentado y no sustituyen las revisiones individuales que requieran evidencias adicionales.
+
+## 5. Limitaciones y consideraciones generales
+
+La etapa E2 presenta las siguientes limitaciones:
 
 1. **Escala de los indicadores:** las series económicas nacionales no representan automáticamente condiciones municipales de vivienda.
 2. **Alcance del mapa:** la visualización muestra límites administrativos, no precios ni valores económicos municipales.
 3. **Archivos derivados:** algunos productos de Plata y Oro se generan mediante scripts y no necesariamente se encuentran versionados en Git.
 4. **Trazabilidad temporal:** las fechas de captura no deben confundirse con fechas de procesamiento.
-5. **Experimento factorial 2³:** pendiente de verificar su ejecución y resultados.
-6. **PSP:** pendiente de completar y validar los registros individuales de E2.
-7. **Validación de calidad:** pendiente de incorporar los resultados documentados de las revisiones asignadas a Nancy.
-8. **Integración final:** pendiente de verificar el cierre del equipo y la integración de la rama de trabajo.
+5. **Diseños experimentales:** los resultados corresponden a las condiciones específicas evaluadas y no garantizan el mismo comportamiento en otros equipos o volúmenes.
+6. **Réplicas:** se utilizaron dos réplicas por tratamiento en los experimentos documentados.
+7. **Diseño fraccionado:** algunos efectos e interacciones se encuentran confundidos debido a la estructura de alias.
+8. **PSP:** los registros individuales deben reflejar los tiempos y actividades realmente realizados.
+9. **Revisión de calidad:** las actividades de cada integrante deben estar respaldadas por sus evidencias correspondientes.
 
-Estas limitaciones se declaran para evitar presentar como terminadas actividades que todavía requieren evidencia.
+Estas limitaciones se declaran para evitar presentar como universales resultados que únicamente corresponden a las condiciones evaluadas.
 
 ## 6. Relatoría y entregables
 
@@ -234,32 +600,54 @@ Estas limitaciones se declaran para evitar presentar como terminadas actividades
 | Entrega E2 | `docs/E2/ENTREGA.md` |
 | Relatoría E2 | `docs/relatoria-E2.md` |
 | Trazabilidad | `docs/E2/trazabilidad.md` |
+| Validación de calidad | `docs/E2/validacion-calidad.md` |
 | Ética de datos | `docs/etica-datos.md` |
+| Experimento factorial 2³ | `docs/E2/analisis_estadistico/experimento_factorial_2_3.md` |
+| Comparación factorial 2⁴ | `docs/E2/analisis_estadistico/comparacion_factorial_2_4.md` |
 
 ### 6.2 Productos técnicos
 
 | Producto | Ubicación |
 |---|---|
 | Procesamiento geoespacial | `src/geoespacial.py` |
-| Generación de mapa | `src/mapa_colima.py` |
+| Generación del mapa | `src/mapa_colima.py` |
 | Trazabilidad | `src/trazabilidad.py` |
 | Integración de datos | `src/integracion.py` |
 | Indicadores Oro | `src/oro.py` |
 | Pruebas geoespaciales | `tests/test_geoespacial.py` |
 | Pruebas de trazabilidad | `tests/test_trazabilidad_e2.py` |
-| Mapa municipal | `reportes/figuras/mapa_municipios_colima_v2.png` |
 
-### 6.3 Evidencias de validación
+### 6.3 Evidencias estadísticas
 
-La validación técnica documentada incluye el procesamiento de los diez municipios de Colima, la generación de los productos mensuales de Plata y Oro y la ejecución satisfactoria de 145 pruebas automatizadas.
+| Evidencia | Ubicación |
+|---|---|
+| Experimento factorial 2³ | `data/reportes/experimento_factorial_e2_confirmacion.csv` |
+| ANOVA 2³ | `data/reportes/anova_factorial_2_3.csv` |
+| Experimento completo 2⁴ | `data/reportes/experimento_factorial_2_4_completo.csv` |
+| Experimento fraccionado 2⁴⁻¹ | `data/reportes/experimento_factorial_2_4_fraccionado.csv` |
+| ANOVA completo 2⁴ | `data/reportes/anova_factorial_2_4_completo.csv` |
+| ANOVA fraccionado 2⁴⁻¹ | `data/reportes/anova_factorial_2_4_fraccionado.csv` |
+| Comparación de diseños | `data/reportes/comparacion_factorial_2_4.csv` |
 
-Las revisiones adicionales de calidad asignadas a Nancy deberán documentarse mediante sus resultados y registros PSP.
+### 6.4 Evidencias de validación
 
-### 6.4 Uso de IA generativa
+La validación técnica documentada incluye:
 
-Se utilizó ChatGPT como apoyo para explicar procedimientos técnicos, revisar comandos, orientar la implementación de scripts y pruebas, interpretar resultados y estructurar documentación.
+- Procesamiento de los diez municipios de Colima.
+- Diez geometrías válidas.
+- Generación del GeoPackage con EPSG:4326.
+- Integración de 564 registros en Plata.
+- Integración de 564 registros en Oro.
+- Conservación de la procedencia de los registros.
+- Ejecución satisfactoria de 145 pruebas automatizadas.
+- Análisis estático con Ruff sin errores.
+- Verificación de formato mediante Git.
 
-Las respuestas generadas se contrastaron con los archivos y evidencias disponibles en el repositorio.
+### 6.5 Uso de IA generativa
+
+Se utilizó ChatGPT como apoyo para explicar procedimientos técnicos, revisar comandos de PowerShell y Git, orientar la implementación de scripts y pruebas, interpretar resultados estadísticos y estructurar documentación.
+
+Las respuestas generadas se contrastaron con los archivos, las ejecuciones y las evidencias disponibles en el repositorio.
 
 La responsabilidad de verificar los resultados y presentar la entrega corresponde al equipo.
 
@@ -269,102 +657,84 @@ La responsabilidad de verificar los resultados y presentar la entrega correspond
 
 **Repositorio:** https://github.com/NancyHaideVazquez/trusted-data-lab
 
-**Rama de trabajo:** `e2david`
-
 ### 7.2 Historial de commits
 
-| Etapa | Commit | Descripción |
-|---|---|---|
-| G01 | `b4fe64f` | Incorporar Marco Geoestadístico municipal 2026 |
-| G02 | `8ef0ae2` | Implementar procesamiento geoespacial y pruebas |
-| G03 | `6f79137` | Generar mapa municipal |
-| G04 | `ce8b16a` | Incorporar trazabilidad Bronce–Plata–Oro |
-| G05 | `1a8adcf` | Documentar ética y uso responsable de datos |
-| G06 | `d93ef88` | Documentar entrega y evidencias |
-| G07 | `9fd82f6` | Documentar relatoría y actualizar entrega |
-
-Los commits G01–G07 se registraron el 22 de noviembre de 2026.
-
-### 7.3 Estado de la entrega
-
-La implementación técnica, los productos geoespaciales, la trazabilidad y la documentación principal cuentan con evidencias en el repositorio.
-
-El cierre de E2 requiere completar las revisiones de calidad asignadas, actualizar los registros PSP correspondientes y verificar el cumplimiento de los requisitos oficiales.
-
-**Estado:** Entrega E2 actualizada con la distribución de responsabilidades del equipo. Pendiente de revisión y validación final.
-
-## Evidencias complementarias de validacion G05-G07
-
-El 22 de noviembre de 2026 se realizaron verificaciones
-adicionales de calidad correspondientes a E2.
-
-Resultados obtenidos:
-
-- G05: revision del documento de etica de datos, aprobada.
-- G06: 14 pruebas especificas de E2 aprobadas.
-- G06: 145 pruebas generales aprobadas.
-- G07: comprobaciones documentales y de formato aprobadas.
-
-Tiempo total reportado: 75 minutos.
-
-Evidencia disponible:
-`docs/E2/validacion-calidad.md`
-
-Estas verificaciones no implican que se hayan completado
-las demas actividades de revision pendientes.
-
-## Verificacion de procedencia y condiciones de uso
-
-Se verifico la integridad del archivo original
-2026_1_06_MUN.zip mediante SHA-256.
-
-El hash calculado coincide con el registrado
-en metadatos.json.
-
-Fuente: INEGI, Marco Geoestadistico municipal 2026.
-
-Condiciones de uso:
-https://www.inegi.org.mx/inegi/terminos.html
-
-La fecha exacta de ingesta y la URL directa
-de descarga permanecen sin documentar.
-
-La revision de procedencia y condiciones de uso
-se encuentra registrada en docs/etica-datos.md.
-
-
-## Validacion tecnica final de Ingenieria de Datos
-
-El 22 de noviembre de 2026 se verificaron los siguientes resultados:
-
-| Verificacion | Resultado |
+| Commit | Descripción |
 |---|---|
-| Pruebas automatizadas | 145 aprobadas |
-| Analisis estatico con Ruff | Sin errores |
-| Municipios procesados | 10 |
-| Geometrias validas | 10 |
-| CRS de salida | EPSG:4326 |
-| Registros en Plata | 564 |
-| Registros en Oro | 564 |
-| Registros de Banxico por capa | 381 |
-| Registros de INEGI por capa | 183 |
-| Registros sin archivo de origen | 0 |
-| Registros sin fecha de ingesta | 0 |
-| Archivos originales inexistentes | 0 |
-| Fechas de ingesta validas | 564 por capa |
+| `b4fe64f` | Incorporar Marco Geoestadístico municipal 2026 |
+| `8ef0ae2` | Implementar procesamiento geoespacial y pruebas |
+| `6f79137` | Generar mapa municipal |
+| `ce8b16a` | Incorporar trazabilidad Bronce–Plata–Oro |
+| `1a8adcf` | Documentar ética y uso responsable de datos |
+| `d93ef88` | Documentar entrega y evidencias |
+| `9fd82f6` | Documentar relatoría y actualizar entrega |
+| `3c58f28` | Incorporar evidencias de validación y actualizar PSP |
+| `691bb86` | Documentar procedencia INEGI y corregir estilo del código |
+| `892c21f` | Incorporar experimento factorial 2³ y análisis estadístico |
+| `01f2421` | Completar comparación de diseños factoriales 2⁴ |
+| `2622d2e` | Corregir orden de imports para cumplir Ruff en E2 |
+| `3e359ef` | Documentar ANOVA del experimento factorial 2³ |
 
-Los resultados se comprobaron mediante pruebas automatizadas
-y consultas directas a los productos de las capas Plata y Oro.
+Los commits anteriores permiten consultar la evolución de las actividades y los productos incorporados a la etapa.
 
-### Commits complementarios
+### 7.3 Reproducción de los experimentos
 
-| Commit | Descripcion |
-|---|---|
-| `3c58f28` | Incorporar evidencias de validacion y actualizar PSP |
-| `691bb86` | Documentar procedencia INEGI y corregir estilo del codigo |
+Desde la raíz del repositorio se pueden ejecutar los programas mediante los siguientes comandos:
 
-La rama de trabajo utilizada fue `e2david`.
+**Experimento factorial 2³:**
 
-Estas verificaciones respaldan la implementacion tecnica.
-No sustituyen las revisiones pendientes de otros integrantes
-ni la validacion de los requisitos oficiales de E2.
+```powershell
+python -m src.experimento_factorial_e2
+python -m src.analisis_factorial_2_3_e2
+python -m src.graficas_factorial_e2
+```
+
+**Diseño factorial completo 2⁴:**
+
+```powershell
+python -m src.experimento_factorial_2_4_e2
+python -m src.analisis_factorial_2_4_e2
+```
+
+**Diseño factorial fraccionado 2⁴⁻¹:**
+
+```powershell
+python -m src.analisis_fraccionado_2_4_e2
+```
+
+**Comparación de diseños y gráficas:**
+
+```powershell
+python -m src.comparacion_factorial_2_4_e2
+python -m src.graficas_comparacion_2_4_e2
+```
+
+**Validación del proyecto:**
+
+```powershell
+python -m ruff check src tests --output-format concise
+python -m pytest -q
+git diff --check
+```
+
+**Nota:** ejecutar nuevamente los experimentos sobrescribe sus archivos CSV de salida. Se recomienda conservar una copia de los resultados utilizados en esta entrega antes de repetir las ejecuciones.
+
+### 7.4 Estado de la entrega
+
+La etapa E2 cuenta con productos geoespaciales, integración de datos, mecanismos de trazabilidad, experimentos factoriales, análisis estadísticos, evidencias gráficas y pruebas automatizadas.
+
+Los resultados técnicos y estadísticos se encuentran documentados en sus respectivos archivos dentro del repositorio.
+
+La entrega integra las evidencias correspondientes a Ingeniería de Datos, Análisis Estadístico y Calidad en los Sistemas de Información.
+
+El cierre definitivo debe considerar la revisión de los requisitos oficiales, la comprobación de los enlaces de evidencia y la actualización de los registros individuales de calidad que correspondan.
+
+**Estado:** Documentación E2 integrada y actualizada, pendiente de revisión final de los requisitos y evidencias del equipo.
+
+---
+
+**Responsables:** David Cuevas Farías y Nancy Haide Vázquez Ávalos.
+
+**Proyecto:** Observatorio de Vivienda y Costos de Colima.
+
+**Repositorio:** [Trusted Data Lab](https://github.com/NancyHaideVazquez/trusted-data-lab)
