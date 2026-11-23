@@ -140,3 +140,79 @@ Fuente: INEGI, Marco Geoestadistico municipal 2026.
 
 La fecha exacta de ingesta y la URL directa de
 descarga no estan documentadas y no se inventan.
+
+## 11. Revisi?n de robots.txt y condiciones de acceso
+
+Se consultaron los archivos p?blicos robots.txt de las instituciones utilizadas como fuentes del observatorio.
+
+### 11.1 INEGI
+
+- URL: https://www.inegi.org.mx/robots.txt
+- Resultado de consulta: HTTP 200.
+- Fecha de revisi?n: 22 de noviembre de 2026.
+- Agente general: User-Agent: *.
+
+Entre las rutas expresamente permitidas se encuentran `/temas`, `/datos` y `/programas`.
+
+Se identificaron restricciones espec?ficas, como `/auth/register/` y `/catalog/*/data-dictionary/*?file_name=*`.
+
+Estas reglas no constituyen autorizaci?n general para extraer cualquier contenido.
+
+### 11.2 Banco de M?xico
+
+- URL: https://www.banxico.org.mx/robots.txt
+- Resultado de consulta: HTTP 200.
+- Fecha de revisi?n: 22 de noviembre de 2026.
+
+Se identificaron restricciones para rutas como `/dyn`, `/dyn/` y `/ALEPH`.
+
+El proyecto debe respetar las restricciones aplicables a las rutas y mecanismos de acceso utilizados.
+
+### 11.3 Criterios de cumplimiento
+
+El equipo establece los siguientes compromisos:
+
+1. Priorizar archivos p?blicos y servicios oficiales de descarga.
+2. Consultar las condiciones de uso antes de incorporar nuevas fuentes.
+3. Respetar las restricciones aplicables de robots.txt.
+4. Evitar mecanismos de extracci?n que eludan controles de acceso.
+5. Conservar la identificaci?n y procedencia de las fuentes.
+6. Revisar nuevamente las condiciones si cambian las rutas o m?todos de adquisici?n.
+
+La consulta de robots.txt no sustituye la revisi?n de t?rminos de uso ni acredita por s? misma derechos de reproducci?n o redistribuci?n.
+
+## 12. Licencias y condiciones de reutilizaci?n
+
+### 12.1 INEGI
+
+Fuente: Marco Geoestad?stico municipal 2026.
+
+- P?gina oficial: https://www.inegi.org.mx/temas/mg/
+- T?rminos institucionales: https://www.inegi.org.mx/inegi/terminos.html
+
+El proyecto reconoce al INEGI como fuente original y conserva la referencia de procedencia.
+
+La reproducci?n, adaptaci?n y publicaci?n de productos derivados debe sujetarse a las condiciones institucionales aplicables.
+
+No se atribuye al INEGI la autor?a de los an?lisis derivados del observatorio.
+
+### 12.2 Banco de M?xico
+
+Fuente: serie SF43783, TIIE de 28 d?as.
+
+- Sitio oficial: https://www.banxico.org.mx/
+- Archivo robots.txt: https://www.banxico.org.mx/robots.txt
+
+El equipo reconoce al Banco de M?xico como fuente de los indicadores financieros utilizados.
+
+La autorizaci?n espec?fica de redistribuci?n y las condiciones aplicables al mecanismo de consulta deben verificarse en la documentaci?n oficial correspondiente antes de publicar conjuntos de datos derivados.
+
+No se presume una licencia abierta espec?fica que no haya sido comprobada.
+
+### 12.3 Alcance de la revisi?n
+
+La presente declaraci?n documenta las fuentes utilizadas, las reglas de rastreo observadas y los compromisos ?ticos del equipo.
+
+La revisi?n de robots.txt no sustituye la verificaci?n jur?dica de licencias y t?rminos espec?ficos.
+
+Si se incorporan nuevas fuentes, deber?n documentarse sus condiciones de acceso, reutilizaci?n, atribuci?n y privacidad.
