@@ -26,3 +26,7 @@ fecha,inicio,fin,interrupcion_min,fase,actividad
 2026-11-13,08:30,09:00,0,Análisis estadístico,Análisis de series temporales
 2026-11-13,09:00,10:30,0,Análisis estadístico,Modelos de pronóstico y pronóstico final
 2026-11-13,10:30,11:11,0,Calidad,Mejoras de calidad del proyecto
+
+2026-11-22,,,0,revision,E2 G05 - Revision de etica de datos - 20 min - Ejecutada por David en apoyo a Nancy
+2026-11-22,,,0,pruebas,E2 G06 - Verificacion de 145 pruebas automatizadas - 35 min - Ejecutada por David en apoyo a Nancy
+2026-11-22,,,0,revision,E2 G07 - Revision documental y evidencias - 20 min - Ejecutada por David en apoyo a Nancy
