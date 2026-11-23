@@ -1,0 +1,7 @@
+caracteristica,formula,numerador,denominador,resultado_porcentaje,evidencia,limitacion
+Completitud,Campos presentes / campos esperados,5640,5640,100.0,data\oro\indicadores_mensuales_e2.csv,Evalua los diez campos obligatorios
+Consistencia,"Filas con periodo, valor y llave validos / total",564,564,100.0,data\oro\indicadores_mensuales_e2.csv,No sustituye la validacion integral de Pandera
+Trazabilidad,Filas con archivo existente y fecha valida / total,564,564,100.0,data\oro\indicadores_mensuales_e2.csv,"Verifica referencias, no el valor original"
+Precision - conservacion Plata/Oro,Valores conservados / total,564,564,100.0,data\plata\integracion_mensual_e2.csv,Tolerancia 1e-9; no mide precision de la fuente
+Credibilidad - identificacion,Filas con fuente y serie esperadas / total,564,564,100.0,data\oro\indicadores_mensuales_e2.csv,No acredita por si sola licencias ni exactitud
+Disponibilidad local,Archivos de datos legibles / archivos probados,2,2,100.0,data\oro\indicadores_mensuales_e2.csv; data\plata\integracion_mensual_e2.csv,"Una comprobacion local, no disponibilidad continua"
