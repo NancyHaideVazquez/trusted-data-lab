@@ -5,3 +5,7 @@ numero,fecha,tipo,fase_introducido,fase_eliminado,minutos_correccion,defecto_ori
 4,2026-11-08,entorno,documentacion,revision,10,,"El archivo .gitignore estaba bloqueando la subida de la carpeta data/bronce, impidiendo subir la evidencia"
 5,2026-11-08,interfaz,pruebas,revision,15,,El primer workflow de GitHub Actions fallo por un error de sintaxis en el archivo YAML (traduccion de palabras clave al español)
 6,2026-11-22,documentacion,documentacion,revision,20,docs/E2/ENTREGA.md,Espacios finales detectados mediante git diff --check y corregidos durante la revision documental de E2
+7,2026-11-22,estandar,codigo,pruebas,30,,Imports desordenados detectados por Ruff y corregidos en el commit 2622d2e
+8,2026-11-23,documentacion,documentacion,revision,,,Formato incorrecto al final de iso25012.md corregido en el commit e2c8cb0
+9,2026-11-23,integracion,integracion,integracion,,,Push rechazado por cambios remotos de capturas automaticas y resuelto mediante git pull --rebase
+10,2026-11-23,entorno,configuracion,pruebas,,,DuckDB no disponible en el entorno local; se instalo y verifico la lectura de 564 registros

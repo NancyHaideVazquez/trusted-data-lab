@@ -19,3 +19,14 @@ fecha,inicio,fin,interrupcion_min,fase,actividad
 2026-11-22,14:00,14:30,0,documentacion,E2 G05 - Etica y uso responsable de datos
 2026-11-22,14:30,15:00,0,documentacion,E2 G06 - Documento de entrega
 2026-11-22,15:00,15:15,0,documentacion,E2 G07 - Relatoria
+
+2026-11-22,,,,analisis,E2 G08 - Experimento factorial 2^3 - 30 min efectivos estimados
+2026-11-22,,,,analisis,E2 G09 - Comparacion factorial 2^4 completo y fraccionado - 30 min efectivos estimados
+2026-11-22,,,,codigo,E2 G10 - Correccion de imports para Ruff - 30 min efectivos estimados
+2026-11-22,,,,documentacion,E2 G11 - Documentacion del ANOVA factorial - 30 min efectivos estimados
+2026-11-22,,,,documentacion,E2 - Actualizacion de entrega y relatoria - 30 min efectivos estimados
+2026-11-22,,,,documentacion,E2 - Declaracion de etica y legalidad - 15 min efectivos estimados
+2026-11-23,,,,calidad,E2 Q02 - Evaluacion ISO IEC 25012 - 30 min efectivos estimados
+2026-11-23,,,,calidad,E2 Q01 - Evaluacion ISO IEC 25010 - 30 min efectivos estimados
+2026-11-23,,,,documentacion,E2 Q03 - Antecedentes normativos - 45 min efectivos estimados
+,,,45,descanso,E2 - Descansos acumulados del 22 y 23 de noviembre
