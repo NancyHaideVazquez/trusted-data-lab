@@ -9,6 +9,14 @@ pyarrow>=17,<24
 duckdb>=1.1,<2
 pandera>=0.20,<1
 
+
+# Procesamiento geoespacial - E2
+geopandas>=1.1,<2
+shapely>=2.0,<3
+pyproj>=3.6,<4
+pyogrio>=0.10,<1
+
+
 # Estadistica y experimentacion
 numpy>=1.26,<3
 scipy>=1.13,<2

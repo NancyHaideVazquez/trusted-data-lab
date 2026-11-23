@@ -1,9 +1,11 @@
-
 from pathlib import Path
 
 import pandas as pd
 
-from integracion import integrar_datos
+try:
+    from src.integracion import integrar_datos
+except ModuleNotFoundError:
+    from integracion import integrar_datos
 
 
 def main():
@@ -22,23 +24,49 @@ def main():
     carpeta_salida = carpeta_proyecto / "data/plata"
     carpeta_salida.mkdir(parents=True, exist_ok=True)
 
-    # Leer archivos
-    inegi = pd.read_csv(archivo_inegi)
-    banxico = pd.read_csv(archivo_banxico)
+    # Leer los identificadores como texto
+    inegi = pd.read_csv(
+        archivo_inegi,
+        dtype={"serie_id": str},
+    )
 
-    # Integrar
-    integrado = integrar_datos(inegi, banxico)
+    banxico = pd.read_csv(
+        archivo_banxico,
+        dtype={"serie_id": str},
+    )
 
-    # Guardar resultado
-    archivo_salida = carpeta_salida / "integracion_mensual.csv"
+    # Integrar con trazabilidad E2
+    integrado = integrar_datos(
+        inegi,
+        banxico,
+        incluir_trazabilidad=True,
+    )
+
+    # Verificar que la trazabilidad esté completa
+    columnas_trazabilidad = [
+        "archivo_origen",
+        "fecha_ingesta_utc",
+    ]
+
+    assert len(integrado) == len(inegi) + len(banxico)
+    assert integrado[columnas_trazabilidad].notna().all().all()
+
+    # Guardar en un archivo independiente de E2
+    archivo_salida = (
+        carpeta_salida / "integracion_mensual_e2.csv"
+    )
+
     integrado.to_csv(archivo_salida, index=False)
 
-    print("T10 - INTEGRACION DE DATOS")
+    print("================================")
+    print(" E2 - INTEGRACION CON TRAZABILIDAD")
+    print("================================")
     print("Registros INEGI:", len(inegi))
     print("Registros Banxico:", len(banxico))
     print("Registros integrados:", len(integrado))
+    print("Columnas:", len(integrado.columns))
     print("Archivo generado:", archivo_salida)
-    print("Integracion completada correctamente.")
+    print("Integracion E2 completada correctamente.")
 
 
 if __name__ == "__main__":
