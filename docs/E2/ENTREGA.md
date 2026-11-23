@@ -6,7 +6,7 @@
 
 **Etapa:** E2 — Procesamiento geoespacial, trazabilidad, análisis estadístico y calidad de datos.
 
-**Fecha de actualización:** 22 de noviembre de 2026.
+**Fecha de actualización:** 23 de noviembre de 2026.
 
 **Repositorio:** https://github.com/NancyHaideVazquez/trusted-data-lab
 
@@ -27,6 +27,8 @@ En el área de Análisis Estadístico se desarrollaron experimentos factoriales 
 Se realizaron análisis ANOVA, estimación de efectos, evaluación de interacciones, diagnósticos de residuos y comparaciones entre diseños experimentales.
 
 En el área de Calidad de Software se ejecutaron pruebas automatizadas, análisis estático con Ruff y verificaciones de formato. La validación general del proyecto reportó 145 pruebas aprobadas.
+
+Se incorporaron evaluaciones internas ISO/IEC 25010 y 25012, antecedentes normativos y registros PSP actualizados. La auditoría cruzada permanece pendiente.
 
 La documentación de esta etapa reúne los resultados de Ingeniería de Datos, Análisis Estadístico y Calidad en los Sistemas de Información.
 
@@ -547,15 +549,24 @@ El repositorio contiene registros de tiempo y defectos para ambos integrantes:
 | David Cuevas Farías | `calidad/tiempo-david.csv` | `calidad/defectos-david.csv` |
 | Nancy Haide Vázquez Ávalos | `calidad/tiempo-nancy.csv` | `calidad/defectos-nancy.csv` |
 
-Para David se prepararon siete registros estimados correspondientes a las actividades G01–G07 del 22 de noviembre de 2026.
+El registro de David contiene 29 actividades acumuladas y 10 defectos. Para G01–G07 se registraron 270 minutos efectivos estimados y 45 minutos de interrupciones. Las nueve actividades adicionales del 22 y 23 de noviembre suman 270 minutos efectivos estimados y 45 minutos de descanso acumulado, confirmados por David. En conjunto, los registros de E2 representan 540 minutos efectivos y 90 minutos de interrupciones estimadas, sin sumar nuevamente las verificaciones de apoyo G05–G07.
 
-El tiempo efectivo aproximado fue de 270 minutos, con 45 minutos adicionales de interrupciones.
+| Actividad adicional | Minutos efectivos estimados |
+|---|---:|
+| G08 — Factorial 2³ | 30 |
+| G09 — Factorial 2⁴ | 30 |
+| G10 — Ruff | 30 |
+| G11 — ANOVA | 30 |
+| Actualización de entrega y relatoría | 30 |
+| Ética y legalidad | 15 |
+| Q02 — ISO/IEC 25012 | 30 |
+| Q01 — ISO/IEC 25010 | 30 |
+| Q03 — Antecedentes normativos | 45 |
+| Total | 270 |
 
-Los horarios individuales son estimaciones reconstruidas y no mediciones exactas.
+Los horarios exactos de las actividades adicionales no se conocen; las duraciones se registraron en la descripción del CSV. Los cuatro defectos adicionales (7–10) corresponden a imports, formato documental, sincronización Git y disponibilidad de DuckDB. Los tiempos de corrección no confirmados permanecen vacíos.
 
-Los registros PSP de Nancy para E2 deberán actualizarse con los tiempos y actividades de revisión efectivamente realizados.
-
-Los registros de defectos anteriores se conservan como antecedentes. No se asignan defectos nuevos sin evidencia de su identificación y corrección.
+Los registros de Nancy requieren confirmación individual; las tres verificaciones de apoyo realizadas por David no se atribuyen a Nancy ni se suman como trabajo adicional sin comprobar que no exista duplicidad. Evidencia: commit `fefae1c`.
 
 ### 4.6 Validaciones complementarias G05–G07
 
@@ -573,7 +584,72 @@ La evidencia se encuentra en:
 
 `docs/E2/validacion-calidad.md`
 
-Estas verificaciones corresponden al trabajo documentado y no sustituyen las revisiones individuales que requieran evidencias adicionales.
+Estas verificaciones fueron realizadas por David en apoyo a Nancy. Estas verificaciones corresponden al trabajo documentado y no sustituyen las revisiones individuales que requieran evidencias adicionales.
+
+### 4.7 Q01 — Evaluación de calidad del producto ISO/IEC 25010
+
+Se documentaron las ocho características solicitadas, tomando como referencia ISO/IEC 25010:2011 y considerando las diferencias terminológicas de la edición 2023. La evaluación interna no constituye certificación.
+
+| Característica | Resultado observado | Limitación |
+|---|---|---|
+| Adecuación funcional | 145 pruebas aprobadas | No implica cobertura de todos los requisitos |
+| Eficiencia | 13.9944 ms promedio; 517.5033 KiB promedio | Diez lecturas de 564 registros; memoria Python medida con tracemalloc |
+| Compatibilidad | 5/5 comprobaciones | CSV con Pandas y DuckDB, JSON, GeoPackage y PNG |
+| Interacción | 5/5 tareas de revisión del mapa | Un evaluador interno; sin usuarios externos |
+| Fiabilidad | 8/10 ejecuciones de calidad exitosas (#24–33) | 80 %, inferior a la meta propuesta de 95 % |
+| Seguridad | Auditoría de requisitos: 0 vulnerabilidades conocidas; entorno global: 78 hallazgos en 9 paquetes | No equivale a ausencia de vulnerabilidades; Gitleaks no disponible en la revisión |
+| Mantenibilidad | Ruff sin errores; cobertura 823/2261 sentencias (36.40 %) | Cobertura insuficiente, especialmente en extractores |
+| Portabilidad | Windows/Python 3.14.3 y CI Ubuntu/Python 3.11 | Validación de pruebas, no de todos los scripts |
+
+Evidencia principal: [ISO/IEC 25010](calidad/iso25010.md), commit `5299de2`. Revisión de Nancy pendiente.
+
+### 4.8 Q02 — Evaluación de calidad de datos ISO/IEC 25012
+
+Se evaluaron las quince características de ISO/IEC 25012:2008 sobre los productos de E2. Los indicadores indirectos se identifican como aproximaciones y no como certificación.
+
+| Característica | Resultado o evidencia | Limitación |
+|---|---|---|
+| Exactitud | 564/564 valores coincidentes con Bronce (tolerancia 1e-9) | Banxico agregado por promedio mensual |
+| Completitud | 5640/5640 campos completos | Diez columnas de Oro |
+| Consistencia | 564/564 registros conformes | Reglas evaluadas de periodo, valor y unicidad |
+| Credibilidad | 564/564 con fuente y serie esperadas | Identificación, no verificación independiente de la fuente |
+| Actualidad | 11.37 días desde ingesta; INEGI: 3 días entre actualización y captura | No se conoce fecha de publicación de Banxico |
+| Accesibilidad | 2/2 archivos locales legibles | No prueba acceso externo |
+| Conformidad | 564/564 registros Plata conformes a Pandera | Alcance del esquema aplicado |
+| Confidencialidad | 4/4 patrones de exclusión comprobados | No es escaneo integral de secretos |
+| Eficiencia | 23.9783 ms de lectura | Una medición local |
+| Precisión | 564/564 valores conservados Plata–Oro | No mide precisión instrumental |
+| Trazabilidad | 564/564 registros trazables; 2 hashes SHA-256 | Hashes de referencia actuales, no comparación histórica |
+| Comprensibilidad | 4 documentos disponibles | No mide comprensión de usuarios |
+| Disponibilidad | 2/2 archivos disponibles localmente | No mide disponibilidad continua |
+| Portabilidad | 564 registros conservados en lectura y escritura CSV | Comprobación local con Pandas |
+| Recuperabilidad | 564/564 valores contrastados con Bronce | No equivale a restauración integral del sistema |
+
+Evidencia principal: [ISO/IEC 25012](calidad/iso25012.md), commits `8f42839` y `e2c8cb0`. Revisión de Nancy pendiente.
+
+### 4.9 Q03 — Antecedentes normativos
+
+Se documentaron ISO/IEC 9126-1:2001 como antecedente de calidad del producto; ISO/IEC 25000:2014 como marco SQuaRE; ISO/IEC 25010:2011 y 2023 para modelos de calidad; ISO/IEC 25012:2008 para calidad de datos; e ISO 9001:2015 e ISO 9000:2015 para gestión de calidad y fundamentos. Se relacionaron con las prácticas y evidencias del observatorio sin afirmar certificación.
+
+Evidencia: [Antecedentes normativos](calidad/antecedentes_normativos.md), commit `ce79abf`. Pendiente de revisión bibliográfica de las fichas oficiales y revisión de Nancy.
+
+### 4.10 Q04 — Auditoría cruzada
+
+**Estado: pendiente de indicaciones de la docente.** No se ha confirmado el equipo asignado ni la versión a auditar. No se presentan hallazgos externos simulados. Cuando se reciban las instrucciones se documentarán criterio, evidencia, severidad, impacto, acción, responsable y cierre, así como la respuesta a la auditoría recibida.
+
+### 4.11 Evidencias de calidad adicionales
+
+| Evidencia | Ruta |
+|---|---|
+| Auditoría del entorno | `data/reportes/auditoria_dependencias_e2.json` |
+| Auditoría de requisitos | `data/reportes/auditoria_proyecto_e2.json` |
+| Cobertura | `data/reportes/cobertura_iso25010_e2.json` |
+| Compatibilidad | `data/reportes/compatibilidad_iso25010_e2.csv` |
+| Eficiencia | `data/reportes/eficiencia_iso25010_e2.csv` |
+| Métricas de datos | `data/reportes/metricas_iso25012_e2.csv` |
+| Hashes Bronce | `data/reportes/hashes_bronce_e2.csv` |
+| Exactitud Bronce–Oro | `data/reportes/exactitud_bronce_oro_e2.csv` |
+| Script de métricas | `src/metricas_iso25012.py` |
 
 ## 5. Limitaciones y consideraciones generales
 
@@ -588,6 +664,10 @@ La etapa E2 presenta las siguientes limitaciones:
 7. **Diseño fraccionado:** algunos efectos e interacciones se encuentran confundidos debido a la estructura de alias.
 8. **PSP:** los registros individuales deben reflejar los tiempos y actividades realmente realizados.
 9. **Revisión de calidad:** las actividades de cada integrante deben estar respaldadas por sus evidencias correspondientes.
+
+10. **Calidad:** cobertura y fiabilidad por debajo de las metas propuestas; revisión de seguridad limitada.
+11. **Auditoría:** Q04 pendiente; revisión individual y bibliográfica pendiente.
+12. **Análisis estadístico:** falta confirmar con la rúbrica la evidencia de ANOVA de dos factores 3×2 y bloqueo del diseño 2³.
 
 Estas limitaciones se declaran para evitar presentar como universales resultados que únicamente corresponden a las condiciones evaluadas.
 
@@ -604,6 +684,11 @@ Estas limitaciones se declaran para evitar presentar como universales resultados
 | Ética de datos | `docs/etica-datos.md` |
 | Experimento factorial 2³ | `docs/E2/analisis_estadistico/experimento_factorial_2_3.md` |
 | Comparación factorial 2⁴ | `docs/E2/analisis_estadistico/comparacion_factorial_2_4.md` |
+| ISO/IEC 25010 | `docs/E2/calidad/iso25010.md` |
+| ISO/IEC 25012 | `docs/E2/calidad/iso25012.md` |
+| Antecedentes normativos | `docs/E2/calidad/antecedentes_normativos.md` |
+
+Relatoría: [Consultar relatoría E2](../relatoria-E2.md).
 
 ### 6.2 Productos técnicos
 
@@ -674,6 +759,13 @@ La responsabilidad de verificar los resultados y presentar la entrega correspond
 | `01f2421` | Completar comparación de diseños factoriales 2⁴ |
 | `2622d2e` | Corregir orden de imports para cumplir Ruff en E2 |
 | `3e359ef` | Documentar ANOVA del experimento factorial 2³ |
+| `5bc1963` | Actualizar entrega, relatoría y comparación factorial |
+| `d6fc572` | Completar ética y legalidad; etiqueta e2 |
+| `8f42839` | Evaluar ISO/IEC 25012 |
+| `e2c8cb0` | Corregir formato ISO/IEC 25012 |
+| `5299de2` | Evaluar ISO/IEC 25010 |
+| `ce79abf` | Documentar antecedentes normativos |
+| `fefae1c` | Actualizar PSP de David |
 
 Los commits anteriores permiten consultar la evolución de las actividades y los productos incorporados a la etapa.
 
@@ -729,7 +821,11 @@ La entrega integra las evidencias correspondientes a Ingeniería de Datos, Anál
 
 El cierre definitivo debe considerar la revisión de los requisitos oficiales, la comprobación de los enlaces de evidencia y la actualización de los registros individuales de calidad que correspondan.
 
-**Estado:** Documentación E2 integrada y actualizada, pendiente de revisión final de los requisitos y evidencias del equipo.
+**Estado:** Q01–Q03 documentadas y publicadas; PSP de David actualizado. Q04, revisión de Nancy, confirmación de requisitos estadísticos y revisión final pendientes.
+
+La etiqueta publicada `e2` apunta a `d6fc572`; las evidencias adicionales de calidad se encuentran en `main` y no forman parte de esa etiqueta. No se ha modificado la etiqueta original.
+
+Versión de referencia de las evidencias adicionales: `fefae1c`.
 
 ---
 

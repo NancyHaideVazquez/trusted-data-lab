@@ -4,9 +4,11 @@
 
 **Equipo:** David Cuevas Farías y Nancy Haide Vázquez Ávalos
 
-**Etapa:** E2 — Procesamiento geoespacial, trazabilidad, análisis estadístico y ética de datos
+**Etapa:** E2 — Procesamiento geoespacial, trazabilidad, análisis estadístico, ética y evaluación de calidad
 
-**Fecha de elaboración:** 22 de noviembre de 2026
+**Periodo documentado:** 22–23 de noviembre de 2026
+
+**Fecha de actualización:** 23 de noviembre de 2026
 
 **Repositorio:** https://github.com/NancyHaideVazquez/trusted-data-lab
 
@@ -414,11 +416,100 @@ El repositorio contiene los archivos:
 
 Para David se preparó un registro estimado de las actividades G01–G07 realizadas durante el desarrollo de E2.
 
-El tiempo efectivo aproximado fue de 270 minutos, con 45 minutos adicionales de interrupciones, para un tiempo transcurrido estimado de 315 minutos.
+El registro inicial G01–G07 comprendió 270 minutos efectivos y 45 minutos de interrupciones. Las actividades adicionales se incorporaron posteriormente al PSP; el total actualizado se detalla en la sección 2.10.
 
 Los horarios individuales se reconstruyeron a partir de estimaciones y no corresponden a una medición minuto a minuto.
 
 Los registros PSP deben mantenerse actualizados conforme se realicen nuevas actividades.
+
+### 2.10 Cronología complementaria y actualización PSP
+
+| Fecha | Actividad | Ejecución documentada | Minutos efectivos estimados |
+|---|---|---|---:|
+| 22/11/2026 | G01–G07 | David | 270 |
+| 22/11/2026 | G08 — Factorial 2³ | David | 30 |
+| 22/11/2026 | G09 — Comparación 2⁴ | David | 30 |
+| 22/11/2026 | G10 — Ruff | David | 30 |
+| 22/11/2026 | G11 — ANOVA | David | 30 |
+| 22/11/2026 | Entrega y relatoría | David | 30 |
+| 22/11/2026 | Ética y legalidad | David | 15 |
+| 23/11/2026 | Q02 — ISO 25012 | David | 30 |
+| 23/11/2026 | Q01 — ISO 25010 | David en apoyo a Nancy | 30 |
+| 23/11/2026 | Q03 — Normas | David en apoyo a Nancy | 45 |
+| | Total efectivo | | 540 |
+
+Se registraron 90 minutos acumulados de descansos e interrupciones, para un total estimado de 630 minutos (10.5 horas), de los cuales nueve horas corresponden a trabajo efectivo. No se inventaron horarios exactos para las actividades adicionales.
+
+Las verificaciones G05–G07 documentadas en `docs/E2/validacion-calidad.md` suman 75 minutos estimados de apoyo de David; no se agregan nuevamente al total ni se atribuyen a Nancy. Su revisión individual y PSP permanecen pendientes de confirmación.
+
+### 2.11 Q01 — Evaluación del producto ISO/IEC 25010
+
+La evaluación utiliza las ocho características solicitadas, distingue las ediciones 2011 y 2023 y documenta métricas, metas, resultados, evidencia y limitaciones. La preparación inicial fue realizada por David en apoyo a la actividad asignada a Nancy.
+
+| Característica | Resultado observado | Alcance |
+|---|---|---|
+| Adecuación funcional | 145 pruebas aprobadas | No equivale a cobertura de todos los requisitos |
+| Eficiencia | 13.9944 ms promedio; 517.5033 KiB promedio | Diez lecturas de 564 registros; memoria rastreada por Python |
+| Compatibilidad | 5/5 comprobaciones | Pandas, DuckDB, JSON, GeoPackage y PNG |
+| Interacción | 5/5 tareas | Un evaluador interno, sin usuarios externos |
+| Fiabilidad | 8/10 ejecuciones de calidad exitosas | Ventana Actions #24–33; meta propuesta 95 % no alcanzada |
+| Seguridad | 0 vulnerabilidades conocidas en resolución de requirements.txt | Auditoría global con hallazgos; sin Gitleaks |
+| Mantenibilidad | 823/2261 sentencias cubiertas (36.4 %); Ruff aprobado | Cobertura limitada |
+| Portabilidad | 2/2 entornos comprobados | Windows Python 3.14.3 y CI Ubuntu Python 3.11; alcance parcial |
+
+La auditoría del entorno general reportó 9 paquetes afectados y 78 hallazgos, que pueden incluir duplicados y dependencias ajenas al proyecto. La auditoría de requisitos resolvió 162 paquetes sin vulnerabilidades conocidas reportadas. No constituye una garantía de seguridad.
+
+La prueba del mapa comprobó apertura, identificación de Colima y Villa de Álvarez, comprensión de la leyenda y legibilidad. No representa una evaluación externa de usabilidad.
+
+Los registros de captura mostraron 106 ejecuciones registradas como exitosas, incluyendo ejecuciones locales o manuales; no se interpretan como cumplimiento continuo de la programación de Actions.
+
+El informe se publicó en `5299de2` y su revisión individual por Nancy permanece pendiente.
+
+### 2.12 Q02 — Calidad de datos ISO/IEC 25012:2008
+
+David evaluó las quince características mediante mediciones directas e indicadores aproximados, distinguiendo calidad inherente y dependiente del sistema.
+
+| Característica | Evidencia o resultado | Limitación |
+|---|---|---|
+| Exactitud | 564/564 coincidencias Bronce–Oro | Tolerancia numérica 1e-9 |
+| Completitud | 5640/5640 celdas | Diez columnas Oro |
+| Consistencia | 564/564 registros | Reglas de periodo, valor y unicidad |
+| Credibilidad | 564/564 identificaciones | Identificación de fuente y serie |
+| Actualidad | INEGI: 3 días entre actualización y captura | Banxico sin fecha de publicación verificada |
+| Accesibilidad | 2/2 archivos locales | No prueba acceso externo |
+| Conformidad | 564/564 filas Plata con Pandera | Reglas implementadas |
+| Confidencialidad | 4/4 patrones de exclusión comprobados | No es un escaneo de secretos |
+| Eficiencia | 23.9783 ms de lectura | Una medición |
+| Precisión | 564/564 valores conservados Plata–Oro | No mide precisión instrumental |
+| Trazabilidad | 564/564 referencias; 2 hashes SHA-256 | Hashes como línea base |
+| Comprensibilidad | 4 documentos existentes | No mide comprensión de usuarios |
+| Disponibilidad | 2/2 archivos leídos | Disponibilidad local puntual |
+| Portabilidad | 564 filas en lectura de retorno CSV | No cubre todos los entornos |
+| Recuperabilidad | 564/564 valores reconstruidos desde Bronce | No equivale a restauración integral |
+
+La comparación directa incluyó 381 registros de Banxico y 183 de INEGI. Para Banxico se calcularon promedios mensuales de observaciones numéricas; para INEGI se conservaron los valores mensuales originales. La diferencia máxima de Banxico fue aproximadamente 7.11e-15 y la de INEGI fue cero.
+
+La antigüedad de la captura seleccionada fue aproximadamente 11.37 días al momento de la evaluación; no debe confundirse con retraso de publicación.
+
+Se publicaron el script de métricas, los CSV de resultados y el informe en `8f42839`, con corrección de formato en `e2c8cb0`. La revisión por Nancy queda pendiente.
+
+### 2.13 Q03 — Antecedentes normativos
+
+Se documentaron las siguientes referencias y su relación con el proyecto:
+
+| Norma | Aplicación |
+|---|---|
+| ISO/IEC 9126-1:2001 | Antecedente del modelo de calidad de software |
+| ISO/IEC 25000:2014 | Familia SQuaRE |
+| ISO/IEC 25010:2011 y 2023 | Calidad del producto y evolución del modelo |
+| ISO/IEC 25012:2008 | Calidad de datos |
+| ISO 9001:2015 e ISO 9000:2015 | Gestión de calidad y mejora de procesos |
+
+Se relacionaron las normas con pruebas, trazabilidad, métricas, riesgos y registros PSP. No se declara certificación. La comprobación bibliográfica de las fichas oficiales y la revisión de Nancy siguen pendientes. El documento se publicó en `ce79abf`.
+
+### 2.14 Q04 — Auditoría cruzada
+
+La actividad se pospuso hasta conocer las indicaciones de la profesora Isis y el equipo asignado. No se han emitido ni recibido hallazgos de auditoría cruzada documentados. Cuando se realice, se registrarán criterio, evidencia, severidad, impacto, acción, responsable y cierre verificable.
 
 ## 3. ¿Qué decidimos y por qué?
 
@@ -553,6 +644,18 @@ Los defectos anteriores a E2 se conservan como antecedentes del proyecto.
 
 Los problemas descritos en esta relatoría no se consideran automáticamente defectos PSP. Su incorporación al registro requiere identificar la fecha, clasificación, fase y tiempo real de corrección.
 
+### 4.8 Defectos PSP de E2 registrados por David
+
+| Número | Fecha | Defecto | Corrección |
+|---|---|---|---|
+| 6 | 22/11 | Espacios finales en ENTREGA.md | Revisión y corrección de formato |
+| 7 | 22/11 | Imports desordenados | Ruff; `2622d2e` |
+| 8 | 23/11 | Formato final de iso25012.md | `e2c8cb0` |
+| 9 | 23/11 | Push rechazado por capturas remotas | Pull con rebase y push |
+| 10 | 23/11 | DuckDB no disponible | Instalación y lectura de 564 registros |
+
+El registro histórico de David contiene diez defectos, cinco correspondientes a E2. Los tiempos desconocidos no se inventaron. El PSP de Nancy conserva 21 defectos históricos y requiere confirmación individual. Los registros actualizados de David se publicaron en `fefae1c`.
+
 ## 5. ¿Qué aprendimos?
 
 ### Ingeniería de Datos
@@ -592,6 +695,8 @@ Durante la validación técnica del proyecto se obtuvo un resultado de 145 prueb
 También identificamos que los registros PSP deben mantenerse actualizados y reflejar las actividades y tiempos reales de cada integrante.
 
 La revisión de calidad es una actividad complementaria al desarrollo técnico y permite detectar inconsistencias antes de presentar los entregables finales.
+
+La evaluación ISO permitió distinguir calidad del producto, calidad de los datos y gestión de procesos. Aprendimos que aprobar pruebas no implica cobertura completa y que una auditoría de dependencias no sustituye una revisión integral de seguridad. También identificamos la importancia de definir denominadores, metas y limitaciones antes de interpretar porcentajes de calidad.
 
 ## 6. ¿Cuáles son las evidencias?
 
@@ -671,7 +776,7 @@ El commit `3e359ef` incorporó los siguientes archivos:
 
 El cierre estadístico se integró en `main` mediante un avance directo y se realizó el envío al repositorio remoto.
 
-La verificación posterior confirmó que la rama local y `origin/main` se encontraban sincronizadas en el commit `3e359ef`.
+La verificación del cierre estadístico correspondió al commit `3e359ef`. Posteriormente se publicaron las evaluaciones de calidad y el PSP actualizado hasta `fefae1c`.
 
 El repositorio se encuentra disponible en:
 
@@ -695,6 +800,39 @@ Durante las verificaciones técnicas se obtuvieron los siguientes resultados:
 
 Las evidencias de validación y los resultados correspondientes se encuentran documentados en el repositorio.
 
+### 6.7 Evidencias complementarias de calidad
+
+| Evidencia | Enlace |
+|---|---|
+| Q01 | [ISO 25010](E2/calidad/iso25010.md) |
+| Q02 | [ISO 25012](E2/calidad/iso25012.md) |
+| Q03 | [Antecedentes normativos](E2/calidad/antecedentes_normativos.md) |
+| Cobertura | [JSON](../data/reportes/cobertura_iso25010_e2.json) |
+| Auditoría global | [JSON](../data/reportes/auditoria_dependencias_e2.json) |
+| Auditoría de requisitos | [JSON](../data/reportes/auditoria_proyecto_e2.json) |
+| Compatibilidad | [CSV](../data/reportes/compatibilidad_iso25010_e2.csv) |
+| Eficiencia | [CSV](../data/reportes/eficiencia_iso25010_e2.csv) |
+| Métricas ISO 25012 | [CSV](../data/reportes/metricas_iso25012_e2.csv) |
+| Hashes Bronce | [CSV](../data/reportes/hashes_bronce_e2.csv) |
+| Exactitud | [CSV](../data/reportes/exactitud_bronce_oro_e2.csv) |
+| Script de métricas | [Python](../src/metricas_iso25012.py) |
+| PSP David | [Tiempos](../calidad/tiempo-david.csv) y [defectos](../calidad/defectos-david.csv) |
+| PSP Nancy | [Tiempos](../calidad/tiempo-nancy.csv) y [defectos](../calidad/defectos-nancy.csv) |
+
+### 6.8 Commits complementarios
+
+| Commit | Actividad |
+|---|---|
+| `5bc1963` | Actualización de entrega, relatoría y comparación factorial |
+| `d6fc572` | Ética y legalidad; versión etiquetada e2 |
+| `8f42839` | Q02 — Evaluación ISO 25012 |
+| `e2c8cb0` | Corrección de formato Q02 |
+| `5299de2` | Q01 — Evaluación ISO 25010 |
+| `ce79abf` | Q03 — Antecedentes normativos |
+| `fefae1c` | Actualización PSP de David |
+
+La etiqueta `e2` conserva `d6fc572`; las mejoras posteriores se publicaron en `main` sin modificar la etiqueta.
+
 ## 7. Uso de IA generativa
 
 Durante el desarrollo de E2 se utilizó ChatGPT como herramienta de apoyo para explicar procedimientos técnicos, revisar comandos de PowerShell y Git, orientar el desarrollo de scripts y pruebas, y estructurar documentación.
@@ -707,11 +845,14 @@ La responsabilidad de verificar los resultados y entregar el proyecto correspond
 
 ## 8. Pendientes de validación antes del cierre definitivo
 
-1. Completar y verificar los registros PSP de E2 correspondientes a ambos integrantes.
+1. Confirmar los registros PSP de Nancy; los de David ya se actualizaron y publicaron.
 2. Documentar las revisiones individuales de calidad realizadas por Nancy.
 3. Confirmar que todos los requisitos oficiales de la etapa E2 estén cubiertos.
 4. Revisar la correspondencia entre las evidencias y los documentos finales.
 5. Confirmar la revisión definitiva de la entrega por parte del equipo.
+6. Realizar Q04 cuando Isis indique el procedimiento y equipo asignado.
+7. Verificar bibliografía oficial de Q03 y requisitos estadísticos restantes, incluido ANOVA 3×2 y bloqueo si corresponden a la rúbrica.
+8. Completar fecha exacta y URL directa de ingesta geográfica y verificar condiciones específicas de redistribución de Banxico.
 
 ---
 
@@ -725,4 +866,4 @@ Las pruebas automatizadas registraron 145 resultados aprobados y la revisión de
 
 Los cambios correspondientes al cierre estadístico fueron integrados en la rama principal del repositorio.
 
-Permanecen pendientes las evidencias individuales de validación, los registros PSP que deban completarse y la revisión definitiva de los entregables por parte del equipo.
+Q01–Q03 y el PSP actualizado de David cuentan con evidencia publicada. Permanecen pendientes Q04, las revisiones individuales de Nancy, la confirmación de su PSP y la comprobación final de requisitos. La relatoría ampliada conserva el detalle técnico original; si se exige un máximo de dos páginas, deberá presentarse una versión breve adicional.
