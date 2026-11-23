@@ -4,7 +4,6 @@ import pandas as pd
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 
-
 RAIZ = Path(__file__).resolve().parent.parent
 
 ARCHIVO_COMPLETO = (

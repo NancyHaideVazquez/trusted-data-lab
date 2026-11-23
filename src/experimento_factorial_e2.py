@@ -10,7 +10,6 @@ import pandas as pd
 from src.calidad import validar_calidad
 from src.integracion import integrar_datos
 
-
 RAIZ = Path(__file__).resolve().parent.parent
 SALIDA = RAIZ / "data/reportes/experimento_factorial_e2_confirmacion.csv"
 SEMILLA = 2026

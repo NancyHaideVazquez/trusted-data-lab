@@ -5,7 +5,6 @@ import statsmodels.api as sm
 import statsmodels.formula.api as smf
 from scipy.stats import shapiro
 
-
 RAIZ = Path(__file__).resolve().parent.parent
 
 ENTRADA = (

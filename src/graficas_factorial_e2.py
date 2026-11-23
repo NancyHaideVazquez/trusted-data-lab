@@ -3,13 +3,13 @@
 from pathlib import Path
 
 import matplotlib
+
 matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
 import pandas as pd
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
-
 
 RAIZ = Path(__file__).resolve().parent.parent
 ENTRADA = RAIZ / "data/reportes/experimento_factorial_e2_confirmacion.csv"
