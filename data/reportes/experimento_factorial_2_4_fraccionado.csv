@@ -1,0 +1,17 @@
+orden,replica,A,B,C,D,registros,trazabilidad,pandera,resumen,tiempo_ms,registros_salida
+2,1,-1,1,1,-1,200,True,True,False,28.1932,200
+4,2,1,-1,1,-1,500,False,True,False,20.6768,500
+7,1,-1,1,-1,1,200,True,False,True,12.828,200
+10,2,1,1,-1,-1,500,True,False,False,11.9534,500
+11,1,1,1,-1,-1,500,True,False,False,11.5004,500
+13,2,-1,1,-1,1,200,True,False,True,12.1118,200
+15,1,1,-1,-1,1,500,False,False,True,7.2797,500
+16,1,-1,-1,-1,-1,200,False,False,False,5.7571,200
+17,2,1,-1,-1,1,500,False,False,True,6.1804,500
+19,1,1,1,1,1,500,True,True,True,28.6504,500
+20,2,-1,1,1,-1,200,True,True,False,29.3646,200
+25,2,-1,-1,1,1,200,False,True,True,18.3591,200
+26,2,1,1,1,1,500,True,True,True,26.0546,500
+27,1,-1,-1,1,1,200,False,True,True,18.0974,200
+30,2,-1,-1,-1,-1,200,False,False,False,5.5302,200
+31,1,1,-1,1,-1,500,False,True,False,19.1169,500
