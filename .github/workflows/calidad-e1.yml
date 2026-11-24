@@ -30,7 +30,7 @@ jobs:
           python -m pip install -r requirements.txt
 
       - name: Revisar codigo con Ruff
-        run: python -m ruff check src tests --output-format concise
+        run: python -m ruff check src tests tablero --output-format concise
 
       - name: Ejecutar pruebas automatizadas
         run: python -m pytest tests/ -q

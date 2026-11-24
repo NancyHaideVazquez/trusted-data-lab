@@ -6,9 +6,9 @@
 
 **Etapa:** E2 — Procesamiento geoespacial, trazabilidad, análisis estadístico, ética y evaluación de calidad
 
-**Periodo documentado:** 22–23 de noviembre de 2026
+**Periodo documentado:** 22–24 de noviembre de 2026
 
-**Fecha de actualización:** 23 de noviembre de 2026
+**Fecha de actualización:** 24 de noviembre de 2026
 
 **Repositorio:** https://github.com/NancyHaideVazquez/trusted-data-lab
 
@@ -25,14 +25,23 @@ El propósito principal fue incorporar información geoespacial oficial, mejorar
 Los objetivos establecidos fueron:
 
 1. Incorporar información del Marco Geoestadístico municipal 2026 del INEGI.
+
 2. Procesar los límites municipales de Colima mediante herramientas geoespaciales.
+
 3. Generar un mapa de los municipios de Colima y Villa de Álvarez.
+
 4. Mejorar la integración de información entre las capas Bronce, Plata y Oro.
+
 5. Incorporar mecanismos de trazabilidad para identificar el origen de los registros.
+
 6. Verificar las transformaciones mediante pruebas automatizadas.
+
 7. Documentar los principios éticos y las limitaciones de los datos.
+
 8. Desarrollar experimentos factoriales para evaluar el comportamiento del procesamiento de datos.
+
 9. Comparar diseños factoriales completos y fraccionados.
+
 10. Fortalecer la documentación técnica y los registros de calidad del proyecto.
 
 Para organizar el trabajo se establecieron dos áreas complementarias de responsabilidad: implementación técnica y validación de calidad.
@@ -101,6 +110,7 @@ Se fortaleció el procesamiento de información económica procedente de INEGI y
 Las fuentes utilizadas incluyen:
 
 - INEGI: indicador `910402`, correspondiente a inflación mensual de servicios subyacentes.
+
 - Banxico: serie `SF43783`, correspondiente a la TIIE de 28 días.
 
 Se documentó la procedencia de los datos y se incorporaron mecanismos para relacionar los registros procesados con sus fuentes de respaldo.
@@ -131,6 +141,7 @@ El diseño contempla ocho tratamientos y dos réplicas por tratamiento, para un 
 Se realizaron dos tandas:
 
 - Primera tanda: 16 corridas iniciales sin calentamiento previo.
+
 - Segunda tanda: ocho ejecuciones de calentamiento y posteriormente 16 corridas de confirmación.
 
 Las combinaciones se ejecutaron en orden aleatorizado utilizando la semilla 2026.
@@ -172,7 +183,9 @@ En la primera tanda se registró un tiempo extremo de 168.756 ms.
 El análisis inicial presentó:
 
 - R² = 0.5574.
+
 - Desviación residual = 35.3814 ms.
+
 - Shapiro-Wilk p = 0.000016.
 
 En la tanda de confirmación, el tiempo máximo registrado fue de 29.1671 ms.
@@ -186,14 +199,19 @@ Las conclusiones se limitan a las condiciones experimentales evaluadas y a las d
 Código:
 
 - `src/experimento_factorial_e2.py`
+
 - `src/analisis_factorial_2_3_e2.py`
+
 - `src/graficas_factorial_e2.py`
 
 Resultados:
 
 - `data/reportes/experimento_factorial_e2.csv`
+
 - `data/reportes/experimento_factorial_e2_original.csv`
+
 - `data/reportes/experimento_factorial_e2_confirmacion.csv`
+
 - `data/reportes/anova_factorial_2_3.csv`
 
 Documentación:
@@ -209,8 +227,11 @@ El propósito fue evaluar la capacidad de ambos diseños para identificar efecto
 Se trabajó con los siguientes factores:
 
 - A: cantidad de registros.
+
 - B: trazabilidad.
+
 - C: validación Pandera.
+
 - D: generación de un resumen estadístico del resultado integrado.
 
 Los niveles experimentales fueron:
@@ -258,9 +279,13 @@ Las interacciones indican que el efecto de algunos factores puede variar dependi
 #### Diagnóstico del modelo completo
 
 - R² = 0.9814.
+
 - R² ajustado = 0.9640.
+
 - Desviación residual = 1.6964 ms.
+
 - Shapiro-Wilk W = 0.943642.
+
 - Shapiro-Wilk p = 0.095015.
 
 El modelo explicó aproximadamente el 98.14 % de la variabilidad observada en el tiempo de procesamiento.
@@ -310,9 +335,13 @@ Por lo tanto, los resultados del diseño fraccionado deben interpretarse conside
 #### Diagnóstico del modelo fraccionado
 
 - R² = 0.9942.
+
 - R² ajustado = 0.9890.
+
 - Desviación residual = 0.8871 ms.
+
 - Shapiro-Wilk W = 0.995479.
+
 - Shapiro-Wilk p = 0.999999.
 
 La prueba Shapiro-Wilk no proporcionó evidencia suficiente para rechazar la normalidad de los residuos. Estos indicadores describen el ajuste del modelo en las corridas evaluadas, pero no eliminan las limitaciones ocasionadas por el alias.
@@ -344,23 +373,33 @@ Los resultados de significancia no deben interpretarse como equivalentes entre a
 Código:
 
 - `src/experimento_factorial_2_4_e2.py`
+
 - `src/analisis_factorial_2_4_e2.py`
+
 - `src/analisis_fraccionado_2_4_e2.py`
+
 - `src/comparacion_factorial_2_4_e2.py`
+
 - `src/graficas_comparacion_2_4_e2.py`
 
 Resultados:
 
 - `data/reportes/experimento_factorial_2_4_completo.csv`
+
 - `data/reportes/experimento_factorial_2_4_fraccionado.csv`
+
 - `data/reportes/anova_factorial_2_4_completo.csv`
+
 - `data/reportes/anova_factorial_2_4_fraccionado.csv`
+
 - `data/reportes/comparacion_factorial_2_4.csv`
 
 Gráficas:
 
 - `data/reportes/graficas_comparacion_2_4/01_efectos_principales.png`
+
 - `data/reportes/graficas_comparacion_2_4/02_significancia_estadistica.png`
+
 - `data/reportes/graficas_comparacion_2_4/03_numero_corridas.png`
 
 Documentación:
@@ -372,11 +411,17 @@ Documentación:
 Para el cierre de E2 se contempló la revisión de los siguientes aspectos:
 
 - Correspondencia entre las fuentes originales y los metadatos.
+
 - Verificación de que el GeoPackage contenga los diez municipios esperados.
+
 - Revisión de la representación de Colima y Villa de Álvarez en el mapa.
+
 - Comprobación de los campos de procedencia de los registros.
+
 - Conservación de registros entre Plata y Oro.
+
 - Ejecución de pruebas automatizadas.
+
 - Revisión de la coherencia entre los documentos de entrega, trazabilidad, ética y relatoría.
 
 Durante la validación técnica del código se ejecutaron los siguientes comandos:
@@ -412,6 +457,7 @@ Se realizaron verificaciones técnicas sobre los componentes desarrollados por D
 El repositorio contiene los archivos:
 
 - `calidad/tiempo-david.csv`
+
 - `calidad/tiempo-nancy.csv`
 
 Para David se preparó un registro estimado de las actividades G01–G07 realizadas durante el desarrollo de E2.
@@ -525,7 +571,6 @@ David realizó 12 corridas medidas: tres niveles de procesos (1, 2 y 4), dos for
 | 1 | 1235.6301 | 1238.1061 |
 | 2 | 1223.3481 | 1259.6919 |
 | 4 | 1337.1796 | 1389.7390 |
-
 | Término | gl | F | p |
 |---|---:|---:|---:|
 | Procesos | 2 | 23.018435 | 0.001533 |
@@ -537,7 +582,7 @@ El número de procesos presentó significancia al nivel 0.05, condicionada a los
 
 El modelo presentó R² = 0.894001 y Shapiro-Wilk p = 0.995404. La prueba de Levene resulta degenerada con dos observaciones por celda; no permite concluir de manera fiable sobre homogeneidad. No se midió memoria ni rendimiento del pipeline completo.
 
-Informe: [ANOVA 3×2](E2/analisis_estadistico/anova_3_2.md).
+Informe: [ANOVA 3×2](analisis_estadistico/anova_3_2.md).
 
 ### 2.16 Factorial 2³ con bloques
 
@@ -556,7 +601,7 @@ Se ejecutaron dos bloques completos de ocho tratamientos cada uno, mediante invo
 
 B y C fueron significativos; no se encontró evidencia suficiente de efecto de bloque. R² = 0.969939, desviación residual = 4.19303 ms y Shapiro-Wilk p = 0.323063. Los dos bloques no representan equipos o entornos diferentes y no permiten generalizar a otras condiciones.
 
-Informe: [Factorial con bloques](E2/analisis_estadistico/experimento_factorial_bloques.md).
+Informe: [Factorial con bloques](analisis_estadistico/experimento_factorial_bloques.md).
 
 ### 2.17 X05 — Confirmación experimental
 
@@ -579,7 +624,7 @@ La candidata fue aproximadamente 3.69 % más lenta; la línea base fue más ráp
 
 La sobrecarga de procesos es una explicación posible, no medida por separado. La prueba pareada no contó con comprobación formal de sus supuestos; los resultados corresponden a una sesión local y no se combinan con los tiempos exploratorios.
 
-Informe: [Confirmación X05](E2/analisis_estadistico/confirmacion_experimental_x05.md).
+Informe: [Confirmación X05](analisis_estadistico/confirmacion_experimental_x05.md).
 
 ## 3. ¿Qué decidimos y por qué?
 
@@ -716,6 +761,7 @@ La diferencia observada no permite afirmar que el calentamiento fuera la única 
 Los archivos de defectos del proyecto son:
 
 - `calidad/defectos-david.csv`
+
 - `calidad/defectos-nancy.csv`
 
 Los defectos anteriores a E2 se conservan como antecedentes del proyecto.
@@ -731,7 +777,6 @@ Los problemas descritos en esta relatoría no se consideran automáticamente def
 | 8 | 23/11 | Formato final de iso25012.md | `e2c8cb0` |
 | 9 | 23/11 | Push rechazado por capturas remotas | Pull con rebase y push |
 | 10 | 23/11 | DuckDB no disponible | Instalación y lectura de 564 registros |
-
 | 11 | 23/11 | Ruff BLE001 en X05 | Excepción localizada con `# noqa: BLE001` y validación general de Ruff |
 
 El registro histórico de David contiene once defectos, seis correspondientes a E2. Los 30 minutos de corrección y validación se registraron como actividad estimada; el tiempo exclusivo del defecto 11 quedó vacío. Los tiempos desconocidos no se inventaron. El PSP de Nancy conserva 21 defectos históricos y cuenta con la confirmación individual de sus actividades y tiempos estimados. La actualización anterior se publicó en `fefae1c`; los nuevos registros están incorporados localmente y pendientes de publicación.
@@ -813,16 +858,16 @@ La evaluación ISO permitió distinguir calidad del producto, calidad de los dat
 | Resultados factorial completo | `data/reportes/experimento_factorial_2_4_completo.csv` |
 | Resultados factorial fraccionado | `data/reportes/experimento_factorial_2_4_fraccionado.csv` |
 | Comparación estadística | `data/reportes/comparacion_factorial_2_4.csv` |
-| X03 — Informe | [ANOVA 3×2](E2/analisis_estadistico/anova_3_2.md) |
+| X03 — Informe | [ANOVA 3×2](analisis_estadistico/anova_3_2.md) |
 | X03 — Código | `src/experimento_anova_3_2_e2.py`, `src/analisis_anova_3_2_e2.py` |
 | X03 — Corridas y análisis | `data/reportes/experimento_anova_3_2.csv`, `data/reportes/anova_3_2.csv`, `data/reportes/resumen_anova_3_2.csv`, `data/reportes/diagnostico_anova_3_2.csv` |
 | X03 — Gráficas | `reportes/figuras/anova_3_2/` |
-| Bloques — Informe | [Factorial con bloques](E2/analisis_estadistico/experimento_factorial_bloques.md) |
+| Bloques — Informe | [Factorial con bloques](analisis_estadistico/experimento_factorial_bloques.md) |
 | Bloques — Código | `src/experimento_factorial_bloques_e2.py`, `src/analisis_factorial_bloques_e2.py` |
 | Bloques — Corridas | `data/reportes/factorial_2_3_bloque_1.csv`, `data/reportes/factorial_2_3_bloque_2.csv` |
 | Bloques — Análisis | `data/reportes/anova_factorial_bloques_e2.csv`, `data/reportes/efectos_factorial_bloques_e2.csv`, `data/reportes/resumen_factorial_bloques_e2.csv`, `data/reportes/diagnostico_factorial_bloques_e2.csv` |
 | Bloques — Gráficas | `reportes/figuras/factorial_bloques/` |
-| X05 — Informe | [Confirmación experimental](E2/analisis_estadistico/confirmacion_experimental_x05.md) |
+| X05 — Informe | [Confirmación experimental](analisis_estadistico/confirmacion_experimental_x05.md) |
 | X05 — Código | `src/experimento_confirmacion_x05_e2.py` |
 | X05 — Resultados | `data/reportes/experimento_confirmacion_x05.csv`, `data/reportes/resumen_confirmacion_x05.csv`, `data/reportes/comparacion_confirmacion_x05.csv` |
 | X05 — Gráficas | `reportes/figuras/confirmacion_x05/` |
@@ -866,7 +911,9 @@ Los cambios estadísticos fueron integrados a la rama principal mediante los sig
 El commit `3e359ef` incorporó los siguientes archivos:
 
 - `src/analisis_factorial_2_3_e2.py`
+
 - `data/reportes/anova_factorial_2_3.csv`
+
 - `docs/E2/analisis_estadistico/experimento_factorial_2_3.md`
 
 El cierre estadístico se integró en `main` mediante un avance directo y se realizó el envío al repositorio remoto.
@@ -899,20 +946,20 @@ Las evidencias de validación y los resultados correspondientes se encuentran do
 
 | Evidencia | Enlace |
 |---|---|
-| Q01 | [ISO 25010](E2/calidad/iso25010.md) |
-| Q02 | [ISO 25012](E2/calidad/iso25012.md) |
-| Q03 | [Antecedentes normativos](E2/calidad/antecedentes_normativos.md) |
-| Cobertura | [JSON](../data/reportes/cobertura_iso25010_e2.json) |
-| Auditoría global | [JSON](../data/reportes/auditoria_dependencias_e2.json) |
-| Auditoría de requisitos | [JSON](../data/reportes/auditoria_proyecto_e2.json) |
-| Compatibilidad | [CSV](../data/reportes/compatibilidad_iso25010_e2.csv) |
-| Eficiencia | [CSV](../data/reportes/eficiencia_iso25010_e2.csv) |
-| Métricas ISO 25012 | [CSV](../data/reportes/metricas_iso25012_e2.csv) |
-| Hashes Bronce | [CSV](../data/reportes/hashes_bronce_e2.csv) |
-| Exactitud | [CSV](../data/reportes/exactitud_bronce_oro_e2.csv) |
-| Script de métricas | [Python](../src/metricas_iso25012.py) |
-| PSP David | [Tiempos](../calidad/tiempo-david.csv) y [defectos](../calidad/defectos-david.csv) |
-| PSP Nancy | [Tiempos](../calidad/tiempo-nancy.csv) y [defectos](../calidad/defectos-nancy.csv) |
+| Q01 | [ISO 25010](calidad/iso25010.md) |
+| Q02 | [ISO 25012](calidad/iso25012.md) |
+| Q03 | [Antecedentes normativos](calidad/antecedentes_normativos.md) |
+| Cobertura | [JSON](../../data/reportes/cobertura_iso25010_e2.json) |
+| Auditoría global | [JSON](../../data/reportes/auditoria_dependencias_e2.json) |
+| Auditoría de requisitos | [JSON](../../data/reportes/auditoria_proyecto_e2.json) |
+| Compatibilidad | [CSV](../../data/reportes/compatibilidad_iso25010_e2.csv) |
+| Eficiencia | [CSV](../../data/reportes/eficiencia_iso25010_e2.csv) |
+| Métricas ISO 25012 | [CSV](../../data/reportes/metricas_iso25012_e2.csv) |
+| Hashes Bronce | [CSV](../../data/reportes/hashes_bronce_e2.csv) |
+| Exactitud | [CSV](../../data/reportes/exactitud_bronce_oro_e2.csv) |
+| Script de métricas | [Python](../../src/metricas_iso25012.py) |
+| PSP David | [Tiempos](../../calidad/tiempo-david.csv) y [defectos](../../calidad/defectos-david.csv) |
+| PSP Nancy | [Tiempos](../../calidad/tiempo-nancy.csv) y [defectos](../../calidad/defectos-nancy.csv) |
 
 ### 6.8 Commits complementarios
 
@@ -941,12 +988,19 @@ La responsabilidad de verificar los resultados y entregar el proyecto correspond
 ## 8. Pendientes de validación antes del cierre definitivo
 
 1. Los registros PSP de Nancy y David fueron actualizados y confirmados.
+
 2. Realizar las revisiones internas de calidad recomendadas por el plan de trabajo, sin considerarlas un entregable independiente salvo indicacion expresa de los docentes.
+
 3. Confirmar que todos los requisitos oficiales de la etapa E2 estén cubiertos.
+
 4. Revisar la correspondencia entre las evidencias y los documentos finales.
+
 5. Confirmar la revisión definitiva de la entrega por parte del equipo.
+
 6. Realizar Q04 cuando Isis indique el procedimiento y equipo asignado.
+
 7. Revisar las referencias bibliográficas incorporadas en Q03 y contrastar las evidencias de X03, bloqueo y X05 con la rúbrica completa; los experimentos ya se ejecutaron y documentaron.
+
 8. Verificar las condiciones especificas de redistribucion de Banxico. La URL geografica fue recuperada y la fecha estimada de descarga fue documentada; el instante exacto de ingesta no fue registrado originalmente.
 
 ---
@@ -984,11 +1038,17 @@ La relatoria ampliada conserva el detalle tecnico original; si se exige un maxim
 El 24 de noviembre de 2026 Nancy confirmo su participacion en las siguientes actividades de E2:
 
 - Planeacion y organizacion del proyecto.
+
 - Revision de etica y legalidad.
+
 - Participacion en analisis estadistico y experimentos.
+
 - Q01: Evaluacion ISO 25010.
+
 - Q03: Antecedentes normativos.
+
 - Revision de la relatoria E2.
+
 - Validacion tecnica final del repositorio.
 
 La validacion personal obtuvo 145 pruebas aprobadas en 8.73 segundos y Ruff sin errores.
@@ -1035,3 +1095,73 @@ GitHub Actions #43 aprobo el commit f194db0 en 52 segundos.
 Los tiempos son estimaciones retrospectivas. No se inventaron horarios exactos de inicio o fin.
 
 El registro PSP personal de Nancy queda actualizado. La auditoria cruzada Q04 permanece pendiente.
+
+## Ampliacion del PSP de Nancy - Union espacial y tablero
+
+Nancy reporto ocho actividades adicionales correspondientes al 23 de noviembre de 2026.
+
+| Actividad | Minutos efectivos estimados |
+|---|---:|
+| Implementacion de la union espacial | 30 |
+| Pruebas automatizadas geoespaciales | 30 |
+| Construccion del tablero | 25 |
+| Correccion del error de Plotly | 25 |
+| Creacion de pruebas del tablero | 15 |
+| Correccion de la ruta de AppTest | 15 |
+| Ajustes de compatibilidad | 20 |
+| Documentacion tecnica | 20 |
+| Total efectivo adicional | 180 |
+| Descansos adicionales | 20 |
+| Total adicional | 200 |
+
+### Acumulado actualizado del PSP personal E2
+
+| Indicador | Resultado |
+|---|---:|
+| Actividades personales E2 | 15 |
+| Tiempo efectivo acumulado | 380 minutos |
+| Descansos acumulados | 60 minutos |
+| Tiempo total acumulado | 440 minutos |
+| Registros acumulados de tiempo | 47 |
+| Defectos acumulados | 23 |
+| Defectos nuevos E2 | 2 |
+
+El tiempo efectivo personal estimado de Nancy asciende a 6 horas y 20 minutos. El tiempo total incluyendo descansos asciende a 7 horas y 20 minutos.
+
+Los 75 minutos de apoyo ejecutados por David permanecen excluidos de las horas personales de Nancy.
+
+Se registraron dos defectos adicionales: la ausencia de Plotly en el entorno local y la ruta incorrecta de AppTest. Ambos fueron corregidos.
+
+Los tiempos de correccion estan incluidos en el tiempo efectivo y no se contabilizan dos veces.
+
+La comprobacion tecnica del 24 de noviembre obtuvo 163 pruebas aprobadas en 13.07 segundos y Ruff sin errores.
+
+Las fechas y duraciones personales corresponden a estimaciones confirmadas por Nancy. No se inventaron horarios exactos de inicio y fin.
+
+Este resumen sustituye los totales anteriores del PSP de Nancy.
+
+La auditoria cruzada Q04 permanece pendiente.
+
+
+## Actualización técnica del 24 de noviembre de 2026
+
+Esta sección actualiza los estados históricos anteriores sin eliminar sus evidencias.
+
+Se implementó `src/union_espacial.py` con GeoPandas, EPSG:4326 y `sjoin` con predicado `within`. Los diez puntos representativos derivados de los polígonos se asignaron correctamente a sus municipios (10/10; cero sin asignación). No son observaciones independientes de viviendas ni establecimientos.
+
+Se desarrolló `tablero/app.py` con Streamlit 1.67.0 y Plotly 6.9.0. Incluye mapa territorial, indicadores económicos nacionales, calidad y trazabilidad. Se incorporaron diez pruebas de unión espacial y ocho del tablero. La comprobación local final obtuvo 163 pruebas aprobadas en 13.07 segundos y Ruff sin errores. Las pruebas del tablero comprueban ejecución, título, pestañas, métricas y filtros territoriales; la comprobación manual completa sigue pendiente.
+
+Se corrigieron los defectos PSP 22 (Plotly ausente, 25 minutos) y 23 (ruta de AppTest, 15 minutos). Se actualizó el mínimo declarado de Streamlit y la revisión Ruff de CI. El PSP de Nancy ya contiene 47 registros de tiempo y 23 defectos acumulados, con 380 minutos efectivos y 60 de descanso en E2.
+
+### Evidencias nuevas
+
+- [Documentación técnica](tablero-geoespacial.md)
+- [Tablero](../../tablero/app.py)
+- [Unión espacial](../../src/union_espacial.py)
+- [Resultados CSV](../../data/reportes/union_espacial_municipios_e2.csv)
+- [Pruebas del tablero](../../tests/test_tablero.py)
+- [Pruebas de unión espacial](../../tests/test_union_espacial.py)
+
+### Estado vigente
+
+La etiqueta e2 apunta a `7a5ef6b` y los cambios PSP anteriores se publicaron en `ad4670c` (Actions #44 aprobado). La ampliación del tablero aún no se ha publicado. Permanecen pendientes la validación remota, las capturas complementarias, la comprobación de reproducibilidad, Q04 y la verificación de condiciones específicas de redistribución de Banxico. La fecha exacta de ingesta geoespacial sigue siendo desconocida.

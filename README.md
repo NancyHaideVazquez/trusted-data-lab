@@ -267,10 +267,167 @@ Ambos integrantes participan en actividades de calidad, pruebas, documentación 
 
 ## Estado del proyecto
 
-**Etapa actual: revisión y cierre documental de E1 (13 de noviembre de 2026).**
+**Etapa actual: cierre tecnico y documental de E2 (24 de noviembre de 2026).**
 
 Se implementaron las capas Bronce, Plata, Oro y Cuarentena, se generaron análisis y pronósticos de dos series temporales, se aprobaron **131 pruebas locales con 65 % de cobertura** (commit `85d6cae` en `e1parte1d`) y se verificó anteriormente una ejecución satisfactoria del workflow de Calidad E1 (commit `02dc26e`). Continúan pendientes la revisión conjunta de los documentos de cierre, la integración a `main`, la comprobación del CI actualizado, el registro de tiempo posterior de David, la etiqueta `e1` y las limitaciones declaradas de fiabilidad y residuos de Banxico.
 
 ---
 
 **Proyecto académico — TRUSTED DATA LAB, noviembre-diciembre de 2026.**
+
+
+## E2 - Experimento, auditoria y observatorio geoespacial
+
+La etapa E2 incorpora una fuente especializada geoespacial,
+trazabilidad economica, experimentacion estadistica y evaluacion
+de calidad del sistema.
+
+### Fuente especializada
+
+- Marco Geoestadistico 2026 de INEGI.
+- Diez municipios del estado de Colima.
+- Procesamiento mediante GeoPandas.
+- Visualizacion mediante Streamlit y Plotly.
+- Union espacial mediante puntos representativos derivados
+  de los poligonos municipales.
+
+Los indicadores economicos mantienen su cobertura nacional.
+Los puntos representativos no corresponden a viviendas ni
+a observaciones economicas independientes.
+
+### Reproduccion de los productos E2
+
+Se recomienda utilizar Python 3.11 o 3.12.
+
+Crear un entorno virtual e instalar las dependencias:
+
+```bash
+python -m venv .venv
+```
+
+Activar en Windows:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+Activar en Linux o macOS:
+
+```bash
+source .venv/bin/activate
+```
+
+Instalar dependencias:
+
+```bash
+python -m pip install -r requirements.txt
+python -m pip check
+```
+
+Los archivos intermedios economicos y el GeoPackage municipal
+se encuentran versionados en el repositorio.
+
+Para regenerar los productos de E2 desde estos archivos:
+
+```bash
+python -m src.ejecutar_integracion
+python -m src.ejecutar_oro_e2
+python -m src.union_espacial
+```
+
+No se requieren tokens de las APIs para esta reproduccion
+a partir de los archivos locales versionados.
+
+### Ejecutar el tablero interactivo
+
+```bash
+python -m streamlit run tablero/app.py
+```
+
+Abrir en el navegador:
+
+http://localhost:8501
+
+El tablero incluye cuatro apartados:
+
+1. Mapa territorial.
+2. Indicadores economicos.
+3. Calidad de datos.
+4. Trazabilidad.
+
+### Validacion tecnica de E2
+
+```bash
+python -m ruff check src tests tablero
+python -m pytest -q
+```
+
+Validacion local realizada el 24 de noviembre de 2026:
+
+| Indicador | Resultado |
+|---|---|
+| Python | 3.12.13 |
+| Pandas | 2.3.3 |
+| GeoPandas | 1.2.0 |
+| Streamlit | 1.67.0 |
+| Plotly | 6.9.0 |
+| Registros INEGI | 183 |
+| Registros Banxico | 381 |
+| Registros Plata E2 | 564 |
+| Registros Oro E2 | 564 |
+| Valores conservados | 564 |
+| Municipios | 10 |
+| Asignaciones espaciales correctas | 10 |
+| Puntos sin asignacion | 0 |
+| Pruebas aprobadas | 163 |
+| Tiempo de pruebas | 17.27 segundos |
+| Errores Ruff | 0 |
+| Conflictos de dependencias | 0 |
+
+La comprobacion local se realizo en Windows mediante un
+entorno virtual independiente y las dependencias declaradas
+en requirements.txt.
+
+La validacion remota de los cambios recientes mediante
+GitHub Actions con Python 3.11 permanece pendiente.
+
+### Experimentacion estadistica
+
+- Disenos factoriales completos y fraccionados.
+- Analisis de varianza ANOVA.
+- Disenos experimentales con bloques.
+- Experimento de confirmacion X05.
+- Evaluacion del efecto de la trazabilidad y las validaciones
+  sobre el tiempo de procesamiento.
+
+### Calidad y etica
+
+- Evaluacion de caracteristicas ISO 25010.
+- Evaluacion de caracteristicas ISO 25012.
+- Antecedentes normativos.
+- Declaracion de etica y legalidad.
+- Registros personales PSP.
+- Pruebas automatizadas del tablero y la union espacial.
+
+Las evaluaciones no constituyen una certificacion formal.
+
+### Documentacion E2
+
+- [Ficha de entrega E2](docs/E2/ENTREGA.md).
+- [Relatoria completa E2](docs/relatoria-E2.md).
+- [Etica y legalidad](docs/etica-datos.md).
+- [Trazabilidad](docs/E2/trazabilidad.md).
+- [Tablero geoespacial](docs/E2/tablero-geoespacial.md).
+- [Experimentos estadisticos](docs/E2/analisis_estadistico/).
+- [Evaluaciones de calidad](docs/E2/calidad/).
+- [Registros PSP](calidad/).
+- [Pruebas automatizadas](tests/).
+
+### Pendientes y limitaciones
+
+- Auditoria cruzada Q04.
+- Validacion remota de los cambios recientes.
+- Verificacion de las condiciones especificas de
+  redistribucion de la API SIE de Banxico.
+- La fecha exacta de ingesta geoespacial no pudo recuperarse;
+  se conservan las evidencias disponibles.

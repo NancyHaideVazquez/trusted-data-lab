@@ -1034,3 +1034,92 @@ La validacion de la actualizacion documental anterior fue aprobada por GitHub Ac
 El PSP personal de Nancy se encuentra actualizado con los tiempos estimados confirmados por la integrante.
 
 La auditoria Q04 permanece pendiente y no se declara concluida.
+
+
+## Ampliacion E2 - Tablero interactivo y union espacial
+
+Se incorporo una union espacial mediante GeoPandas y un tablero interactivo desarrollado con Streamlit y Plotly.
+
+| Indicador | Resultado |
+|---|---:|
+| Municipios procesados | 10 |
+| Puntos representativos | 10 |
+| Asignaciones correctas | 10 |
+| Puntos sin municipio | 0 |
+| Pruebas automatizadas aprobadas | 163 |
+| Pruebas fallidas | 0 |
+| Errores de Ruff | 0 |
+
+Los puntos se derivan de los poligonos municipales y no representan observaciones economicas independientes.
+
+Los indicadores economicos mantienen su cobertura nacional.
+
+### Evidencias
+
+- [Documentacion tecnica](tablero-geoespacial.md)
+- [Tablero interactivo](../../tablero/app.py)
+- [Union espacial](../../src/union_espacial.py)
+- [Resultados CSV](../../data/reportes/union_espacial_municipios_e2.csv)
+- [Pruebas del tablero](../../tests/test_tablero.py)
+- [Pruebas de union espacial](../../tests/test_union_espacial.py)
+
+La validacion local obtuvo 163 pruebas aprobadas en 13.07 segundos.
+
+La validacion remota de esta ampliacion permanece pendiente de publicacion.
+
+La auditoria Q04 permanece pendiente.
+
+
+## Ampliacion del PSP de Nancy - Union espacial y tablero
+
+Nancy reporto ocho actividades adicionales correspondientes al 23 de noviembre de 2026.
+
+| Actividad | Minutos efectivos estimados |
+|---|---:|
+| Implementacion de la union espacial | 30 |
+| Pruebas automatizadas geoespaciales | 30 |
+| Construccion del tablero | 25 |
+| Correccion del error de Plotly | 25 |
+| Creacion de pruebas del tablero | 15 |
+| Correccion de la ruta de AppTest | 15 |
+| Ajustes de compatibilidad | 20 |
+| Documentacion tecnica | 20 |
+| Total efectivo adicional | 180 |
+| Descansos adicionales | 20 |
+| Total adicional | 200 |
+
+### Acumulado actualizado del PSP personal E2
+
+| Indicador | Resultado |
+|---|---:|
+| Actividades personales E2 | 15 |
+| Tiempo efectivo acumulado | 380 minutos |
+| Descansos acumulados | 60 minutos |
+| Tiempo total acumulado | 440 minutos |
+| Registros acumulados de tiempo | 47 |
+| Defectos acumulados | 23 |
+| Defectos nuevos E2 | 2 |
+
+El tiempo efectivo personal estimado de Nancy asciende a 6 horas y 20 minutos. El tiempo total incluyendo descansos asciende a 7 horas y 20 minutos.
+
+Los 75 minutos de apoyo ejecutados por David permanecen excluidos de las horas personales de Nancy.
+
+Se registraron dos defectos adicionales: la ausencia de Plotly en el entorno local y la ruta incorrecta de AppTest. Ambos fueron corregidos.
+
+Los tiempos de correccion estan incluidos en el tiempo efectivo y no se contabilizan dos veces.
+
+La comprobacion tecnica del 24 de noviembre obtuvo 163 pruebas aprobadas en 13.07 segundos y Ruff sin errores.
+
+Las fechas y duraciones personales corresponden a estimaciones confirmadas por Nancy. No se inventaron horarios exactos de inicio y fin.
+
+Este resumen sustituye los totales anteriores del PSP de Nancy.
+
+La auditoria cruzada Q04 permanece pendiente.
+
+
+## Relatoria y documentacion complementaria
+
+- [Relatoria completa E2](../relatoria-E2.md)
+- [Documentacion del tablero](tablero-geoespacial.md)
+
+La relatoria conserva las actividades, resultados estadisticos, evidencias tecnicas y registros PSP de la etapa.

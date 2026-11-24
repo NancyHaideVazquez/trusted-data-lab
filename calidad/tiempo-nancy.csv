@@ -38,3 +38,12 @@ fecha,inicio,fin,interrupcion_min,fase,actividad
 2026-11-23,,,,revision,E2 - Revision de la relatoria - 45 min efectivos estimados
 2026-11-23,,,,pruebas,E2 - Validacion y actualizacion del PSP - 20 min efectivos estimados - Comprobacion tecnica del 24 de noviembre: Ruff aprobado y 145 pruebas en 8.73 segundos
 2026-11-23,,,40,descanso,E2 - Descansos personales de Nancy
+2026-11-23,,,,codigo,E2 - Implementacion de la union espacial - 30 min efectivos estimados
+2026-11-23,,,,pruebas,E2 - Pruebas automatizadas geoespaciales - 30 min efectivos estimados
+2026-11-23,,,,codigo,E2 - Construccion del tablero Streamlit - 25 min efectivos estimados
+2026-11-23,,,,correccion,E2 - Correccion del error de Plotly - 25 min efectivos estimados
+2026-11-23,,,,pruebas,E2 - Creacion de pruebas del tablero - 15 min efectivos estimados
+2026-11-23,,,,correccion,E2 - Correccion de la ruta de AppTest - 15 min efectivos estimados
+2026-11-23,,,,codigo,E2 - Ajustes de compatibilidad - 20 min efectivos estimados
+2026-11-23,,,,documentacion,E2 - Documentacion tecnica del tablero - 20 min efectivos estimados
+2026-11-23,,,20,descanso,E2 - Descansos adicionales del tablero

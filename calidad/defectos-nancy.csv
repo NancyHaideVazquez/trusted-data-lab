@@ -20,3 +20,5 @@ numero,fecha,tipo,fase_introducido,fase_eliminado,minutos_correccion,defecto_ori
 19,2026-11-12,Entorno,Pruebas,Pruebas,5,Gitleaks en Windows,PowerShell no encontraba el ejecutable de Gitleaks después de la instalación con winget; se revisó su disponibilidad en el entorno
 20,2026-11-12,Configuración,Pruebas,Pruebas,18,configuración TOML de Gitleaks,El archivo TOML contenía una marca BOM UTF-8 que impedía leer la configuración; se corrigió la codificación
 21,2026-11-13,Estadístico,Análisis estadístico,,5,ARIMA(3 0 0),El modelo seleccionado por menor RMSE no superó Ljung-Box; se documentó la limitación de autocorrelación residual sin afirmar que estuviera resuelta
+22,2026-11-23,entorno,configuracion,pruebas,25,,Plotly no estaba instalado en el entorno local; se instalo la dependencia y se verifico el funcionamiento del tablero
+23,2026-11-23,codigo,codigo,pruebas,15,,AppTest utilizaba una ruta relativa incorrecta; se corrigio mediante pathlib y se aprobaron las ocho pruebas del tablero
