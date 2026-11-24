@@ -1,4 +1,4 @@
-﻿{
+{
   "fuente": "INEGI",
   "producto": "Marco Geoestadistico",
   "capa": "AGEM",
@@ -12,6 +12,12 @@
   "formato": "Shapefile comprimido",
   "crs_original": "EPSG:6372",
   "fecha_ingesta_utc": null,
-  "url_descarga_directa": null,
-  "observaciones": "Archivo descargado manualmente desde el portal del Marco Geoestadistico. La URL directa y la fecha exacta de ingesta estan pendientes de documentar."
+  "fecha_descarga_estimada_utc": "2026-11-22T18:08:54Z",
+  "fecha_primer_commit_utc": "2026-11-22T18:15:18Z",
+  "commit_incorporacion_bronce": "b4fe64f",
+  "url_descarga_directa": "https://www.inegi.org.mx/contenidos/descargadenue/MGdescarga/MGN2026/06/2026_1_06_MUN.zip",
+  "evidencia_url": "Campo HostUrl del flujo Zone.Identifier del archivo original descargado.",
+  "evidencia_fecha": "CreationTimeUtc del archivo original localizado en Descargas e historial Git de incorporacion a Bronce.",
+  "integridad_verificada": true,
+  "observaciones": "Archivo descargado manualmente desde el portal oficial del Marco Geoestadistico. Se recupero la URL directa mediante Zone.Identifier. El SHA-256 del archivo original coincide exactamente con el archivo conservado en Bronce. La fecha de descarga se estima mediante CreationTimeUtc; el instante exacto de ingesta en Bronce no fue registrado."
 }

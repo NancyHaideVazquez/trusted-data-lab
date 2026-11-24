@@ -132,7 +132,17 @@ El hash calculado coincide con el registrado en `metadatos.json`.
 
 https://www.inegi.org.mx/inegi/terminos.html
 
-La fecha exacta de ingesta y la URL directa de descarga permanecen sin documentar.
+La URL directa de descarga fue recuperada mediante el campo `HostUrl` del flujo `Zone.Identifier` del archivo original.
+
+- URL directa: https://www.inegi.org.mx/contenidos/descargadenue/MGdescarga/MGN2026/06/2026_1_06_MUN.zip
+- Fecha estimada de descarga UTC: 2026-11-22T18:08:54Z.
+- Primer commit de incorporacion a Bronce: `b4fe64f`.
+- Fecha del primer commit UTC: 2026-11-22T18:15:18Z.
+- Integridad: SHA-256 identico entre el archivo original descargado y el conservado en Bronce.
+
+La fecha de descarga se estima mediante CreationTimeUtc del archivo original. El instante exacto de ingesta en Bronce no fue registrado y se conserva como null en los metadatos.
+
+La evidencia se encuentra en `data/bronce/inegi_marco_geoestadistico/2026/metadatos.json`.
 
 La revisión de procedencia y condiciones de uso se encuentra registrada en `docs/etica-datos.md`.
 
@@ -949,3 +959,37 @@ Versión publicada de referencia: `052fbba`. El commit de las nuevas evidencias 
 **Proyecto:** Observatorio de Vivienda y Costos de Colima.
 
 **Repositorio:** [Trusted Data Lab](https://github.com/NancyHaideVazquez/trusted-data-lab)
+
+---
+
+## Validación complementaria de cierre E2
+
+La validación local del 23 de noviembre de 2026 obtuvo los siguientes resultados:
+
+| Comprobación | Resultado |
+|---|---|
+| Pruebas automatizadas | 145 aprobadas |
+| Tiempo de ejecución | 11.37 segundos |
+| Ruff | Sin errores |
+| Metadatos JSON | Válidos |
+| Municipios en Plata geoespacial | 10 |
+| Geometrías válidas | 10 de 10 |
+| Claves municipales duplicadas | 0 |
+| CRS de Plata geoespacial | EPSG:4326 |
+| Integridad SHA-256 de Bronce | Verificada |
+
+### Disponibilidad de los productos
+
+- [GeoPackage municipal procesado](../../data/plata/municipios_colima_2026.gpkg).
+- [Mapa municipal](../../reportes/figuras/mapa_municipios_colima_v2.png).
+- [Metadatos geoespaciales](../../data/bronce/inegi_marco_geoestadistico/2026/metadatos.json).
+- [Código de procesamiento geoespacial](../../src/geoespacial.py).
+- [Generación de Oro económica](../../src/ejecutar_oro_e2.py).
+
+Los productos económicos de Plata y Oro de E2 contienen 564 registros cada uno y se conservan como archivos locales reproducibles mediante los scripts del proyecto.
+
+La información económica tiene cobertura nacional. No se atribuyen valores nacionales a municipios individuales.
+
+El producto geoespacial se conserva en Plata y cuenta con una visualización cartográfica. No se generó una capa Oro geoespacial independiente.
+
+La fecha exacta de ingesta del archivo geográfico permanece desconocida. Se documentaron la fecha estimada de descarga, la URL original y el primer commit de incorporación a Bronce.

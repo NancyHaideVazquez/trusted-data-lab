@@ -940,14 +940,14 @@ La responsabilidad de verificar los resultados y entregar el proyecto correspond
 
 ## 8. Pendientes de validación antes del cierre definitivo
 
-1. Confirmar los registros PSP de Nancy; los de David están actualizados localmente y pendientes de publicar esta última ampliación.
-2. Documentar las revisiones individuales de calidad realizadas por Nancy.
+1. Confirmar los registros PSP de Nancy; los de David fueron actualizados y publicados en el commit dbf974c.
+2. Realizar las revisiones internas de calidad recomendadas por el plan de trabajo, sin considerarlas un entregable independiente salvo indicacion expresa de los docentes.
 3. Confirmar que todos los requisitos oficiales de la etapa E2 estén cubiertos.
 4. Revisar la correspondencia entre las evidencias y los documentos finales.
 5. Confirmar la revisión definitiva de la entrega por parte del equipo.
 6. Realizar Q04 cuando Isis indique el procedimiento y equipo asignado.
 7. Revisar las referencias bibliográficas incorporadas en Q03 y contrastar las evidencias de X03, bloqueo y X05 con la rúbrica completa; los experimentos ya se ejecutaron y documentaron.
-8. Completar fecha exacta y URL directa de ingesta geográfica y verificar condiciones específicas de redistribución de Banxico.
+8. Verificar las condiciones especificas de redistribucion de Banxico. La URL geografica fue recuperada y la fecha estimada de descarga fue documentada; el instante exacto de ingesta no fue registrado originalmente.
 
 ---
 
@@ -961,4 +961,18 @@ Las pruebas automatizadas registraron 145 resultados aprobados y la revisión de
 
 Los cambios correspondientes al cierre estadístico fueron integrados en la rama principal del repositorio.
 
-Q01–Q03 y la versión anterior del PSP de David cuentan con evidencia publicada. Las 48 nuevas corridas, la ampliación bibliográfica, el PSP actualizado y los documentos de cierre están preparados localmente. Ruff general y git diff --check se verificaron sin errores; falta repetir pytest y publicar los cambios. Permanecen pendientes Q04, las revisiones individuales de Nancy, la confirmación de su PSP y la comprobación final de requisitos. La relatoría ampliada conserva el detalle técnico original; si se exige un máximo de dos páginas, deberá presentarse una versión breve adicional.
+Q01-Q03, las 48 nuevas corridas experimentales, la ampliacion bibliografica, el PSP actualizado de David y los documentos de cierre fueron publicados en el commit `dbf974c`.
+
+La validacion local registro 145 pruebas aprobadas en 12.40 segundos. Ruff y git diff --check finalizaron sin errores. GitHub Actions #39 aprobo el commit publicado.
+
+La etiqueta `e2` fue actualizada y verificada tanto localmente como en el repositorio remoto, apuntando al commit `dbf974c5fd14ef5af2b0ecf5650bee27556836f3`.
+
+Posteriormente se recupero la URL original del Marco Geoestadistico municipal 2026 mediante Zone.Identifier. La fecha estimada de descarga fue 2026-11-22T18:08:54Z y el primer commit de incorporacion a Bronce fue `b4fe64f`, registrado a las 18:15:18 UTC del mismo dia.
+
+Se verifico que el SHA-256 del archivo original coincide exactamente con el archivo conservado en Bronce. Los metadatos fueron actualizados y validados localmente, conservando como desconocido el instante exacto de ingesta.
+
+Permanecen pendientes Q04, la confirmacion del PSP de Nancy, las condiciones especificas de redistribucion de Banxico y la comprobacion final de los requisitos oficiales.
+
+Las revisiones internas del equipo son recomendables conforme al plan de trabajo, sin afirmar que constituyan un entregable independiente obligatorio.
+
+La relatoria ampliada conserva el detalle tecnico original; si se exige un maximo de dos paginas, debera presentarse una version breve adicional.

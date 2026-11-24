@@ -62,3 +62,6 @@ logs/*
 
 # Cache de Streamlit
 .streamlit/secrets.toml
+
+# Producto geoespacial verificado de E2
+!data/plata/municipios_colima_2026.gpkg
