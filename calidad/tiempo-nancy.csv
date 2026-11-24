@@ -30,10 +30,11 @@ fecha,inicio,fin,interrupcion_min,fase,actividad
 2026-11-22,,,0,revision,E2 G05 - Revision de etica de datos - 20 min - Ejecutada por David en apoyo a Nancy
 2026-11-22,,,0,pruebas,E2 G06 - Verificacion de 145 pruebas automatizadas - 35 min - Ejecutada por David en apoyo a Nancy
 2026-11-22,,,0,revision,E2 G07 - Revision documental y evidencias - 20 min - Ejecutada por David en apoyo a Nancy
-,,,,planeacion,E2 - Planeacion y organizacion del proyecto - Fecha y duracion no registradas
-,,,,revision,E2 - Revision de etica y legalidad - Fecha y duracion no registradas
-,,,,analisis,E2 - Participacion en analisis estadistico y experimentos - Fecha y duracion no registradas
-,,,,calidad,E2 Q01 - Participacion en evaluacion ISO 25010 - Fecha y duracion no registradas
-,,,,documentacion,E2 Q03 - Participacion en antecedentes normativos - Fecha y duracion no registradas
-,,,,revision,E2 - Revision de la relatoria - Fecha y duracion no registradas
-2026-11-24,,,,pruebas,E2 - Validacion final personal - Ruff aprobado y 145 pruebas aprobadas en 8.73 segundos
+2026-11-23,,,,planeacion,E2 - Planeacion y organizacion del proyecto - 25 min efectivos estimados
+2026-11-23,,,,revision,E2 - Revision de etica y legalidad - 20 min efectivos estimados
+2026-11-23,,,,analisis,E2 - Participacion en analisis estadistico y experimentos - 25 min efectivos estimados
+2026-11-23,,,,calidad,E2 Q01 - Participacion en evaluacion ISO 25010 - 30 min efectivos estimados
+2026-11-23,,,,documentacion,E2 Q03 - Participacion en antecedentes normativos - 35 min efectivos estimados
+2026-11-23,,,,revision,E2 - Revision de la relatoria - 45 min efectivos estimados
+2026-11-23,,,,pruebas,E2 - Validacion y actualizacion del PSP - 20 min efectivos estimados - Comprobacion tecnica del 24 de noviembre: Ruff aprobado y 145 pruebas en 8.73 segundos
+2026-11-23,,,40,descanso,E2 - Descansos personales de Nancy

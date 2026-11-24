@@ -672,7 +672,7 @@ Los registros de Nancy requieren confirmación individual; las tres verificacion
 | Trabajo efectivo adicional | 117 |
 | Descanso adicional | 15 |
 
-El PSP actualizado contiene 36 registros de tiempo (incluidos dos registros de descanso) y 11 defectos acumulados E0–E2, seis de ellos de E2. El total E2 es 657 minutos efectivos y 105 minutos de interrupciones y descansos, 762 minutos en conjunto (12 h 42 min), según las estimaciones declaradas. No se suman nuevamente las verificaciones de apoyo. El defecto 11 corresponde a BLE001; se aplicó una excepción localizada y Ruff aprobó `src` y `tests`. No se conoce la duración exclusiva del defecto. Los registros de Nancy se conservaron sin cambios.
+El PSP actualizado contiene 36 registros de tiempo (incluidos dos registros de descanso) y 11 defectos acumulados E0–E2, seis de ellos de E2. El total E2 es 657 minutos efectivos y 105 minutos de interrupciones y descansos, 762 minutos en conjunto (12 h 42 min), según las estimaciones declaradas. No se suman nuevamente las verificaciones de apoyo. El defecto 11 corresponde a BLE001; se aplicó una excepción localizada y Ruff aprobó `src` y `tests`. No se conoce la duración exclusiva del defecto. En esa actualización se conservaron los registros de Nancy; posteriormente fueron actualizados y confirmados por la integrante.
 
 ### 4.6 Validaciones complementarias G05–G07
 
@@ -946,7 +946,7 @@ La entrega integra las evidencias correspondientes a Ingeniería de Datos, Anál
 
 El cierre definitivo debe considerar la revisión de los requisitos oficiales, la comprobación de los enlaces de evidencia y la actualización de los registros individuales de calidad que correspondan.
 
-**Estado:** Q01–Q03 documentadas; ANOVA 3×2, factorial bloqueado, X05, bibliografía Q03 y PSP de David actualizados localmente. Ruff general aprobado. Pendientes: revisión final de requisitos, nueva ejecución de pytest, publicación de cambios, Q04 y revisión individual de Nancy.
+**Estado:** Q01–Q03 documentadas; ANOVA 3×2, factorial bloqueado, X05, bibliografía Q03 y PSP de David actualizados localmente. Ruff general aprobado. Estado actualizado: pruebas aprobadas, cambios técnicos publicados y PSP de Nancy confirmado. Permanecen pendientes Q04 y la comprobación final de requisitos oficiales.
 
 La última etiqueta `e2` publicada y verificada previamente apunta a `052fbba`. Las nuevas evidencias locales aún no forman parte de esa versión. Cualquier actualización posterior de la etiqueta requiere autorización.
 
@@ -1002,16 +1002,35 @@ El 24 de noviembre de 2026 se confirmaron las contribuciones personales de Nancy
 
 | Evidencia | Resultado |
 |---|---|
-| Registros acumulados de tiempo | 37 |
+| Registros acumulados de tiempo | 38 |
 | Defectos previamente registrados | 21 |
 | Nuevas actividades personales E2 | 7 |
 | Pruebas automatizadas | 145 aprobadas |
 | Ruff | Sin errores |
 
-Los tiempos no recuperados permanecen sin registrar. Las actividades de apoyo ejecutadas por David no se contabilizan como horas personales de Nancy.
+Nancy confirmo las fechas y duraciones estimadas de sus actividades personales de E2. Los horarios exactos de inicio y fin no fueron recuperados. Las actividades de apoyo ejecutadas por David no se contabilizan como horas personales de Nancy.
 
 ### Evidencias
 
 - [Registro de tiempos de Nancy](../../calidad/tiempo-nancy.csv).
 - [Registro de defectos de Nancy](../../calidad/defectos-nancy.csv).
 - [Relatoria E2](../relatoria-E2.md).
+
+## Resumen final del PSP personal de Nancy
+
+| Indicador | Resultado |
+|---|---:|
+| Actividades personales E2 | 7 |
+| Tiempo efectivo estimado | 200 minutos |
+| Descansos | 40 minutos |
+| Tiempo total | 240 minutos |
+| Registros acumulados de tiempo | 38 |
+| Defectos acumulados | 21 |
+| Defectos nuevos E2 | 0 |
+| Pruebas automatizadas aprobadas | 145 |
+
+La validacion de la actualizacion documental anterior fue aprobada por GitHub Actions #43, correspondiente al commit f194db0, con una duracion de 52 segundos.
+
+El PSP personal de Nancy se encuentra actualizado con los tiempos estimados confirmados por la integrante.
+
+La auditoria Q04 permanece pendiente y no se declara concluida.

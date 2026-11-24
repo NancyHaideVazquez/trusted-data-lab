@@ -445,7 +445,7 @@ Los registros PSP deben mantenerse actualizados conforme se realicen nuevas acti
 
 Se registraron 105 minutos acumulados de descansos e interrupciones, para un total estimado de 762 minutos (12 h 42 min), de los cuales 657 minutos (10 h 57 min) corresponden a trabajo efectivo. El incremento fue de 117 minutos efectivos y 15 minutos de descanso. El CSV contiene 36 registros acumulados de E0–E2, incluidos descansos. No se inventaron horarios exactos para las actividades adicionales.
 
-Las verificaciones G05–G07 documentadas en `docs/E2/validacion-calidad.md` suman 75 minutos estimados de apoyo de David; no se agregan nuevamente al total ni se atribuyen a Nancy. Su revisión individual y PSP permanecen pendientes de confirmación.
+Las verificaciones G05–G07 documentadas en `docs/E2/validacion-calidad.md` suman 75 minutos estimados de apoyo de David; no se agregan nuevamente al total ni se atribuyen a Nancy. Nancy confirmó sus contribuciones personales y los tiempos estimados de su PSP.
 
 ### 2.11 Q01 — Evaluación del producto ISO/IEC 25010
 
@@ -734,7 +734,7 @@ Los problemas descritos en esta relatoría no se consideran automáticamente def
 
 | 11 | 23/11 | Ruff BLE001 en X05 | Excepción localizada con `# noqa: BLE001` y validación general de Ruff |
 
-El registro histórico de David contiene once defectos, seis correspondientes a E2. Los 30 minutos de corrección y validación se registraron como actividad estimada; el tiempo exclusivo del defecto 11 quedó vacío. Los tiempos desconocidos no se inventaron. El PSP de Nancy conserva 21 defectos históricos y requiere confirmación individual. La actualización anterior se publicó en `fefae1c`; los nuevos registros están incorporados localmente y pendientes de publicación.
+El registro histórico de David contiene once defectos, seis correspondientes a E2. Los 30 minutos de corrección y validación se registraron como actividad estimada; el tiempo exclusivo del defecto 11 quedó vacío. Los tiempos desconocidos no se inventaron. El PSP de Nancy conserva 21 defectos históricos y cuenta con la confirmación individual de sus actividades y tiempos estimados. La actualización anterior se publicó en `fefae1c`; los nuevos registros están incorporados localmente y pendientes de publicación.
 
 ## 5. ¿Qué aprendimos?
 
@@ -940,7 +940,7 @@ La responsabilidad de verificar los resultados y entregar el proyecto correspond
 
 ## 8. Pendientes de validación antes del cierre definitivo
 
-1. Confirmar los registros PSP de Nancy; los de David fueron actualizados y publicados en el commit dbf974c.
+1. Los registros PSP de Nancy y David fueron actualizados y confirmados.
 2. Realizar las revisiones internas de calidad recomendadas por el plan de trabajo, sin considerarlas un entregable independiente salvo indicacion expresa de los docentes.
 3. Confirmar que todos los requisitos oficiales de la etapa E2 estén cubiertos.
 4. Revisar la correspondencia entre las evidencias y los documentos finales.
@@ -971,7 +971,7 @@ Posteriormente se recupero la URL original del Marco Geoestadistico municipal 20
 
 Se verifico que el SHA-256 del archivo original coincide exactamente con el archivo conservado en Bronce. Los metadatos fueron actualizados y validados localmente, conservando como desconocido el instante exacto de ingesta.
 
-Permanecen pendientes Q04, la confirmacion del PSP de Nancy, las condiciones especificas de redistribucion de Banxico y la comprobacion final de los requisitos oficiales.
+Permanecen pendientes Q04, las condiciones especificas de redistribucion de Banxico y la comprobacion final de los requisitos oficiales.
 
 Las revisiones internas del equipo son recomendables conforme al plan de trabajo, sin afirmar que constituyan un entregable independiente obligatorio.
 
@@ -995,10 +995,43 @@ La validacion personal obtuvo 145 pruebas aprobadas en 8.73 segundos y Ruff sin 
 
 Las siete actividades fueron incorporadas al archivo calidad/tiempo-nancy.csv.
 
-Las fechas y duraciones que no pudieron recuperarse se conservaron como no registradas.
+Nancy confirmo posteriormente las fechas y duraciones estimadas de sus siete actividades personales de E2. Los horarios exactos de inicio y fin no fueron recuperados.
 
 Los 75 minutos de apoyo correspondientes a G05, G06 y G07 fueron ejecutados por David y no se contabilizan como tiempo personal de Nancy.
 
 Se conservaron los 21 defectos previamente documentados. No se incorporaron defectos nuevos sin evidencia.
 
 La auditoria cruzada Q04 permanece pendiente de cierre.
+
+## Cierre del PSP personal de Nancy - E2
+
+Nancy confirmo los siguientes tiempos personales estimados correspondientes a E2.
+
+| Actividad | Fecha reportada | Minutos efectivos |
+|---|---|---:|
+| Planeacion y organizacion | 2026-11-23 | 25 |
+| Revision de etica y legalidad | 2026-11-23 | 20 |
+| Analisis estadistico y experimentos | 2026-11-23 | 25 |
+| Q01 - Evaluacion ISO 25010 | 2026-11-23 | 30 |
+| Q03 - Antecedentes normativos | 2026-11-23 | 35 |
+| Revision de la relatoria E2 | 2026-11-23 | 45 |
+| Validacion y actualizacion del PSP | 2026-11-23 | 20 |
+| Total efectivo | | 200 |
+| Descansos | | 40 |
+| Total general | | 240 |
+
+El tiempo efectivo personal de Nancy en E2 fue estimado en 3 horas y 20 minutos, con 40 minutos de descanso, para un total de 4 horas.
+
+El archivo de tiempos contiene 38 registros acumulados, incluyendo siete actividades personales de E2 y un registro de descanso.
+
+Los 75 minutos de apoyo ejecutados por David no forman parte de las horas personales de Nancy.
+
+Se conservaron los 21 defectos acumulados. Nancy confirmo que no encontro defectos nuevos durante E2.
+
+La comprobacion tecnica del 24 de noviembre obtuvo 145 pruebas aprobadas en 8.73 segundos y Ruff sin errores.
+
+GitHub Actions #43 aprobo el commit f194db0 en 52 segundos.
+
+Los tiempos son estimaciones retrospectivas. No se inventaron horarios exactos de inicio o fin.
+
+El registro PSP personal de Nancy queda actualizado. La auditoria cruzada Q04 permanece pendiente.
