@@ -993,3 +993,25 @@ La información económica tiene cobertura nacional. No se atribuyen valores nac
 El producto geoespacial se conserva en Plata y cuenta con una visualización cartográfica. No se generó una capa Oro geoespacial independiente.
 
 La fecha exacta de ingesta del archivo geográfico permanece desconocida. Se documentaron la fecha estimada de descarga, la URL original y el primer commit de incorporación a Bronce.
+
+---
+
+## Actualizacion del PSP de Nancy
+
+El 24 de noviembre de 2026 se confirmaron las contribuciones personales de Nancy correspondientes a E2.
+
+| Evidencia | Resultado |
+|---|---|
+| Registros acumulados de tiempo | 37 |
+| Defectos previamente registrados | 21 |
+| Nuevas actividades personales E2 | 7 |
+| Pruebas automatizadas | 145 aprobadas |
+| Ruff | Sin errores |
+
+Los tiempos no recuperados permanecen sin registrar. Las actividades de apoyo ejecutadas por David no se contabilizan como horas personales de Nancy.
+
+### Evidencias
+
+- [Registro de tiempos de Nancy](../../calidad/tiempo-nancy.csv).
+- [Registro de defectos de Nancy](../../calidad/defectos-nancy.csv).
+- [Relatoria E2](../relatoria-E2.md).

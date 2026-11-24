@@ -976,3 +976,29 @@ Permanecen pendientes Q04, la confirmacion del PSP de Nancy, las condiciones esp
 Las revisiones internas del equipo son recomendables conforme al plan de trabajo, sin afirmar que constituyan un entregable independiente obligatorio.
 
 La relatoria ampliada conserva el detalle tecnico original; si se exige un maximo de dos paginas, debera presentarse una version breve adicional.
+
+---
+
+## Confirmacion de contribuciones personales de Nancy
+
+El 24 de noviembre de 2026 Nancy confirmo su participacion en las siguientes actividades de E2:
+
+- Planeacion y organizacion del proyecto.
+- Revision de etica y legalidad.
+- Participacion en analisis estadistico y experimentos.
+- Q01: Evaluacion ISO 25010.
+- Q03: Antecedentes normativos.
+- Revision de la relatoria E2.
+- Validacion tecnica final del repositorio.
+
+La validacion personal obtuvo 145 pruebas aprobadas en 8.73 segundos y Ruff sin errores.
+
+Las siete actividades fueron incorporadas al archivo calidad/tiempo-nancy.csv.
+
+Las fechas y duraciones que no pudieron recuperarse se conservaron como no registradas.
+
+Los 75 minutos de apoyo correspondientes a G05, G06 y G07 fueron ejecutados por David y no se contabilizan como tiempo personal de Nancy.
+
+Se conservaron los 21 defectos previamente documentados. No se incorporaron defectos nuevos sin evidencia.
+
+La auditoria cruzada Q04 permanece pendiente de cierre.
