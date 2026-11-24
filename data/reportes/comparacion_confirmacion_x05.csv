@@ -1,0 +1,2 @@
+replicas_por_configuracion,promedio_baseline_ms,promedio_candidata_ms,diferencia_media_ms,mejora_porcentaje,ic95_inferior_ms,ic95_superior_ms,estadistico_t,valor_p,errores_totales,checksums_distintos,conclusion
+10,3204.85569,3323.02324,-118.16754999999989,-3.6871410581360724,-176.42682160939327,-59.90827839060651,-4.58834383366569,0.001312120515642052,0,1,Empeoramiento estadisticamente significativo

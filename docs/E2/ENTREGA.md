@@ -32,6 +32,8 @@ Se incorporaron evaluaciones internas ISO/IEC 25010 y 25012, antecedentes normat
 
 La documentación de esta etapa reúne los resultados de Ingeniería de Datos, Análisis Estadístico y Calidad en los Sistemas de Información.
 
+Se añadieron 48 corridas nuevas: 12 del ANOVA 3×2, 16 del factorial 2³ bloqueado y 20 de X05. La confirmación no mostró una mejora de rendimiento de la candidata; se conservó la referencia como opción para el escenario evaluado.
+
 ## 2. Ingeniería de Datos
 
 ### 2.1 Incorporación de información geoespacial
@@ -474,11 +476,91 @@ La gráfica compara el número de corridas de ambos diseños y permite observar 
 - `data/reportes/graficas_comparacion_2_4/02_significancia_estadistica.png`
 - `data/reportes/graficas_comparacion_2_4/03_numero_corridas.png`
 
-### 3.4 Limitaciones del análisis estadístico
+### 3.4 ANOVA de dos factores 3×2 (X03)
+
+Se evaluaron 1, 2 y 4 procesos configurados y los formatos CSV y Parquet, con dos réplicas por combinación, seis calentamientos y 12 corridas aleatorizadas. Se utilizaron 564 registros locales integrados con trazabilidad. El tiempo incluye creación y cierre del ejecutor, escritura, lectura y concatenación; no mide todo el pipeline.
+
+| Procesos | Formato | Media (ms) | Desviación estándar (ms) |
+|---:|---|---:|---:|
+| 1 | CSV | 1235.63010 | 31.989087 |
+| 1 | Parquet | 1238.10605 | 26.195124 |
+| 2 | CSV | 1223.34805 | 24.596073 |
+| 2 | Parquet | 1259.69185 | 2.565454 |
+| 4 | CSV | 1337.17955 | 54.737065 |
+| 4 | Parquet | 1389.73900 | 7.432258 |
+
+Modelo: `tiempo_ms ~ C(procesos)*C(formato)`. ANOVA tipo II, alfa 0.05.
+
+| Término | SC | gl | F | p | Eta cuadrado parcial |
+|---|---:|---:|---:|---:|---:|
+| Procesos | 41221.561120 | 2 | 23.018435 | 0.001533 | 0.8847 |
+| Formato | 2783.386064 | 1 | 3.108528 | 0.128343 | 0.3413 |
+| Interacción | 1306.111847 | 2 | 0.729343 | 0.520555 | 0.1956 |
+| Residuo | 5372.419320 | 6 | — | — | — |
+
+El tamaño de efecto parcial se calcula como SC del término dividida entre SC del término más SC residual. Solo procesos mostró significancia bajo el modelo. Dos procesos con CSV presentó el menor promedio exploratorio, sin demostrar superioridad individual frente a un proceso.
+
+R² = 0.894001; R² ajustado = 0.805668; desviación residual = 29.923289 ms. Shapiro-Wilk p = 0.995404, con potencia limitada. Levene produjo p = 2.663597e-84; con dos observaciones por celda las desviaciones absolutas intragrupo son iguales y la prueba resulta degenerada, por lo que no permite una conclusión fiable de homogeneidad. Los resultados inferenciales son exploratorios.
+
+**Evidencias:** [Documento ANOVA 3×2](analisis_estadistico/anova_3_2.md), `src/experimento_anova_3_2_e2.py`, `src/analisis_anova_3_2_e2.py`, `data/reportes/experimento_anova_3_2.csv`, `data/reportes/anova_3_2.csv`, `data/reportes/resumen_anova_3_2.csv`, `data/reportes/diagnostico_anova_3_2.csv`.
+
+![Efecto de procesos](../../reportes/figuras/anova_3_2/01_efecto_procesos.png)
+
+![Interacción](../../reportes/figuras/anova_3_2/03_interaccion.png)
+
+### 3.5 Factorial completo 2³ con bloques
+
+Se realizaron dos ejecuciones independientes del programa, cada una con los ocho tratamientos A (200/500 registros), B (trazabilidad) y C (Pandera). Cada bloque tuvo calentamiento y orden aleatorizado propio. Se registraron 16 corridas nuevas; el bloque representa la sesión de ejecución, no un cambio demostrado de equipo o entorno.
+
+Modelo: `tiempo_ms ~ C(bloque) + A * B * factor_c`.
+
+| Término | Efecto (ms) | F | p |
+|---|---:|---:|---:|
+| Bloque | — | 0.153974 | 0.706440 |
+| A | 2.438212 | 1.352531 | 0.282944 |
+| B | 14.257538 | 46.248014 | 0.000253 |
+| C | 27.830038 | 176.210436 | 0.000003 |
+| AB | -0.246187 | 0.013789 | 0.909820 |
+| AC | 2.213262 | 1.114474 | 0.326179 |
+| BC | 1.805437 | 0.741599 | 0.417668 |
+| ABC | 0.312663 | 0.022241 | 0.885653 |
+
+Los factores B y C resultaron significativos. No se detectó un efecto significativo del bloque, lo que no demuestra igualdad entre sesiones. Los promedios de los bloques fueron 33.722800 y 32.900137 ms. R² = 0.969939; R² ajustado = 0.935583; desviación residual = 4.19303 ms; Shapiro-Wilk p = 0.323063. Se supone aditividad del bloque y se reconoce la limitación de dos sesiones.
+
+**Evidencias:** [Documento factorial con bloques](analisis_estadistico/experimento_factorial_bloques.md), `src/experimento_factorial_bloques_e2.py`, `src/analisis_factorial_bloques_e2.py`, `data/reportes/factorial_2_3_bloque_1.csv`, `data/reportes/factorial_2_3_bloque_2.csv`, `data/reportes/anova_factorial_bloques_e2.csv`, `data/reportes/efectos_factorial_bloques_e2.csv`, `data/reportes/resumen_factorial_bloques_e2.csv`, `data/reportes/diagnostico_factorial_bloques_e2.csv`.
+
+![Efectos factoriales](../../reportes/figuras/factorial_bloques/01_efectos_factoriales.png)
+
+![Comparación de bloques](../../reportes/figuras/factorial_bloques/02_comparacion_bloques.png)
+
+### 3.6 Confirmación experimental X05
+
+Se comparó la referencia de un proceso CSV con la candidata de dos procesos CSV, elegida por el menor promedio exploratorio. La referencia se definió antes de la confirmación, después del análisis exploratorio. Se realizaron diez pares aleatorizados (20 corridas nuevas), con 564 registros y calentamiento previo.
+
+| Indicador | Referencia | Candidata |
+|---|---:|---:|
+| Corridas | 10 | 10 |
+| Media (ms) | 3204.85569 | 3323.02324 |
+| Desviación estándar (ms) | 98.158880 | 32.549636 |
+| Errores | 0 | 0 |
+
+Diferencia pareada referencia menos candidata: -118.16755 ms; IC 95 % [-176.426822, -59.908278] ms; t = -4.588344, gl = 9, p bilateral = 0.001312. Mejora porcentual = -3.687141 %. La candidata fue más lenta en nueve de diez pares. El intervalo corresponde a la diferencia absoluta, no al porcentaje.
+
+Las 20 corridas registraron cero errores y un único checksum lógico de salida. SHA-256 esperado: `0d521727ffc75e8555c2ac2f3ce32334dee13a779b1bc977134661a9ea6140d5`.
+
+No se confirmó la mejora esperada. Se recomienda conservar la referencia para este escenario, sin modificar automáticamente el pipeline. La prueba supone independencia entre pares y normalidad aproximada de diferencias, no verificadas formalmente. No se midió memoria total ni se controló exhaustivamente la carga del sistema. No se extrapola a otros volúmenes.
+
+**Evidencias:** [Documento X05](analisis_estadistico/confirmacion_experimental_x05.md), `src/experimento_confirmacion_x05_e2.py`, `data/reportes/experimento_confirmacion_x05.csv`, `data/reportes/resumen_confirmacion_x05.csv`, `data/reportes/comparacion_confirmacion_x05.csv`.
+
+![Comparación de promedios](../../reportes/figuras/confirmacion_x05/01_comparacion_promedios.png)
+
+![Diferencias pareadas](../../reportes/figuras/confirmacion_x05/03_diferencias_pareadas.png)
+
+### 3.7 Limitaciones del análisis estadístico
 
 Los resultados deben interpretarse considerando las siguientes limitaciones:
 
-1. Los experimentos utilizaron dos réplicas por tratamiento.
+1. Los diseños factoriales y ANOVA exploratorio utilizaron dos réplicas por tratamiento; X05 utilizó diez pares.
 2. Los tiempos pueden variar según la carga del equipo.
 3. Se evaluaron únicamente los tamaños de muestra definidos en los diseños.
 4. La primera tanda del experimento 2³ presentó una medición extrema.
@@ -549,7 +631,7 @@ El repositorio contiene registros de tiempo y defectos para ambos integrantes:
 | David Cuevas Farías | `calidad/tiempo-david.csv` | `calidad/defectos-david.csv` |
 | Nancy Haide Vázquez Ávalos | `calidad/tiempo-nancy.csv` | `calidad/defectos-nancy.csv` |
 
-El registro de David contiene 29 actividades acumuladas y 10 defectos. Para G01–G07 se registraron 270 minutos efectivos estimados y 45 minutos de interrupciones. Las nueve actividades adicionales del 22 y 23 de noviembre suman 270 minutos efectivos estimados y 45 minutos de descanso acumulado, confirmados por David. En conjunto, los registros de E2 representan 540 minutos efectivos y 90 minutos de interrupciones estimadas, sin sumar nuevamente las verificaciones de apoyo G05–G07.
+Antes de la última actualización, el registro de David contenía 29 actividades de trabajo acumuladas y 10 defectos. Para G01–G07 se registraron 270 minutos efectivos estimados y 45 minutos de interrupciones. Las nueve actividades adicionales del 22 y 23 de noviembre suman 270 minutos efectivos estimados y 45 minutos de descanso acumulado, confirmados por David. En conjunto, los registros de E2 representan 540 minutos efectivos y 90 minutos de interrupciones estimadas, sin sumar nuevamente las verificaciones de apoyo G05–G07.
 
 | Actividad adicional | Minutos efectivos estimados |
 |---|---:|
@@ -567,6 +649,20 @@ El registro de David contiene 29 actividades acumuladas y 10 defectos. Para G01�
 Los horarios exactos de las actividades adicionales no se conocen; las duraciones se registraron en la descripción del CSV. Los cuatro defectos adicionales (7–10) corresponden a imports, formato documental, sincronización Git y disponibilidad de DuckDB. Los tiempos de corrección no confirmados permanecen vacíos.
 
 Los registros de Nancy requieren confirmación individual; las tres verificaciones de apoyo realizadas por David no se atribuyen a Nancy ni se suman como trabajo adicional sin comprobar que no exista duplicidad. Evidencia: commit `fefae1c`.
+
+**Actualización del 23 de noviembre:**
+
+| Actividad adicional | Minutos estimados |
+|---|---:|
+| X03 — ANOVA 3×2 | 20 |
+| Factorial 2³ con bloques | 25 |
+| Q03 — Referencias bibliográficas | 20 |
+| X05 — Confirmación experimental | 22 |
+| Corrección BLE001 y validación Ruff | 30 |
+| Trabajo efectivo adicional | 117 |
+| Descanso adicional | 15 |
+
+El PSP actualizado contiene 36 registros de tiempo (incluidos dos registros de descanso) y 11 defectos acumulados E0–E2, seis de ellos de E2. El total E2 es 657 minutos efectivos y 105 minutos de interrupciones y descansos, 762 minutos en conjunto (12 h 42 min), según las estimaciones declaradas. No se suman nuevamente las verificaciones de apoyo. El defecto 11 corresponde a BLE001; se aplicó una excepción localizada y Ruff aprobó `src` y `tests`. No se conoce la duración exclusiva del defecto. Los registros de Nancy se conservaron sin cambios.
 
 ### 4.6 Validaciones complementarias G05–G07
 
@@ -631,7 +727,7 @@ Evidencia principal: [ISO/IEC 25012](calidad/iso25012.md), commits `8f42839` y `
 
 Se documentaron ISO/IEC 9126-1:2001 como antecedente de calidad del producto; ISO/IEC 25000:2014 como marco SQuaRE; ISO/IEC 25010:2011 y 2023 para modelos de calidad; ISO/IEC 25012:2008 para calidad de datos; e ISO 9001:2015 e ISO 9000:2015 para gestión de calidad y fundamentos. Se relacionaron con las prácticas y evidencias del observatorio sin afirmar certificación.
 
-Evidencia: [Antecedentes normativos](calidad/antecedentes_normativos.md), commit `ce79abf`. Pendiente de revisión bibliográfica de las fichas oficiales y revisión de Nancy.
+Evidencia: [Antecedentes normativos](calidad/antecedentes_normativos.md), commit `ce79abf`. Se incorporaron ocho referencias con enlaces al catálogo ISO en la actualización local. La vigencia exacta de las ediciones y la revisión cruzada de Nancy requieren confirmación; no se afirma certificación ni lectura integral de las normas.
 
 ### 4.10 Q04 — Auditoría cruzada
 
@@ -660,14 +756,14 @@ La etapa E2 presenta las siguientes limitaciones:
 3. **Archivos derivados:** algunos productos de Plata y Oro se generan mediante scripts y no necesariamente se encuentran versionados en Git.
 4. **Trazabilidad temporal:** las fechas de captura no deben confundirse con fechas de procesamiento.
 5. **Diseños experimentales:** los resultados corresponden a las condiciones específicas evaluadas y no garantizan el mismo comportamiento en otros equipos o volúmenes.
-6. **Réplicas:** se utilizaron dos réplicas por tratamiento en los experimentos documentados.
+6. **Réplicas:** dos por tratamiento en los diseños factoriales y ANOVA 3×2; diez pares en X05.
 7. **Diseño fraccionado:** algunos efectos e interacciones se encuentran confundidos debido a la estructura de alias.
 8. **PSP:** los registros individuales deben reflejar los tiempos y actividades realmente realizados.
 9. **Revisión de calidad:** las actividades de cada integrante deben estar respaldadas por sus evidencias correspondientes.
 
 10. **Calidad:** cobertura y fiabilidad por debajo de las metas propuestas; revisión de seguridad limitada.
-11. **Auditoría:** Q04 pendiente; revisión individual y bibliográfica pendiente.
-12. **Análisis estadístico:** falta confirmar con la rúbrica la evidencia de ANOVA de dos factores 3×2 y bloqueo del diseño 2³.
+11. **Auditoría:** Q04 y revisión individual pendientes; referencias bibliográficas incorporadas, vigencia de ediciones por confirmar.
+12. **Análisis estadístico:** ANOVA 3×2, bloqueo 2³ y X05 documentados; queda revisar su correspondencia integral con la rúbrica, incluidos requisitos de memoria y controles experimentales.
 
 Estas limitaciones se declaran para evitar presentar como universales resultados que únicamente corresponden a las condiciones evaluadas.
 
@@ -687,6 +783,9 @@ Estas limitaciones se declaran para evitar presentar como universales resultados
 | ISO/IEC 25010 | `docs/E2/calidad/iso25010.md` |
 | ISO/IEC 25012 | `docs/E2/calidad/iso25012.md` |
 | Antecedentes normativos | `docs/E2/calidad/antecedentes_normativos.md` |
+| ANOVA 3×2 | `docs/E2/analisis_estadistico/anova_3_2.md` |
+| Factorial con bloques | `docs/E2/analisis_estadistico/experimento_factorial_bloques.md` |
+| Confirmación X05 | `docs/E2/analisis_estadistico/confirmacion_experimental_x05.md` |
 
 Relatoría: [Consultar relatoría E2](../relatoria-E2.md).
 
@@ -713,6 +812,10 @@ Relatoría: [Consultar relatoría E2](../relatoria-E2.md).
 | ANOVA completo 2⁴ | `data/reportes/anova_factorial_2_4_completo.csv` |
 | ANOVA fraccionado 2⁴⁻¹ | `data/reportes/anova_factorial_2_4_fraccionado.csv` |
 | Comparación de diseños | `data/reportes/comparacion_factorial_2_4.csv` |
+| Corridas ANOVA 3×2 | `data/reportes/experimento_anova_3_2.csv` |
+| ANOVA con bloques | `data/reportes/anova_factorial_bloques_e2.csv` |
+| Corridas X05 | `data/reportes/experimento_confirmacion_x05.csv` |
+| Comparación X05 | `data/reportes/comparacion_confirmacion_x05.csv` |
 
 ### 6.4 Evidencias de validación
 
@@ -766,6 +869,7 @@ La responsabilidad de verificar los resultados y presentar la entrega correspond
 | `5299de2` | Evaluar ISO/IEC 25010 |
 | `ce79abf` | Documentar antecedentes normativos |
 | `fefae1c` | Actualizar PSP de David |
+| `052fbba` | Completar entrega y relatoría E2; referencia de etiqueta actualizada |
 
 Los commits anteriores permiten consultar la evolución de las actividades y los productos incorporados a la etapa.
 
@@ -801,6 +905,17 @@ python -m src.comparacion_factorial_2_4_e2
 python -m src.graficas_comparacion_2_4_e2
 ```
 
+**Nuevos experimentos (reproducción, no ejecutar sobre evidencias sin respaldo):**
+
+```powershell
+python -m src.experimento_anova_3_2_e2
+python -m src.analisis_anova_3_2_e2
+python -m src.experimento_factorial_bloques_e2 --bloque 1
+python -m src.experimento_factorial_bloques_e2 --bloque 2
+python -m src.analisis_factorial_bloques_e2
+python -m src.experimento_confirmacion_x05_e2
+```
+
 **Validación del proyecto:**
 
 ```powershell
@@ -809,7 +924,7 @@ python -m pytest -q
 git diff --check
 ```
 
-**Nota:** ejecutar nuevamente los experimentos sobrescribe sus archivos CSV de salida. Se recomienda conservar una copia de los resultados utilizados en esta entrega antes de repetir las ejecuciones.
+**Nota:** algunos experimentos sobrescriben sus archivos CSV de salida; los scripts de bloques y X05 protegen las corridas existentes. Se recomienda conservar una copia de los resultados utilizados en esta entrega antes de repetir las ejecuciones.
 
 ### 7.4 Estado de la entrega
 
@@ -821,11 +936,11 @@ La entrega integra las evidencias correspondientes a Ingeniería de Datos, Anál
 
 El cierre definitivo debe considerar la revisión de los requisitos oficiales, la comprobación de los enlaces de evidencia y la actualización de los registros individuales de calidad que correspondan.
 
-**Estado:** Q01–Q03 documentadas y publicadas; PSP de David actualizado. Q04, revisión de Nancy, confirmación de requisitos estadísticos y revisión final pendientes.
+**Estado:** Q01–Q03 documentadas; ANOVA 3×2, factorial bloqueado, X05, bibliografía Q03 y PSP de David actualizados localmente. Ruff general aprobado. Pendientes: revisión final de requisitos, nueva ejecución de pytest, publicación de cambios, Q04 y revisión individual de Nancy.
 
-La etiqueta publicada `e2` apunta a `d6fc572`; las evidencias adicionales de calidad se encuentran en `main` y no forman parte de esa etiqueta. No se ha modificado la etiqueta original.
+La última etiqueta `e2` publicada y verificada previamente apunta a `052fbba`. Las nuevas evidencias locales aún no forman parte de esa versión. Cualquier actualización posterior de la etiqueta requiere autorización.
 
-Versión de referencia de las evidencias adicionales: `fefae1c`.
+Versión publicada de referencia: `052fbba`. El commit de las nuevas evidencias queda pendiente; no se asigna un hash anticipado.
 
 ---
 

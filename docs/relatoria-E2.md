@@ -436,9 +436,14 @@ Los registros PSP deben mantenerse actualizados conforme se realicen nuevas acti
 | 23/11/2026 | Q02 — ISO 25012 | David | 30 |
 | 23/11/2026 | Q01 — ISO 25010 | David en apoyo a Nancy | 30 |
 | 23/11/2026 | Q03 — Normas | David en apoyo a Nancy | 45 |
-| | Total efectivo | | 540 |
+| 23/11/2026 | X03 — ANOVA 3×2 | David | 20 |
+| 23/11/2026 | Factorial 2³ con bloques | David | 25 |
+| 23/11/2026 | Q03 — Actualización bibliográfica | David | 20 |
+| 23/11/2026 | X05 — Confirmación experimental | David | 22 |
+| 23/11/2026 | Corrección BLE001 y validación Ruff | David | 30 |
+| | Total efectivo | | 657 |
 
-Se registraron 90 minutos acumulados de descansos e interrupciones, para un total estimado de 630 minutos (10.5 horas), de los cuales nueve horas corresponden a trabajo efectivo. No se inventaron horarios exactos para las actividades adicionales.
+Se registraron 105 minutos acumulados de descansos e interrupciones, para un total estimado de 762 minutos (12 h 42 min), de los cuales 657 minutos (10 h 57 min) corresponden a trabajo efectivo. El incremento fue de 117 minutos efectivos y 15 minutos de descanso. El CSV contiene 36 registros acumulados de E0–E2, incluidos descansos. No se inventaron horarios exactos para las actividades adicionales.
 
 Las verificaciones G05–G07 documentadas en `docs/E2/validacion-calidad.md` suman 75 minutos estimados de apoyo de David; no se agregan nuevamente al total ni se atribuyen a Nancy. Su revisión individual y PSP permanecen pendientes de confirmación.
 
@@ -505,11 +510,76 @@ Se documentaron las siguientes referencias y su relación con el proyecto:
 | ISO/IEC 25012:2008 | Calidad de datos |
 | ISO 9001:2015 e ISO 9000:2015 | Gestión de calidad y mejora de procesos |
 
-Se relacionaron las normas con pruebas, trazabilidad, métricas, riesgos y registros PSP. No se declara certificación. La comprobación bibliográfica de las fichas oficiales y la revisión de Nancy siguen pendientes. El documento se publicó en `ce79abf`.
+Se relacionaron las normas con pruebas, trazabilidad, métricas, riesgos y registros PSP. No se declara certificación. El documento inicial se publicó en `ce79abf`. El 23 de noviembre David incorporó referencias a fichas oficiales de ISO y notas sobre ediciones y antecedentes. La actualización está disponible localmente en `docs/E2/calidad/antecedentes_normativos.md`; no implica lectura íntegra de las normas ni certificación. La revisión de Nancy permanece pendiente.
 
 ### 2.14 Q04 — Auditoría cruzada
 
 La actividad se pospuso hasta conocer las indicaciones de la profesora Isis y el equipo asignado. No se han emitido ni recibido hallazgos de auditoría cruzada documentados. Cuando se realice, se registrarán criterio, evidencia, severidad, impacto, acción, responsable y cierre verificable.
+
+### 2.15 X03 — ANOVA de dos factores 3×2
+
+David realizó 12 corridas medidas: tres niveles de procesos (1, 2 y 4), dos formatos (CSV y Parquet) y dos réplicas por combinación. Se utilizaron 564 registros integrados, calentamiento y orden aleatorizado. El intervalo medido incluye creación y cierre del pool de procesos, escritura, lectura y concatenación; no incluye preparación de particiones ni comprobación de equivalencia.
+
+| Procesos | CSV promedio (ms) | Parquet promedio (ms) |
+|---:|---:|---:|
+| 1 | 1235.6301 | 1238.1061 |
+| 2 | 1223.3481 | 1259.6919 |
+| 4 | 1337.1796 | 1389.7390 |
+
+| Término | gl | F | p |
+|---|---:|---:|---:|
+| Procesos | 2 | 23.018435 | 0.001533 |
+| Formato | 1 | 3.108528 | 0.128343 |
+| Interacción | 2 | 0.729343 | 0.520555 |
+| Residual | 6 | — | — |
+
+El número de procesos presentó significancia al nivel 0.05, condicionada a los supuestos del modelo. El formato y la interacción no presentaron evidencia suficiente de significancia. Dos procesos con CSV obtuvieron el menor promedio exploratorio. Las salidas fueron equivalentes en las 12 corridas.
+
+El modelo presentó R² = 0.894001 y Shapiro-Wilk p = 0.995404. La prueba de Levene resulta degenerada con dos observaciones por celda; no permite concluir de manera fiable sobre homogeneidad. No se midió memoria ni rendimiento del pipeline completo.
+
+Informe: [ANOVA 3×2](E2/analisis_estadistico/anova_3_2.md).
+
+### 2.16 Factorial 2³ con bloques
+
+Se ejecutaron dos bloques completos de ocho tratamientos cada uno, mediante invocaciones separadas de Python, con calentamiento y aleatorización independiente por bloque. Los factores fueron cantidad de registros (A), trazabilidad (B) y validación Pandera (C). Se ajustó un modelo factorial con efecto aditivo de bloque.
+
+| Término | Efecto (ms) | p |
+|---|---:|---:|
+| Bloque | — | 0.706440 |
+| A | 2.438212 | 0.282944 |
+| B | 14.257538 | 0.000253 |
+| C | 27.830038 | 0.000003 |
+| AB | -0.246187 | 0.909820 |
+| AC | 2.213262 | 0.326179 |
+| BC | 1.805437 | 0.417668 |
+| ABC | 0.312663 | 0.885653 |
+
+B y C fueron significativos; no se encontró evidencia suficiente de efecto de bloque. R² = 0.969939, desviación residual = 4.19303 ms y Shapiro-Wilk p = 0.323063. Los dos bloques no representan equipos o entornos diferentes y no permiten generalizar a otras condiciones.
+
+Informe: [Factorial con bloques](E2/analisis_estadistico/experimento_factorial_bloques.md).
+
+### 2.17 X05 — Confirmación experimental
+
+Se comparó la línea base de un proceso con CSV frente a la candidata de dos procesos con CSV, seleccionada a partir de X03. Se realizaron diez pares aleatorizados (20 corridas nuevas), con calentamiento y los mismos 564 registros. La línea base se definió antes de la confirmación, después de la exploración.
+
+| Indicador | Resultado |
+|---|---:|
+| Promedio línea base | 3204.85569 ms |
+| Promedio candidata | 3323.02324 ms |
+| Diferencia base menos candidata | -118.16755 ms |
+| Mejora relativa | -3.687141 % |
+| IC 95 % de la diferencia | [-176.426822, -59.908278] ms |
+| t pareada (9 gl) | -4.588344 |
+| Valor p | 0.001312 |
+| Corridas exitosas | 20/20 |
+| Errores | 0 |
+| Checksums distintos | 1 |
+
+La candidata fue aproximadamente 3.69 % más lenta; la línea base fue más rápida en nueve de diez pares. Se decidió conservar un proceso con CSV para este escenario, sin modificar el pipeline. El checksum lógico SHA-256 común fue `0d521727ffc75e8555c2ac2f3ce32334dee13a779b1bc977134661a9ea6140d5`.
+
+La sobrecarga de procesos es una explicación posible, no medida por separado. La prueba pareada no contó con comprobación formal de sus supuestos; los resultados corresponden a una sesión local y no se combinan con los tiempos exploratorios.
+
+Informe: [Confirmación X05](E2/analisis_estadistico/confirmacion_experimental_x05.md).
 
 ## 3. ¿Qué decidimos y por qué?
 
@@ -572,6 +642,14 @@ En la comparación factorial 2⁴ se incorporó un cuarto factor, correspondient
 Esta decisión permitió evaluar si calcular la cantidad de registros, el promedio, el mínimo y el máximo del resultado integrado incrementaba el tiempo de procesamiento.
 
 Los resultados del diseño completo no mostraron evidencia suficiente de un efecto significativo para este factor.
+
+### 3.9 Confirmar el rendimiento antes de cambiar la configuración
+
+Se descartó adoptar automáticamente la candidata de X03. X05 mostró que dos procesos con CSV no mejoraron el tiempo frente a uno. Se mantuvo la configuración de referencia para el escenario evaluado, preservando la equivalencia de los datos y sin desactivar controles de calidad del pipeline.
+
+### 3.10 Separar bloques y conservar evidencias
+
+Se ejecutaron bloques completos independientes en orden aleatorio para considerar variaciones entre sesiones de ejecución. Se conservaron los resultados originales y se documentaron los límites de la inferencia con pocas réplicas.
 
 ## 4. ¿Qué salió mal y cómo lo atendimos?
 
@@ -654,7 +732,9 @@ Los problemas descritos en esta relatoría no se consideran automáticamente def
 | 9 | 23/11 | Push rechazado por capturas remotas | Pull con rebase y push |
 | 10 | 23/11 | DuckDB no disponible | Instalación y lectura de 564 registros |
 
-El registro histórico de David contiene diez defectos, cinco correspondientes a E2. Los tiempos desconocidos no se inventaron. El PSP de Nancy conserva 21 defectos históricos y requiere confirmación individual. Los registros actualizados de David se publicaron en `fefae1c`.
+| 11 | 23/11 | Ruff BLE001 en X05 | Excepción localizada con `# noqa: BLE001` y validación general de Ruff |
+
+El registro histórico de David contiene once defectos, seis correspondientes a E2. Los 30 minutos de corrección y validación se registraron como actividad estimada; el tiempo exclusivo del defecto 11 quedó vacío. Los tiempos desconocidos no se inventaron. El PSP de Nancy conserva 21 defectos históricos y requiere confirmación individual. La actualización anterior se publicó en `fefae1c`; los nuevos registros están incorporados localmente y pendientes de publicación.
 
 ## 5. ¿Qué aprendimos?
 
@@ -685,6 +765,8 @@ Identificamos que los diseños fraccionados pueden reducir considerablemente el 
 También comprendimos que la generación de resultados experimentales debe realizarse bajo condiciones controladas, incluyendo calentamiento, aleatorización y réplicas.
 
 Reconocimos que los resultados estadísticos deben interpretarse considerando el número de réplicas, las condiciones de ejecución y los supuestos del modelo.
+
+El ANOVA 3×2 permitió distinguir los efectos del número de procesos y del formato. Aprendimos que una prueba de homogeneidad puede ser poco informativa con dos réplicas por celda. El bloqueo permitió estudiar variaciones entre ejecuciones, y X05 mostró la necesidad de confirmar una configuración candidata con mediciones nuevas antes de adoptarla. Un resultado negativo también aporta evidencia útil.
 
 ### Calidad en los Sistemas de Información
 
@@ -731,6 +813,19 @@ La evaluación ISO permitió distinguir calidad del producto, calidad de los dat
 | Resultados factorial completo | `data/reportes/experimento_factorial_2_4_completo.csv` |
 | Resultados factorial fraccionado | `data/reportes/experimento_factorial_2_4_fraccionado.csv` |
 | Comparación estadística | `data/reportes/comparacion_factorial_2_4.csv` |
+| X03 — Informe | [ANOVA 3×2](E2/analisis_estadistico/anova_3_2.md) |
+| X03 — Código | `src/experimento_anova_3_2_e2.py`, `src/analisis_anova_3_2_e2.py` |
+| X03 — Corridas y análisis | `data/reportes/experimento_anova_3_2.csv`, `data/reportes/anova_3_2.csv`, `data/reportes/resumen_anova_3_2.csv`, `data/reportes/diagnostico_anova_3_2.csv` |
+| X03 — Gráficas | `reportes/figuras/anova_3_2/` |
+| Bloques — Informe | [Factorial con bloques](E2/analisis_estadistico/experimento_factorial_bloques.md) |
+| Bloques — Código | `src/experimento_factorial_bloques_e2.py`, `src/analisis_factorial_bloques_e2.py` |
+| Bloques — Corridas | `data/reportes/factorial_2_3_bloque_1.csv`, `data/reportes/factorial_2_3_bloque_2.csv` |
+| Bloques — Análisis | `data/reportes/anova_factorial_bloques_e2.csv`, `data/reportes/efectos_factorial_bloques_e2.csv`, `data/reportes/resumen_factorial_bloques_e2.csv`, `data/reportes/diagnostico_factorial_bloques_e2.csv` |
+| Bloques — Gráficas | `reportes/figuras/factorial_bloques/` |
+| X05 — Informe | [Confirmación experimental](E2/analisis_estadistico/confirmacion_experimental_x05.md) |
+| X05 — Código | `src/experimento_confirmacion_x05_e2.py` |
+| X05 — Resultados | `data/reportes/experimento_confirmacion_x05.csv`, `data/reportes/resumen_confirmacion_x05.csv`, `data/reportes/comparacion_confirmacion_x05.csv` |
+| X05 — Gráficas | `reportes/figuras/confirmacion_x05/` |
 
 ### 6.3 Calidad de Software
 
@@ -831,7 +926,7 @@ Las evidencias de validación y los resultados correspondientes se encuentran do
 | `ce79abf` | Q03 — Antecedentes normativos |
 | `fefae1c` | Actualización PSP de David |
 
-La etiqueta `e2` conserva `d6fc572`; las mejoras posteriores se publicaron en `main` sin modificar la etiqueta.
+La etiqueta `e2` se actualizó previamente de `d6fc572` a `052fbba` con autorización. Ese commit contiene las evaluaciones ISO, PSP y documentación de la entrega anterior. Las nuevas evidencias de X03, bloques, X05 y Q03 se encuentran localmente y aún no forman parte de la etiqueta. Su publicación y eventual actualización de etiqueta requieren el cierre de las verificaciones.
 
 ## 7. Uso de IA generativa
 
@@ -845,13 +940,13 @@ La responsabilidad de verificar los resultados y entregar el proyecto correspond
 
 ## 8. Pendientes de validación antes del cierre definitivo
 
-1. Confirmar los registros PSP de Nancy; los de David ya se actualizaron y publicaron.
+1. Confirmar los registros PSP de Nancy; los de David están actualizados localmente y pendientes de publicar esta última ampliación.
 2. Documentar las revisiones individuales de calidad realizadas por Nancy.
 3. Confirmar que todos los requisitos oficiales de la etapa E2 estén cubiertos.
 4. Revisar la correspondencia entre las evidencias y los documentos finales.
 5. Confirmar la revisión definitiva de la entrega por parte del equipo.
 6. Realizar Q04 cuando Isis indique el procedimiento y equipo asignado.
-7. Verificar bibliografía oficial de Q03 y requisitos estadísticos restantes, incluido ANOVA 3×2 y bloqueo si corresponden a la rúbrica.
+7. Revisar las referencias bibliográficas incorporadas en Q03 y contrastar las evidencias de X03, bloqueo y X05 con la rúbrica completa; los experimentos ya se ejecutaron y documentaron.
 8. Completar fecha exacta y URL directa de ingesta geográfica y verificar condiciones específicas de redistribución de Banxico.
 
 ---
@@ -866,4 +961,4 @@ Las pruebas automatizadas registraron 145 resultados aprobados y la revisión de
 
 Los cambios correspondientes al cierre estadístico fueron integrados en la rama principal del repositorio.
 
-Q01–Q03 y el PSP actualizado de David cuentan con evidencia publicada. Permanecen pendientes Q04, las revisiones individuales de Nancy, la confirmación de su PSP y la comprobación final de requisitos. La relatoría ampliada conserva el detalle técnico original; si se exige un máximo de dos páginas, deberá presentarse una versión breve adicional.
+Q01–Q03 y la versión anterior del PSP de David cuentan con evidencia publicada. Las 48 nuevas corridas, la ampliación bibliográfica, el PSP actualizado y los documentos de cierre están preparados localmente. Ruff general y git diff --check se verificaron sin errores; falta repetir pytest y publicar los cambios. Permanecen pendientes Q04, las revisiones individuales de Nancy, la confirmación de su PSP y la comprobación final de requisitos. La relatoría ampliada conserva el detalle técnico original; si se exige un máximo de dos páginas, deberá presentarse una versión breve adicional.

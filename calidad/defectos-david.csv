@@ -9,3 +9,4 @@ numero,fecha,tipo,fase_introducido,fase_eliminado,minutos_correccion,defecto_ori
 8,2026-11-23,documentacion,documentacion,revision,,,Formato incorrecto al final de iso25012.md corregido en el commit e2c8cb0
 9,2026-11-23,integracion,integracion,integracion,,,Push rechazado por cambios remotos de capturas automaticas y resuelto mediante git pull --rebase
 10,2026-11-23,entorno,configuracion,pruebas,,,DuckDB no disponible en el entorno local; se instalo y verifico la lectura de 564 registros
+11,2026-11-23,estandar,codigo,pruebas,,,Ruff detecto BLE001 en experimento_confirmacion_x05_e2.py; se justifico la captura general de excepciones mediante noqa localizado y se verifico Ruff en src y tests

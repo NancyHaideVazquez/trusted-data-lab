@@ -30,3 +30,9 @@ fecha,inicio,fin,interrupcion_min,fase,actividad
 2026-11-23,,,,calidad,E2 Q01 - Evaluacion ISO IEC 25010 - 30 min efectivos estimados
 2026-11-23,,,,documentacion,E2 Q03 - Antecedentes normativos - 45 min efectivos estimados
 ,,,45,descanso,E2 - Descansos acumulados del 22 y 23 de noviembre
+2026-11-23,,,,analisis,E2 X03 - ANOVA 3x2 de procesos y formatos - 20 min efectivos estimados
+2026-11-23,,,,analisis,E2 - Experimento factorial 2^3 con bloques - 25 min efectivos estimados
+2026-11-23,,,,documentacion,E2 Q03 - Actualizacion de referencias bibliograficas oficiales - 20 min efectivos estimados
+2026-11-23,,,,analisis,E2 X05 - Confirmacion experimental de rendimiento - 22 min efectivos estimados
+2026-11-23,,,,codigo,E2 - Correccion BLE001 y validacion de Ruff - 30 min efectivos estimados
+2026-11-23,,,15,descanso,E2 - Descansos adicionales

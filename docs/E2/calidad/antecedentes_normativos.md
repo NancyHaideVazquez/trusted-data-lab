@@ -68,6 +68,7 @@ La evaluación de la calidad del software ha evolucionado desde modelos centrado
 | 2014 | ISO/IEC 25000 | Actualización de la guía de la familia SQuaRE. |
 | 2015 | ISO 9001 | Enfoque basado en procesos, riesgos y mejora continua. |
 | 2023 | ISO/IEC 25010 | Actualización del modelo de calidad del producto. |
+| 2026 | ISO 9001 e ISO 9000 | Nuevas ediciones de gestión de la calidad. |
 
 ISO 9001 pertenece al ámbito de la gestión de la calidad organizacional, mientras que ISO/IEC 9126 y la familia SQuaRE se concentran principalmente en la ingeniería y evaluación de sistemas, software y datos.
 
@@ -196,7 +197,7 @@ No se afirma que el proyecto haya implementado todas las normas pertenecientes a
 
 | Elemento | Descripción |
 |---|---|
-| Norma utilizada | ISO/IEC 25010:2011 |
+| Norma utilizada | ISO/IEC 25010:2011 (retirada; referencia académica) |
 | Referencia complementaria | ISO/IEC 25010:2023 |
 | Enfoque | Modelo de calidad del producto |
 | Actividad relacionada | Q01 |
@@ -370,7 +371,8 @@ La recuperabilidad requiere pruebas adicionales de reconstrucción integral desd
 
 | Elemento | Descripción |
 |---|---|
-| Norma de referencia | ISO 9001:2015 |
+| Norma de referencia histórica | ISO 9001:2015 |
+| Edición vigente de referencia complementaria | ISO 9001:2026 |
 | Nombre | Quality management systems — Requirements |
 | Enfoque | Sistemas de gestión de la calidad |
 | Aplicación | Organización de procesos y mejora continua |
@@ -463,7 +465,7 @@ Por lo tanto, no se afirma que el proyecto se encuentre certificado bajo esta no
 | ISO/IEC 25000 | 2014 | Requisitos y evaluación de calidad | Organización conceptual de SQuaRE |
 | ISO/IEC 25010 | 2011 y referencia complementaria 2023 | Producto de software | Evaluación Q01 |
 | ISO/IEC 25012 | 2008 | Datos | Evaluación Q02 |
-| ISO 9001 | 2015 | Sistema de gestión de la calidad | Procesos, riesgos y mejora continua |
+| ISO 9001 | 2015 (histórica); 2026 (complementaria) | Sistema de gestión de la calidad | Procesos, riesgos y mejora continua |
 
 ### 10.1. Diferencias principales
 
@@ -633,19 +635,21 @@ Las mediciones obtenidas constituyen una línea base para continuar mejorando el
 
 Las siguientes ediciones se establecen como referencias normativas de la actividad. La descripción se realiza a nivel conceptual y no sustituye la consulta del texto oficial completo de cada norma.
 
-1. International Organization for Standardization e International Electrotechnical Commission. (2001). ISO/IEC 9126-1:2001. Software engineering — Product quality — Part 1: Quality model.
+1. International Organization for Standardization e International Electrotechnical Commission. (2001). ISO/IEC 9126-1:2001. Software engineering — Product quality — Part 1: Quality model. [Ficha oficial ISO](https://www.iso.org/standard/22749.html).
 
-2. International Organization for Standardization e International Electrotechnical Commission. (2014). ISO/IEC 25000:2014. Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Guide to SQuaRE.
+2. International Organization for Standardization e International Electrotechnical Commission. (2014). ISO/IEC 25000:2014. Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Guide to SQuaRE. [Ficha oficial ISO](https://www.iso.org/standard/64764.html).
 
-3. International Organization for Standardization e International Electrotechnical Commission. (2011). ISO/IEC 25010:2011. Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — System and software quality models.
+3. International Organization for Standardization e International Electrotechnical Commission. (2011). ISO/IEC 25010:2011. Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — System and software quality models. [Ficha oficial ISO](https://www.iso.org/standard/35733.html).
 
-4. International Organization for Standardization e International Electrotechnical Commission. (2023). ISO/IEC 25010:2023. Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model.
+4. International Organization for Standardization e International Electrotechnical Commission. (2023). ISO/IEC 25010:2023. Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model. [Ficha oficial ISO](https://www.iso.org/standard/78176.html).
 
-5. International Organization for Standardization e International Electrotechnical Commission. (2008). ISO/IEC 25012:2008. Software engineering — Software product Quality Requirements and Evaluation (SQuaRE) — Data quality model.
+5. International Organization for Standardization e International Electrotechnical Commission. (2008). ISO/IEC 25012:2008. Software engineering — Software product Quality Requirements and Evaluation (SQuaRE) — Data quality model. [Ficha oficial ISO](https://www.iso.org/standard/35736.html).
 
-6. International Organization for Standardization. (2015). ISO 9001:2015. Quality management systems — Requirements.
+6. International Organization for Standardization. (2015). ISO 9001:2015. Quality management systems — Requirements. [Ficha oficial ISO](https://www.iso.org/standard/62085.html).
 
-7. International Organization for Standardization. (2015). ISO 9000:2015. Quality management systems — Fundamentals and vocabulary.
+7. International Organization for Standardization. (2015). ISO 9000:2015. Quality management systems — Fundamentals and vocabulary. [Ficha oficial ISO](https://www.iso.org/standard/45481.html).
+
+8. International Organization for Standardization. (2026). ISO 9001:2026. [Ficha oficial ISO](https://www.iso.org/standard/9001).
 
 ### 17.1. Recursos de referencia
 
@@ -655,11 +659,24 @@ Las siguientes ediciones se establecen como referencias normativas de la activid
 - Portal informativo de ISO 25000: https://iso25000.com/
 - Repositorio Trusted Data Lab: https://github.com/NancyHaideVazquez/trusted-data-lab
 
-La verificación bibliográfica de las ediciones y sus fichas oficiales deberá confirmarse durante la revisión final del equipo.
+### 17.2. Verificación bibliográfica — 23 de noviembre de 2026
+
+| Edición | Estado según el catálogo oficial |
+|---|---|
+| ISO/IEC 9126-1:2001 | Retirada; antecedente histórico |
+| ISO/IEC 25000:2014 | Vigente; confirmada en 2026 |
+| ISO/IEC 25010:2011 | Retirada; utilizada para conservar los ocho criterios académicos de Q01 |
+| ISO/IEC 25010:2023 | Vigente; nueve características de calidad del producto |
+| ISO/IEC 25012:2008 | Vigente; confirmada en 2025 |
+| ISO 9001:2015 | Retirada en septiembre de 2026; sustituida por ISO 9001:2026 |
+| ISO 9000:2015 | Retirada; sustituida por ISO 9000:2026 |
+| ISO 9001:2026 | Vigente; referencia complementaria |
+
+La consulta asistida por ChatGPT verificó las fichas públicas, las ediciones y los estados del catálogo ISO. No equivale a una lectura integral de los textos normativos ni a una auditoría de conformidad. La revisión y aprobación de Nancy y la validación conjunta continúan pendientes.
 
 ## 18. Uso de inteligencia artificial generativa
 
-Se utilizó ChatGPT como herramienta de apoyo para organizar los antecedentes normativos, estructurar las tablas comparativas y relacionar los modelos de calidad con las evidencias del proyecto.
+Se utilizó ChatGPT como herramienta de apoyo para verificar las fichas públicas oficiales de ISO, organizar los antecedentes normativos, estructurar las tablas comparativas y relacionar los modelos de calidad con las evidencias del proyecto.
 
 Los resultados cuantitativos incluidos corresponden a mediciones realizadas durante Q01 y Q02.
 
@@ -671,7 +688,8 @@ No se generaron resultados experimentales ficticios ni se atribuyeron certificac
 |---|---|---|
 | Elaboración inicial de antecedentes normativos | David Cuevas Farías | Realizada |
 | Integración de resultados Q01 y Q02 | David Cuevas Farías | Realizada |
-| Revisión normativa y bibliográfica | Nancy Haide Vázquez Ávalos | Pendiente de confirmación |
+| Verificación de fichas oficiales | Apoyo de ChatGPT | Realizada |
+| Revisión normativa y bibliográfica del equipo | Nancy Haide Vázquez Ávalos | Pendiente de confirmación |
 | Validación conjunta | Nancy y David | Pendiente |
 
 **Estado de Q03:** antecedentes normativos documentados, relacionados con las evidencias de E2 y pendientes de revisión final del equipo.

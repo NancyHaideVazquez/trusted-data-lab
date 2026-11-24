@@ -1,0 +1,13 @@
+orden,replica,procesos,formato,tiempo_ms,registros_salida,tamano_bytes,salida_equivalente
+1,1,1,CSV,1213.0104,564,120110,True
+2,2,1,CSV,1258.2498,564,120110,True
+3,1,2,CSV,1240.7401,564,120219,True
+4,1,2,Parquet,1257.8778,564,22155,True
+5,2,4,CSV,1298.4746,564,120437,True
+6,1,4,CSV,1375.8845,564,120437,True
+7,2,1,Parquet,1219.5833,564,14380,True
+8,2,4,Parquet,1394.9944,564,37020,True
+9,2,2,Parquet,1261.5059,564,22155,True
+10,2,2,CSV,1205.956,564,120219,True
+11,1,4,Parquet,1384.4836,564,37020,True
+12,1,1,Parquet,1256.6288,564,14380,True
