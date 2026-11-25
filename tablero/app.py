@@ -1,4 +1,5 @@
 
+from datetime import timedelta
 from pathlib import Path
 
 import geopandas as gpd
@@ -40,7 +41,7 @@ st.markdown(
 
 
 @st.cache_data
-def cargar_datos():
+def cargar_datos(ruta_oro):
     municipios = gpd.read_file(RUTA_MAPA)
 
     municipios = municipios.to_crs(epsg=4326)
@@ -54,9 +55,9 @@ def cargar_datos():
 
     oro = None
 
-    if RUTA_ORO.is_file():
+    if ruta_oro.is_file():
         oro = pd.read_csv(
-            RUTA_ORO,
+            ruta_oro,
             dtype={"serie_id": str},
         )
 
@@ -74,7 +75,7 @@ def cargar_datos():
 
 
 try:
-    municipios, union, oro = cargar_datos()
+    municipios, union, oro = cargar_datos(RUTA_ORO)
 
 except (OSError, ValueError) as error:
     st.error(f"No fue posible cargar los datos: {error}")
@@ -313,6 +314,24 @@ with tab_economia:
 
         else:
 
+            ultimo = datos.iloc[-1]
+
+            maximo = datos.loc[datos["valor"].idxmax()]
+            minimo = datos.loc[datos["valor"].idxmin()]
+
+            cambio = None
+
+            if len(datos) >= 2:
+                anterior = datos.iloc[-2]
+
+                if (
+                    ultimo["periodo"].to_period("M")
+                    == anterior["periodo"].to_period("M") + 1
+                ):
+                    cambio = (
+                        ultimo["valor"] - anterior["valor"]
+                    )
+
             c1, c2, c3 = st.columns(3)
 
             c1.metric(
@@ -327,26 +346,628 @@ with tab_economia:
 
             c3.metric(
                 "Último valor seleccionado",
-                f"{datos.iloc[-1]['valor']:.2f} %",
+                f"{ultimo['valor']:.2f} %",
             )
 
-            grafica = px.line(
-                datos,
-                x="periodo",
-                y="valor",
-                color="fuente",
+            c4, c5, c6 = st.columns(3)
+
+            c4.metric(
+                "Valor máximo",
+                f"{maximo['valor']:.2f} %",
+            )
+
+            c4.caption(
+                maximo["periodo"].strftime("%Y-%m")
+            )
+
+            c5.metric(
+                "Valor mínimo",
+                f"{minimo['valor']:.2f} %",
+            )
+
+            c5.caption(
+                minimo["periodo"].strftime("%Y-%m")
+            )
+
+            c6.metric(
+                "Cambio mensual",
+                f"{cambio:+.2f} pp"
+                if cambio is not None
+                else "No disponible",
+            )
+
+            c6.caption(
+                "Respecto al mes anterior seleccionado"
+            )
+
+            st.caption(
+                f"Unidad: {ultimo['unidad']} | "
+                f"Cobertura: {ultimo['cobertura']} | "
+                "pp = puntos porcentuales."
+            )
+
+
+            st.subheader("Evolución histórica y tendencia")
+
+            ventana = st.selectbox(
+                "Periodo del promedio móvil",
+                options=[3, 6, 12],
+                index=2,
+                format_func=lambda n: f"{n} meses",
+                key="ventana_promedio_movil",
+            )
+
+            serie = (
+                datos.set_index("periodo")["valor"]
+                .sort_index()
+                .asfreq("MS")
+            )
+
+            promedio_movil = serie.rolling(
+                window=ventana,
+                min_periods=ventana,
+            ).mean()
+
+            grafica = go.Figure()
+
+            grafica.add_trace(
+                go.Scatter(
+                    x=serie.index,
+                    y=serie,
+                    mode="lines+markers"
+                    if len(serie) <= 24
+                    else "lines",
+                    name="Valor mensual",
+                    line={
+                        "color": "#60a5fa",
+                        "width": 1.8,
+                    },
+                    connectgaps=False,
+                )
+            )
+
+            grafica.add_trace(
+                go.Scatter(
+                    x=promedio_movil.index,
+                    y=promedio_movil,
+                    mode="lines",
+                    name=f"Promedio móvil ({ventana} meses)",
+                    line={
+                        "color": "#f59e0b",
+                        "width": 3,
+                    },
+                    connectgaps=False,
+                )
+            )
+
+            grafica.update_layout(
                 title=indicador,
-                labels={
-                    "periodo": "Periodo",
-                    "valor": "Porcentaje",
-                    "fuente": "Fuente",
+                xaxis_title="Periodo",
+                xaxis_tickformat="%Y-%m",
+                yaxis_title=ultimo["unidad"].capitalize(),
+                hovermode="x unified",
+                height=450,
+                legend={
+                    "orientation": "h",
+                    "y": 1.12,
                 },
             )
+
+            if len(serie) == 1:
+                grafica.update_xaxes(
+                    range=[
+                        pd.Timestamp(serie.index[0]).date() - timedelta(days=15),
+                        pd.Timestamp(serie.index[0]).date() + timedelta(days=15),
+                    ],
+                    dtick="M1",
+                )
+
 
             st.plotly_chart(
                 grafica,
                 width="stretch",
             )
+
+            st.caption(
+                "La línea azul muestra los valores originales. "
+                "La línea naranja suaviza las fluctuaciones "
+                "para facilitar la identificación de tendencias."
+            )
+
+            tendencias = promedio_movil.dropna()
+
+            if len(tendencias) >= 2:
+                diferencia = (
+                    tendencias.iloc[-1]
+                    - tendencias.iloc[0]
+                )
+
+                if diferencia > 0.005:
+                    direccion = "ascendente"
+                elif diferencia < -0.005:
+                    direccion = "descendente"
+                else:
+                    direccion = "estable"
+
+                st.info(
+                    f"El promedio móvil presenta un cambio "
+                    f"neto {direccion} de "
+                    f"{diferencia:+.2f} puntos porcentuales "
+                    "entre el primer y el último promedio "
+                    "disponible del periodo seleccionado."
+                )
+
+            elif tendencias.empty:
+                st.warning(
+                    f"Se necesitan al menos {ventana} meses "
+                    "consecutivos para calcular el promedio móvil."
+                )
+
+
+            st.divider()
+
+            st.subheader("Comparación económica anual")
+
+            anual = (
+                datos.assign(
+                    anio=datos["periodo"].dt.year
+                )
+                .groupby("anio", as_index=False)
+                .agg(
+                    promedio=("valor", "mean"),
+                    minimo=("valor", "min"),
+                    maximo=("valor", "max"),
+                    meses=("periodo", "nunique"),
+                )
+            )
+
+            anual["anio"] = anual["anio"].astype(str)
+
+            anual["cobertura_anual"] = (
+                anual["meses"]
+                .map(
+                    lambda n: "12 meses"
+                    if n == 12
+                    else "Año parcial"
+                )
+            )
+
+            figura_anual = px.bar(
+                anual,
+                x="anio",
+                y="promedio",
+                color="cobertura_anual",
+                text_auto=".2f",
+                hover_data={
+                    "meses": True,
+                    "minimo": ":.2f",
+                    "maximo": ":.2f",
+                },
+                color_discrete_map={
+                    "12 meses": "#2563eb",
+                    "Año parcial": "#f59e0b",
+                },
+                labels={
+                    "anio": "Año",
+                    "promedio": "Promedio mensual (%)",
+                    "meses": "Meses disponibles",
+                    "minimo": "Valor mínimo",
+                    "maximo": "Valor máximo",
+                    "cobertura_anual": "Cobertura",
+                },
+            )
+
+            figura_anual.update_layout(
+                height=450,
+                xaxis_type="category",
+                xaxis_categoryorder="array",
+                xaxis_categoryarray=anual["anio"].tolist(),
+                yaxis_title=ultimo["unidad"].capitalize(),
+                legend_title_text="Cobertura anual",
+            )
+
+            st.plotly_chart(
+                figura_anual,
+                width="stretch",
+                key="comparacion_anual",
+            )
+
+            mayor = anual.loc[
+                anual["promedio"].idxmax()
+            ]
+
+            menor = anual.loc[
+                anual["promedio"].idxmin()
+            ]
+
+            st.info(
+                f"El año {mayor['anio']} presenta el mayor "
+                f"promedio observado: "
+                f"{mayor['promedio']:.2f} %, "
+                f"con {mayor['meses']} meses disponibles. "
+                f"El menor corresponde a {menor['anio']}, "
+                f"con {menor['promedio']:.2f} % "
+                f"y {menor['meses']} meses disponibles."
+            )
+
+            st.caption(
+                "Las barras azules contienen 12 observaciones "
+                "mensuales y las naranjas corresponden a años "
+                "parciales. Los promedios no representan "
+                "inflación anual acumulada. El último mes "
+                "capturado también puede estar incompleto."
+            )
+
+
+            st.divider()
+
+            st.subheader("Variaciones mensuales")
+
+            variaciones = (
+                serie.diff()
+                .dropna()
+                .rename("variacion")
+                .reset_index()
+            )
+
+            if variaciones.empty:
+
+                st.warning(
+                    "Se necesitan al menos dos meses "
+                    "consecutivos para calcular variaciones."
+                )
+
+            else:
+
+                variaciones["direccion"] = (
+                    variaciones["variacion"].map(
+                        lambda v: "Aumento" if v > 0
+                        else "Disminución" if v < 0
+                        else "Sin cambio"
+                    )
+                )
+
+                figura_variaciones = px.bar(
+                    variaciones,
+                    x="periodo",
+                    y="variacion",
+                    color="direccion",
+                    color_discrete_map={
+                        "Aumento": "#16a34a",
+                        "Disminución": "#dc2626",
+                        "Sin cambio": "#94a3b8",
+                    },
+                    labels={
+                        "periodo": "Periodo",
+                        "variacion": "Cambio mensual (pp)",
+                        "direccion": "Dirección",
+                    },
+                    hover_data={
+                        "variacion": ":.2f",
+                    },
+                )
+
+                figura_variaciones.add_hline(
+                    y=0,
+                    line_color="#94a3b8",
+                )
+
+                figura_variaciones.update_layout(
+                    height=450,
+                    barmode="overlay",
+                    hovermode="x unified",
+                )
+
+                st.plotly_chart(
+                    figura_variaciones,
+                    width="stretch",
+                    key="variaciones_mensuales",
+                )
+
+                aumentos = int(
+                    (variaciones["variacion"] > 0).sum()
+                )
+
+                disminuciones = int(
+                    (variaciones["variacion"] < 0).sum()
+                )
+
+                sin_cambio = int(
+                    (variaciones["variacion"] == 0).sum()
+                )
+
+                v1, v2, v3 = st.columns(3)
+
+                v1.metric("Meses con aumento", aumentos)
+
+                v2.metric(
+                    "Meses con disminución",
+                    disminuciones,
+                )
+
+                v3.metric(
+                    "Meses sin cambio",
+                    sin_cambio,
+                )
+
+                mayor_cambio = variaciones.loc[
+                    variaciones["variacion"].abs().idxmax()
+                ]
+
+                st.info(
+                    "El mayor cambio mensual en magnitud "
+                    "se presentó en "
+                    f"{mayor_cambio['periodo']:%Y-%m}, "
+                    "con una variación de "
+                    f"{mayor_cambio['variacion']:+.2f} "
+                    "puntos porcentuales."
+                )
+
+                st.caption(
+                    "Cada barra representa la diferencia "
+                    "respecto al mes anterior. "
+                    "Verde indica aumento y rojo disminución. "
+                    "Los colores no implican que el cambio "
+                    "sea favorable o desfavorable."
+                )
+
+
+            st.divider()
+
+            st.subheader("Mapa de calor histórico")
+
+            meses = [
+                "Ene", "Feb", "Mar", "Abr",
+                "May", "Jun", "Jul", "Ago",
+                "Sep", "Oct", "Nov", "Dic",
+            ]
+
+            datos_calor = datos.assign(
+                anio=datos["periodo"].dt.year,
+                mes=datos["periodo"].dt.month,
+            )
+
+            matriz = datos_calor.pivot_table(
+                index="anio",
+                columns="mes",
+                values="valor",
+                aggfunc="mean",
+            )
+
+            matriz = matriz.reindex(
+                columns=range(1, 13)
+            ).sort_index()
+
+            matriz.columns = meses
+
+            figura_calor = go.Figure(
+                data=go.Heatmap(
+                    z=matriz.to_numpy(),
+                    x=meses,
+                    y=matriz.index.astype(str),
+                    colorscale="Viridis",
+                    texttemplate="%{z:.2f}",
+                    hoverongaps=False,
+                    colorbar={
+                        "title": ultimo["unidad"],
+                    },
+                    hovertemplate=(
+                        "Año: %{y}<br>"
+                        "Mes: %{x}<br>"
+                        "Valor: %{z:.2f} %"
+                        "<extra></extra>"
+                    ),
+                )
+            )
+
+            figura_calor.update_layout(
+                height=max(
+                    450,
+                    len(matriz) * 28 + 100,
+                ),
+                xaxis_title="Mes",
+                yaxis_title="Año",
+                yaxis={
+                    "type": "category",
+                    "autorange": "reversed",
+                },
+                margin={
+                    "l": 50,
+                    "r": 30,
+                    "t": 30,
+                    "b": 40,
+                },
+            )
+
+            st.plotly_chart(
+                figura_calor,
+                width="stretch",
+                key="mapa_calor_historico",
+            )
+
+            st.info(
+                "El valor más alto del periodo corresponde a "
+                f"{maximo['periodo']:%Y-%m}, "
+                f"con {maximo['valor']:.2f} %. "
+                "El valor más bajo corresponde a "
+                f"{minimo['periodo']:%Y-%m}, "
+                f"con {minimo['valor']:.2f} %."
+            )
+
+            st.caption(
+                "Los colores oscuros representan valores "
+                "más bajos y los claros valores más altos. "
+                "Las celdas vacías indican meses sin datos "
+                "dentro del periodo seleccionado. "
+                "No representan valores iguales a cero."
+            )
+
+
+            st.divider()
+
+            st.subheader("Relación entre inflación y TIIE")
+
+            st.caption(
+                "Comparación de los indicadores nacionales "
+                "durante los meses coincidentes."
+            )
+
+            inflacion = oro.loc[
+                oro["serie_id"] == "910402",
+                ["periodo", "valor"],
+            ].rename(
+                columns={"valor": "inflacion"}
+            )
+
+            tiie = oro.loc[
+                oro["serie_id"] == "SF43783",
+                ["periodo", "valor"],
+            ].rename(
+                columns={"valor": "tiie"}
+            )
+
+            relacionados = inflacion.merge(
+                tiie,
+                on="periodo",
+                how="inner",
+                validate="one_to_one",
+            )
+
+            relacionados = relacionados.loc[
+                relacionados["periodo"].between(
+                    datos["periodo"].min(),
+                    datos["periodo"].max(),
+                )
+            ].dropna(
+                subset=["inflacion", "tiie"]
+            ).sort_values("periodo").copy()
+
+            if (
+                len(relacionados) < 3
+                or relacionados["inflacion"].nunique() < 2
+                or relacionados["tiie"].nunique() < 2
+            ):
+
+                st.warning(
+                    "No existen suficientes valores "
+                    "coincidentes y distintos para "
+                    "calcular la correlación."
+                )
+
+            else:
+
+                correlacion = relacionados[
+                    "inflacion"
+                ].corr(
+                    relacionados["tiie"]
+                )
+
+                magnitud = abs(correlacion)
+
+                if magnitud >= 0.70:
+                    intensidad = "fuerte"
+                elif magnitud >= 0.30:
+                    intensidad = "moderada"
+                else:
+                    intensidad = "débil"
+
+                if magnitud < 0.005:
+                    direccion_corr = "prácticamente nula"
+                elif correlacion > 0:
+                    direccion_corr = f"positiva {intensidad}"
+                else:
+                    direccion_corr = f"negativa {intensidad}"
+
+                r1, r2, r3 = st.columns(3)
+
+                r1.metric(
+                    "Meses comparados",
+                    len(relacionados),
+                )
+
+                r2.metric(
+                    "Correlación de Pearson",
+                    f"{correlacion:.3f}",
+                )
+
+                r3.metric(
+                    "Tipo de relación",
+                    direccion_corr.capitalize(),
+                )
+
+                relacionados["mes"] = (
+                    relacionados["periodo"]
+                    .dt.strftime("%Y-%m")
+                )
+
+                relacionados["anio"] = (
+                    relacionados["periodo"].dt.year
+                )
+
+                figura_correlacion = px.scatter(
+                    relacionados,
+                    x="inflacion",
+                    y="tiie",
+                    color="anio",
+                    color_continuous_scale="Viridis",
+                    hover_name="mes",
+                    hover_data={
+                        "inflacion": ":.2f",
+                        "tiie": ":.2f",
+                    },
+                    labels={
+                        "inflacion": (
+                            "Inflación mensual de servicios (%)"
+                        ),
+                        "tiie": (
+                            "TIIE a 28 días (% anual)"
+                        ),
+                        "anio": "Año",
+                    },
+                )
+
+                figura_correlacion.update_traces(
+                    marker={
+                        "size": 9,
+                        "opacity": 0.75,
+                    }
+                )
+
+                figura_correlacion.update_layout(
+                    height=500,
+                )
+
+                st.plotly_chart(
+                    figura_correlacion,
+                    width="stretch",
+                    key="correlacion_economica",
+                )
+
+                st.info(
+                    f"Se observa una relación "
+                    f"{direccion_corr}, con un coeficiente "
+                    f"de Pearson de {correlacion:.3f}, "
+                    f"a partir de {len(relacionados)} "
+                    "meses coincidentes."
+                )
+
+                st.caption(
+                    "Cada punto representa un mes. "
+                    "La escala de colores identifica el año. "
+                    "La clasificación de intensidad es "
+                    "orientativa. Correlación no implica "
+                    "causalidad. Las tendencias temporales "
+                    "pueden influir en el resultado."
+                )
+
+                st.caption(
+                    "Fuentes: INEGI, indicador 910402; "
+                    "Banco de México, serie SF43783. "
+                    "La inflación es una variación mensual "
+                    "y la TIIE es una tasa anual promediada "
+                    "por mes. Ambas tienen cobertura nacional."
+                )
+
 
             st.dataframe(
                 datos[
